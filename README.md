@@ -84,6 +84,7 @@ Each user story was assigned a number of labels to aid in the project workflow. 
 Using the Agile method allowed this project to be managed well in small chunks. The developer was able to work on specific tasks without losing focus and manage and project the time required for these tasks optimally.
 
 ### Business Model
+Gardening Services is designed as a Business to Customer (B2C) e-commerce application. Individuals are the main type of customer being targeted for the services being sold, although other businesses can also fall into this category. The deliverables are services; repeat transations are expected based on the positive experience and feedback from customers. A single payment systems is used for Gardening Services, as the services on offer can be seasonal or have extended periods of time before being required again.
 
 ### User Stories
 #### Epic: Initial Project Setup
