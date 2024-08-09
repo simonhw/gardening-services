@@ -189,6 +189,7 @@ The Epics and labels discussed above were used in conjunction with the board and
 ### Marketing
 
 ## Design
+An easy payment gateway and authentication system was designed for this application to give the customer the best possible experience in ordering and accessing information on their past or upcoming services booked with the business. Clear descriptions and images of the services on offer will allow the user to make an informed purchase. Ratings and reviews under each service helps the customer to commit to the purchase. 
 ### Colour Scheme
 A palette of ....
 
@@ -232,7 +233,7 @@ Wireframes were created in Balsamiq for the initial front-end design of the webs
 ![Reviews Wireframe - Desktop]() -->
 
 ### Entity Relationship Diagrams
-An ERD was created to plan out the models that would be created and used in this project.
+An ERD was created to plan out the models that would be created and used in this project. A custom user model was planned as this is reccomenede in the official Django documentation and will afford the developer easier control over its structure. Other models include Service, Order, OrderItem, and Review.
 
 ![ERDs]()
 
