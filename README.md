@@ -63,7 +63,8 @@ User Stories were generated and grouped under different Epics to effectively str
 - "Initial Project Setup"
 - "Create Models"
 - "User Accounts"
-- "Bookings System"
+- "Services and Checkout"
+- "Payment System"
 - "Website Content"
 - "Bugs"
 - "Writing Documentation"
@@ -196,9 +197,9 @@ A palette of ....
 ![Coolors colour palette]()
 
 ### Typography
-The font was chosen from the Google Fonts library ....
+The Playfair Display font was chosen from the Google Fonts library as its thin and sharp look evoked thought of garden tools, fencing, and ordered lines. This gives the impression of a professional business and links the services offered namely creating something neat and ordered.
 
-![ Font]()
+![Playfair Display Font](static/images/readme/playfair-display.png)
 
 
 ### Imagery
@@ -213,7 +214,11 @@ Wireframes were created in Balsamiq for the initial front-end design of the webs
 
 ![Homepage Wireframe - Tablet]()
 
-![Homepage Wireframe - Desktop]()
+Desktop Screens
+
+![Homepage Wireframe - Desktop](static/images/readme/desktop-wireframe-home-1.png)
+![Homepage Wireframe - Desktop](static/images/readme/desktop-wireframe-home-2.png)
+![Homepage Wireframe - Desktop](static/images/readme/desktop-wireframe-home-3.png)
 
 
 <!-- **Booking Page**
@@ -233,9 +238,9 @@ Wireframes were created in Balsamiq for the initial front-end design of the webs
 ![Reviews Wireframe - Desktop]() -->
 
 ### Entity Relationship Diagrams
-An ERD was created to plan out the models that would be created and used in this project. A custom user model was planned as this is reccomenede in the official Django documentation and will afford the developer easier control over its structure. Other models include Service, Order, OrderItem, and Review.
+An ERD was created to plan out the models that would be created and used in this project. A custom user model was planned as this is reccomenede in the official Django documentation and will afford the developer easier control over its structure. Other models include Service, Order, OrderItem, Category, and Review.
 
-![ERDs]()
+![ERDs](static/images/readme/gardening_services_erd.png)
 
 ### CRUD Functionality
 A key requirement for this project was for users to be able to create, read, update, and/or delete data from the database as appropriate. Users could interact with the database in these ways as follows:
@@ -398,6 +403,8 @@ Chrome Developer Tools - To visualise and test changes to the website code.
 
 [Favicon.io](https://favicon.io/) - To source the favicon used.
 
+[Free Logo Design](https://freelogodesign.org) - To create a mock logo for the business.
+
 [Git](https://git-scm.com/) - For version control.
 
 [GitHub](https://github.com/) - To save and store files online.
@@ -486,7 +493,9 @@ All documentation on the testing of this application can be found in the [TESTIN
 ChatGPT was used to generate most of the text content about the campsite and services offered and was edited by Simon Henleywillis. The "description" and "keywords" meta tags were also generated using ChatGPT.
 
 ### Media
-All images used were found on [Pexels](https://www.pexels.com/). The Pexels website states that "*All photos and videos on Pexels can be downloaded and used for free*".
+The business logo was created on [FreeLogoDesign](https://freelogodesign.org). The website states that "[w]hether you use the free or the paid version (high-resolution plan), you are free to use your logo for promotional purposes without having to credit FreeLogoDesign."
+
+All other images used were found on [Pexels](https://www.pexels.com/). The Pexels website states that "*All photos and videos on Pexels can be downloaded and used for free*".
 Images were resized and cropped where necessary.
 
 - Hero image: []()
