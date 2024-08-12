@@ -210,11 +210,9 @@ Wireframes were created in Balsamiq for the initial front-end design of the webs
 
 **Home Page**
 
-![Homepage Wireframe - Mobile]()
+![Homepage Wireframe - Mobile](static/images/readme/mobile-wireframe-home.png)
 
-![Homepage Wireframe - Tablet]()
-
-Desktop Screens
+![Homepage Wireframe - Tablet](static/images/readme/tablet-wireframe-home.png)
 
 ![Homepage Wireframe - Desktop](static/images/readme/desktop-wireframe-home-1.png)
 ![Homepage Wireframe - Desktop](static/images/readme/desktop-wireframe-home-2.png)
