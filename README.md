@@ -214,20 +214,18 @@ Wireframes were created in Balsamiq for the initial front-end design of the webs
 
 ![Homepage Wireframe - Tablet](static/images/readme/tablet-wireframe-home.png)
 
-![Homepage Wireframe - Desktop](static/images/readme/desktop-wireframe-home-1.png)
-![Homepage Wireframe - Desktop](static/images/readme/desktop-wireframe-home-2.png)
-![Homepage Wireframe - Desktop](static/images/readme/desktop-wireframe-home-3.png)
+![Homepage Wireframe - Desktop](static/images/readme/desktop-wireframe-home.png)
 
 
-<!-- **Booking Page**
+**About Us Page**
 
-![Booking Wireframe - Mobile]()
+![About Wireframe - Mobile](static/images/readme/mobile-about.png)
 
-![Booking Wireframe - Tablet]()
+![About Wireframe - Tablet](static/images/readme/tablet-about.png)
 
-![Booking Wireframe - Desktop]()
+![About Wireframe - Desktop](static/images/readme/desktop-about.png)
 
-**Reviews Page**
+<!-- **Reviews Page**
 
 ![Reviews Wireframe - Mobile]()
 
@@ -317,12 +315,25 @@ A key requirement for this project was for users to be able to create, read, upd
     </details> -->
 
 ## Features
+The website consists of several main pages:
+- the homepage
+- the about page
+- the services page
+- the contact us page
+- individual service pages
+- the shopping bag page
+- the checkout page
 
+Other pages include:
+- the signup page
+- the sign in page
+- the sign out page
+- the 404, 403, and 500 error pages
 
 **All pages on the website have:**
-1. A favicon of  
+1. A favicon of a pair of gloves. This icon was chosen to reflect a hands-on and professional business to the customer.  
 
-    ![ favicon]()
+    ![Gloves favicon](static/images/readme/gloves-favicon.png)
 
 2. A header with a title and nav bar or menu dropdown for page links
 
@@ -361,11 +372,8 @@ A key requirement for this project was for users to be able to create, read, upd
 
 ### The Sign Out Page
 
-### The Booking Page
-
-### User Bookings
-
-### Managing Bookings
+### The Services Page
+Gardening Serives offers a number of services to their customers. The different services are displayed in a column on mobile and in a grid on tablet and desktop sizes. Each service has its own page with a full description and price breakdown. Each service has a unit cost depending on the type of work to be done for the customer. The dropdown options show the customer how much they will pay for areas of different sizes.
 
 ### Error Pages
 
