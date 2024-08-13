@@ -210,20 +210,59 @@ Wireframes were created in Balsamiq for the initial front-end design of the webs
 
 **Home Page**
 
+#### Homepage Wireframe - Mobile
+
 ![Homepage Wireframe - Mobile](static/images/readme/mobile-wireframe-home.png)
 
+#### Homepage Wireframe - Tablet
+
 ![Homepage Wireframe - Tablet](static/images/readme/tablet-wireframe-home.png)
+
+#### Homepage Wireframe - Desktop
 
 ![Homepage Wireframe - Desktop](static/images/readme/desktop-wireframe-home.png)
 
 
 **About Us Page**
 
+<details><summary>About Us Wireframe - Mobile</summary>
+
 ![About Wireframe - Mobile](static/images/readme/mobile-about.png)
+
+</details>
+
+<details><summary>About Us Wireframe - Tablet</summary>
 
 ![About Wireframe - Tablet](static/images/readme/tablet-about.png)
 
+</details>
+
+<details><summary>About Us Wireframe - Desktop</summary>
+
 ![About Wireframe - Desktop](static/images/readme/desktop-about.png)
+
+</details><br>
+
+**Services Page**
+
+<details><summary>Services Wireframe - Mobile</summary>
+
+![Reviews Wireframe - Mobile](static/images/readme/mobile-services.png)
+
+</details>
+
+<details><summary>Services Wireframe - Tablet</summary>
+
+![Reviews Wireframe - Tablet](static/images/readme/tablet-services.png)
+
+</details>
+
+<details><summary>Services Wireframe - Desktop</summary>
+
+![Reviews Wireframe - Desktop](static/images/readme/desktop-services.png)
+
+</details>
+
 
 <!-- **Reviews Page**
 
