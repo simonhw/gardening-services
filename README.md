@@ -225,7 +225,7 @@ Wireframes were created in Balsamiq for the initial front-end design of the webs
 
 **About Us Page**
 
-<details><summary>About Us Wireframe - Mobile</summary>
+<details open><summary>About Us Wireframe - Mobile</summary>
 
 ![About Wireframe - Mobile](static/images/readme/mobile-about.png)
 
@@ -245,7 +245,7 @@ Wireframes were created in Balsamiq for the initial front-end design of the webs
 
 **Services Page**
 
-<details><summary>Services Wireframe - Mobile</summary>
+<details open><summary>Services Wireframe - Mobile</summary>
 
 ![Reviews Wireframe - Mobile](static/images/readme/mobile-services.png)
 
@@ -260,6 +260,26 @@ Wireframes were created in Balsamiq for the initial front-end design of the webs
 <details><summary>Services Wireframe - Desktop</summary>
 
 ![Reviews Wireframe - Desktop](static/images/readme/desktop-services.png)
+
+</details>
+
+**Individial Service Pages**
+
+<details open><summary>Individual Service Wireframe - Mobile</summary>
+
+![Reviews Wireframe - Mobile](static/images/readme/mobile-service-description.png)
+
+</details>
+
+<details><summary>Individual Service Wireframe - Tablet</summary>
+
+![Reviews Wireframe - Mobile](static/images/readme/tablet-service-page.png)
+
+</details>
+
+<details><summary>Individual Service Wireframe - Desktop</summary>
+
+![Reviews Wireframe - Mobile](static/images/readme/desktop-service-page.png)
 
 </details>
 
