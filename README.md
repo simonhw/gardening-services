@@ -247,19 +247,19 @@ Wireframes were created in Balsamiq for the initial front-end design of the webs
 
 <details open><summary>Services Wireframe - Mobile</summary>
 
-![Reviews Wireframe - Mobile](static/images/readme/mobile-services.png)
+![Services Wireframe - Mobile](static/images/readme/mobile-services.png)
 
 </details>
 
 <details><summary>Services Wireframe - Tablet</summary>
 
-![Reviews Wireframe - Tablet](static/images/readme/tablet-services.png)
+![Services Wireframe - Tablet](static/images/readme/tablet-services.png)
 
 </details>
 
 <details><summary>Services Wireframe - Desktop</summary>
 
-![Reviews Wireframe - Desktop](static/images/readme/desktop-services.png)
+![Services Wireframe - Desktop](static/images/readme/desktop-services.png)
 
 </details>
 
@@ -267,30 +267,61 @@ Wireframes were created in Balsamiq for the initial front-end design of the webs
 
 <details open><summary>Individual Service Wireframe - Mobile</summary>
 
-![Reviews Wireframe - Mobile](static/images/readme/mobile-service-description.png)
+![Individial Service Wireframe - Mobile](static/images/readme/mobile-service-description.png)
 
 </details>
 
 <details><summary>Individual Service Wireframe - Tablet</summary>
 
-![Reviews Wireframe - Mobile](static/images/readme/tablet-service-page.png)
+![Individial Service Wireframe - Mobile](static/images/readme/tablet-service-page.png)
 
 </details>
 
 <details><summary>Individual Service Wireframe - Desktop</summary>
 
-![Reviews Wireframe - Mobile](static/images/readme/desktop-service-page.png)
+![Individial Service Wireframe - Mobile](static/images/readme/desktop-service-page.png)
 
 </details>
 
+**Basket Page**
 
-<!-- **Reviews Page**
+<details open><summary>Basket Wireframe - Mobile</summary>
 
-![Reviews Wireframe - Mobile]()
+![Basket Wireframe - Mobile](static/images/readme/basket-mobile.png)
 
-![Reviews Wireframe - Tablet]()
+</details>
 
-![Reviews Wireframe - Desktop]() -->
+<details><summary>Basket Wireframe - Tablet</summary>
+
+![Basket Wireframe - Mobile](static/images/readme/basket-tablet.png)
+
+</details>
+
+<details><summary>Basket Wireframe - Desktop</summary>
+
+![Basket Wireframe - Mobile](static/images/readme/desktop-basket.png)
+
+</details>
+
+**Checkout Page**
+
+<details open><summary>Checkout Wireframe - Mobile</summary>
+
+![Checkout Wireframe - Mobile](static/images/readme/mobile-checkout.png)
+
+</details>
+
+<details><summary>Checkout Wireframe - Tablet</summary>
+
+![Checkout Wireframe - Mobile](static/images/readme/tablet-checkout.png)
+
+</details>
+
+<details><summary>Checkout Wireframe - Desktop</summary>
+
+![Checkout Wireframe - Mobile](static/images/readme/desktop-checkout.png)
+
+</details>
 
 ### Entity Relationship Diagrams
 An ERD was created to plan out the models that would be created and used in this project. A custom user model was planned as this is reccomenede in the official Django documentation and will afford the developer easier control over its structure. Other models include Service, Order, OrderItem, Category, and Review.
