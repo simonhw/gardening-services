@@ -259,7 +259,7 @@ Wireframes were created in Balsamiq for the initial front-end design of the webs
 
 <details><summary>Services Wireframe - Desktop</summary>
 
-![Services Wireframe - Desktop](static/images/readme/desktop-services.png)
+![Services Wireframe - Desktop](static/images/readme/services-desktop.png)
 
 </details>
 
@@ -267,7 +267,7 @@ Wireframes were created in Balsamiq for the initial front-end design of the webs
 
 <details open><summary>Individual Service Wireframe - Mobile</summary>
 
-![Individial Service Wireframe - Mobile](static/images/readme/mobile-service-description.png)
+![Individial Service Wireframe - Mobile](static/images/readme/service-mobile.png)
 
 </details>
 
@@ -279,7 +279,7 @@ Wireframes were created in Balsamiq for the initial front-end design of the webs
 
 <details><summary>Individual Service Wireframe - Desktop</summary>
 
-![Individial Service Wireframe - Mobile](static/images/readme/desktop-service-page.png)
+![Individial Service Wireframe - Mobile](static/images/readme/service-desktop.png)
 
 </details>
 
@@ -299,7 +299,7 @@ Wireframes were created in Balsamiq for the initial front-end design of the webs
 
 <details><summary>Basket Wireframe - Desktop</summary>
 
-![Basket Wireframe - Mobile](static/images/readme/desktop-basket.png)
+![Basket Wireframe - Mobile](static/images/readme/basket-desktop.png)
 
 </details>
 
