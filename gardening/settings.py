@@ -29,6 +29,10 @@ ALLOWED_HOSTS = [
     '8000-simonhw-gardeningservic-n6pd81grg5m.ws.codeinstitute-ide.net',
 ]
 
+CSRF_TRUSTED_ORIGINS = [
+    'https://8000-simonhw-gardeningservic-n6pd81grg5m.ws.codeinstitute-ide.net',
+]
+
 
 # Application definition
 
