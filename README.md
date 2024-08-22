@@ -585,6 +585,10 @@ All documentation on the testing of this application can be found in the [TESTIN
 
 ## Credits
 
+The below tutorial was followed when creating the custom User model:
+
+ - [Learn Django - Django Custom User Model](https://learndjango.com/tutorials/django-custom-user-model)
+
 ### Content
 ChatGPT was used to generate most of the text content about the campsite and services offered and was edited by Simon Henleywillis. The "description" and "keywords" meta tags were also generated using ChatGPT.
 
