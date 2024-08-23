@@ -27,12 +27,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = 'DEVELOPMENT' in os.environ
-DEBUG = 'True'
+DEBUG = 'DEVELOPMENT' in os.environ
 
 ALLOWED_HOSTS = [
     '8000-simonhw-gardeningservic-n6pd81grg5m.ws.codeinstitute-ide.net',
-    'https://gardening-services-e596b6371c3f.herokuapp.com',
+    'gardening-services-e596b6371c3f.herokuapp.com',
 ]
 
 CSRF_TRUSTED_ORIGINS = [
