@@ -31,6 +31,7 @@ DEBUG = 'DEVELOPMENT' in os.environ
 
 ALLOWED_HOSTS = [
     '8000-simonhw-gardeningservic-n6pd81grg5m.ws.codeinstitute-ide.net',
+    'https://gardening-services-e596b6371c3f.herokuapp.com',
 ]
 
 CSRF_TRUSTED_ORIGINS = [
