@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+.logo {
+    width: 150px;
+    text-align: center;
+}
+
+#logo-and-text.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.playfair {
+    font-family: "Playfair Display", serif;
+}
+
+.text-green {
+    color: darkgreen;
+}
