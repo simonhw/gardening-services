@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mate:ital@0;1&display=swap');
 
 .logo {
-    width: 150px;
+    width: 145px;
     text-align: center;
 }
 
@@ -9,12 +9,31 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 
-.playfair {
-    font-family: "Playfair Display", serif;
+.navbar button {
+    border: none;
+}
+
+.navbar-nav {
+    text-align: center;
+}
+
+.collapse a {
+    color: darkgreen;
+}
+
+.mate {
+    font-family: "Mate", serif;
 }
 
 .text-green {
     color: darkgreen;
 }
+
+/* .navbar button {
+    position: absolute;
+    right: 10px;
+    top: 156px;
+} */
