@@ -197,9 +197,9 @@ A palette of ....
 ![Coolors colour palette]()
 
 ### Typography
-The Playfair Display font was chosen from the Google Fonts library as its thin and sharp look evoked thought of garden tools, fencing, and ordered lines. This gives the impression of a professional business and links the services offered namely creating something neat and ordered.
+The Mate font was chosen from the Google Fonts library as its thin and sharp look evoked thought of garden tools, fencing, and ordered lines. This gives the impression of a professional business and links the services offered namely creating something neat and ordered.
 
-![Playfair Display Font](static/images/readme/playfair-display.png)
+![Mate Font](static/images/readme/mate.png)
 
 
 ### Imagery
@@ -432,7 +432,7 @@ Other pages include:
     ![Website Header](static/images/readme/header-dd.png)
 
     The header contains links to the main pages of the website, depending on the authentication status of the site user. 
-    - The website title "Lakeview Campsite" is a link which when clicked will return the user to the `index.html` page.
+    - The website title "The Garden Path" is a link which when clicked will return the user to the `index.html` page.
     - "About" brings the user to the `about.html` page.
     - "Book Now" brings the user to the `bookings.html` page.
     - "Log In" and "Sign Up" will direct the user to the respective account pages of `login.html` and `signup.html`.
@@ -598,7 +598,7 @@ The business logo was created on [FreeLogoDesign](https://freelogodesign.org). T
 All other images used were found on [Pexels](https://www.pexels.com/). The Pexels website states that "*All photos and videos on Pexels can be downloaded and used for free*".
 Images were resized and cropped where necessary.
 
-- Hero image: []()
+- Hero image: [two-red-flowers-on-stairs](https://www.pexels.com/photo/two-red-flowers-on-stairs-68470/)
 
 
 ### Code Used
