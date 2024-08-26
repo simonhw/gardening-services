@@ -28,8 +28,36 @@
     font-family: "Mate", serif;
 }
 
-.text-green {
-    color: darkgreen;
+.dark-brown {
+    color: #332217;
+}
+
+.dark-brown-bg {
+    background-color: #332217;
+}
+
+.hunter-green {
+    color: #3A5A40;
+}
+
+.fern-green {
+    color: #588157;
+}
+
+.sage-green {
+    color: #A3B18A;
+}
+
+.isabelline {
+    color: #EDEDE8;
+}
+
+.isabelline-bg {
+    background-color: #EDEDE8;
+}
+
+.plain-anchor {
+    text-decoration: none;
 }
 
 /* .navbar button {
@@ -37,3 +65,11 @@
     right: 10px;
     top: 156px;
 } */
+
+.text-center {
+    text-align: center;
+}
+
+footer {
+    background-color: #EDEDE8;
+}
