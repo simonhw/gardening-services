@@ -9,24 +9,36 @@
 <div class="container-fluid">
 
     <!-- Hero Image -->
-     <div class="row">
+    <div class="row">
         <div class="col-12 g-0">
             <img class="img-fluid" src="{% static 'images/path-blur-768.webp' %}"
                 alt="Two red flowers on steps.">
         </div>
-     </div>
-     <div class="row">
-        <div class="col-10 offset-1">
-            <h1 class="mate">About Us</h1>
+    </div>
+
+    <!-- displaying Django messages -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                {% for message in messages %}
+                <div class="alert {{ message.tags }} alert-dismissible
+                                    fade show mt-3" id="msg" role="alert">
+                    {{ message | safe }}
+                    <button class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                {% endfor %}
+            </div>
         </div>
-     </div>
-{% if user.is_authenticated %}
-  Hi {{ user.username }}!
-  <p><a href="{% url 'logout' %}">Log Out</a></p>
-{% else %}
-  <p>You are not logged in</p>
-  <a href="{% url 'login' %}">Log In</a> |
-  <a href="{% url 'signup' %}">Sign Up</a>
-{% endif %}
+    </div>
+    
+    <div class="row py-3">
+        <div class="col-10 offset-1 mt-2">
+            <h1 class="mate">Award-Winning Gardening Services</h1>
+            <p>Insert blurb here about the company and general overview of what we do. Insert blurb here about the company and general overview of what we do. 
+                Insert blurb here about the company and general overview of what we do. Insert blurb here about the company and general overview of what we do. 
+                Insert blurb here about the company and general overview of what we do. 
+            </p>
+        </div>
+    </div>
 </div>
 {% endblock %}
