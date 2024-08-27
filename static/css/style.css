@@ -12,6 +12,18 @@
     flex-direction: column;
 }
 
+.image-and-text {
+    position: relative;
+    text-align: center;
+}
+
+.centred-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
 .navbar button {
     border: none;
 }

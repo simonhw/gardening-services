@@ -31,15 +31,15 @@
         <div class="container-fluid flex-center">
             <div id="logo-and-text" class="flex-center">
                 <a class="navbar-brand" href="{% url 'home' %}">
-                    <img src="{% static 'images/tgp-logo.webp' %}" class="logo" alt="The Garden Path Logo">
-                </a>
-                <a class="navbar-brand mate hunter-green fw-semibold" href="{% url 'home' %}">
-                    The Garden Path
+                    <div class="image-and-text">
+                        <img src="{% static 'images/logo-new.webp' %}" class="logo" alt="The Garden Path Logo">
+                        <div class="centred-title navbar-brand mate hunter-green fw-semibold">The Garden Path</div>
+                    </div>
                 </a>
             </div>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
                 aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                <i class="fa-solid fa-bars hunter-green fs-3"></i>
+                <i class="fa-solid fa-bars hunter-green"></i>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav">
