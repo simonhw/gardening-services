@@ -5,6 +5,10 @@
     text-align: center;
 }
 
+#messages-div {
+    position: absolute;
+}
+
 #logo-and-text.flex-center {
     display: flex;
     justify-content: center;
