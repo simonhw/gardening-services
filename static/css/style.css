@@ -107,6 +107,8 @@ footer {
     .navbar-nav .nav-link.active {
         background-color: #588157;
         color: #EDEDE8;
+        /* border-top: 2px solid darkgreen;
+        border-bottom: 2px solid darkgreen; */
     }
 }
 
@@ -114,5 +116,10 @@ footer {
     .navbar-expand-lg .navbar-collapse {
         padding-right: 10vw;
         justify-content: flex-end;
+    }
+
+    .navbar-nav .nav-link.active {
+        border-top: 1px solid #3A5A40;
+        border-bottom: 1px solid #3A5A40;
     }
 }
