@@ -599,6 +599,11 @@ All other images used were found on [Pexels](https://www.pexels.com/). The Pexel
 Images were resized and cropped where necessary.
 
 - Hero image: [two-red-flowers-on-stairs](https://www.pexels.com/photo/two-red-flowers-on-stairs-68470/)
+- Grass-cutting Service: [a-person-using-a-lawn-mower](https://www.pexels.com/photo/a-person-using-a-lawn-mower-6728919/)
+- Weed Service: [a-group-of-dandelions-in-a-field](https://unsplash.com/photos/a-group-of-dandelions-in-a-field-lYWEUytAj6s)
+- Tree service: [https://www.pexels.com/photo/a-firefighter-cutting-a-tree-with-a-chainsaw-7812853/](https://www.pexels.com/photo/a-firefighter-cutting-a-tree-with-a-chainsaw-7812853/)
+- Hedge service: [https://www.pexels.com/photo/man-cutting-a-hedge-with-a-trimmer-in-the-garden-24595769/](https://www.pexels.com/photo/man-cutting-a-hedge-with-a-trimmer-in-the-garden-24595769/)
+- Flowerbed service: [https://www.pexels.com/photo/photo-of-assorted-color-flowers-at-daytime-1039129/](https://www.pexels.com/photo/photo-of-assorted-color-flowers-at-daytime-1039129/)
 
 
 ### Code Used
