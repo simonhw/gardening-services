@@ -589,6 +589,8 @@ The below tutorial was followed when creating the custom User model:
 
  - [Learn Django - Django Custom User Model](https://learndjango.com/tutorials/django-custom-user-model)
 
+ The Category model was taken from the Boutique Ado walkthrough.
+
 ### Content
 ChatGPT was used to generate most of the text content about the campsite and services offered and was edited by Simon Henleywillis. The "description" and "keywords" meta tags were also generated using ChatGPT.
 
@@ -604,7 +606,7 @@ Images were resized and cropped where necessary.
 - Tree service: [https://www.pexels.com/photo/a-firefighter-cutting-a-tree-with-a-chainsaw-7812853/](https://www.pexels.com/photo/a-firefighter-cutting-a-tree-with-a-chainsaw-7812853/)
 - Hedge service: [https://www.pexels.com/photo/man-cutting-a-hedge-with-a-trimmer-in-the-garden-24595769/](https://www.pexels.com/photo/man-cutting-a-hedge-with-a-trimmer-in-the-garden-24595769/)
 - Flowerbed service: [https://www.pexels.com/photo/photo-of-assorted-color-flowers-at-daytime-1039129/](https://www.pexels.com/photo/photo-of-assorted-color-flowers-at-daytime-1039129/)
-
+- Tree Stump service: [https://www.pexels.com/photo/a-close-up-shot-of-a-tree-stump-10814837/](https://www.pexels.com/photo/a-close-up-shot-of-a-tree-stump-10814837/)
 
 ### Code Used
 **All code in this project was written entirely by Simon Henleywillis unless otherwise specified below.**
