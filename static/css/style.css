@@ -72,6 +72,10 @@
     color: #A3B18A;
 }
 
+.sage-green-bg {
+    background-color: #A3B18A;
+}
+
 .isabelline {
     color: #EDEDE8;
 }
@@ -84,12 +88,6 @@
     text-decoration: none;
 }
 
-/* .navbar button {
-    position: absolute;
-    right: 10px;
-    top: 156px;
-} */
-
 .text-center {
     text-align: center;
 }
@@ -97,6 +95,10 @@
 main {
     box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.1);
     position: relative;
+}
+
+.card-img-top {
+    border-radius: 10%;
 }
 
 footer {
@@ -107,8 +109,6 @@ footer {
     .navbar-nav .nav-link.active {
         background-color: #588157;
         color: #EDEDE8;
-        /* border-top: 2px solid darkgreen;
-        border-bottom: 2px solid darkgreen; */
     }
 }
 
