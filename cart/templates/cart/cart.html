@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block extra_title %} | Cart{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row my-3">
+        <div class="col-10 offset-1 col-md-8 offset-md-2 mt-2">
+            <h1 class="mate text-center">Cart: {% if cart_items %}2{% else %}0{% endif %} items</h1>
+        </div>
+    </div>
+    <hr>
+    <div class="row my-3">
+        <div class="col-10 offset-1 mt-2">
+            {% if cart_items %}
+            <div class="table-responsive">
+                
+            </div>
+            {% else %}
+            <p>Your cart is empty.</p>
+            <a href="{% url 'services' %}" class="btn rounded-1 mate isabelline hunter-green-bg">
+                <i class="fas fa-caret-left"></i>
+                View Services
+            </a>
+            {% endif %}
+        </div>
+    </div>
+    
+</div>
+{% endblock %}
