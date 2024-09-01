@@ -105,6 +105,10 @@ main {
     max-width: 250px;
 }
 
+.service-link:hover {
+    color: #3A5A40;
+}
+
 .star-ratings {
     unicode-bidi: bidi-override;
     color: #ccc;

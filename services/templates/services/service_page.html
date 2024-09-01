@@ -10,21 +10,22 @@
 
     <div class="row my-3">
         <div class="col-10 offset-1 col-md-8 offset-md-2 mt-2">
-            <h1 class="mate text-center">{{ service.name }}</h1>
+            <h1 class="mate">{{ service.name }}</h1>
+            <p class="small sage-green mb-0"><a href="{% url 'services' %}" class="plain-anchor sage-green service-link">Services</a> > <a href="{% url 'services' %}?category={{ service.category }}" class="plain-anchor sage-green service-link">{{ service.category.friendly_name }}</a> > {{ service.name }}</p>
         </div>
     </div>
 
     <div class="row pb-3">
-        <div class="col-10 offset-1">
-            <img src="/media/{{ service.image }}" class="card-img-top my-2" alt="{{ service.name }}">
+        <div class="col-10 offset-1 col-md-8 offset-md-2">
+            <img src="/media/{{ service.image }}" class="card-img-top mb-2" alt="{{ service.name }}">
         </div>
-        <div class="col-10 offset-1">
+        <div class="col-10 offset-1 col-md-8 offset-md-2">
             <p>{{service.description}}</p>
         </div>
-        <div class="col-10 offset-1">
+        <div class="col-10 offset-1 col-md-8 offset-md-2">
             Base Price: €{{service.unit_price}}
         </div>
-        <div class="col-10 offset-1">
+        <div class="col-10 offset-1 col-md-8 offset-md-2">
             <div class="star-ratings">
                 <div class="fill-ratings" style="width: 50%;">
                     <span>★★★★★</span> 

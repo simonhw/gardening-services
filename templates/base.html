@@ -82,12 +82,12 @@
                         </a>
                         <ul class="dropdown-menu text-center">
                             <li><a class="dropdown-item" href="{% url 'services' %}">All Services</a></li>
-                            <li><a class="dropdown-item" href="#">Grass Cutting</a></li>
-                            <li><a class="dropdown-item" href="#">Weed Control</a></li>
-                            <li><a class="dropdown-item" href="#">Tree Cutting & Pruning</a></li>
-                            <li><a class="dropdown-item" href="#">Hedge Maintenance</a></li>
-                            <li><a class="dropdown-item" href="#">Flowerbed Care</a></li>
-                            <li><a class="dropdown-item" href="#">Tree Stump Removal</a></li>
+                            <li><a class="dropdown-item" href="{% url 'service_page' 1 %}">Grass Cutting</a></li>
+                            <li><a class="dropdown-item" href="{% url 'service_page' 2 %}">Weed Control</a></li>
+                            <li><a class="dropdown-item" href="{% url 'service_page' 3 %}">Tree Cutting & Pruning</a></li>
+                            <li><a class="dropdown-item" href="{% url 'service_page' 4 %}">Hedge Maintenance</a></li>
+                            <li><a class="dropdown-item" href="{% url 'service_page' 5 %}">Flowerbed Care</a></li>
+                            <li><a class="dropdown-item" href="{% url 'service_page' 6 %}">Tree Stump Removal</a></li>
                         </ul>
                     </li>
                     {% if user.is_authenticated %}
