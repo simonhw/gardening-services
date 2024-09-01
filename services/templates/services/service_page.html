@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block extra_title %} | {{ service.name }}{% endblock %}
+
+{% block content %}
+
+<div class="container-fluid">
+
+    <div class="row my-3">
+        <div class="col-10 offset-1 col-md-8 offset-md-2 mt-2">
+            <h1 class="mate text-center">{{ service.name }}</h1>
+        </div>
+    </div>
+
+    <div class="row pb-3">
+        <div class="col-10 offset-1">
+            <img src="/media/{{ service.image }}" class="card-img-top my-2" alt="{{ service.name }}">
+        </div>
+        <div class="col-10 offset-1">
+            <p>{{service.description}}</p>
+        </div>
+        <div class="col-10 offset-1">
+            Base Price: €{{service.unit_price}}
+        </div>
+        <div class="col-10 offset-1">
+            <div class="star-ratings">
+                <div class="fill-ratings" style="width: 50%;">
+                    <span>★★★★★</span> 
+                </div>
+                <div class="empty-ratings">
+                    <span>★★★★★</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+{% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}
+<script>
+$(document).ready(function() {
+  // Gets the span width of the filled-ratings span
+  // this will be the same for each rating
+  var star_rating_width = $('.fill-ratings span').width();
+  // Sets the container of the ratings to span width
+  // thus the percentages in mobile will never be wrong
+  $('.star-ratings').width(star_rating_width);
+});
+</script>
+{% endblock %}

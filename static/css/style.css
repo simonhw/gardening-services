@@ -105,6 +105,42 @@ main {
     max-width: 250px;
 }
 
+.star-ratings {
+    unicode-bidi: bidi-override;
+    color: #ccc;
+    font-size: 25px;
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+
+.star-ratings span {
+    display: inline-flex;
+    align-items: center;
+}
+
+.fill-ratings {
+      color: orange;
+      padding: 0;
+      position: absolute;
+      z-index: 1;
+      display: block;
+      top: 0;
+      left: 0;
+      overflow: hidden;
+      
+      /* Allows us to grab the width of the span elements */
+      span {
+        display: inline-block;
+      }
+}
+
+.empty-ratings {
+      padding: 0;
+      display: block;
+      z-index: 0;
+  }
+
 footer {
     background-color: #EDEDE8;
 }
