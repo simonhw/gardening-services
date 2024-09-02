@@ -9,32 +9,60 @@
 <div class="container-fluid">
 
     <div class="row my-3">
-        <div class="col-10 offset-1 col-md-8 offset-md-2 mt-2">
-            <h1 class="mate">{{ service.name }}</h1>
+        <div class="col-10 offset-1 col-lg-8 offset-lg-2 col-xl-6 offset-xl-3 mt-2">
+            <!-- <h1 class="mate">{{ service.name }}</h1> -->
             <p class="small sage-green mb-0"><a href="{% url 'services' %}" class="plain-anchor sage-green service-link">Services</a> > <a href="{% url 'services' %}?category={{ service.category }}" class="plain-anchor sage-green service-link">{{ service.category.friendly_name }}</a> > {{ service.name }}</p>
         </div>
     </div>
 
     <div class="row pb-3">
-        <div class="col-10 offset-1 col-md-8 offset-md-2">
+        <div class="col-10 offset-1 col-sm-4 col-md-5 offset-md-1 col-lg-4 offset-lg-2 col-xl-2 offset-xl-3">
             <img src="/media/{{ service.image }}" class="card-img-top mb-2" alt="{{ service.name }}">
         </div>
-        <div class="col-10 offset-1 col-md-8 offset-md-2">
-            <p>{{service.description}}</p>
-        </div>
-        <div class="col-10 offset-1 col-md-8 offset-md-2">
-            Base Price: €{{service.unit_price}}
-        </div>
-        <div class="col-10 offset-1 col-md-8 offset-md-2">
-            <div class="star-ratings">
-                <div class="fill-ratings" style="width: 50%;">
-                    <span>★★★★★</span> 
+        <div class="col-10 offset-1 col-sm-6 offset-sm-0 col-md-5 col-lg-4">
+            <div class="service-details-container">
+                <h5 class="mate">{{ service.name }}</h5>
+                <p class="mb-0">{{service.description}}</p>
+                <div class="star-ratings mb-1">
+                    <div class="fill-ratings" style="width: 50%;">
+                        <span>★★★★★</span> 
+                    </div>
+                    <div class="empty-ratings">
+                        <span>★★★★★</span>
+                    </div>
                 </div>
-                <div class="empty-ratings">
-                    <span>★★★★★</span>
-                </div>
+                <!-- Base Price: €{{service.unit_price}} -->
+
+                <!-- Form for selecting the service option -->
+                <form class="form" method="POST" action="">
+                    {% csrf_token %}
+                    <div class="form-row">
+                        <!-- <p><strong>Hours:</strong></p>
+                        <div class="form-group w-50">
+                            <div class="input-group">
+                                <input type="number" class="form-control hour-input" name="hours" value="1" min="1" max="8" data-item-id="{{ service.id }}" id="id_hours_{{ service.id }}">
+                            </div>
+                        </div> -->
+                        <label for="inputOption"><strong>Select Option:</strong></label>
+                        <div class="form-group w-75 mb-4">
+                            <select id="inputOption" class="form-select">
+                                <option selected value="1">1 acre or less</option>
+                                <option value="2">1-2 acres</option>
+                                <option value="4">2+ acres</option>
+                            </select>
+                        </div>
+                        <div>
+                            <a href="{% url 'services'}" class="btn rounded-1 hunter-green hunter-green-border isabelline-bg">
+                                <i class="fas fa-caret-left"></i>
+                                Services
+                            </a>
+                            <input type="submit" class="btn rounded-1 text-white hunter-green-bg text-uppercase" value="Add to Cart"/>
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
+        
     </div>
 
 </div>
