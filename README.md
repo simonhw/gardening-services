@@ -616,3 +616,33 @@ Various Bootstrap classes and components were used in the styling of this websit
 ## Acknowledgements
 - [Creating Your First README - Kera Cudmore](https://github.com/kera-cudmore/readme-examples)
 - I would like to thank my CI Mentor [Graeme Taylor](https://github.com/G-Taylor) for his support and advice throughout the development phase.
+
+
+
+-------------------
+Services
+
+# Hedge cutting
+Input - hedge size
+input - number of hedges
+
+# Grass cutting
+Input - number of acres
+
+# Tree cutting and pruning
+Input 1A - tree felling
+Input 2 - number of trees
+
+# Input 1B - tree pruning
+Input 2 - number of trees
+
+# Weeding
+Input - bed or driveway
+Input - size of bed options -> small medium large
+
+# Flowerbed care
+Input - bed size
+Input - number of beds
+
+# Tree Stump Removal
+Input - number of stumps
