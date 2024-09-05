@@ -5,6 +5,7 @@ let treeInput = document.getElementById('tree-input');
 let weedInput = document.getElementById('weed-input');
 
 let serviceName = document.getElementById('service-name').innerText.toLowerCase();
+let serviceNoun = document.getElementsByClassName('service-name');
 
 // Show relevant fields for Grass Cutting
 if ( serviceName.includes('grass') ) {
@@ -41,6 +42,8 @@ if ( serviceName.includes('weed') ) {
 if ( serviceName.includes('tree cutting') ) {
     acreInput.setAttribute('class', 'd-none');
 
+    updateServiceName(serviceNoun, "Tree");
+
     sizeInput.removeAttribute('class', 'd-none');
     numberInput.removeAttribute('class', 'd-none');
     treeInput.removeAttribute('class', 'd-none');
@@ -50,6 +53,12 @@ if ( serviceName.includes('tree cutting') ) {
 // Show relevant fields for Hedge Cutting and Flowerbed Care
 if ( serviceName.includes('hedge') || serviceName.includes('flower') ) {
     acreInput.setAttribute('class', 'd-none');
+
+    if ( serviceName.includes('hedge') ) {
+        updateServiceName(serviceNoun, "Hedge");
+    } else {
+        updateServiceName(serviceNoun, "Flowerbed");
+    }
 
     sizeInput.removeAttribute('class', 'd-none');
     numberInput.removeAttribute('class', 'd-none');
@@ -61,8 +70,19 @@ if ( serviceName.includes('hedge') || serviceName.includes('flower') ) {
 if ( serviceName.includes('stump') ) {
     numberInput.removeAttribute('class', 'd-none');
 
+    updateServiceName(serviceNoun, "Stump");
+
     acreInput.setAttribute('class', 'd-none');
     sizeInput.setAttribute('class', 'd-none');
     treeInput.setAttribute('class', 'd-none');
     weedInput.setAttribute('class', 'd-none');
+}
+
+/**
+ * Function that updates the service-name spans with the correct word.
+ */
+function updateServiceName(serviceNoun, string) {
+    for (let i = 0; i < serviceNoun.length; i++) {
+        serviceNoun[i].innerText = string;
+    }
 }

@@ -34,14 +34,14 @@
                 <!-- Base Price: €{{service.unit_price}} -->
 
                 <!-- Form for selecting the service option -->
-                <form class="form" method="POST" action="">
+                <form class="form my-3" method="POST" action="">
                     {% csrf_token %}
                     <div class="form-row">
 
                         <!-- Input Type 1 - Size -->
-                         <div id="size-input">
+                         <div id="size-input" class="py-1">
                             <label for="sizeOption"><strong>Size of <span class="service-name">{{ service.name }}</span></strong></label>
-                            <div class="form-group w-75 mb-4">
+                            <div class="form-group w-75">
                                 <select id="grassOption" class="form-select">
                                     <option selected value="1">Small</option>
                                     <option value="2">Medium</option>
@@ -51,8 +51,8 @@
                         </div>
 
                         <!-- Input Type 2 - Number -->
-                         <div id="number-input">
-                            <label for="numberOption"><strong>Number of <span class="service-name">{{ service.name }}</span></strong></label>
+                         <div id="number-input" class="py-1">
+                            <label for="numberOption"><strong>Number of <span class="service-name">{{ service.name }}</span>s</strong></label>
                             <div class="form-group w-75">
                                 <div class="input-group">
                                     <input type="number" class="form-control number-input" name="hours" value="1" min="1" max="99" data-item-id="{{ service.id }}" id="id_hours_{{ service.id }}">
@@ -61,9 +61,9 @@
                         </div>
 
                         <!-- Input Type 3 - Acres -->
-                         <div id="acre-input">
+                         <div id="acre-input" class="py-1">
                             <label for="acreOption"><strong>Select Option:</strong></label>
-                            <div class="form-group w-75 mb-4">
+                            <div class="form-group w-75">
                                 <select id="acreOption" class="form-select">
                                     <option selected value="1">1 acre or less</option>
                                     <option value="2">1-2 acres</option>
@@ -73,9 +73,9 @@
                         </div>
 
                         <!-- Input Type 4 - Trees -->
-                         <div id="tree-input">
+                         <div id="tree-input" class="py-1">
                             <label for="treeOption"><strong>Select Option:</strong></label>
-                                <div class="form-group w-75 mb-4">
+                                <div class="form-group w-75">
                                     <select id="treeOption" class="form-select">
                                         <option selected value="1">Felling</option>
                                         <option value="2">Pruning/Coppicing</option>
@@ -84,9 +84,9 @@
                         </div>
 
                         <!-- Input Type 5 - Weeds -->
-                         <div id="weed-input">
+                         <div id="weed-input" class="py-1">
                             <label for="weedOption"><strong>Surface Type:</strong></label>
-                                <div class="form-group w-75 mb-4">
+                                <div class="form-group w-75">
                                     <select id="weedOption" class="form-select">
                                         <option selected value="1">Driveway/Patio</option>
                                         <option value="2">Bed/Planter</option>
@@ -94,7 +94,7 @@
                                 </div>
                         </div>
 
-                        <div>
+                        <div class="my-3">
                             <a href="{% url 'services'}" class="btn rounded-1 hunter-green hunter-green-border isabelline-bg">
                                 <i class="fas fa-caret-left"></i>
                                 Services
