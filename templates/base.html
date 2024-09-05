@@ -96,7 +96,9 @@
                         <a class="nav-link" href="#">My Profile</a>
                     </li>
                     <li class="nav-item {% if request.path == url %}active{% endif %}">
-                        <a class="nav-link" href="{% url 'view_cart' %}">Cart</a>
+                        <a class="nav-link" href="{% url 'view_cart' %}">
+                            Cart{% if total %}: <span class="fw-bold">€{{ total|floatformat:2 }}</span>{% endif %}
+                        </a>
                     </li>
                     {% else %}
                     <li class="nav-item {% if request.path == url %}active{% endif %}">
