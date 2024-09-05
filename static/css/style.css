@@ -153,6 +153,10 @@ footer {
     background-color: #EDEDE8;
 }
 
+td > img {
+    max-width: 150px;
+}
+
 @media (max-width: 991px) {
     .navbar-nav .nav-link.active {
         background-color: #588157;
