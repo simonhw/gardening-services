@@ -34,7 +34,7 @@
                 <!-- Base Price: €{{service.unit_price}} -->
 
                 <!-- Form for selecting the service option -->
-                <form class="form my-3" method="POST" action="">
+                <form class="form my-3" method="POST" action="{% url 'add_to_cart' service.id %}">
                     {% csrf_token %}
                     <div class="form-row">
 
@@ -42,10 +42,10 @@
                          <div id="size-input" class="py-1">
                             <label for="sizeOption"><strong>Size of <span class="service-name">{{ service.name }}</span></strong></label>
                             <div class="form-group w-75">
-                                <select id="grassOption" class="form-select">
-                                    <option selected value="1">Small</option>
-                                    <option value="2">Medium</option>
-                                    <option value="4">Large</option>
+                                <select id="grassOption" name="size" class="form-select">
+                                    <option selected value="s">Small</option>
+                                    <option value="m">Medium</option>
+                                    <option value="l">Large</option>
                                 </select>
                             </div>
                         </div>
@@ -55,7 +55,7 @@
                             <label for="numberOption"><strong>Number of <span class="service-name">{{ service.name }}</span>s</strong></label>
                             <div class="form-group w-75">
                                 <div class="input-group">
-                                    <input type="number" class="form-control number-input" name="hours" value="1" min="1" max="99" data-item-id="{{ service.id }}" id="id_hours_{{ service.id }}">
+                                    <input type="number" class="form-control number-input" name="number" value="1" min="1" max="99" data-item-id="{{ service.id }}" id="id_number_{{ service.id }}">
                                 </div>
                             </div>
                         </div>
@@ -64,10 +64,10 @@
                          <div id="acre-input" class="py-1">
                             <label for="acreOption"><strong>Select Option:</strong></label>
                             <div class="form-group w-75">
-                                <select id="acreOption" class="form-select">
-                                    <option selected value="1">1 acre or less</option>
-                                    <option value="2">1-2 acres</option>
-                                    <option value="4">2+ acres</option>
+                                <select id="acreOption" name="acres" class="form-select">
+                                    <option selected value="1a">1 acre or less</option>
+                                    <option value="2a">1-2 acres</option>
+                                    <option value="2plusa">2+ acres</option>
                                 </select>
                             </div>
                         </div>
@@ -76,9 +76,9 @@
                          <div id="tree-input" class="py-1">
                             <label for="treeOption"><strong>Select Option:</strong></label>
                                 <div class="form-group w-75">
-                                    <select id="treeOption" class="form-select">
-                                        <option selected value="1">Felling</option>
-                                        <option value="2">Pruning/Coppicing</option>
+                                    <select id="treeOption" name="tree" class="form-select">
+                                        <option selected value="fell">Felling</option>
+                                        <option value="prune">Pruning/Coppicing</option>
                                     </select>
                                 </div>
                         </div>
@@ -87,9 +87,9 @@
                          <div id="weed-input" class="py-1">
                             <label for="weedOption"><strong>Surface Type:</strong></label>
                                 <div class="form-group w-75">
-                                    <select id="weedOption" class="form-select">
-                                        <option selected value="1">Driveway/Patio</option>
-                                        <option value="2">Bed/Planter</option>
+                                    <select id="weedOption" name="surface" class="form-select">
+                                        <option selected value="drive">Driveway/Patio</option>
+                                        <option value="bed">Bed/Planter</option>
                                     </select>
                                 </div>
                         </div>
@@ -102,6 +102,7 @@
                             <input type="submit" class="btn rounded-1 text-white hunter-green-bg text-uppercase" value="Add to Cart"/>
                         </div>
                     </div>
+                    <input type="hidden" name="redirect_url" value="{{ request.path }}">
                 </form>
             </div>
         </div>

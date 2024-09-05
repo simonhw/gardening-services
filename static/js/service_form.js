@@ -29,7 +29,7 @@ if ( serviceName.includes('weed') ) {
     weedInput.addEventListener('change', function () {
         let weedOption = document.getElementById('weedOption');
         console.log("weedOption.value:", weedOption.value);
-        if ( weedOption.value == 2 ) {
+        if ( weedOption.value == 'bed' ) {
             sizeInput.removeAttribute('class', 'd-none');
 
         } else {
