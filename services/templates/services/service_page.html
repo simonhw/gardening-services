@@ -11,7 +11,11 @@
     <div class="row my-3">
         <div class="col-10 offset-1 col-lg-8 offset-lg-2 col-xl-6 offset-xl-3 mt-2">
             <h1 class="mate">{{ service.name }}</h1>
-            <p class="small sage-green mb-0"><a href="{% url 'services' %}" class="plain-anchor sage-green service-link">Services</a> > <a href="{% url 'services' %}?category={{ service.category }}" class="plain-anchor sage-green service-link">{{ service.category.friendly_name }}</a> > {{ service.name }}</p>
+            <p class="small sage-green mb-0"><a href="{% url 'services' %}"
+                    class="plain-anchor sage-green service-link">Services</a> > <a
+                    href="{% url 'services' %}?category={{ service.category }}"
+                    class="plain-anchor sage-green service-link">{{ service.category.friendly_name }}</a> >
+                {{ service.name }}</p>
         </div>
     </div>
 
@@ -25,7 +29,7 @@
                 <p class="mb-0">{{service.description}}</p>
                 <div class="star-ratings mb-1">
                     <div class="fill-ratings" style="width: 50%;">
-                        <span>★★★★★</span> 
+                        <span>★★★★★</span>
                     </div>
                     <div class="empty-ratings">
                         <span>★★★★★</span>
@@ -39,8 +43,10 @@
                     <div class="form-row">
 
                         <!-- Input Type 1 - Size -->
-                         <div id="size-input" class="py-1">
-                            <label for="sizeOption"><strong>Size of <span class="service-name">{{ service.name }}</span></strong></label>
+                        {% if service.has_sizes %}
+                        <div id="size-input" class="py-1">
+                            <label for="sizeOption"><strong>Size of <span
+                                        class="service-name">{{ service.name }}</span></strong></label>
                             <div class="form-group w-75">
                                 <select id="grassOption" name="size" class="form-select">
                                     <option selected value="s">Small</option>
@@ -49,19 +55,24 @@
                                 </select>
                             </div>
                         </div>
+                        {% endif %}
 
                         <!-- Input Type 2 - Number -->
-                         <div id="number-input" class="py-1">
-                            <label for="numberOption"><strong>Number of <span class="service-name">{{ service.name }}</span>s</strong></label>
+                        <div id="number-input" class="py-1">
+                            <label for="numberOption"><strong>Number of <span
+                                        class="service-name">{{ service.name }}</span>s</strong></label>
                             <div class="form-group w-75">
                                 <div class="input-group">
-                                    <input type="number" class="form-control number-input" name="number" value="1" min="1" max="99" data-item-id="{{ service.id }}" id="id_number_{{ service.id }}">
+                                    <input type="number" class="form-control number-input" name="number" value="1"
+                                        min="1" max="99" data-item-id="{{ service.id }}"
+                                        id="id_number_{{ service.id }}">
                                 </div>
                             </div>
                         </div>
 
                         <!-- Input Type 3 - Acres -->
-                         <div id="acre-input" class="py-1">
+                        {% if service.has_acres %}
+                        <div id="acre-input" class="py-1">
                             <label for="acreOption"><strong>Select Option:</strong></label>
                             <div class="form-group w-75">
                                 <select id="acreOption" name="acres" class="form-select">
@@ -71,42 +82,49 @@
                                 </select>
                             </div>
                         </div>
+                        {% endif %}
 
                         <!-- Input Type 4 - Trees -->
-                         <div id="tree-input" class="py-1">
+                        {% if service.has_fellprune %}
+                        <div id="tree-input" class="py-1">
                             <label for="treeOption"><strong>Select Option:</strong></label>
-                                <div class="form-group w-75">
-                                    <select id="treeOption" name="tree" class="form-select">
-                                        <option selected value="fell">Felling</option>
-                                        <option value="prune">Pruning/Coppicing</option>
-                                    </select>
-                                </div>
+                            <div class="form-group w-75">
+                                <select id="treeOption" name="tree" class="form-select">
+                                    <option selected value="fell">Felling</option>
+                                    <option value="prune">Pruning/Coppicing</option>
+                                </select>
+                            </div>
                         </div>
+                        {% endif %}
 
                         <!-- Input Type 5 - Weeds -->
-                         <div id="weed-input" class="py-1">
+                        {% if service.has_surface %}
+                        <div id="weed-input" class="py-1">
                             <label for="weedOption"><strong>Surface Type:</strong></label>
-                                <div class="form-group w-75">
-                                    <select id="weedOption" name="surface" class="form-select">
-                                        <option selected value="drive">Driveway/Patio</option>
-                                        <option value="bed">Bed/Planter</option>
-                                    </select>
-                                </div>
+                            <div class="form-group w-75">
+                                <select id="weedOption" name="surface" class="form-select">
+                                    <option selected value="drive">Driveway/Patio</option>
+                                    <option value="bed">Bed/Planter</option>
+                                </select>
+                            </div>
                         </div>
+                        {% endif %}
 
                         <div class="my-3">
-                            <a href="{% url 'services'}" class="btn rounded-1 hunter-green hunter-green-border isabelline-bg">
+                            <a href="{% url 'services' %}"
+                                class="btn rounded-1 hunter-green hunter-green-border isabelline-bg">
                                 <i class="fas fa-caret-left"></i>
                                 Services
                             </a>
-                            <input type="submit" class="btn rounded-1 text-white hunter-green-bg text-uppercase" value="Add to Cart"/>
+                            <input type="submit" class="btn rounded-1 text-white hunter-green-bg text-uppercase"
+                                value="Add to Cart" />
                         </div>
                     </div>
                     <input type="hidden" name="redirect_url" value="{{ request.path }}">
                 </form>
             </div>
         </div>
-        
+
     </div>
     <div class="d-none" id="service-name">{{ service.name }}</div>
 </div>
@@ -115,14 +133,14 @@
 {% block postloadjs %}
 {{ block.super }}
 <script>
-$(document).ready(function() {
-  // Gets the span width of the filled-ratings span
-  // this will be the same for each rating
-  var star_rating_width = $('.fill-ratings span').width();
-  // Sets the container of the ratings to span width
-  // thus the percentages in mobile will never be wrong
-  $('.star-ratings').width(star_rating_width);
-});
+    $(document).ready(function () {
+        // Gets the span width of the filled-ratings span
+        // this will be the same for each rating
+        var star_rating_width = $('.fill-ratings span').width();
+        // Sets the container of the ratings to span width
+        // thus the percentages in mobile will never be wrong
+        $('.star-ratings').width(star_rating_width);
+    });
 </script>
 <script src="{% static 'js/service_form.js' %}"></script>
 {% endblock %}
