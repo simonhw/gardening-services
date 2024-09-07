@@ -54,15 +54,12 @@ def add_to_cart(request, item_id):
                 cart[item_id] = {'surfaces': {surface: {'sizes': {size: number}}}}
         else:
             if item_id in list(cart.keys()):
-                # Add a driveway to a cart containing at least 1 bed/planter
-                # if surface in list(cart[item_id]['surfaces'].keys())
-                # Add a driveway to a cart containing a driveway
-                print('-------------------------') # Debugging comment
-                print('cart[item_id] is', cart[item_id]) # Debugging comment
-                print("cart[item_id]['surfaces'] is", cart[item_id]['surfaces']) # Debugging comment
-                print("cart[item_id]['surfaces'][surface] is", cart[item_id]['surfaces'][surface]) # Debugging comment
-                print('-------------------------') # Debugging comment
-                cart[item_id]['surfaces'][surface] += number
+                if surface in cart[item_id]['surfaces'].keys():
+                    # Add a driveway to a cart containing a driveway
+                    cart[item_id]['surfaces'][surface] += number
+                else:
+                    # Add a driveway to a cart containing at least 1 bed/planter
+                    cart[item_id]['surfaces'][surface] = number
             else:
                 # Add a driveway to empty cart
                 cart[item_id] = {'surfaces': {surface: number}}

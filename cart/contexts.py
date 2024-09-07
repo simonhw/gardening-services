@@ -26,43 +26,44 @@ def cart_contents(request):
         else:
             service = get_object_or_404(Service, pk=item_id)
             if 'surfaces' in item_data.keys():
+                print("item_data['surfaces'].keys() IS", item_data['surfaces'].keys())
+                if 'drive' in item_data['surfaces'].keys():
 
-                print("item_data['surfaces'].keys() is", item_data['surfaces'].keys()) # Debugging comment
-                # print("item_data['surfaces']['drive'] is", item_data['surfaces']['drive']) # Debugging comment
+                    print('drive is in the above!') # Debugging comment
 
-                for surface in item_data['surfaces'].items():
-                    print('For Loop 1:')
-                    print('surface:', surface)
-
-                    if 'drive' in item_data['surfaces'].keys():
-
-                        print('drive is in the above!') # Debugging comment
-
-                        for surface, number in item_data['surfaces'].items():
-                            if surface == 'drive':
-                                print('For Loop 2:')
-                                print('surface:', surface)
-                                print('number:', number)
-                                total += number * service.unit_price
-                                item_count += number
-                                cart_items.append({
-                                    'item_id': item_id,
-                                    'number': item_data,
-                                    'service': service,
-                                    'surface': surface,
-                                })
-                            else:
-                                break
-                    if 'bed' in item_data['surfaces'].keys():
-                        for size, number in item_data['surfaces']['bed']['sizes'].items():
+                    for surface, number in item_data['surfaces'].items():
+                        if surface == 'drive':
+                            print('For Loop 2:')
+                            print('surface:', surface)
+                            print('number:', number)
+                            print('total is', total) # Debugging comment
                             total += number * service.unit_price
+                            print('new total is', total) # Debugging comment
                             item_count += number
                             cart_items.append({
                                 'item_id': item_id,
                                 'number': item_data,
                                 'service': service,
-                                'size': size,
+                                'surface': surface,
                             })
+                        else:
+                            # break
+                            continue
+                if 'bed' in item_data['surfaces'].keys():
+                    for size, number in item_data['surfaces']['bed']['sizes'].items():
+                        print('For Loop 3:')
+                        print('total is', total) # Debugging comment
+                        print('number is', number) # Debugging comment
+                        print('service.unit_price is', service.unit_price) # Debugging comment
+                        total += number * service.unit_price
+                        print('new total is', total) # Debugging comment
+                        item_count += number
+                        cart_items.append({
+                            'item_id': item_id,
+                            'number': item_data,
+                            'service': service,
+                            'size': size,
+                        })
             else:
                 for size, number in item_data['sizes'].items():
                     total += number * service.unit_price
