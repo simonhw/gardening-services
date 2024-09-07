@@ -16,26 +16,33 @@ def add_to_cart(request, item_id):
     """
 
     size = request.POST.get('size')
-    number = request.POST.get('number')
+    number = int(request.POST.get('number'))
     acres = request.POST.get('acres')
     tree = request.POST.get('tree')
     surface = request.POST.get('surface')
     redirect_url = request.POST.get('redirect_url')
 
     cart = request.session.get('cart', {})
+    print('cart is', cart)
+    # print('cart.keys() is', cart.keys())
     if item_id in list(cart.keys()):
-        cart[item_id] += int(number)
+        # print('item_id is', item_id)
+        cart[item_id] += number
         # if item_id == '1':
             # cart[item_id] += acres
         # cart[item_id] += size
         # cart[item_id] += acres
         # cart[item_id] += tree
         # cart[item_id] += surface
+        # print('cart[item_id] is', cart[item_id])
     else:
-        cart[item_id] = int(number)
+        print('item_id is', item_id)
+        # cart[item_id] = {acres, number}
+        cart[item_id] = number
         # if item_id == '1':
             # cart[item_id] += acres
+        # print('cart[item_id] is', cart[item_id])
     
     request.session['cart'] = cart
-    print(request.session['cart'])
+    print('cart is', cart)
     return redirect(redirect_url)

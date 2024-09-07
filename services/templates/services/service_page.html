@@ -42,7 +42,33 @@
                     {% csrf_token %}
                     <div class="form-row">
 
-                        <!-- Input Type 1 - Size -->
+                        <!-- Input Type 1 - Weed Surface -->
+                        {% if service.has_surface %}
+                        <div id="weed-input" class="py-1">
+                            <label for="weedOption"><strong>Surface Type:</strong></label>
+                            <div class="form-group w-75">
+                                <select id="weedOption" name="surface" class="form-select">
+                                    <option selected value="drive">Driveway/Patio</option>
+                                    <option value="bed">Bed/Planter</option>
+                                </select>
+                            </div>
+                        </div>
+                        {% endif %}
+
+                        <!-- Input Type 2 - Felling or Pruning -->
+                        {% if service.has_fellprune %}
+                        <div id="tree-input" class="py-1">
+                            <label for="treeOption"><strong>Select Option:</strong></label>
+                            <div class="form-group w-75">
+                                <select id="treeOption" name="tree" class="form-select">
+                                    <option selected value="fell">Felling</option>
+                                    <option value="prune">Pruning/Coppicing</option>
+                                </select>
+                            </div>
+                        </div>
+                        {% endif %}
+
+                        <!-- Input Type 3 - Size -->
                         {% if service.has_sizes %}
                         <div id="size-input" class="py-1">
                             <label for="sizeOption"><strong>Size of <span
@@ -57,7 +83,7 @@
                         </div>
                         {% endif %}
 
-                        <!-- Input Type 2 - Number -->
+                        <!-- Input Type 4 - Number -->
                         <div id="number-input" class="py-1">
                             <label for="numberOption"><strong>Number of <span
                                         class="service-name">{{ service.name }}</span>s</strong></label>
@@ -70,7 +96,7 @@
                             </div>
                         </div>
 
-                        <!-- Input Type 3 - Acres -->
+                        <!-- Input Type 5 - Acres -->
                         {% if service.has_acres %}
                         <div id="acre-input" class="py-1">
                             <label for="acreOption"><strong>Select Option:</strong></label>
@@ -79,32 +105,6 @@
                                     <option selected value="1a">1 acre or less</option>
                                     <option value="2a">1-2 acres</option>
                                     <option value="2plusa">2+ acres</option>
-                                </select>
-                            </div>
-                        </div>
-                        {% endif %}
-
-                        <!-- Input Type 4 - Trees -->
-                        {% if service.has_fellprune %}
-                        <div id="tree-input" class="py-1">
-                            <label for="treeOption"><strong>Select Option:</strong></label>
-                            <div class="form-group w-75">
-                                <select id="treeOption" name="tree" class="form-select">
-                                    <option selected value="fell">Felling</option>
-                                    <option value="prune">Pruning/Coppicing</option>
-                                </select>
-                            </div>
-                        </div>
-                        {% endif %}
-
-                        <!-- Input Type 5 - Weeds -->
-                        {% if service.has_surface %}
-                        <div id="weed-input" class="py-1">
-                            <label for="weedOption"><strong>Surface Type:</strong></label>
-                            <div class="form-group w-75">
-                                <select id="weedOption" name="surface" class="form-select">
-                                    <option selected value="drive">Driveway/Patio</option>
-                                    <option value="bed">Bed/Planter</option>
                                 </select>
                             </div>
                         </div>

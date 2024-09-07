@@ -19,7 +19,7 @@
                 <table class="table table-sm table-borderless">
                     <thead>
                         <tr>
-                            <th scope="col">Service Info</th>
+                            <th scope="col" class="ps-3">Service Info</th>
                             <th scope="col"></th>
                             <th scope="col" class="text-center">Price</th>
                             <th scope="col" class="text-center">Number</th>
@@ -34,6 +34,9 @@
                             </td>
                             <td class="py-3">
                                 <p class="my-0"><strong>{{ item.service.name }}</strong></p>
+                                {% if item.service.has_sizes %}
+                                <p class="my-0"><strong>Size:</strong> {{item.size }}</p>
+                                {% endif %}
                             </td>
                             <td class="py-3 text-center">
                                 <p class="my-0">€{{ item.service.unit_price }}</p>
