@@ -585,12 +585,6 @@ All documentation on the testing of this application can be found in the [TESTIN
 
 ## Credits
 
-The below tutorial was followed when creating the custom User model:
-
- - [Learn Django - Django Custom User Model](https://learndjango.com/tutorials/django-custom-user-model)
-
- The Category model was taken from the Boutique Ado walkthrough.
-
 ### Content
 ChatGPT was used to generate most of the text content about the campsite and services offered and was edited by Simon Henleywillis. The "description" and "keywords" meta tags were also generated using ChatGPT.
 
@@ -612,37 +606,15 @@ Images were resized and cropped where necessary.
 **All code in this project was written entirely by Simon Henleywillis unless otherwise specified below.**
 Various Bootstrap classes and components were used in the styling of this website and were learned about from reading the Bootstrap documentation. Chunks of code that were copied or adapted are specifically credited below.
 
+The below tutorial was followed when creating the custom User model:
+
+ - [Learn Django - Django Custom User Model](https://learndjango.com/tutorials/django-custom-user-model)
+
+ The Category model was taken from the Boutique Ado walkthrough.
+
+The JavaScript code to control the decrement and increment of the number input field on the service pages was taken from the Boutique Ado walkthrough.
+
 
 ## Acknowledgements
 - [Creating Your First README - Kera Cudmore](https://github.com/kera-cudmore/readme-examples)
 - I would like to thank my CI Mentor [Graeme Taylor](https://github.com/G-Taylor) for his support and advice throughout the development phase.
-
-
-
--------------------
-Services
-
-# Hedge cutting
-Input - hedge size
-input - number of hedges
-
-# Grass cutting
-Input - number of acres
-
-# Tree cutting and pruning
-Input 1A - tree felling
-Input 2 - number of trees
-
-# Input 1B - tree pruning
-Input 2 - number of trees
-
-# Weeding
-Input - bed or driveway
-Input - size of bed options -> small medium large
-
-# Flowerbed care
-Input - bed size
-Input - number of beds
-
-# Tree Stump Removal
-Input - number of stumps
