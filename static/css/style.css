@@ -154,7 +154,7 @@ footer {
 }
 
 td > img {
-    max-width: 150px;
+    max-width: 100px;
 }
 
 @media (max-width: 991px) {
