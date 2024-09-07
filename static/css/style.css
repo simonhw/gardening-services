@@ -157,6 +157,26 @@ td > img {
     max-width: 100px;
 }
 
+.decrement-number {
+    border-top-left-radius: 15%;
+    border-bottom-left-radius: 15%;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.increment-number {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 15%;
+    border-bottom-right-radius: 15%;
+}
+
+.btn:active,
+.btn:focus {
+    background: #3A5A40;
+    color: #EDEDE8;
+}
+
 @media (max-width: 991px) {
     .navbar-nav .nav-link.active {
         background-color: #588157;
