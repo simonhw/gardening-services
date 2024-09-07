@@ -15,10 +15,6 @@
     <div class="row my-3">
         <div class="col-10 offset-1 mt-2">
             {% if cart_items %}
-            {{ cart_items}}
-            <br>
-            <br>
-            {{ request.session.cart }}
             <div class="table-responsive">
                 <table class="table table-sm table-borderless">
                     <thead>
@@ -38,15 +34,46 @@
                             </td>
                             <td class="py-3">
                                 <p class="my-0"><strong>{{ item.service.name }}</strong></p>
-                                {% if item.service.has_sizes %}
-                                <p class="my-0"><strong>Size:</strong> {{item.size|upper }}</p>
+                                {% if item.surface %}
+                                <p class="my-0"><strong>Type:</strong> {{ item.surface }}</p>
+                                {% endif %}
+                                {% if item.cuts %}
+                                <p class="my-0"><strong>Type:</strong> {{ item.cuts }}</p>
+                                {% endif %}
+                                {% if item.size %}
+                                <p class="my-0"><strong>Size:</strong> {{ item.size }}</p>
                                 {% endif %}
                             </td>
                             <td class="py-3 text-center">
                                 <p class="my-0">€{{ item.service.unit_price }}</p>
                             </td>
                             <td class="py-3 text-center">
-                                <p class="my-0">{{ item.number }}</p>
+                                <form action="" method="POST" class="form update-form">
+                                    {% csrf_token %}
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <button class="decrement-number btn btn-sm hunter-green-bg isabelline" 
+                                                    data-item_id="{{ item.item_id }}" id="decrement-number_{{ item.item_id }}">
+                                                    <span>
+                                                        <i class="fas fa-minus fa-sm"></i>
+                                                    </span>
+                                                </button>
+                                            </div>
+                                            <input type="number" class="form-control form-control-sm number_input" name="number" value="{{ item.number }}"
+                                                min="1" max="99" data-item_id="{{ item.item_id }}"
+                                                id="id_number_{{ item.item_id }}">
+                                            <div class="input-group-append">
+                                                <button class="increment-number btn btn-sm hunter-green-bg isabelline" 
+                                                    data-item_id="{{ item.item_id }}" id="increment-number_{{ item.item_id }}">
+                                                    <span>
+                                                        <i class="fas fa-plus fa-sm"></i>
+                                                    </span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
                             </td>
                             <td class="py-3 text-center">
                                 <p class="my-0">€{{ item.service.unit_price }}</p>

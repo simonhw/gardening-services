@@ -34,7 +34,7 @@ def cart_contents(request):
                             item_count += number
                             cart_items.append({
                                 'item_id': item_id,
-                                'number': item_data,
+                                'number': number,
                                 'service': service,
                                 'surface': surface,
                             })
@@ -46,8 +46,9 @@ def cart_contents(request):
                         item_count += number
                         cart_items.append({
                             'item_id': item_id,
-                            'number': item_data,
+                            'number': number,
                             'service': service,
+                            'surface': surface,
                             'size': size,
                         })
             elif 'cuts' in item_data.keys():
@@ -57,9 +58,10 @@ def cart_contents(request):
                         item_count += number
                         cart_items.append({
                             'item_id': item_id,
-                            'number': item_data,
+                            'number': number,
                             'service': service,
                             'size': size,
+                            'cuts': cuts,
                         })
 
             else:
@@ -68,7 +70,7 @@ def cart_contents(request):
                     item_count += number
                     cart_items.append({
                         'item_id': item_id,
-                        'number': item_data,
+                        'number': number,
                         'service': service,
                         'size': size,
                     })
