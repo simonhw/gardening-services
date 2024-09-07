@@ -26,19 +26,11 @@ def cart_contents(request):
         else:
             service = get_object_or_404(Service, pk=item_id)
             if 'surfaces' in item_data.keys():
-                print("item_data['surfaces'].keys() IS", item_data['surfaces'].keys())
                 if 'drive' in item_data['surfaces'].keys():
-
-                    print('drive is in the above!') # Debugging comment
 
                     for surface, number in item_data['surfaces'].items():
                         if surface == 'drive':
-                            print('For Loop 2:')
-                            print('surface:', surface)
-                            print('number:', number)
-                            print('total is', total) # Debugging comment
                             total += number * service.unit_price
-                            print('new total is', total) # Debugging comment
                             item_count += number
                             cart_items.append({
                                 'item_id': item_id,
@@ -47,16 +39,10 @@ def cart_contents(request):
                                 'surface': surface,
                             })
                         else:
-                            # break
                             continue
                 if 'bed' in item_data['surfaces'].keys():
                     for size, number in item_data['surfaces']['bed']['sizes'].items():
-                        print('For Loop 3:')
-                        print('total is', total) # Debugging comment
-                        print('number is', number) # Debugging comment
-                        print('service.unit_price is', service.unit_price) # Debugging comment
                         total += number * service.unit_price
-                        print('new total is', total) # Debugging comment
                         item_count += number
                         cart_items.append({
                             'item_id': item_id,
@@ -64,6 +50,18 @@ def cart_contents(request):
                             'service': service,
                             'size': size,
                         })
+            elif 'cuts' in item_data.keys():
+                for cuts in item_data['cuts'].keys():
+                    for size, number in item_data['cuts'][cuts]['sizes'].items():
+                        total += number * service.unit_price
+                        item_count += number
+                        cart_items.append({
+                            'item_id': item_id,
+                            'number': item_data,
+                            'service': service,
+                            'size': size,
+                        })
+
             else:
                 for size, number in item_data['sizes'].items():
                     total += number * service.unit_price

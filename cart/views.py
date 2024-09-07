@@ -33,9 +33,6 @@ def add_to_cart(request, item_id):
         surface = request.POST.get('surface')
 
     cart = request.session.get('cart', {})
-    print('cart is', cart)  # Debugging comment
-    print('size is', size)  # Debugging comment
-    print('surface is', surface) # Debugging comment
 
     if surface:
         if surface == 'bed':
@@ -63,12 +60,20 @@ def add_to_cart(request, item_id):
             else:
                 # Add a driveway to empty cart
                 cart[item_id] = {'surfaces': {surface: number}}
-                print('-------------------------') # Debugging comment
-                print('cart[item_id] is', cart[item_id]) # Debugging comment
-                print("cart[item_id]['surfaces'] is", cart[item_id]['surfaces']) # Debugging comment
-                print("cart[item_id]['surfaces'][surface] is", cart[item_id]['surfaces'][surface]) # Debugging comment
-                print('-------------------------') # Debugging comment
-        
+    
+    elif tree:
+        if item_id in list(cart.keys()):
+            if tree in cart[item_id]['cuts'].keys():
+                if size in cart[item_id]['cuts'][tree]['sizes'].keys():
+                    cart[item_id]['cuts'][tree]['sizes'][size] += number
+                else:
+                    cart[item_id]['cuts'][tree]['sizes'][size] = number
+            else:
+                cart[item_id]['cuts'][tree] = {'sizes': {size: number}}
+
+        else:
+            cart[item_id] = {'cuts': {tree: {'sizes': {size: number}}}}
+    
     # This handles both the acres option and the normal sizes option
     elif size:
         if item_id in list(cart.keys()):
@@ -85,5 +90,5 @@ def add_to_cart(request, item_id):
             cart[item_id] = number
     
     request.session['cart'] = cart
-    print('cart is', cart) # Debugging comment
+    # print('cart is', cart) # Debugging comment
     return redirect(redirect_url)
