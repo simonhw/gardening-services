@@ -12,6 +12,7 @@ def cart_contents(request):
     total = 0
     item_count = 0
     cart = request.session.get('cart', {})
+    print(cart)
 
     for item_id, item_data in cart.items():
         if isinstance(item_data, int):
@@ -48,7 +49,6 @@ def cart_contents(request):
                             'item_id': item_id,
                             'number': number,
                             'service': service,
-                            'surface': surface,
                             'size': size,
                         })
             elif 'cuts' in item_data.keys():

@@ -4,7 +4,7 @@ $('.update-link').click(function(e) {
 });
 
 $('.remove-item').click(function(e) {
-    var csrfToken = "{{ csrf_token }}";
+    var csrfToken = $('input[name="csrfmiddlewaretoken"]').val();
     console.log(csrfToken);
     let itemId = $(this).attr('id').split('remove_')[1];
     let size = $(this).data('size');
