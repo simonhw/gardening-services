@@ -12,7 +12,6 @@ def cart_contents(request):
     total = 0
     item_count = 0
     cart = request.session.get('cart', {})
-    print(cart)
 
     for item_id, item_data in cart.items():
         if isinstance(item_data, int):
@@ -28,7 +27,6 @@ def cart_contents(request):
             service = get_object_or_404(Service, pk=item_id)
             if 'surfaces' in item_data.keys():
                 if 'drive' in item_data['surfaces'].keys():
-
                     for surface, number in item_data['surfaces'].items():
                         if surface == 'drive':
                             total += number * service.unit_price
@@ -42,13 +40,15 @@ def cart_contents(request):
                         else:
                             continue
                 if 'bed' in item_data['surfaces'].keys():
-                    for size, number in item_data['surfaces']['bed']['sizes'].items():
+                    surface = 'bed'
+                    for size, number in item_data['surfaces'][surface]['sizes'].items():
                         total += number * service.unit_price
                         item_count += number
                         cart_items.append({
                             'item_id': item_id,
                             'number': number,
                             'service': service,
+                            'surface': surface,
                             'size': size,
                         })
             elif 'cuts' in item_data.keys():

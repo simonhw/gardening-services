@@ -48,6 +48,7 @@
                                 <p class="my-0">€{{ item.service.unit_price }}</p>
                             </td>
                             <td class="py-3">
+                                <!-- Number of Services Form -->
                                 <form action="{% url 'amend_cart' item.item_id %}" method="POST" class="form update-form">
                                     {% csrf_token %}
                                     <div class="form-group cart-numbers">
@@ -61,8 +62,7 @@
                                                 </button>
                                             </div>
                                             <input type="number" class="form-control form-control-sm number_input" name="number" value="{{ item.number }}"
-                                                min="1" max="99" data-item_id="{{ item.item_id }}"
-                                                id="id_number_{{ item.item_id }}">
+                                                min="1" max="99" data-item_id="{{ item.item_id }}" id="id_number_{{ item.item_id }}">
                                             <div class="input-group-append">
                                                 <button class="increment-number btn btn-sm hunter-green-bg isabelline" 
                                                     data-item_id="{{ item.item_id }}" id="increment-number_{{ item.item_id }}">
@@ -71,6 +71,15 @@
                                                     </span>
                                                 </button>
                                             </div>
+                                            {% if item.size %}
+                                            <input type="hidden" name="size" value="{{ item.size }}">
+                                            {% endif %}
+                                            {% if item.surface %}
+                                            <input type="hidden" name="surface" value="{{ item.surface }}">
+                                            {% endif %}
+                                            {% if item.cuts %}
+                                            <input type="hidden" name="cuts" value="{{ item.cuts }}">
+                                            {% endif %}
                                         </div>
                                     </div>
                                 </form>
@@ -78,7 +87,8 @@
                                     <a class="update-link fern-green">
                                         <small>Update</small>
                                     </a>
-                                    <a class="remove-item text-danger float-end" id="remove_{{ item.item_id }}" data-size="{{ item.size }}" data-surface="{{ item.surface }}" data-cuts="{{ item.cuts }}">
+                                    <a class="remove-item text-danger float-end" id="remove_{{ item.item_id }}"
+                                        data-size="{{ item.size }}" data-surface="{{ item.surface }}" data-cuts="{{ item.cuts }}">
                                         <small>Remove</small>
                                     </a>
                                 </div>
@@ -90,7 +100,7 @@
                     {% endfor %}
                     <tr>
                         <td colspan="5" class="pt-5 text-end">
-                            <h4 class="mt-4"><strong>Grand Total: ${{ total|floatformat:2 }}</strong></h4>
+                            <h4 class="mt-4"><strong>Grand Total: €{{ total|floatformat:2 }}</strong></h4>
                         </td>
                     </tr>
                     <tr>
