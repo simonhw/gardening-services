@@ -1,6 +1,5 @@
 function handleEnableDisable(itemId) {
     let currentValue = parseInt($(`#id_number_${itemId}`).val());
-    // console.log('currentValue is', currentValue);
     let minusDisabled = currentValue < 2;
     let plusDisabled = currentValue > 98;
     $(`#decrement-number_${itemId}`).prop('disabled', minusDisabled);
@@ -25,7 +24,6 @@ $('.increment-number').click(function(e) {
     let currentValue = parseInt($(closestInput).val());
     $(closestInput).val(currentValue + 1);
     let itemId = $(this).data('item_id');
-    console.log('itemId is', itemId);
     handleEnableDisable(itemId);
 });
 

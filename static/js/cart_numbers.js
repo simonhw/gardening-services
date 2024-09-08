@@ -1,5 +1,5 @@
 $('.update-link').click(function(e) {
-    let form = $(this).prev('.update-form');
+    let form = $(this).parent().prev('.update-form');
     form.submit();
 });
 
