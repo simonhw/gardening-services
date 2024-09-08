@@ -177,6 +177,20 @@ td > img {
     color: #EDEDE8;
 }
 
+.cart-numbers {
+    max-width: 150px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.form-group input {
+    text-align: center;
+}
+
+.update-link, .remove-item {
+    cursor: pointer;
+}
+
 @media (max-width: 991px) {
     .navbar-nav .nav-link.active {
         background-color: #588157;
