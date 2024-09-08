@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, reverse, HttpResponse
 
 
 def view_cart(request):
@@ -92,3 +92,109 @@ def add_to_cart(request, item_id):
     request.session['cart'] = cart
     # print('cart is', cart) # Debugging comment
     return redirect(redirect_url)
+
+
+def amend_cart(request, item_id):
+    """ Update or amend the services currently in the shopping cart """
+
+    number = int(request.POST.get('number'))
+
+    size = None
+    acres = None
+    tree = None
+    surface = None
+    
+    if 'size' in request.POST:
+        size = request.POST.get('size')
+    
+    if 'tree' in request.POST:
+        tree = request.POST.get('tree')
+    
+    if 'surface' in request.POST:
+        surface = request.POST.get('surface')
+
+    cart = request.session.get('cart', {})
+
+    if surface:
+        if surface == 'bed':
+            if number > 0:
+                cart[item_id]['surfaces'][surface]['sizes'][size] = number
+            else:
+                del cart[item_id]['surfaces'][surface]['sizes'][size]
+                if not cart[item_id]['surfaces']:
+                    cart.pop(item_id)
+        else:
+            if numbner > 0:
+                cart[item_id]['surfaces'][surface] = number
+            else:
+                del cart[item_id]['surfaces'][surface]
+                if not cart[item_id]['surfaces']:
+                    cart.pop(item_id)
+    elif tree:
+        if number > 0:
+            cart[item_id]['cuts'][tree]['sizes'][size] = number
+        else:
+            del cart[item_id]['cuts'][tree]['sizes'][size]
+            if not cart[item_id]['cuts']:
+                cart.pop(item_id)
+    elif size:
+        if number > 0:
+            cart[item_id]['sizes'][size] = number
+        else:
+            del cart[item_id]['sizes'][size]
+            if not cart[item_id]['sizes']:
+                cart.pop(item_id)
+    else:
+        if number > 0:
+            cart[item_id] = number
+        else:
+            cart.pop(item_id)
+    
+    request.session['cart'] = cart
+    # print('cart is', cart) # Debugging comment
+    return redirect(reverse('view_cart'))
+
+
+def remove_from_cart(request, item_id):
+    """ Delete services currently in the shopping cart """
+
+    try:
+        size = None
+        acres = None
+        tree = None
+        surface = None
+        
+        if 'size' in request.POST:
+            size = request.POST.get('size')
+        
+        if 'tree' in request.POST:
+            tree = request.POST.get('tree')
+        
+        if 'surface' in request.POST:
+            surface = request.POST.get('surface')
+
+        cart = request.session.get('cart', {})
+
+        if surface:
+            if surface == 'bed':
+                del cart[item_id]['surfaces'][surface]['sizes'][size]
+            else:
+                del cart[item_id]['surfaces'][surface]
+            if not cart[item_id]['surfaces']:
+                cart.pop(item_id)
+        elif tree:
+            del cart[item_id]['cuts'][tree]['sizes'][size]
+            if not cart[item_id]['cuts']:
+                cart.pop(item_id)
+        elif size:
+            del cart[item_id]['sizes'][size]
+            if not cart[item_id]['sizes']:
+                cart.pop(item_id)
+        else:
+            cart.pop(item_id)
+        
+        request.session['cart'] = cart
+        # print('cart is', cart) # Debugging comment
+        return HttpResponse(status=200)
+    except Exception as e:
+        return HttpResponse(status=500)

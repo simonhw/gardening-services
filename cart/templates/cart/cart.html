@@ -48,7 +48,7 @@
                                 <p class="my-0">€{{ item.service.unit_price }}</p>
                             </td>
                             <td class="py-3">
-                                <form action="" method="POST" class="form update-form">
+                                <form action="{% url 'amend_cart' item.item_id %}" method="POST" class="form update-form">
                                     {% csrf_token %}
                                     <div class="form-group cart-numbers">
                                         <div class="input-group">
@@ -78,7 +78,7 @@
                                     <a class="update-link fern-green">
                                         <small>Update</small>
                                     </a>
-                                    <a class="remove-item text-danger float-end" id="remove_{{ item.item_id }}" data-service_size="{{ item.size }}">
+                                    <a class="remove-item text-danger float-end" id="remove_{{ item.item_id }}" data-size="{{ item.size }}" data-surface="{{ item.surface }}" data-cuts="{{ item.cuts }}">
                                         <small>Remove</small>
                                     </a>
                                 </div>
