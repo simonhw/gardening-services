@@ -49,15 +49,15 @@ def add_to_cart(request, item_id):
                         cart[item_id]['surfaces'][surface]\
                             ['sizes'][size] += number
                         messages.success(
-                            request, f'{service.name}: added {number} {size}\
-                                    {surface} to cart'
+                            request, f'Added {number} {size.title()}\
+                            {surface} {service.name} to cart'
                         )
                     else:
                         cart[item_id]['surfaces'][surface]\
                             ['sizes'][size] = number
                         messages.success(
-                            request, f'{service.name}: added {number} {size}\
-                                    {surface} to cart'
+                            request, f'Added {number} {size.title()}\
+                            {surface} {service.name} to cart'
                         )
                 else:
                     # In this case, there is a Driveway/Patio service
@@ -66,8 +66,8 @@ def add_to_cart(request, item_id):
                     cart[item_id]['surfaces'][surface] = \
                         {'sizes': {size: number}}
                     messages.success(
-                        request, f'{service.name}: added {number} {size}\
-                                {surface} to cart'
+                        request, f'Added {number} {size.title()}\
+                            {surface} {service.name} to cart'
                     )
 
             else:
@@ -76,8 +76,8 @@ def add_to_cart(request, item_id):
                 cart[item_id] = {'surfaces':\
                      {surface: {'sizes': {size: number}}}}
                 messages.success(
-                    request, f'Added {service.name}:\
-                            {size} {surface} x{number} to cart'
+                    request, f'Added {number} {size.title()} {surface}\
+                        {service.name} to cart'
                 )
         else:
             # When the service is a Driveway/Patio, check if the cart
@@ -88,22 +88,22 @@ def add_to_cart(request, item_id):
                 if surface in cart[item_id]['surfaces'].keys():
                     cart[item_id]['surfaces'][surface] += number
                     messages.success(
-                        request, f'Added {service.name}:\
-                            {surface} x{number} to cart'
+                        request, f'Added {number} {surface}\
+                        {service.name} to cart'
                     ) 
                 else:
                     cart[item_id]['surfaces'][surface] = number
                     messages.success(
-                        request, f'Added {service.name}:\
-                            {surface} x{number} to cart'
+                        request, f'Added {number} {surface}\
+                        {service.name} to cart'
                     ) 
             else:
                 # There is no Weeding service already in the cart.
                 #  Create a new dictionary.
                 cart[item_id] = {'surfaces': {surface: number}}
                 messages.success(
-                    request, f'Added {service.name}:\
-                         {surface} x{number} to cart'
+                    request, f'Added {number} {surface}\
+                        {service.name} to cart'
                 )    
     elif tree:
         # For carts where there is already a Tree Maintenance service,
@@ -149,20 +149,36 @@ def add_to_cart(request, item_id):
         if item_id in list(cart.keys()):
             if size in cart[item_id]['sizes'].keys():
                 cart[item_id]['sizes'][size] += number
-                messages.success(
-                    request, f'Added {service.name}: {size} x{number} to cart'
-                )
+                print('item_id', item_id)
+                print(type(item_id))
+                if item_id == '1':
+                    messages.success(
+                        request, f'Added {size.title()} {service.name}\
+                            to cart'
+                    )
+                else:
+                    messages.success(
+                        request, f'Added {number} {size.title()}\
+                            {service.name} to cart'
+                    )
             else:
                 cart[item_id]['sizes'][size] = number
-                messages.success(
-                    request, f'Added {service.name}: {size} x{number} to cart'
-                )
+                if item_id == '1':
+                    messages.success(
+                        request, f'Added {size.title()} {service.name}\
+                            to cart'
+                    )
+                else:
+                    messages.success(
+                        request, f'Added {number} {size.title()}\
+                            {service.name} to cart'
+                    )
         else:
             # If the service does not exist in the cart yet, create a
             #  new dictionary.
             cart[item_id] = {'sizes': {size: number}}
             messages.success(
-                request, f'Added {service.name}: {size} x{number} to cart'
+                request, f'Added {size.title()} {service.name} to cart'
             )
     else:
         # For services that only take a number input, check if the
@@ -208,16 +224,16 @@ def amend_cart(request, item_id):
                 # Update the number of the specific size Bed/Planter
                 cart[item_id]['surfaces'][surface]['sizes'][size] = number
                 messages.success(
-                    request, f'Updated {service.name}:\
-                            {size} {surface} to {number}'
+                    request, f'{size.title()} {surface} {service.name}\
+                        updated to {number}'
                 )
             else:
                 # Delete the entry if the specified number is 0 and
                 #  remove the parent dictionary if it is empty.
                 del cart[item_id]['surfaces'][surface]['sizes'][size]
                 messages.success(
-                    request, f'Removed {service.name}:\
-                            {size} {surface} from cart.'
+                    request, f'Removed {size.title()} {surface}\
+                        {service.name} from cart.'
                 )
                 if not cart[item_id]['surfaces']:
                     cart.pop(item_id)
@@ -226,14 +242,15 @@ def amend_cart(request, item_id):
                 # Update the number of the specific size Driveway/Patio
                 cart[item_id]['surfaces'][surface] = number
                 messages.success(
-                    request, f'Updated {service.name}: {surface} to {number}'
+                    request, f'{surface} {service.name} updated to\
+                        {number}'
                 )
             else:
                 # Delete the entry if the specified number is 0 and
                 #  remove the parent dictionary if it is empty.
                 del cart[item_id]['surfaces'][surface]
                 messages.success(
-                    request, f'Removed {service.name}: {surface} from cart.'
+                    request, f'Removed {surface} {service.name} from cart.'
                 )
                 if not cart[item_id]['surfaces']:
                     cart.pop(item_id)
@@ -242,16 +259,16 @@ def amend_cart(request, item_id):
             # Update the number of the specific size tree service
             cart[item_id]['cuts'][tree]['sizes'][size] = number
             messages.success(
-                request, f'Updated {service.name}:\
-                    {size} tree {tree} to {number}'
+                request, f'{size.title()} Tree {tree.title()} updated to\
+                    {number}'
             )
         else:
             # Delete the entry if the specified number is 0 and
             #  remove the parent dictionary if it is empty.
             del cart[item_id]['cuts'][tree]['sizes'][size]
             messages.success(
-                request, f'Removed {service.name}:\
-                    {size} tree {tree} from cart.'
+                request, f'Removed {size.title()} Tree {tree.title()} from\
+                    cart.'
             )
             if not cart[item_id]['cuts']:
                 cart.pop(item_id)
@@ -260,14 +277,14 @@ def amend_cart(request, item_id):
             # Update the number of the specific size service
             cart[item_id]['sizes'][size] = number
             messages.success(
-                request, f'Updated {service.name}: {size} to {number}'
+                request, f'{size.title()} {service.name} updated to {number}'
             )
         else:
             # Delete the entry if the specified number is 0 and
             #  remove the parent dictionary if it is empty.
             del cart[item_id]['sizes'][size]
             messages.success(
-                request, f'Removed {service.name}: {size} from cart'
+                request, f'Removed {size.title()} {service.name} from cart'
             )
             if not cart[item_id]['sizes']:
                 cart.pop(item_id)
@@ -276,7 +293,7 @@ def amend_cart(request, item_id):
             # Update the number of the specific service
             cart[item_id] = number
             messages.success(
-                request, f'Updated {service.name} to {number}'
+                request, f'{service.name} number updated to {number}'
             )
         else:
             # Delete the entry if the specified number is 0
@@ -313,8 +330,8 @@ def remove_from_cart(request, item_id):
                 # Delete the specific size of Bed/Planter only
                 del cart[item_id]['surfaces'][surface]['sizes'][size]
                 messages.success(
-                    request, f'Removed {service.name}:\
-                            {size} {surface} from cart.'
+                    request, f'Removed {size.title()} {surface} {service.name}\
+                            from cart.'
                 )
                 if not cart[item_id]['surfaces'][surface]['sizes']:
                     # Delete an empty Bed/Planter dictionary
@@ -323,7 +340,7 @@ def remove_from_cart(request, item_id):
                 # Delete the Driveway/Patio dictionary
                 del cart[item_id]['surfaces'][surface]
                 messages.success(
-                    request, f'Removed {service.name}: {surface} from cart.'
+                    request, f'Removed {surface} {service.name} from cart.'
                 )
             if not cart[item_id]['surfaces']:
                 # If the Weeding dictionary contains empty
@@ -341,14 +358,14 @@ def remove_from_cart(request, item_id):
                     #  dictionaries, remove it from the cart
                     cart.pop(item_id)
             messages.success(
-                request, f'Removed {service.name}:\
-                    {size} tree {tree} from cart.'
+                request, f'Removed {size.title()} Tree\
+                    {tree.title()} from cart.'
             )
         elif size:
             # Delete a specific size of sized service
             del cart[item_id]['sizes'][size]
             messages.success(
-                request, f'Removed {service.name}: {size} from cart'
+                request, f'Removed {size.title()} {service.name} from cart'
             )
             if not cart[item_id]['sizes']:
                 # If the specific service has no other sizes present in
