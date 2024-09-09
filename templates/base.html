@@ -85,7 +85,7 @@
                             <li><a class="dropdown-item" href="{% url 'services' %}">All Services</a></li>
                             <li><a class="dropdown-item" href="{% url 'service_page' 1 %}">Grass Cutting</a></li>
                             <li><a class="dropdown-item" href="{% url 'service_page' 2 %}">Weed Control</a></li>
-                            <li><a class="dropdown-item" href="{% url 'service_page' 3 %}">Tree Cutting & Pruning</a></li>
+                            <li><a class="dropdown-item" href="{% url 'service_page' 3 %}">Tree Felling & Maintenance</a></li>
                             <li><a class="dropdown-item" href="{% url 'service_page' 4 %}">Hedge Maintenance</a></li>
                             <li><a class="dropdown-item" href="{% url 'service_page' 5 %}">Flowerbed Care</a></li>
                             <li><a class="dropdown-item" href="{% url 'service_page' 6 %}">Tree Stump Removal</a></li>
@@ -190,8 +190,6 @@
     {% block postloadjs %}
     <script type="text/javascript" >
         $(document).ready(function(){
-            console.log('$', $);
-            console.log("$('.toast')", $('.toast'));
             $('.toast').toast('show');
         });
     </script>
