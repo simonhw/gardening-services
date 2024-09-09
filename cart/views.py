@@ -39,7 +39,7 @@ def add_to_cart(request, item_id):
     cart = request.session.get('cart', {})
 
     if surface:
-        if surface == 'bed':
+        if surface == 'Bed/Planter':
             if item_id in list(cart.keys()):
                 if surface in cart[item_id]['surfaces'].keys():
                     if size in cart[item_id]['surfaces'][surface]\
@@ -177,7 +177,7 @@ def amend_cart(request, item_id):
     cart = request.session.get('cart', {})
 
     if surface:
-        if surface == 'bed':
+        if surface == 'Bed/Planter':
             if number > 0:
                 cart[item_id]['surfaces'][surface]['sizes'][size] = number
                 messages.success(
@@ -271,7 +271,7 @@ def remove_from_cart(request, item_id):
         cart = request.session.get('cart', {})
 
         if surface:
-            if surface == 'bed':
+            if surface == 'Bed/Planter':
                 del cart[item_id]['surfaces'][surface]['sizes'][size]
                 messages.success(
                     request, f'Removed {service.name}:\

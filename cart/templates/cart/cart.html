@@ -35,13 +35,13 @@
                             <td class="py-3">
                                 <p class="my-0"><strong>{{ item.service.name }}</strong></p>
                                 {% if item.surface %}
-                                <p class="my-0"><strong>Type:</strong> {{ item.surface }}</p>
+                                <p class="my-0"><strong>Type:</strong> {{ item.surface | title }}</p>
                                 {% endif %}
                                 {% if item.cuts %}
-                                <p class="my-0"><strong>Type:</strong> {{ item.cuts }}</p>
+                                <p class="my-0"><strong>Type:</strong> {{ item.cuts | title }}</p>
                                 {% endif %}
                                 {% if item.size %}
-                                <p class="my-0"><strong>Size:</strong> {{ item.size }}</p>
+                                <p class="my-0"><strong>Size:</strong> {{ item.size | title }}</p>
                                 {% endif %}
                             </td>
                             <td class="py-3 text-center">

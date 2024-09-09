@@ -198,6 +198,20 @@ td > img {
     cursor: pointer;
 }
 
+.toast-cart > hr {
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+}
+
+.cart-notification-wrapper {
+    height: 120px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    /* border-top: 1px solid black;
+    border-bottom: 1px solid black; */
+}
+
 @media (min-width: 769px) {
     .hero-image {
         display: none;
