@@ -12,6 +12,8 @@
 
 .custom-toast {
     overflow: visible;
+    margin-left: auto;
+    /* margin-right: auto; */
 }
 
 #logo-and-text.flex-center {

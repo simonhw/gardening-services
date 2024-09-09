@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect, reverse, HttpResponse
 from django.contrib import messages
+from services.models import Service
 
 
 def view_cart(request):
@@ -16,6 +17,7 @@ def add_to_cart(request, item_id):
     Add the service to the shopping cart with its relevant options
     """
 
+    service = Service.objects.get(pk=item_id)
     number = int(request.POST.get('number'))
     redirect_url = request.POST.get('redirect_url')
 
@@ -87,8 +89,10 @@ def add_to_cart(request, item_id):
     else:
         if item_id in list(cart.keys()):
             cart[item_id] += number
+            messages.warning(request, f'Added {service.name} x{number} to cart.')
         else:
             cart[item_id] = number
+            messages.info(request, f'Added {service.name} x{number} to cart.')
     
     request.session['cart'] = cart
 
