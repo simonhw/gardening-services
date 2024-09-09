@@ -7,6 +7,11 @@
 
 #messages-div {
     position: absolute;
+    z-index: 99999;
+}
+
+.custom-toast {
+    overflow: visible;
 }
 
 #logo-and-text.flex-center {
@@ -189,6 +194,20 @@ td > img {
 
 .update-link, .remove-item {
     cursor: pointer;
+}
+
+@media (min-width: 769px) {
+    .hero-image {
+        display: none;
+    }
+
+    .hero {
+        background-image: url("/static/images/path-blur-1920.webp");
+        height: 500px;
+        background-repeat: no-repeat;
+        background-size: cover; 
+        background-position: 0% 70%;
+    }
 }
 
 @media (max-width: 991px) {
