@@ -41,58 +41,108 @@ def add_to_cart(request, item_id):
         if surface == 'bed':
             if item_id in list(cart.keys()):
                 if surface in cart[item_id]['surfaces'].keys():
-                # Add a bed/planter to a cart already containing a bed/planter
                     if size in cart[item_id]['surfaces'][surface]['sizes'].keys():
                         cart[item_id]['surfaces'][surface]['sizes'][size] += number
+                        messages.success(
+                            request, f'Added {service.name}:\
+                                    {size} {surface} x{number} to cart'
+                        )
                     else:
                         cart[item_id]['surfaces'][surface]['sizes'][size] = number
+                        messages.success(
+                            request, f'Added {service.name}:\
+                                    {size} {surface} x{number} to cart'
+                        )
                 else:
                     cart[item_id]['surfaces'][surface] = {'sizes': {size: number}}
+                    messages.success(
+                        request, f'Added {service.name}:\
+                                {size} {surface} x{number} to cart'
+                    )
 
             else:
-                # Add a bed/planter to an empty cart
                 cart[item_id] = {'surfaces': {surface: {'sizes': {size: number}}}}
+                messages.success(
+                    request, f'Added {service.name}:\
+                            {size} {surface} x{number} to cart'
+                )
         else:
             if item_id in list(cart.keys()):
                 if surface in cart[item_id]['surfaces'].keys():
-                    # Add a driveway to a cart containing a driveway
                     cart[item_id]['surfaces'][surface] += number
+                    messages.success(
+                        request, f'Added {service.name}:\
+                            {surface} x{number} to cart'
+                    ) 
                 else:
-                    # Add a driveway to a cart containing at least 1 bed/planter
                     cart[item_id]['surfaces'][surface] = number
+                    messages.success(
+                        request, f'Added {service.name}:\
+                            {surface} x{number} to cart'
+                    ) 
             else:
-                # Add a driveway to empty cart
                 cart[item_id] = {'surfaces': {surface: number}}
-    
+                messages.success(
+                    request, f'Added {service.name}:\
+                         {surface} x{number} to cart'
+                )    
     elif tree:
         if item_id in list(cart.keys()):
             if tree in cart[item_id]['cuts'].keys():
                 if size in cart[item_id]['cuts'][tree]['sizes'].keys():
                     cart[item_id]['cuts'][tree]['sizes'][size] += number
+                    messages.success(
+                        request, f'Added {service.name}: {size} tree, \
+                            {tree} x{number} to cart'
+                    )
                 else:
                     cart[item_id]['cuts'][tree]['sizes'][size] = number
+                    messages.success(
+                        request, f'Added {service.name}: {size} tree, \
+                            {tree} x{number} to cart'
+                    )
             else:
                 cart[item_id]['cuts'][tree] = {'sizes': {size: number}}
+                messages.success(
+                    request, f'Added {service.name}: {size} tree, \
+                        {tree} x{number} to cart'
+                )
 
         else:
             cart[item_id] = {'cuts': {tree: {'sizes': {size: number}}}}
-    
+            messages.success(
+                request, f'Added {service.name}: {size} tree, \
+                    {tree} x{number} to cart'
+            )
     # This handles both the acres option and the normal sizes option
     elif size:
         if item_id in list(cart.keys()):
             if size in cart[item_id]['sizes'].keys():
                 cart[item_id]['sizes'][size] += number
+                messages.success(
+                    request, f'Added {service.name}: {size} x{number} to cart'
+                )
             else:
                 cart[item_id]['sizes'][size] = number
+                messages.success(
+                    request, f'Added {service.name}: {size} x{number} to cart'
+                )
         else:
             cart[item_id] = {'sizes': {size: number}}
+            messages.success(
+                request, f'Added {service.name}: {size} x{number} to cart'
+            )
     else:
         if item_id in list(cart.keys()):
             cart[item_id] += number
-            messages.warning(request, f'Added {service.name} x{number} to cart.')
+            messages.success(
+                request, f'Added {service.name} x{number} to cart.'
+            )
         else:
             cart[item_id] = number
-            messages.info(request, f'Added {service.name} x{number} to cart.')
+            messages.success(
+                request, f'Added {service.name} x{number} to cart.'
+            )
     
     request.session['cart'] = cart
 
