@@ -614,6 +614,13 @@ The below tutorial was followed when creating the custom User model:
 
 The JavaScript code to control the decrement and increment of the number input field on the service pages was taken from the Boutique Ado walkthrough.
 
+Getting the toasts to show with B5:
+
+- [Bootstrap 5 Jquery Is It Possible To Force Bootstrap 5 To Inject Its Jquery P](https://stackoverflow.com/questions/67953465/bootstrap-5-jquery-is-it-possible-to-force-bootstrap-5-to-inject-its-jquery-p)
+
+The styling of the toast messages was adapted frome examples in the below article:
+
+-[https://fastbootstrap.com/components/toast/](https://fastbootstrap.com/components/toast/)
 
 ## Acknowledgements
 - [Creating Your First README - Kera Cudmore](https://github.com/kera-cudmore/readme-examples)
