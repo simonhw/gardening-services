@@ -41,7 +41,8 @@ def cart_contents(request):
                             continue
                 if 'Bed/Planter' in item_data['surfaces'].keys():
                     surface = 'Bed/Planter'
-                    for size, number in item_data['surfaces'][surface]['sizes'].items():
+                    for size, number in item_data['surfaces'][surface]\
+                        ['sizes'].items():
                         total += number * service.unit_price
                         item_count += number
                         cart_items.append({
@@ -53,7 +54,8 @@ def cart_contents(request):
                         })
             elif 'cuts' in item_data.keys():
                 for cuts in item_data['cuts'].keys():
-                    for size, number in item_data['cuts'][cuts]['sizes'].items():
+                    for size, number in item_data['cuts'][cuts]\
+                        ['sizes'].items():
                         total += number * service.unit_price
                         item_count += number
                         cart_items.append({
