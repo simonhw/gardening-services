@@ -5,7 +5,7 @@
 {% block extra_title %} | Checkout{% endblock %}
 
 {% block navbar %}
-<nav class="navbar">
+<nav class="navbar checkout-navbar">
     <div class="container-fluid d-flex">
         <div id="site-logo-and-checkout" class="d-flex align-items-center">
             <div id="logo-and-text" class="flex-center">
@@ -41,13 +41,18 @@
         <div class="label">Address</div>
         <div class="label">Payment</div>
         <div class="label">Review</div>
-
     </div>
 </nav>
 {% endblock %}
 
 {% block content %}
 <div class="container">
+    <hr>
+    <div class="row">
+        <div class="col-12">
+            <p class="fs-4 text-center">Enter your personal details</p>
+        </div>
+    </div>
     
 </div>
 {% endblock %}
