@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block extra_title %} | Checkout{% endblock %}
+
+{% block navbar %}
+<nav class="navbar">
+    <div class="container-fluid d-flex">
+        <div id="site-logo-and-checkout" class="d-flex align-items-center">
+            <div id="logo-and-text" class="flex-center">
+                <a class="navbar-brand" href="{% url 'home' %}">
+                    <div class="image-and-text">
+                        <img src="{% static 'images/logo-new.webp' %}" class="logo" alt="The Garden Path Logo">
+                        <div class="centred-title navbar-brand mate hunter-green fw-semibold">The Garden Path</div>
+                    </div>
+                </a>
+            </div>
+            <div class="d-flex align-items-center">
+                <div>
+                    <span class="icon"><i class="fas fa-lock px-2 fs-5"></i></span>
+                </div>
+                <div>
+                    <p class="m-0"><strong class="mate fs-5">Secure Checkout</strong></p>
+                </div>
+            </div>
+        </div>
+        <div id="progress-indicator" class="d-flex align-items-center justify-content-between mx-3 pt-3">
+            <div class="step active text-center">
+                <div class="circle"></div>
+            </div>
+            <div class="line flex-grow-1"></div>
+            <div class="step">
+                <div class="circle"></div>
+            </div>
+            <div class="line flex-grow-1"></div>
+            <div class="step">
+                <div class="circle"></div>
+            </div>
+        </div>
+        <div class="label">Address</div>
+        <div class="label">Payment</div>
+        <div class="label">Review</div>
+
+    </div>
+</nav>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    
+</div>
+{% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}
+{% endblock %}

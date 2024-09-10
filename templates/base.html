@@ -54,6 +54,7 @@
 </head>
 
 <body class="d-flex flex-column min-vh-100">
+    {% block navbar %}
     <nav class="navbar navbar-expand-lg">
         <div class="container-fluid flex-center">
             <div id="logo-and-text" class="flex-center">
@@ -112,6 +113,7 @@
             </div>
         </div>
     </nav>
+    {% endblock %}
 
     <main class="flex-grow-1">
         <!-- displaying Django messages -->
