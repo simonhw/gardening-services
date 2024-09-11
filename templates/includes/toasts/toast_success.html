@@ -11,7 +11,7 @@
     </div>
     </div>
 </div>
-<!-- <div class="toast-cart isabelline-bg text-dark">
+<div class="toast-cart isabelline-bg text-dark d-lg-none">
     {% if total %}
         <p class="mate text-center pt-1 mb-1"><strong>Cart: {{ item_count }} items</strong></p>
         <hr class="mb-0 text-center">
@@ -41,7 +41,7 @@
         <div class="row">
             <div class="col">
                 <p class="mb-1"><strong>Grand Total: €{{ total|floatformat:2 }}</strong></p>
-                <a href="" class="btn hunter-green hunter-green-border mate isabelline-bg fw-bold rounded-1 mb-2">
+                <a href="{% url 'checkout' %}" class="btn hunter-green hunter-green-border mate isabelline-bg fw-bold rounded-1 mb-2">
                     <span class="text-uppercase">Go To Secure Checkout</span>
                     <span class="icon">
                         <i class="fas fa-lock"></i>
@@ -50,5 +50,5 @@
             </div>
         </div>
     {% endif %}
-</div> -->
+</div>
 </div>

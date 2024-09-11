@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Mate:ital@0;1&display=swap');
 
+/* Navbar Styles */
 .logo {
     width: 145px;
     text-align: center;
@@ -55,6 +56,12 @@
     z-index: 100000;
 }
 
+.cart-dropdown {
+    display: none;
+}
+
+/* Fonts and Colours */
+
 .mate {
     font-family: "Mate", serif;
 }
@@ -83,6 +90,10 @@
     color: #588157;
 }
 
+.fern-green-bg {
+    background-color: #588157;
+}
+
 .sage-green {
     color: #A3B18A;
 }
@@ -98,6 +109,11 @@
 .isabelline-bg {
     background-color: #EDEDE8;
 }
+
+.white-bg {
+    background-color: #fff;
+}
+
 
 .plain-anchor {
     text-decoration: none;
@@ -310,6 +326,15 @@ td > img {
     .navbar-nav .nav-link.active {
         border-top: 1px solid #3A5A40;
         border-bottom: 1px solid #3A5A40;
+    }
+
+    .cart-dropdown-wrapper:hover .cart-dropdown {
+        display: block;
+        position: absolute;
+        z-index: 100001;
+        right: 10%;
+        width: 400px;
+        font-family: serif;
     }
 }
 

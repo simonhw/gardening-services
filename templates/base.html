@@ -105,9 +105,51 @@
                         <a class="nav-link" href="#">Contact Us</a>
                     </li>
                     <li class="nav-item {% if request.path == url %}active{% endif %}">
-                        <a class="nav-link" href="{% url 'view_cart' %}">
-                            Cart{% if total %}: <span class="fw-bold">€{{ total|floatformat:2 }}</span>{% endif %}
-                        </a>
+                        <div class="cart-dropdown-wrapper">
+                            <a class="nav-link" href="{% url 'view_cart' %}">
+                                Cart{% if total %}: <span class="fw-bold">€{{ total|floatformat:2 }}</span>{% endif %}
+                            </a>
+                            <div class="cart-dropdown fern-green-bg hunter-green-border isabelline rounded-1">
+                                {% if total %}
+                                <p class="mate text-center mt-2"><strong>Cart: {{ item_count }} items</strong></p>
+                                <hr class="mb-0 text-center">
+                                <div class="cart-notification-wrapper text-dark white-bg">
+                                    {% for item in cart_items %}
+                                        <div class="row">
+                                            <div class="col-3 offset-1 my-1">
+                                                <img src="/media/{{ item.service.image }}" class="w-100 rounded">
+                                            </div>
+                                            <div class="col-7">
+                                                <p class="my-0"><strong>{{ item.service.name }}</strong></p>
+                                                    {% if item.surface %}
+                                                    <p class="my-0"><strong>Type:</strong> {{ item.surface }}</p>
+                                                    {% endif %}
+                                                    {% if item.cuts %}
+                                                    <p class="my-0"><strong>Type:</strong> {{ item.cuts }}</p>
+                                                    {% endif %}
+                                                    {% if item.size %}
+                                                    <p class="my-0"><strong>Size:</strong> {{ item.size }}</p>
+                                                    {% endif %}
+                                            </div>
+                                        </div>
+                                    {% endfor %}
+                                    
+                                </div>
+                                <hr class="mt-0 text-center">
+                                <div class="row">
+                                    <div class="col">
+                                        <p class="mb-1"><strong>Grand Total: €{{ total|floatformat:2 }}</strong></p>
+                                        <a href="{% url 'checkout' %}" class="btn hunter-green hunter-green-border mate isabelline-bg fw-bold rounded-1 mb-2">
+                                            <span class="text-uppercase">Go To Secure Checkout</span>
+                                            <span class="icon">
+                                                <i class="fas fa-lock"></i>
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                                {% endif %}
+                            </div>
+                        </div>
                     </li>
                 </ul>
             </div>
