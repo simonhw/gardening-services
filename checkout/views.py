@@ -132,7 +132,7 @@ def checkout(request):
 
     context = {
         'order_form': order_form,
-        # 'stripe_public_key': stripe_public_key,
+        'stripe_public_key': 'pk_test_51PeEjXRrmWApgL372tzVOS0cTtvtYk8JETgQGivoMC2kkBCS5ehLF4QObmsLJ5jJyFtbU9jyPV7i3upbIrPvWEKl00NnCZ9a0f',
         # 'client_secret': intent.client_secret,
     }
 
