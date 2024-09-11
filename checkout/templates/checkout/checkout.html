@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 
 {% load static %}
+{% load cart_tools %}
 
 {% block extra_title %} | Checkout{% endblock %}
 
@@ -50,8 +51,9 @@
     <hr>
     <div class="row">
         <div class="col-10 offset-1">
-            <form action="{% url 'checkout %'}" method="POST" id="payment-form">
+            <form action="{% url 'checkout %'}" method="POST" id="payment-form" class="mb-3">
                 {% csrf_token %}
+                <!-- Personal and Location Details  -->
                 <div class="details-fields">
                     <fieldset class="rounded mb-4">
                         <legend class="fieldset-label text-black px-2 w-auto">Enter Your Personal Details</legend>
@@ -93,6 +95,7 @@
                         </button>
                     </div>
                 </div>
+                <!-- Card Payment Details -->
                 <div class="payment-fields d-none">
                     <fieldset class="">
                         <legend class="fieldset-label text-black px-2 w-auto">Enter Your Payment Details</legend>
@@ -115,6 +118,7 @@
                         </div>
                     </fieldset>
                 </div>
+                <!-- Review Order and Submit Form -->
                 <div class="review-order d-none">
                     <h2>Order Review</h2>
                     <p class="orange-info">Nearly finished! Review your details below before paying and finalising your order.</p>
@@ -132,8 +136,39 @@
                         </div>
                         <div class="col-12"><a class="adjust-payment">Change</a></div>
                     </div>
-                    <div class="cart-summary">
-
+                    <div class="cart-summary row mb-3 rounded-1 mx-0">
+                        <div class="col-12">
+                            <div class="row mt-3">
+                                <div class="col-7 offset-1">
+                                    <p><strong>Service{% if item_count != 1 %}s{% endif %} ({{ item_count }})</strong></p>
+                                </div>
+                                <div class="col-3 text-center">
+                                    <p><strong>Subtotal</strong></p>
+                                </div>
+                            </div>
+                            {% for item in cart_items %}
+                                <div class="row">
+                                    <div class="col-2 offset-1 my-1">
+                                        <img src="/media/{{ item.service.image }}" class="w-100 rounded">
+                                    </div>
+                                    <div class="col-5">
+                                        <p class="my-0"><strong>{{item.number}} x {{ item.service.name }}</strong></p>
+                                    </div>
+                                    <div class="col-3 text-center">
+                                        <p class="my-0 small text-muted">${{ item.service.unit_price | calc_subtotal:item.number }}</p>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                            <hr>
+                            <div class="row">
+                                <div class="col-7 offset-1">
+                                    <p class="float-end"><strong>Grand Total:</strong></p>
+                                </div>
+                                <div class="col-3 text-center">
+                                    <p><strong>€{{ total|floatformat:2 }}</strong></p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="submit-button text-center mb-2">                    
                         <a href="{% url 'view_cart' %}" class="btn btn hunter-green-border isabelline-bg hunter-green rounded-1 mb-3">
@@ -152,7 +187,7 @@
                             <span class="icon">
                                 <i class="fas fa-exclamation-circle"></i>
                             </span>
-                            <span>Your card will be charged <strong>${{ grand_total|floatformat:2 }}</strong></span>
+                            <span>Your card will be charged <strong>€{{ total|floatformat:2 }}</strong> today.</span>
                         </p>
                     </div>
                 </div>

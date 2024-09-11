@@ -266,6 +266,10 @@ td > img {
     padding: 10px;
 }
 
+.cart-summary {
+    border: 1px solid black;
+}
+
 @media (min-width: 769px) {
     .hero-image {
         display: none;
