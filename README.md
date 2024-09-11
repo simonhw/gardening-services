@@ -622,6 +622,10 @@ The styling of the toast messages was adapted frome examples in the below articl
 
 -[https://fastbootstrap.com/components/toast/](https://fastbootstrap.com/components/toast/)
 
+The checkout forms and disabling of buttons based on fields
+
+- [https://stackoverflow.com/questions/5614399/disabling-submit-button-until-all-fields-have-values](https://stackoverflow.com/questions/5614399/disabling-submit-button-until-all-fields-have-values)
+
 ## Acknowledgements
 - [Creating Your First README - Kera Cudmore](https://github.com/kera-cudmore/readme-examples)
 - I would like to thank my CI Mentor [Graeme Taylor](https://github.com/G-Taylor) for his support and advice throughout the development phase.
