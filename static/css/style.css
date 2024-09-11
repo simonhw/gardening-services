@@ -246,14 +246,24 @@ td > img {
 .active > .circle {
     width: 40px;
     height: 40px;
-    background-color: #000;
     margin: 0 10px;
+}
+
+.dark {
+    background-color: #000;
+
 }
 
 .label {
     width: 60px;
     text-align: center;
     margin: 0 16px;
+}
+
+.orange-info {
+    border: 2px solid darkorange;
+    background: #ff7b0778;
+    padding: 10px;
 }
 
 @media (min-width: 769px) {
