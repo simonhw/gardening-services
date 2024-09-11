@@ -270,7 +270,13 @@ td > img {
     border: 1px solid black;
 }
 
-@media (min-width: 769px) {
+@media (min-width: 500px) {
+    #payment-form button {
+        margin-left: 1rem;
+    }
+}
+
+@media (min-width: 768px) {
     .hero-image {
         display: none;
     }
@@ -281,6 +287,10 @@ td > img {
         background-repeat: no-repeat;
         background-size: cover; 
         background-position: 0% 70%;
+    }
+
+    #site-logo-and-checkout {
+        width: 100%;
     }
 }
 
