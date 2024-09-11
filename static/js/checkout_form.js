@@ -1,3 +1,20 @@
+$('.details-fields input[required]').bind('keyup',function() {
+
+    if( allFilled() ) {
+        $('#show-payment').removeAttr('disabled');
+    } else {
+        $('#show-payment').prop("disabled", true);
+    }
+
+    function allFilled() {
+        var filled = true;
+        $('.details-fields input[required]').each(function() {
+            if($(this).val() == '') filled = false;
+        });
+        return filled;
+    }
+});
+
 $('.show-address, .adjust-address').click(function(e) {
     $('.details-fields').removeClass('d-none');
     $('.payment-fields').addClass('d-none');
@@ -13,6 +30,7 @@ $('.show-address, .adjust-address').click(function(e) {
 });
 
 $('.show-payment, .adjust-payment').click(function(e) {
+
     $('.details-fields').addClass('d-none');
     $('.payment-fields').removeClass('d-none');
     $('.review-order').addClass('d-none');

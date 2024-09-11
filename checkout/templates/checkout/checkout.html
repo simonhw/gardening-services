@@ -59,27 +59,38 @@
                         {{ order_form.email | as_crispy_field }}
                         {{ order_form.phone_number | as_crispy_field }}
                     </fieldset>
-                    <fieldset class="rounded mb-4">
+                    <fieldset class="rounded mb-1">
                         <legend class="fieldset-label text-black px-2 w-auto">Enter the Location Address</legend>
                         {{ order_form.street_address1 | as_crispy_field }}
                         {{ order_form.street_address2 | as_crispy_field }}
                         {{ order_form.town_or_city | as_crispy_field }}
                         {{ order_form.county | as_crispy_field }}
                         {{ order_form.eircode | as_crispy_field }}
+                        <div class="form-check form-check-inline mr-0">
+                            {% if user.is_authenticated %}
+                            <input type="checkbox" class="form-check-input ml-2 mr-0" id="id-save-info" name="save-info" checked>
+                            <label for="id-save-info" class="form-check-label">Save these details to my profile</label>
+                            {% else %}
+                            <label for="id-save-info" class="form-check-label">
+                                <a href="{% url 'account_signup' %}" class="text-info">Create an account</a> or 
+                                <a href="{% url 'account_login' %}" class="text-info">login</a> to save this information.
+                            </label>
+                            {% endif %}
+                        </div>
                     </fieldset>
-                    <div class="text-right mt-5 mb-2">                    
-                        <a href="{% url 'view_cart' %}" class="btn btn-outline-black rounded-0">
+                    <div class="text-center mb-2">                    
+                        <a href="{% url 'view_cart' %}" class="btn hunter-green-border isabelline-bg hunter-green rounded-1 mb-3">
                             <span class="icon">
                                 <i class="fas fa-chevron-left"></i>
                             </span>
                             <span class="font-weight-bold">Adjust Cart</span>
                         </a>
-                        <a class="btn hunter-green-bg isabelline rounded-0 show-payment">
+                        <button type="button" class="btn btn-lg hunter-green-bg isabelline rounded-1 show-payment mb-3" id="show-payment" disabled>
                             <span class="font-weight-bold">Continue to Payment</span>
                             <span class="icon">
                                 <i class="fas fa-chevron-right"></i>
                             </span>
-                        </a>
+                        </button>
                     </div>
                 </div>
                 <div class="payment-fields d-none">
@@ -88,15 +99,15 @@
                         <div class="mb-3" id="card-element"></div>
                         <div class="mb-3 text-danger" id="card-errors" role="alert"></div>
                         <input type="hidden" value="{{ client_secret }}" name="client_secret">
-                        <div class="text-right mt-5 mb-2">                    
-                            <a class="btn btn-outline-black rounded-0">
+                        <div class="text-center mt-5 mb-2">                    
+                            <button type="button" class="btn hunter-green-border isabelline-bg hunter-green rounded-1 mb-3 show-address">
                                 <span class="icon">
                                     <i class="fas fa-chevron-left"></i>
                                 </span>
-                                <span class="font-weight-bold show-address">Address Details</span>
-                            </a>
-                            <button class="btn btn-outline-black rounded-0"></a>
-                                <span class="font-weight-bold show-review">Review Order</span>
+                                <span class="font-weight-bold">Address Details</span>
+                            </button>
+                            <button type="button" class="btn btn-lg hunter-green-bg isabelline rounded-1 show-review mb-3"></a>
+                                <span class="font-weight-bold">Review Order</span>
                                 <span class="icon">
                                     <i class="fas fa-chevron-right"></i>
                                 </span>
@@ -124,26 +135,26 @@
                     <div class="cart-summary">
 
                     </div>
-                </div>
-                <div class="submit-button text-right mt-5 mb-2">                    
-                    <a href="{% url 'view_cart' %}" class="btn btn-outline-black rounded-0">
-                        <span class="icon">
-                            <i class="fas fa-chevron-left"></i>
-                        </span>
-                        <span class="font-weight-bold">Adjust Cart</span>
-                    </a>
-                    <button id="submit-button" class="btn btn-black rounded-0">
-                        <span class="font-weight-bold">Pay and Place Order</span>
-                        <span class="icon">
-                            <i class="fas fa-lock"></i>
-                        </span>
-                    </button>
-                    <p class="small text-danger my-0">
-                        <span class="icon">
-                            <i class="fas fa-exclamation-circle"></i>
-                        </span>
-                        <span>Your card will be charged <strong>${{ grand_total|floatformat:2 }}</strong></span>
-                    </p>
+                    <div class="submit-button text-center mb-2">                    
+                        <a href="{% url 'view_cart' %}" class="btn btn hunter-green-border isabelline-bg hunter-green rounded-1 mb-3">
+                            <span class="icon">
+                                <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="font-weight-bold">Adjust Cart</span>
+                        </a>
+                        <button id="submit-button" class="btn btn-lg bg-warning rounded-1">
+                            <span class="font-weight-bold">Pay and Place Order</span>
+                            <span class="icon">
+                                <i class="fas fa-lock"></i>
+                            </span>
+                        </button>
+                        <p class="small text-danger my-0">
+                            <span class="icon">
+                                <i class="fas fa-exclamation-circle"></i>
+                            </span>
+                            <span>Your card will be charged <strong>${{ grand_total|floatformat:2 }}</strong></span>
+                        </p>
+                    </div>
                 </div>
             </form>
         </div>
