@@ -11,7 +11,7 @@ from cart.contexts import cart_contents
 from accounts.forms import CustomUserCreationForm
 from accounts.models import CustomUser
 
-# import stripe
+import stripe
 # import json
 
 # @require_POST
@@ -32,8 +32,8 @@ from accounts.models import CustomUser
 
 
 def checkout(request):
-    # stripe_public_key = settings.STRIPE_PUBLIC_KEY
-    # stripe_secret_key = settings.STRIPE_SECRET_KEY
+    stripe_public_key = settings.STRIPE_PUBLIC_KEY
+    stripe_secret_key = settings.STRIPE_SECRET_KEY
 
     # if request.method == 'POST':
     #    cart = request.session.get('cart', {})
@@ -94,14 +94,16 @@ def checkout(request):
         messages.error(request, "There's nothing in your cart at the moment.")
         return redirect(reverse('services'))
 
-    #     current_cart = cart_contents(request)
-    #     total = current_cart['grand_total']
-    #     stripe_total = round(total * 100)
-    #     stripe.api_key = stripe_secret_key
-    #     intent = stripe.PaymentIntent.create(
-    #         amount=stripe_total,
-    #         currency=settings.STRIPE_CURRENCY,
-    #     )
+    current_cart = cart_contents(request)
+    total = current_cart['total']
+    stripe_total = round(total * 100)
+    stripe.api_key = stripe_secret_key
+    intent = stripe.PaymentIntent.create(
+        amount=stripe_total,
+        currency=settings.STRIPE_CURRENCY,
+    )
+
+    print(intent)
 
     #     if request.user.is_authenticated:
     #         try:
@@ -121,9 +123,9 @@ def checkout(request):
     #     else:
     #         order_form = OrderForm()
 
-    # if not stripe_public_key:
-    #     messages.warning(request, 'Stripe public key is missing. Did you \
-    #         forget to set it in your environment?')
+    if not stripe_public_key:
+        messages.warning(request, 'Stripe public key is missing. Did you \
+            forget to set it in your environment?')
 
     # Temporary Line:
     order_form = OrderForm()
@@ -132,8 +134,8 @@ def checkout(request):
 
     context = {
         'order_form': order_form,
-        'stripe_public_key': 'pk_test_51PeEjXRrmWApgL372tzVOS0cTtvtYk8JETgQGivoMC2kkBCS5ehLF4QObmsLJ5jJyFtbU9jyPV7i3upbIrPvWEKl00NnCZ9a0f',
-        # 'client_secret': intent.client_secret,
+        'stripe_public_key': stripe_public_key,
+        'client_secret': intent.client_secret,
     }
 
     return render(request, template, context)

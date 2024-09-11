@@ -54,7 +54,7 @@
     <hr>
     <div class="row">
         <div class="col-10 offset-1 col-lg-8 offset-lg-2">
-            <form action="{% url 'checkout %'}" method="POST" id="payment-form" class="mb-3">
+            <form action="{% url 'checkout' %}" method="POST" id="payment-form" class="mb-3">
                 {% csrf_token %}
                 <!-- Personal and Location Details  -->
                 <div class="details-fields">
