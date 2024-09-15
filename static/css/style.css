@@ -289,6 +289,11 @@ td > img {
     border: 1px solid black;
 }
 
+.overflow-ellipses {
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
 @media (min-width: 500px) {
     #payment-form button {
         margin-left: 1rem;

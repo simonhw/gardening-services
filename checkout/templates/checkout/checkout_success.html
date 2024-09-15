@@ -14,11 +14,11 @@
         <div class="col-10 offset-1 col-lg-8 offset-lg-2 text-center">
             <h2 class="mate">Thanks for your order!</h2>
             <p>Confirmation email sent to {{ order.email }}</p>
-            <p>Order #{{ order.order_number }}</p>
+            <p class="overflow-ellipses">Order #{{ order.order_number }}</p>
         </div>
     </div>
     <div class="row mb-3">
-        <div class="col-10 offset-1 col-lg-8 offset-lg-2">
+        <div class="col-10 offset-1 col-lg-8 offset-lg-2 ">
             <div class="order-confirmation-wrapper">
                 <div class="row">
                     <div class="col">
@@ -50,73 +50,73 @@
                 </div>
                 <!-- Delivery Section -->
                 <div class="row">
-                    <div class="col">
+                    <div class="col-12">
                         <strong>Location Details:</strong>
                     </div>
                 </div>
 
                 <div class="row">
-                    <div class="col-12 col-md-4">
+                    <div class="col-6 ">
                         <p class="mb-0 text-black font-weight-bold">Full Name</p>
                     </div>
-                    <div class="col-12 col-md-8 text-md-right">
+                    <div class="col-6 text-md-right ">
                         <p class="mb-0">{{ order.full_name }}</p>
                     </div>
                 </div>
 
                 <div class="row">
-                    <div class="col-12 col-md-4">
+                    <div class="col-6">
                         <p class="mb-0 text-black font-weight-bold">Phone Number</p>
                     </div>
-                    <div class="col-12 col-md-8 text-md-right">
+                    <div class="col-6 text-md-right">
                         <p class="mb-0">{{ order.phone_number }}</p>
                     </div>
                 </div>
 
                 <div class="row">
-                    <div class="col-12 col-md-4">
+                    <div class="col-6">
                         <p class="mb-0 text-black font-weight-bold">Address</p>
                     </div>
-                    <div class="col-12 col-md-8 text-md-right">
+                    <div class="col-6 text-md-right">
                         <p class="mb-0">{{ order.street_address1 }}</p>
                     </div>
                 </div>
 
                 {% if order.street_address2 %}
                 <div class="row">
-                    <div class="col-12 col-md-4">
+                    <div class="col-6">
                         <p class="mb-0 text-black font-weight-bold"> </p>
                     </div>
-                    <div class="col-12 col-md-8 text-md-right">
+                    <div class="col-6 text-md-right">
                         <p class="mb-0">{{ order.street_address2 }}</p>
                     </div>
                 </div>
                 {% endif %}
 
                 <div class="row">
-                    <div class="col-12 col-md-4">
+                    <div class="col-6">
                         <p class="mb-0 text-black font-weight-bold">Town or City</p>
                     </div>
-                    <div class="col-12 col-md-8 text-md-right">
+                    <div class="col-6 text-md-right">
                         <p class="mb-0">{{ order.town_or_city }}</p>
                     </div>
                 </div>
 
                 <div class="row">
-                    <div class="col-12 col-md-4">
+                    <div class="col-6">
                         <p class="mb-0 text-black font-weight-bold">County</p>
                     </div>
-                    <div class="col-12 col-md-8 text-md-right">
+                    <div class="col-6 text-md-right">
                         <p class="mb-0">{{ order.county }}</p>
                     </div>
                 </div>
 
                 {% if order.eircode %}
                 <div class="row">
-                    <div class="col-12 col-md-4">
+                    <div class="col-6">
                         <p class="mb-0 text-black font-weight-bold">Eircode</p>
                     </div>
-                    <div class="col-12 col-md-8 text-md-right">
+                    <div class="col-6 text-md-right">
                         <p class="mb-0">{{ order.eircode }}</p>
                     </div>
                 </div>
