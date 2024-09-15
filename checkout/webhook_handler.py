@@ -52,8 +52,8 @@ class StripeWH_Handler:
         Handle the payment intent succeeded webhook event from Stripe
         """
 
-#         intent = event.data.object
-#         print(intent)
+        intent = event.data.object
+        print(intent)
 #         pid = intent.id
 #         bag = intent.metadata.bag
 #         save_info = intent.metadata.save_info

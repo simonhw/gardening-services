@@ -12,23 +12,25 @@ from accounts.forms import CustomUserCreationForm
 from accounts.models import CustomUser
 
 import stripe
-# import json
+import json
 
-# @require_POST
-# def cache_checkout_data(request):
-#     try:
-#         pid = request.POST.get('client_secret').split('_secret')[0]
-#         stripe.api_key = settings.STRIPE_SECRET_KEY
-#         stripe.PaymentIntent.modify(pid, metadata={
-#             'cart': json.dumps(request.session.get('cart', {})),
-#             'save_info': request.POST.get('save_info'),
-#             'username': request.user,
-#         })
-#         return HttpResponse(status=200)
-#     except Exception as e:
-#         messages.error(request, 'Sorry, your payment cannot be \
-#             processed right now. Please try again later.')
-#         return HttpResponse(content=e, status=400)
+@require_POST
+def cache_checkout_data(request):
+    """ Method to handle when user ticks the save info checkbox """
+
+    try:
+        pid = request.POST.get('client_secret').split('_secret')[0]
+        stripe.api_key = settings.STRIPE_SECRET_KEY
+        stripe.PaymentIntent.modify(pid, metadata={
+            'cart': json.dumps(request.session.get('cart', {})),
+            'save_info': request.POST.get('save_info'),
+            'username': request.user,
+        })
+        return HttpResponse(status=200)
+    except Exception as e:
+        messages.error(request, 'Sorry, your payment cannot be processed\
+             right now. Please try again later.')
+        return HttpResponse(content=e, status=400)
 
 
 def checkout(request):
@@ -56,72 +58,72 @@ def checkout(request):
     #         order.original_cart = json.dumps(cart)
     #         order.save()
             for item_id, item_data in cart.items():
-                # try:
-                service = Service.objects.get(id=item_id)
-                if isinstance(item_data, int):
-                    order_line_item = OrderLineItem(
-                        order=order,
-                        service=service,
-                        number=item_data,
-                    )
-                    order_line_item.save()
-                else:
-                    if 'surfaces' in item_data.keys():
-                        if 'Driveway/Patio' in item_data\
-                            ['surfaces'].keys():
-                            for surface, number in item_data\
-                                ['surfaces'].items():
-                                if surface == 'Driveway/Patio':
+                try:
+                    service = Service.objects.get(id=item_id)
+                    if isinstance(item_data, int):
+                        order_line_item = OrderLineItem(
+                            order=order,
+                            service=service,
+                            number=item_data,
+                        )
+                        order_line_item.save()
+                    else:
+                        if 'surfaces' in item_data.keys():
+                            if 'Driveway/Patio' in item_data\
+                                ['surfaces'].keys():
+                                for surface, number in item_data\
+                                    ['surfaces'].items():
+                                    if surface == 'Driveway/Patio':
+                                        order_line_item = OrderLineItem(
+                                            order=order,
+                                            service=service,
+                                            number=number,
+                                            surface=surface,
+                                        )
+                                        order_line_item.save()
+                                    else:
+                                        continue
+                            if 'Bed/Planter' in item_data['surfaces'].keys():
+                                surface = 'Bed/Planter'
+                                for size, number in item_data['surfaces']\
+                                    [surface]['sizes'].items():
                                     order_line_item = OrderLineItem(
                                         order=order,
                                         service=service,
                                         number=number,
                                         surface=surface,
+                                        size=size,
                                     )
                                     order_line_item.save()
-                                else:
-                                    continue
-                        if 'Bed/Planter' in item_data['surfaces'].keys():
-                            surface = 'Bed/Planter'
-                            for size, number in item_data['surfaces']\
-                                [surface]['sizes'].items():
+                        elif 'cuts' in item_data.keys():
+                            for cuts in item_data['cuts'].keys():
+                                for size, number in item_data['cuts'][cuts]\
+                                    ['sizes'].items():
+                                    order_line_item = OrderLineItem(
+                                        order=order,
+                                        service=service,
+                                        cuts=cuts,
+                                        number=number,
+                                        size=size,
+                                    )
+                                    order_line_item.save()
+                        else:
+                            for size, number in item_data['sizes'].items():
                                 order_line_item = OrderLineItem(
                                     order=order,
                                     service=service,
                                     number=number,
-                                    surface=surface,
                                     size=size,
                                 )
                                 order_line_item.save()
-                    elif 'cuts' in item_data.keys():
-                        for cuts in item_data['cuts'].keys():
-                            for size, number in item_data['cuts'][cuts]\
-                                ['sizes'].items():
-                                order_line_item = OrderLineItem(
-                                    order=order,
-                                    service=service,
-                                    cuts=cuts,
-                                    number=number,
-                                    size=size,
-                                )
-                                order_line_item.save()
-                    else:
-                        for size, number in item_data['sizes'].items():
-                            order_line_item = OrderLineItem(
-                                order=order,
-                                service=service,
-                                number=number,
-                                size=size,
-                            )
-                            order_line_item.save()
 
-                # except Service.DoesNotExist:
-                #     messages.error(request, (
-                #         "One of the services in your cart wasn't found in our "
-                #         "database. Please call us for assistance!")
-                #     )
-                #     order.delete()
-                #     return redirect(reverse('view_cart'))
+                except Service.DoesNotExist:
+                    messages.error(request, (
+                        "One of the services in your cart wasn't found in our "
+                        "database. Please call us for assistance!")
+                    )
+                    order.delete()
+                    return redirect(reverse('view_cart'))
             
             request.session['save_info'] = 'save-info' in request.POST
             return redirect(reverse(
