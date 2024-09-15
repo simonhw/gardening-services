@@ -31,17 +31,21 @@ $('.show-address, .adjust-address').click(function(e) {
 
 $('.show-payment, .adjust-payment').click(function(e) {
 
-    $('.details-fields').addClass('d-none');
-    $('.payment-fields').removeClass('d-none');
-    $('.review-order').addClass('d-none');
+    if ( $('#id_email')[0].checkValidity() ) {
+        $('.details-fields').addClass('d-none');
+        $('.payment-fields').removeClass('d-none');
+        $('.review-order').addClass('d-none');
 
-    $('#step-1').removeClass('active');
-    $('#step-2').addClass('active');
-    $('#step-2').children().addClass('dark');
-    $('.line-1').addClass('dark');
-    $('.line-2').removeClass('dark');
-    $('#step-3').removeClass('active');
-    $('#step-3').children().removeClass('dark');
+        $('#step-1').removeClass('active');
+        $('#step-2').addClass('active');
+        $('#step-2').children().addClass('dark');
+        $('.line-1').addClass('dark');
+        $('.line-2').removeClass('dark');
+        $('#step-3').removeClass('active');
+        $('#step-3').children().removeClass('dark');
+    } else {
+        $('#id_email')[0].reportValidity();
+    }
 });
 
 $('.show-review').click(function(e) {
