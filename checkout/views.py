@@ -35,75 +35,116 @@ def checkout(request):
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
 
-    # if request.method == 'POST':
-    #    cart = request.session.get('cart', {})
+    if request.method == 'POST':
+        cart = request.session.get('cart', {})
 
-    #     form_data = {
-    #         'full_name': request.POST['full_name'],
-    #         'email': request.POST['email'],
-    #         'phone_number': request.POST['phone_number'],
-    #         'country': request.POST['country'],
-    #         'postcode': request.POST['postcode'],
-    #         'town_or_city': request.POST['town_or_city'],
-    #         'street_address1': request.POST['street_address1'],
-    #         'street_address2': request.POST['street_address2'],
-    #         'county': request.POST['county'],
-    #     }
-    #     order_form = OrderForm(form_data)
-    #     if order_form.is_valid():
-    #         order = order_form.save(commit=False)
+        form_data = {
+            'full_name': request.POST['full_name'],
+            'email': request.POST['email'],
+            'phone_number': request.POST['phone_number'],
+            'street_address1': request.POST['street_address1'],
+            'street_address2': request.POST['street_address2'],
+            'town_or_city': request.POST['town_or_city'],
+            'county': request.POST['county'],
+            'eircode': request.POST['eircode'],
+        }
+        order_form = OrderForm(form_data)
+        if order_form.is_valid():
+            order = order_form.save()#commit=False)
     #         pid = request.POST.get('client_secret').split('_secret')[0]
     #         order.stripe_pid = pid
     #         order.original_cart = json.dumps(cart)
     #         order.save()
-    #         for item_id, item_data in cart.items():
-    #             try:
-    #                 service = Service.objects.get(id=item_id)
-    #                 if isinstance(item_data, int):
-    #                     order_line_item = OrderLineItem(
-    #                         order=order,
-    #                         service=service,
-    #                         quantity=item_data,
-    #                     )
-    #                     order_line_item.save()
-    #                 else:
-    #                     for size, quantity in item_data['items_by_size'].items():
-    #                         order_line_item = OrderLineItem(
-    #                             order=order,
-    #                             service=service,
-    #                             quantity=quantity,
-    #                             service_size=size,
-    #                         )
-    #                         order_line_item.save()
-    #             except Service.DoesNotExist:
-    #                 messages.error(request, (
-    #                     "One of the services in your cart wasn't found in our database. "
-    #                     "Please call us for assistance!")
-    #                 )
-    #                 order.delete()
-    #                 return redirect(reverse('view_cart'))
+            for item_id, item_data in cart.items():
+                # try:
+                service = Service.objects.get(id=item_id)
+                if isinstance(item_data, int):
+                    order_line_item = OrderLineItem(
+                        order=order,
+                        service=service,
+                        number=item_data,
+                    )
+                    order_line_item.save()
+                else:
+                    if 'surfaces' in item_data.keys():
+                        if 'Driveway/Patio' in item_data\
+                            ['surfaces'].keys():
+                            for surface, number in item_data\
+                                ['surfaces'].items():
+                                if surface == 'Driveway/Patio':
+                                    order_line_item = OrderLineItem(
+                                        order=order,
+                                        service=service,
+                                        number=number,
+                                        surface=surface,
+                                    )
+                                    order_line_item.save()
+                                else:
+                                    continue
+                        if 'Bed/Planter' in item_data['surfaces'].keys():
+                            surface = 'Bed/Planter'
+                            for size, number in item_data['surfaces']\
+                                [surface]['sizes'].items():
+                                order_line_item = OrderLineItem(
+                                    order=order,
+                                    service=service,
+                                    number=number,
+                                    surface=surface,
+                                    size=size,
+                                )
+                                order_line_item.save()
+                    elif 'cuts' in item_data.keys():
+                        for cuts in item_data['cuts'].keys():
+                            for size, number in item_data['cuts'][cuts]\
+                                ['sizes'].items():
+                                order_line_item = OrderLineItem(
+                                    order=order,
+                                    service=service,
+                                    cuts=cuts,
+                                    number=number,
+                                    size=size,
+                                )
+                                order_line_item.save()
+                    else:
+                        for size, number in item_data['sizes'].items():
+                            order_line_item = OrderLineItem(
+                                order=order,
+                                service=service,
+                                number=number,
+                                size=size,
+                            )
+                            order_line_item.save()
+
+                # except Service.DoesNotExist:
+                #     messages.error(request, (
+                #         "One of the services in your cart wasn't found in our "
+                #         "database. Please call us for assistance!")
+                #     )
+                #     order.delete()
+                #     return redirect(reverse('view_cart'))
             
-    #         request.session['save_info'] = 'save-info' in request.POST
-    #         return redirect(reverse('checkout_success', args=[order.order_number]))
-    #     else:
-    #         messages.error(request, 'There was an error with your form. \
-    #             Please double check your information.')
-    # else:
-    cart = request.session.get('cart', {})
-    if not cart:
-        messages.error(request, "There's nothing in your cart at the moment.")
-        return redirect(reverse('services'))
+            request.session['save_info'] = 'save-info' in request.POST
+            return redirect(reverse(
+                'checkout_success',args=[order.order_number]
+                ))
+        else:
+            messages.error(request, 'There was an error with your form. \
+                Please double check your information.')
+    else:
+        cart = request.session.get('cart', {})
+        if not cart:
+            messages.error(request, "There's nothing in your cart at the\
+                 moment.")
+            return redirect(reverse('services'))
 
-    current_cart = cart_contents(request)
-    total = current_cart['total']
-    stripe_total = round(total * 100)
-    stripe.api_key = stripe_secret_key
-    intent = stripe.PaymentIntent.create(
-        amount=stripe_total,
-        currency=settings.STRIPE_CURRENCY,
-    )
-
-    print(intent)
+        current_cart = cart_contents(request)
+        total = current_cart['total']
+        stripe_total = round(total * 100)
+        stripe.api_key = stripe_secret_key
+        intent = stripe.PaymentIntent.create(
+            amount=stripe_total,
+            currency=settings.STRIPE_CURRENCY,
+        )
 
     #     if request.user.is_authenticated:
     #         try:
@@ -141,12 +182,12 @@ def checkout(request):
     return render(request, template, context)
 
 
-# def checkout_success(request, order_number):
-#     """ Handle successful checkouts """
+def checkout_success(request, order_number):
+    """ Handle successful checkouts """
 
 
-#     save_info = request.session.get('save_info')
-#     order = get_object_or_404(Order, order_number=order_number)
+    save_info = request.session.get('save_info')
+    order = get_object_or_404(Order, order_number=order_number)
 
 #     if request.user.is_authenticated:
 #         profile = CustomUser.objects.get(user=request.user)
@@ -166,16 +207,15 @@ def checkout(request):
 #             if user_profile_form.is_valid():
 #                 user_profile_form.save()
 
-#     messages.success(request, f'Order successfully processed! Your order \
-#         number is {order_number}. A confirmation email will be sent to \
-#             {order.email}.')
+    messages.success(request, f'Order successfully processed! A confirmation\
+         email will be sent to {order.email}.')
     
-#     if 'cart' in request.session:
-#         del request.session['cart']
+    if 'cart' in request.session:
+        del request.session['cart']
 
-#     template = 'checkout/checkout_success.html'
-#     context = {
-#         'order': order,
-#     }
+    template = 'checkout/checkout_success.html'
+    context = {
+        'order': order,
+    }
 
-#     return render(request, template, context)
+    return render(request, template, context)

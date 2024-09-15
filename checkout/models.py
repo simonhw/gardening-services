@@ -66,7 +66,7 @@ class OrderLineItem(models.Model):
         on_delete=models.CASCADE)
     surface = models.CharField(max_length=14, null=True, blank=True)
     cuts = models.CharField(max_length=10, null=True, blank=True)
-    size = models.CharField(max_length=6, null=True, blank=True)
+    size = models.CharField(max_length=14, null=True, blank=True)
     number = models.IntegerField(null=False, blank=False, default=0)
     lineitem_total = models.DecimalField(max_digits=6, decimal_places=2,\
         null=False, blank=False, editable=False)

@@ -113,7 +113,7 @@
                                 </span>
                                 <span class="font-weight-bold">Address Details</span>
                             </button>
-                            <button type="button" class="btn btn-lg hunter-green-bg isabelline rounded-1 show-review mb-3"></a>
+                            <button type="button" class="btn btn-lg hunter-green-bg isabelline rounded-1 show-review mb-3" id="show-review">
                                 <span class="font-weight-bold">Review Order</span>
                                 <span class="icon">
                                     <i class="fas fa-chevron-right"></i>
@@ -123,23 +123,22 @@
                     </fieldset>
                 </div>
                 <!-- Review Order and Submit Form -->
-                <div class="review-order d-none">
+                <div class="review-order">
                     <h2>Order Review</h2>
                     <p class="orange-info">Nearly finished! Review your details below before paying and finalising your order.</p>
-                    <div class="d-flex flex-column flex-md-row justify-content-md-between">
+                    <div class="">
                         <div class="row mb-3">
-                            <div class="col-12">
+                            <div class="col-12 col-md-6">
                                 <span>Address</span>
                                 <div>(address details)</div>
+                                <div><a class="adjust-address">Change</a></div>
                             </div>
-                            <div class="col-12"><a class="adjust-address">Change</a></div>
-                        </div>
-                        <div class="row mb-3">
-                            <div class="col-12">
+                            <div class="col-12 col-md-6">
                                 <span>Payment</span>
                                 <div>(payment details)</div>
+                                <div><a class="adjust-payment">Change</a></div>
+                                <div class="mb-3 text-danger" id="card-errors-review" role="alert"></div>
                             </div>
-                            <div class="col-12"><a class="adjust-payment">Change</a></div>
                         </div>
                     </div>
                     <div class="cart-summary row mb-3 rounded-1 mx-0">
