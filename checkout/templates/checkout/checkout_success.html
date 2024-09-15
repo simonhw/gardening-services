@@ -35,16 +35,16 @@
                             {% if item.cuts %} Tree: {{ item.cuts|title }} {% endif %}
                         </p>
                     </div>
-                    <div class="col-12 col-md-4 text-md-right">
+                    <div class="col-12 col-md-4">
                         <p class="mb-0">{{ item.number }} @ €{{ item.service.unit_price }} each</p>
                     </div>
                 </div>
                 {% endfor %}
                 <div class="row mb-3">
                     <div class="col-12 col-md-8">
-                        <p class="mb-0 text-black"><strong>Grand Total</strong></p>
+                        <p class="mb-0"><strong>Grand Total</strong></p>
                     </div>
-                    <div class="col-12 col-md-4 text-md-right">
+                    <div class="col-12 col-md-4">
                         <p class="mb-0"><strong>€{{ order.grand_total }}</strong></p>
                     </div>
                 </div>
@@ -57,27 +57,27 @@
 
                 <div class="row">
                     <div class="col-6 ">
-                        <p class="mb-0 text-black font-weight-bold">Full Name</p>
+                        <p class="mb-0">Full Name</p>
                     </div>
-                    <div class="col-6 text-md-right ">
+                    <div class="col-6">
                         <p class="mb-0">{{ order.full_name }}</p>
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="col-6">
-                        <p class="mb-0 text-black font-weight-bold">Phone Number</p>
+                        <p class="mb-0">Phone Number</p>
                     </div>
-                    <div class="col-6 text-md-right">
+                    <div class="col-6">
                         <p class="mb-0">{{ order.phone_number }}</p>
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="col-6">
-                        <p class="mb-0 text-black font-weight-bold">Address</p>
+                        <p class="mb-0">Address</p>
                     </div>
-                    <div class="col-6 text-md-right">
+                    <div class="col-6">
                         <p class="mb-0">{{ order.street_address1 }}</p>
                     </div>
                 </div>
@@ -85,9 +85,9 @@
                 {% if order.street_address2 %}
                 <div class="row">
                     <div class="col-6">
-                        <p class="mb-0 text-black font-weight-bold"> </p>
+                        <p class="mb-0"> </p>
                     </div>
-                    <div class="col-6 text-md-right">
+                    <div class="col-6">
                         <p class="mb-0">{{ order.street_address2 }}</p>
                     </div>
                 </div>
@@ -95,18 +95,18 @@
 
                 <div class="row">
                     <div class="col-6">
-                        <p class="mb-0 text-black font-weight-bold">Town or City</p>
+                        <p class="mb-0">Town or City</p>
                     </div>
-                    <div class="col-6 text-md-right">
+                    <div class="col-6">
                         <p class="mb-0">{{ order.town_or_city }}</p>
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="col-6">
-                        <p class="mb-0 text-black font-weight-bold">County</p>
+                        <p class="mb-0">County</p>
                     </div>
-                    <div class="col-6 text-md-right">
+                    <div class="col-6">
                         <p class="mb-0">{{ order.county }}</p>
                     </div>
                 </div>
@@ -114,9 +114,9 @@
                 {% if order.eircode %}
                 <div class="row">
                     <div class="col-6">
-                        <p class="mb-0 text-black font-weight-bold">Eircode</p>
+                        <p class="mb-0">Eircode</p>
                     </div>
-                    <div class="col-6 text-md-right">
+                    <div class="col-6">
                         <p class="mb-0">{{ order.eircode }}</p>
                     </div>
                 </div>

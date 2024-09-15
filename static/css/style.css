@@ -294,6 +294,11 @@ td > img {
     overflow: hidden;
 }
 
+.processing-text,
+#submit-button .spinner-border {
+    display: none;
+}
+
 @media (min-width: 500px) {
     #payment-form button {
         margin-left: 1rem;

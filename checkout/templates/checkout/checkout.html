@@ -123,7 +123,7 @@
                     </fieldset>
                 </div>
                 <!-- Review Order and Submit Form -->
-                <div class="review-order">
+                <div class="review-order d-none">
                     <h2>Order Review</h2>
                     <p class="orange-info">Nearly finished! Review your details below before paying and finalising your order.</p>
                     <div class="">
@@ -183,10 +183,15 @@
                             <span class="font-weight-bold">Adjust Cart</span>
                         </a>
                         <button id="submit-button" class="btn btn-lg bg-warning rounded-1">
-                            <span class="font-weight-bold">Pay and Place Order</span>
+                            <span class="order-text">Pay and Place Order</span>
+                            <span class="processing-text">Processing...</span>
                             <span class="icon">
                                 <i class="fas fa-lock"></i>
+                                <div class="spinner-border spinner-border-sm text-dark" role="status">
+                                    <span class="visually-hidden">Loading...</span>
+                                  </div>
                             </span>
+                            
                         </button>
                         <p class="small text-danger my-0">
                             <span class="icon">
