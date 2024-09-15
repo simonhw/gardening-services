@@ -14,7 +14,7 @@ class OrderAdmin(admin.ModelAdmin):
         'order_number',
         'date',
         'grand_total',
-        'original_bag',
+        'original_cart',
         'stripe_pid',
     )
 
@@ -31,7 +31,7 @@ class OrderAdmin(admin.ModelAdmin):
         'county',
         'eircode',
         'grand_total',
-        'original_bag',
+        'original_cart',
         'stripe_pid',
     )
 
