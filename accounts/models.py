@@ -43,11 +43,8 @@ class CustomUserManager(BaseUserManager):
             )
 
         super.is_staff = True
-        print('super.is_staff =', super.is_staff)
         super.is_active = True
-        print('super.is_active =', super.is_active)
         super.is_superuser = True
-        print('super.is_superuser =', super.is_superuser)
 
         if super.is_staff is not True:
             raise ValueError(

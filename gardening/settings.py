@@ -119,6 +119,7 @@ ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True
 ACCOUNT_USERNAME_MIN_LENGTH = 4
 LOGIN_URL = '/accounts/login/'
 LOGIN_REDIRECT_URL = '/success' # This is having no effect 27/08/2024
+ACCOUNT_FORMS = {'signup': 'accounts.forms.CustomUserCreationForm'}
 
 WSGI_APPLICATION = 'gardening.wsgi.application'
 
@@ -133,8 +134,6 @@ DATABASES = {
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
-
-AUTH_USER_MODEL = 'accounts.CustomUser'
 
 AUTHENTICATION_BACKENDS = [
     "django.contrib.auth.backends.ModelBackend", # this line fixed my problem

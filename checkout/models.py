@@ -5,13 +5,13 @@ from django.db.models import Sum
 from django.conf import settings
 
 from services.models import Service
-from accounts.models import CustomUser
+from accounts.models import UserAccount
 
 # Create your models here.
 class Order(models.Model):
     order_number = models.CharField(max_length=32, null=False, editable=False)
-    user_profile = models.ForeignKey(
-        CustomUser,
+    user_account = models.ForeignKey(
+        UserAccount,
         on_delete=models.SET_NULL,
         null=True,
         blank=True,
