@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% load static %}
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'accounts/css/accounts.css' %}">
+{% endblock %}
+
+{% block extra_title %} | My Account{% endblock %}
+
+{% block content %}
+<div class="container">
+    <hr>
+    <div class="row">
+        <div class="col-10 offset-1 col-lg-8 offset-lg-2 text-center">
+            <h2 class="mate">My Account</h2>
+        </div>
+    </div>
+    <div class="row py-3">
+        <div class="col-10 offset-1 text-center">
+            <a href="{% url 'home' %}" class="btn btn-lg hunter-green-border isabelline-bg hunter-green rounded-1 mb-3">
+                <span class="font-weight-bold">Back to Site</span>
+                <span class="icon">
+                    <i class="fas fa-chevron-right"></i>
+                </span>
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}
