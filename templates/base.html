@@ -96,7 +96,7 @@
                     </li>
                     {% if user.is_authenticated %}
                     <li class="nav-item {% if request.path == url %}active{% endif %}">
-                        <a class="nav-link" href="#">My Account</a>
+                        <a class="nav-link" href="{% url 'account' %}">My Account</a>
                     </li>
                     {% else %}
                     <li class="nav-item {% if request.path == url %}active{% endif %}">
