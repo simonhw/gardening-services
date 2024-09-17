@@ -111,8 +111,8 @@ AUTHENTICATION_BACKENDS = [
 
 SITE_ID = 1
 
-EMAIL_BACKEND_SETTING = 'django.core.email.backends.console.EmailBackend'
-ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
+EMAIL_BACKEND_SETTING = 'django.core.mail.backends.console.EmailBackend'
+ACCOUNT_AUTHENTICATION_METHOD = 'email'
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
 ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True

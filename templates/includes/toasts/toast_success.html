@@ -12,7 +12,7 @@
     </div>
 </div>
 <div class="toast-cart isabelline-bg text-dark d-lg-none">
-    {% if total %}
+    {% if total and not on_account_page %}
         <p class="mate text-center pt-1 mb-1"><strong>Cart: {{ item_count }} items</strong></p>
         <hr class="mb-0 text-center">
         <div class="cart-notification-wrapper text-dark ">
