@@ -111,8 +111,9 @@
                             <a class="nav-link" href="{% url 'view_cart' %}">
                                 Cart{% if total %}: <span class="fw-bold">€{{ total|floatformat:2 }}</span>{% endif %}
                             </a>
+                            {% block cartpreview %}
+                            {% if total %}
                             <div class="cart-dropdown fern-green-bg hunter-green-border isabelline rounded-1">
-                                {% if total %}
                                 <p class="mate text-center mt-2"><strong>Cart: {{ item_count }} items</strong></p>
                                 <hr class="mb-0 text-center">
                                 <div class="cart-notification-wrapper text-dark white-bg">
@@ -149,8 +150,9 @@
                                         </a>
                                     </div>
                                 </div>
-                                {% endif %}
                             </div>
+                            {% endif %}
+                            {% endblock %}
                         </div>
                     </li>
                 </ul>
