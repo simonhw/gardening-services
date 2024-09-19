@@ -19,7 +19,7 @@
             {% for item in cart_items %}
                 <div class="row">
                     <div class="col-3 offset-1 my-1">
-                        <img src="/media/{{ item.service.image }}" class="w-100 rounded">
+                        <img src="{{ MEDIA_URL }}{{ item.service.image }}" class="w-100 rounded">
                     </div>
                     <div class="col-7">
                         <p class="my-0"><strong>{{ item.service.name }}</strong></p>
