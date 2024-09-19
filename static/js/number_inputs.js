@@ -15,6 +15,8 @@ for (let i = 0; i < allNumberInputs.length; i++) {
 $('.number_input').change(function(){
     let itemId = $(this).data('item_id');
     handleEnableDisable(itemId);
+    let form = $(this).parent().parent().parent('.update-form');
+    form.submit();
 });
 
 // Increment quantity
@@ -25,6 +27,8 @@ $('.increment-number').click(function(e) {
     $(closestInput).val(currentValue + 1);
     let itemId = $(this).data('item_id');
     handleEnableDisable(itemId);
+    let form = $(this).parent().parent().parent().parent('.update-form');
+    form.submit();
 });
 
 // Decrement quantity
@@ -35,4 +39,6 @@ $('.decrement-number').click(function(e) {
     $(closestInput).val(currentValue - 1);
     let itemId = $(this).data('item_id');
     handleEnableDisable(itemId);
+    let form = $(this).parent().parent().parent().parent('.update-form');
+    form.submit();
 });
