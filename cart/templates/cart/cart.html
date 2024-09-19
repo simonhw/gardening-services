@@ -5,6 +5,9 @@
 
 {% block extra_title %} | Cart{% endblock %}
 
+{% block cartpreview %}
+{% endblock %}
+
 {% block content %}
 <div class="container">
     <div class="row my-3">
@@ -14,111 +17,104 @@
     </div>
     <hr>
     <div class="row my-3">
-        <div class="col-10 offset-1 mt-2">
+        <div class="col-10 offset-1 col-lg-6 mt-2">
             {% if cart_items %}
-            <div class="table-responsive">
-                <table class="table table-sm table-borderless">
-                    <thead>
-                        <tr>
-                            <th scope="col" class="ps-3">Service Info</th>
-                            <th scope="col"></th>
-                            <th scope="col" class="text-center">Price</th>
-                            <th scope="col" class="text-center">Number</th>
-                            <th scope="col" class="text-center">Subtotal</th>
-                        </tr>
-                    </thead>
-
-                    {% for item in cart_items %}
-                        <tr>
-                            <td class="p-3 w-25">
-                                <img src="{{ MEDIA_URL }}{{ item.service.image }}" class="rounded">
-                            </td>
-                            <td class="py-3">
-                                <p class="my-0"><strong>{{ item.service.name }}</strong></p>
-                                {% if item.surface %}
-                                <p class="my-0"><strong>Type:</strong> {{ item.surface | title }}</p>
-                                {% endif %}
-                                {% if item.cuts %}
-                                <p class="my-0"><strong>Type:</strong> {{ item.cuts | title }}</p>
-                                {% endif %}
-                                {% if item.size %}
-                                <p class="my-0"><strong>Size:</strong> {{ item.size | title }}</p>
-                                {% endif %}
-                            </td>
-                            <td class="py-3 text-center">
-                                <p class="my-0">€{{ item.service.unit_price }}</p>
-                            </td>
-                            <td class="py-3">
+            <div class="row cart-items cart-services-wrapper">
+                {% for item in cart_items %}
+                <div class="col-12 col-md-9 offset-md-2 col-lg-12 offset-lg-0">
+                    <!-- Service Name, Image, and Details -->
+                    <div class="row">
+                         <div class="col-12 mb-2">
+                            <p class="my-0"><strong>{{ item.service.name }}</strong></p>
+                         </div>
+                         <div class="col-6 col-md-5">
+                            <img src="{{ MEDIA_URL }}{{ item.service.image }}">
+                        </div>
+                        <div class="col-6 col-md-6 offset-md-1">
+                            <div class="row">
+                                <div class="col-12">
+                                    {% if item.surface %}
+                                    <p class="my-0 small"><strong>Type:</strong> {{ item.surface | title }}</p>
+                                    {% endif %}
+                                    {% if item.cuts %}
+                                    <p class="my-0 small"><strong>Type:</strong> {{ item.cuts | title }}</p>
+                                    {% endif %}
+                                    {% if item.size %}
+                                    <p class="my-0 small"><strong>Size:</strong> {{ item.size | title }}</p>
+                                    {% endif %}
+                                    <p class="my-0 small"><strong>Price:</strong> €{{ item.service.unit_price }} each</p>
+                                </div>
+                            </div>
+                            <div class="row">
                                 <!-- Number of Services Form -->
-                                <form action="{% url 'amend_cart' item.item_id %}" method="POST" class="form update-form">
-                                    {% csrf_token %}
-                                    <div class="form-group cart-numbers">
-                                        <div class="input-group">
-                                            <div class="input-group-prepend">
-                                                <button class="decrement-number btn btn-sm hunter-green-bg isabelline" 
-                                                    data-item_id="{{ item.item_id }}" id="decrement-number_{{ item.item_id }}">
-                                                    <span>
-                                                        <i class="fas fa-minus fa-sm"></i>
-                                                    </span>
-                                                </button>
+                                <div class="col-md-8">
+                                    <form action="{% url 'amend_cart' item.item_id %}" method="POST" class="form update-form float-start my-2">
+                                        {% csrf_token %}
+                                        <div class="form-group cart-numbers">
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                    <button class="decrement-number btn btn-sm hunter-green-bg isabelline" 
+                                                        data-item_id="{{ item.item_id }}" id="decrement-number_{{ item.item_id }}">
+                                                        <span>
+                                                            <i class="fas fa-minus fa-sm"></i>
+                                                        </span>
+                                                    </button>
+                                                </div>
+                                                <input type="number" class="form-control form-control-sm number_input" name="number" value="{{ item.number }}"
+                                                    min="1" max="99" data-item_id="{{ item.item_id }}" id="id_number_{{ item.item_id }}">
+                                                <div class="input-group-append">
+                                                    <button class="increment-number btn btn-sm hunter-green-bg isabelline" 
+                                                        data-item_id="{{ item.item_id }}" id="increment-number_{{ item.item_id }}">
+                                                        <span>
+                                                            <i class="fas fa-plus fa-sm"></i>
+                                                        </span>
+                                                    </button>
+                                                </div>
+                                                {% if item.size %}
+                                                <input type="hidden" name="size" value="{{ item.size }}">
+                                                {% endif %}
+                                                {% if item.surface %}
+                                                <input type="hidden" name="surface" value="{{ item.surface }}">
+                                                {% endif %}
+                                                {% if item.cuts %}
+                                                <input type="hidden" name="cuts" value="{{ item.cuts }}">
+                                                {% endif %}
                                             </div>
-                                            <input type="number" class="form-control form-control-sm number_input" name="number" value="{{ item.number }}"
-                                                min="1" max="99" data-item_id="{{ item.item_id }}" id="id_number_{{ item.item_id }}">
-                                            <div class="input-group-append">
-                                                <button class="increment-number btn btn-sm hunter-green-bg isabelline" 
-                                                    data-item_id="{{ item.item_id }}" id="increment-number_{{ item.item_id }}">
-                                                    <span>
-                                                        <i class="fas fa-plus fa-sm"></i>
-                                                    </span>
-                                                </button>
-                                            </div>
-                                            {% if item.size %}
-                                            <input type="hidden" name="size" value="{{ item.size }}">
-                                            {% endif %}
-                                            {% if item.surface %}
-                                            <input type="hidden" name="surface" value="{{ item.surface }}">
-                                            {% endif %}
-                                            {% if item.cuts %}
-                                            <input type="hidden" name="cuts" value="{{ item.cuts }}">
-                                            {% endif %}
                                         </div>
-                                    </div>
-                                </form>
-                                <div class="cart-numbers">
-                                    <a class="update-link fern-green">
-                                        <small>Update</small>
-                                    </a>
-                                    <a class="remove-item text-danger float-end" id="remove_{{ item.item_id }}"
-                                        data-size="{{ item.size }}" data-surface="{{ item.surface }}" data-cuts="{{ item.cuts }}">
-                                        <small>Remove</small>
+                                    </form>
+                                </div>
+                            </div>
+                            <!-- Remove and Subtotal for Larger Screens -->
+                            <div class="row">
+                                <div class="d-none d-md-inline col-md-12 d-flex align-items-center">
+                                    <!-- Line Subtotal -->
+                                    <p class="my-0 small"><strong>Subtotal:</strong> €{{ item.service.unit_price | calc_subtotal:item.number }}</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="d-none d-md-inline col-md-8 mt-2">
+                                    <a class="remove-item btn btn-outline-danger d-flex align-items-center justify-content-center" id="remove_{{ item.item_id }}" 
+                                    data-size="{{ item.size }}" data-surface="{{ item.surface }}" data-cuts="{{ item.cuts }}">
+                                    <small>Remove</small>
                                     </a>
                                 </div>
-                            </td>
-                            <td class="py-3 text-center">
-                                <p class="my-0">€{{ item.service.unit_price | calc_subtotal:item.number }}</p>
-                            </td>
-                        </tr>
-                    {% endfor %}
-                    <tr>
-                        <td colspan="5" class="pt-5 text-end">
-                            <h4 class="mt-4"><strong>Grand Total: €{{ total|floatformat:2 }}</strong></h4>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="5" class="text-end">
-                            <a href="{% url 'services' %}" class="btn btn-lg rounded-1 mate isabelline hunter-green-bg">
-                                <i class="fas fa-caret-left"></i>
-                                View Services
+                            </div>
+                        </div>
+                        <!-- Remove and Subtotal for Small Screens -->
+                        <div class="col-6 d-md-none mt-2">
+                            <a class="remove-item btn btn-outline-danger d-flex align-items-center justify-content-center" id="remove_{{ item.item_id }}" 
+                            data-size="{{ item.size }}" data-surface="{{ item.surface }}" data-cuts="{{ item.cuts }}">
+                            <small>Remove</small>
                             </a>
-                            <a href="{% url 'checkout' %}" class="btn hunter-green hunter-green-border mate isabelline-bg fw-bold rounded-1 btn-lg">
-                                <span class="text-uppercase">Secure Checkout</span>
-                                <span class="icon">
-                                    <i class="fas fa-lock"></i>
-                                </span>
-                            </a>
-                        </td>
-                    </tr>
-                </table>
+                        </div>
+                        <div class="col-6 d-md-none mt-2 d-flex align-items-center">
+                            <!-- Line Subtotal -->
+                            <p class="my-0 small"><strong>Subtotal:</strong> €{{ item.service.unit_price | calc_subtotal:item.number }}</p>
+                        </div>
+                    </div>
+                    <hr>
+                </div>
+                {% endfor %}
             </div>
             {% else %}
             <p>Your cart is empty.</p>
@@ -128,6 +124,33 @@
             </a>
             {% endif %}
         </div>
+        {% if cart_items %}
+        <div class="col-10 offset-1 col-md-7 offset-md-3 col-lg-4 offset-lg-0 card cart-card-wrapper ms-lg-5">
+            <div class="card-body d-lg-flex flex-column justify-content-center text-center">
+                <h4 class="mate"><strong>Online Card Payment</strong></h4>
+                <div class="fs-1 d-flex justify-content-evenly">
+                    <i class="fa-brands fa-cc-visa"></i><i class="fa-brands fa-cc-mastercard"></i><i class="fa-brands fa-cc-amex"></i><i class="fa-brands fa-cc-stripe"></i>
+                </div>
+                <h6 class="my-2">Grand Total: €{{ total|floatformat:2 }}</h6>
+                <div class="row">
+                    <div class="col-12">
+                        <a href="{% url 'checkout' %}" class="btn btn-lg hunter-green hunter-green-border mate isabelline-bg fw-bold rounded-1">
+                            <span class="text-uppercase">Secure Checkout</span>
+                            <span class="icon">
+                                <i class="fas fa-lock"></i>
+                            </span>
+                        </a>
+                    </div>
+                    <div class="col-12">
+                        <a href="{% url 'services' %}" class="btn rounded-1 isabelline hunter-green-bg mt-2">
+                            <i class="fas fa-caret-left"></i>
+                            View Services
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endif %}
     </div>
     
 </div>

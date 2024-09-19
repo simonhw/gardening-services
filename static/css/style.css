@@ -132,7 +132,7 @@ main {
     border-radius: 10%;
 }
 
-.card-body {
+.pricing-cards .card-body {
     max-width: 250px;
 }
 
@@ -180,8 +180,9 @@ footer {
     background-color: #EDEDE8;
 }
 
-td > img {
-    max-width: 100px;
+td > img,
+.cart-items img {
+    max-width: 100%;
 }
 
 .decrement-number {
@@ -348,6 +349,18 @@ td > img {
         right: 10%;
         width: 400px;
         font-family: serif;
+    }
+
+    .cart-services-wrapper {
+        height: 500px;
+        /* width: 50vw; */
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+    
+    .cart-card-wrapper {
+        height: 300px;
+        /* margin-top: 5%; */
     }
 }
 
