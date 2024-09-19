@@ -129,15 +129,25 @@
                     <div class="">
                         <div class="row mb-3">
                             <div class="col-12 col-md-6">
-                                <span>Address</span>
-                                <div>(address details)</div>
+                                <span><strong>Address</strong></span>
+                                <div class="review-paragraphs">
+                                    <p id="review_street_address1"></p>
+                                    <p id="review_street_address2"></p>
+                                    <p id="review_town_or_city"></p>
+                                    <p id="review_county"></p>
+                                    <p id="review_eircode"></p>
+                                </div>
                                 <div><a class="adjust-address">Change</a></div>
                             </div>
-                            <div class="col-12 col-md-6">
-                                <span>Payment</span>
-                                <div>(payment details)</div>
+                            <div class="col-12 col-md-6 mt-3 mt-md-0">
+                                <span><strong>Payment</strong></span>
+                                <div class="review-paragraphs">
+                                    <div class="text-danger" id="card-errors-review" role="alert"></div>
+                                    <p id="card-accepted-alert">
+                                        <i class="fa-regular fa-credit-card"></i> Card details accepted <i class="fa-solid fa-square-check" style="color: green;"></i>
+                                    </p>
+                                </div>
                                 <div><a class="adjust-payment">Change</a></div>
-                                <div class="mb-3 text-danger" id="card-errors-review" role="alert"></div>
                             </div>
                         </div>
                     </div>

@@ -41,9 +41,13 @@ card.addEventListener('change', function (event) {
         `;
         $(errorDiv).html(html);
         $(errorDivReview).html(html);
+        $('#card-accepted-alert').prop("hidden", true);
+
     } else {
         errorDiv.textContent = '';
         errorDivReview.textContent = '';
+        $('#card-accepted-alert').prop("hidden", false);
+
     }
 });
 
@@ -100,12 +104,16 @@ form.addEventListener('submit', function(ev) {
         }).then(function(result) {
             if (result.error) {
                 var errorDiv = document.getElementById('card-errors');
+                var errorDivReview = document.getElementById('card-errors-review');
                 var html = `
                     <span class="icon" role="alert">
                     <i class="fas fa-times"></i>
                     </span>
                     <span>${result.error.message}</span>`;
                 $(errorDiv).html(html);
+                $(errorDivReview).html(html);
+                $('#card-accepted-alert').prop("hidden", true);
+
                 $('#submit-button .order-text').fadeToggle(100);
                 $('#submit-button .fa-lock').fadeToggle(100);
                 $('#submit-button .processing-text').fadeToggle(100);

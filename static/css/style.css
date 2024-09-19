@@ -286,6 +286,10 @@ td > img,
     padding: 10px;
 }
 
+.review-paragraphs p {
+    margin: 0;
+}
+
 .cart-summary {
     border: 1px solid black;
 }
