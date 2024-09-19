@@ -11,23 +11,34 @@
 <div class="container">
     <hr>
     <div class="row">
-        <div class="col-10 offset-1 col-lg-8 offset-lg-2 text-center">
+        <div class="col-10 offset-1 col-lg-8 offset-lg-2 col-xl-10 offset-xl-1 text-center">
             <h2 class="mate">My Account</h2>
         </div>
     </div>
     <div class="row">
-        <div class="col-10 offset-1 col-lg-4 offset-lg-2">
-            <p>Default Location Information</p>
+        <div class="col-10 offset-1 col-lg-8 offset-lg-2 col-xl-10 offset-xl-1">
+            <p><strong>Name:</strong> {{ user.first_name}} {{ user.last_name }}</p>
+            <p><strong>Email:</strong> {{ user.email }}</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-10 offset-1 col-lg-8 offset-lg-2 col-xl-10 offset-xl-1 text-center">
+            <hr>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-10 offset-1 col-lg-4 offset-lg-2 offset-xl-1 mt-3 mt-lg-0">
+            <p><strong>Default Location Information</strong></p>
             <form action="{% url 'account' %}" method="POST" id="profile-update-form">
                 {% csrf_token %}
                 {{ form|crispy }}
-                <button class="btn hunter-green-bg isabelline mate float-end">
+                <button class="btn hunter-green-bg isabelline float-end">
                     Save Changes
                 </button>
             </form>
         </div>
-        <div class="col-10 offset-1 col-lg-4">
-            <p>Order History</p>
+        <div class="col-10 offset-1 col-lg-4 offset-lg-0 col-xl-5 offset-xl-1 mt-5 mt-lg-0">
+            <p><strong>Order History</strong></p>
             <div class="order-history table-responsive">
                 <table class="table table-sm table-borderless">
                     <thead>
@@ -68,7 +79,12 @@
             </div>
         </div>
     </div>
-    <div class="row py-3">
+    <div class="row">
+        <div class="col-10 offset-1 col-lg-8 offset-lg-2 col-xl-10 offset-xl-1 text-center">
+            <hr>
+        </div>
+    </div>
+    <div class="row my-4">
         <div class="col-10 offset-1 text-center">
             <a href="{% url 'home' %}" class="btn btn-lg hunter-green-border isabelline-bg hunter-green rounded-1 mb-3">
                 <span class="icon">
