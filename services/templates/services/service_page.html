@@ -27,17 +27,22 @@
             <div class="service-details-container">
                 <!-- <h5 class="mate">{{ service.name }}</h5> -->
                 <p class="mb-0">{{ service.description | safe }}</p>
-                <div class="star-ratings mb-1">
-                    <div class="fill-ratings" style="width: 50%;">
-                        <span>★★★★★</span>
+                <div class="d-flex align-items-center mb-3">
+                    <div class="star-ratings mb-1">
+                        <div class="fill-ratings" style="width: 0%;">
+                            <span>★★★★★</span>
+                        </div>
+                        <div class="empty-ratings">
+                            <span>★★★★★</span>
+                        </div>
+                        <div id="rating" hidden>{{ service.average_rating }}</div>
                     </div>
-                    <div class="empty-ratings">
-                        <span>★★★★★</span>
+                    <div>
+                        <div class="ms-2 text-muted">
+                            ({% if service.average_rating %}{{ service.average_rating }}{% else %}No Reviews{% endif %})
+                        </div>
                     </div>
-                    <div id="rating" hidden>{{ service.rating }}</div>
                 </div>
-                <!-- Base Price: €{{service.unit_price}} -->
-
                 <!-- Form for selecting the service option -->
                 <form class="form my-3" method="POST" action="{% url 'add_to_cart' service.id %}">
                     {% csrf_token %}
@@ -129,6 +134,10 @@
                         </div>
                         {% endif %}
 
+                        <div>
+                            <p class="my-2"><strong>Price:</strong> €{{service.unit_price}} each</p>
+                        </div>
+
                         <div class="my-3">
                             <a href="{% url 'services' %}"
                                 class="btn rounded-1 hunter-green hunter-green-border isabelline-bg">
@@ -141,6 +150,7 @@
                     </div>
                     <input type="hidden" name="redirect_url" value="{{ request.path }}">
                 </form>
+
             </div>
         </div>
 

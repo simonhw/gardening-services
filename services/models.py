@@ -39,16 +39,22 @@ class Service(models.Model):
     name = models.CharField(max_length=254)
     unit_price = models.DecimalField(max_digits=6, decimal_places=2)
     description = models.TextField()
-    image_url = models.URLField(max_length=1024, null=True, blank=True)
     image = models.ImageField(null=True, blank=True)
-    rating = models.DecimalField(
-                                 max_digits=6, decimal_places=1,
+    average_rating = models.DecimalField(
+                                 max_digits=2, decimal_places=1,
                                  null=True, blank=True
                                  )
     has_sizes = models.BooleanField(default=False, null=True, blank=True)
     has_acres = models.BooleanField(default=False, null=True, blank=True)
     has_fellprune = models.BooleanField(default=False, null=True, blank=True)
     has_surface = models.BooleanField(default=False, null=True, blank=True)
+
+    def calculate_average_rating(self):
+        reviews = self.reviews.all()
+        if reviews:
+            summed_ratings = sum(review.rating for review in reviews)
+            self.average_rating = summed_ratings / reviews.count()
+            self.save
 
     def __str__(self):
         return self.name

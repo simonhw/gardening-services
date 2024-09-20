@@ -33,7 +33,7 @@ if ( serviceName.includes('weed') ) {
 }
 
 // Show relevant fields for Tree Cutting and Pruning
-if ( serviceName.includes('tree cutting') ) {
+if ( serviceName.includes('tree felling') ) {
     updateServiceName(serviceNoun, "Tree");
 }
 
