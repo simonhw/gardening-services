@@ -18,7 +18,7 @@ class Review(models.Model):
     title = models.TextField(max_length=80, blank=False)
     content = models.TextField(max_length=500, blank=False)
     created_on = models.DateField(auto_now_add=True)
-    updated_on = models.DateField(auto_now=True)
+    updated_on = models.DateField(auto_now=True, null=True)
     approved = models.BooleanField(default=False)
     rating = models.IntegerField(null=True, blank=False)
 

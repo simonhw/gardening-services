@@ -17,31 +17,39 @@
     </div>
     
     <div class="row my-3">
-        <div class="col-10 offset-1 col-md-8 offset-md-2 mt-2">
+        <div class="col-10 offset-1">
             <h1 class="mate text-center">{{ service.name }} Reviews</h1>
         </div>
     <div>
 
     <div class="row my-3">
-        <div class="col-10 offset-1 col-md-8 offset-md-2">
+        <div class="col-10 offset-1">
             {% if reviews %}
                 <div class="row">
                 {% for review in reviews %}
-                <div class="card col-10 offset-1">
-                    <div class="card-body">
-                        <h5 class="title">{{ review.title}}</h5>
-                        <div class="star-ratings mb-1">
-                            <div class="fill-ratings" style="width: 0%;">
-                                <span>★★★★★</span>
+                {% if reviews|length == 1 %}
+                <div class="col-12 my-2">
+                {% elif reviews|length == 2 %}
+                <div class="col-12 col-md-6 my-2">
+                {% else %}
+                <div class="col-12 col-md-6 col-lg-4 my-2">
+                {% endif %}
+                    <div class="card">
+                        <div class="card-body review-card">
+                            <h5 class="title">{{ review.title}}</h5>
+                            <div class="star-ratings mb-1">
+                                <div class="fill-ratings review-fill-ratings" id="fill-ratings-{{review.pk}}" style="width: 0%;">
+                                    <span>★★★★★</span>
+                                </div>
+                                <div class="empty-ratings">
+                                    <span>★★★★★</span>
+                                </div>
+                                <div id="rating-{{review.pk}}" hidden>{{ review.rating }}</div>
                             </div>
-                            <div class="empty-ratings">
-                                <span>★★★★★</span>
-                            </div>
-                            <div id="rating" hidden>{{ review.rating }}</div>
+                            <div class="card-text">{{ review.content | safe }}</div>
+                            <h6 class="card-subtitle text-end text-muted mb-2">- {{ review.reviewer.first_name }}</h6>
+                            <h6 class="card-subtitle text-end text-muted">{{ review.created_on }}</h6>
                         </div>
-                        <div class="card-text">{{ review.content | safe }}</div>
-                        <h6 class="card-subtitle text-end text-muted">- {{ review.reviewer.first_name }}</h6>
-                        <h6 class="card-subtitle text-end text-muted">{{ review.created_on }}</h6>
                     </div>
                 </div>
                 {% endfor %}
