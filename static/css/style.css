@@ -286,12 +286,33 @@ td > img,
     padding: 10px;
 }
 
+/* Border classes for testing grid layouts */
+.bdr-r {
+    border: 1px solid red;
+}
+
+.bdr-g {
+    border: 1px solid green;
+}
+
+.bdr-b {
+    border: 1px solid blue;
+}
+
+.bdr-m {
+    border: 1px solid magenta;
+}
+
 .review-paragraphs p {
     margin: 0;
 }
 
 .cart-summary {
     border: 1px solid black;
+}
+
+.cart-summary img {
+    max-width: 70px;
 }
 
 .overflow-ellipses {
@@ -304,9 +325,21 @@ td > img,
     display: none;
 }
 
-@media (min-width: 500px) {
+.adjust-cart {
+    margin-bottom: 16px;
+}
+
+@media (min-width: 473px) {
     #payment-form button {
         margin-left: 1rem;
+        margin-right: 1rem;
+    }
+}
+
+@media (min-width: 511px) {
+    .adjust-cart {
+        margin-top: 4px;
+        margin-bottom: 4px;
     }
 }
 

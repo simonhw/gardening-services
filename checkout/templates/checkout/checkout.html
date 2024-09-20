@@ -151,42 +151,43 @@
                             </div>
                         </div>
                     </div>
+                    <!-- Basic Summary of Cart -->
                     <div class="cart-summary row mb-3 rounded-1 mx-0">
                         <div class="col-12">
                             <div class="row mt-3">
-                                <div class="col-7 offset-1">
+                                <div class="col-6 col-sm-7 offset-1">
                                     <p><strong>Service{% if item_count != 1 %}s{% endif %} ({{ item_count }})</strong></p>
                                 </div>
-                                <div class="col-3 text-center">
+                                <div class="col-4 col-sm-3 text-start text-sm-center">
                                     <p><strong>Subtotal</strong></p>
                                 </div>
                             </div>
                             {% for item in cart_items %}
                                 <div class="row">
-                                    <div class="col-2 offset-1 my-1">
+                                    <div class="d-none d-sm-inline col-sm-2 offset-sm-1 my-1">
                                         <img src="{{ MEDIA_URL }}{{ item.service.image }}" class="w-100 rounded">
                                     </div>
-                                    <div class="col-5">
+                                    <div class="col-6 offset-1 col-sm-5 offset-sm-0">
                                         <p class="my-0"><strong>{{item.number}} x {{ item.service.name }}</strong></p>
                                     </div>
-                                    <div class="col-3 text-center">
+                                    <div class="col-4 col-sm-3 text-center">
                                         <p class="my-0 small text-muted">${{ item.service.unit_price | calc_subtotal:item.number }}</p>
                                     </div>
                                 </div>
                             {% endfor %}
                             <hr>
                             <div class="row">
-                                <div class="col-7 offset-1">
+                                <div class="col-6 col-sm-7 offset-1">
                                     <p class="float-end"><strong>Grand Total:</strong></p>
                                 </div>
-                                <div class="col-3 text-center">
+                                <div class="col-4 col-sm-3 text-center">
                                     <p><strong>€{{ total|floatformat:2 }}</strong></p>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="submit-button text-center mb-2">                    
-                        <a href="{% url 'view_cart' %}" class="btn btn hunter-green-border isabelline-bg hunter-green rounded-1 mb-3">
+                    <div class="text-center mb-2">                    
+                        <a href="{% url 'view_cart' %}" class="btn adjust-cart hunter-green-border isabelline-bg hunter-green rounded-1">
                             <span class="icon">
                                 <i class="fas fa-caret-left"></i>
                             </span>
@@ -203,6 +204,8 @@
                             </span>
                             
                         </button>
+                    </div>
+                    <div class="text-center">
                         <p class="small text-danger my-0">
                             <span class="icon">
                                 <i class="fas fa-exclamation-circle"></i>
