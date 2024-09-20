@@ -14,7 +14,6 @@
 .custom-toast {
     overflow: visible;
     margin-left: auto;
-    /* margin-right: auto; */
 }
 
 #logo-and-text.flex-center {
@@ -229,13 +228,31 @@ td > img,
     height: 120px;
     overflow-x: hidden;
     overflow-y: auto;
-    /* border-top: 1px solid black;
-    border-bottom: 1px solid black; */
 }
 
 /* Checkout Page */
-#progress-indicator {
+#site-logo-and-checkout,
+#progress-indicator,
+#progress-dots {
     width: 100%;
+}
+
+#progress-dots {
+    width: 100%;
+}
+
+.label {
+    width: 60px;
+    text-align: center;
+    margin: 0 16px;
+}
+
+.progress-address {
+    margin-left: 0;
+}
+
+.progress-review {
+    margin-right: 0;
 }
 
 .step {
@@ -257,7 +274,6 @@ td > img,
 .line {
     height: 2px;
     background-color: lightgray;
-    /* background-color: #A3B18A; */
     z-index: 0;
     margin: 0 -25px;
 }
@@ -270,14 +286,7 @@ td > img,
 
 .dark {
     background-color: #000;
-    /* background-color: #3A5A40; */
 
-}
-
-.label {
-    width: 60px;
-    text-align: center;
-    margin: 0 16px;
 }
 
 .orange-info {
@@ -356,8 +365,8 @@ td > img,
         background-position: 0% 70%;
     }
 
-    #site-logo-and-checkout {
-        width: 100%;
+    .checkout-navbar > div {
+        justify-content: center;
     }
 }
 
@@ -390,19 +399,22 @@ td > img,
 
     .cart-services-wrapper {
         height: 500px;
-        /* width: 50vw; */
         overflow-x: hidden;
         overflow-y: auto;
     }
     
     .cart-card-wrapper {
         height: 300px;
-        /* margin-top: 5%; */
     }
 }
 
 @media (min-width: 1024px) {
     #logo-and-text{
         padding-left: 1rem;
+    }
+
+    /* Forces navbar row to take up the full width of the container. */
+    .w-lg-100 {
+        width: 100%;
     }
 }
