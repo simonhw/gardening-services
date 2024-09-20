@@ -53,11 +53,15 @@ if ( serviceName.includes('stump') ) {
     updateServiceName(serviceNoun, "Stump");
 }
 
-/**
- * Function that updates the service-name spans with the correct word.
- */
+
+// Function that updates the service-name spans with the correct word.
 function updateServiceName(serviceNoun, string) {
     for (let i = 0; i < serviceNoun.length; i++) {
         serviceNoun[i].innerText = string;
     }
 }
+
+// Apply the correct width to the orange review stars
+rating = Number($('#rating').text());
+percentage = rating * 20;
+$('.fill-ratings').css('width', percentage + "%")
