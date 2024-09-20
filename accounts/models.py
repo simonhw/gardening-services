@@ -65,8 +65,8 @@ class CustomUser(AbstractUser, PermissionsMixin):
 
     username = None
     email = models.EmailField(_('email address'), unique=True)
-    first_name = models.CharField(_('first name'), max_length=35, blank=True)
-    last_name = models.CharField(_('last name'), max_length=35, blank=True)
+    first_name = models.CharField(_('first name'), max_length=35, blank=False)
+    last_name = models.CharField(_('last name'), max_length=35, blank=False)
     is_staff = models.BooleanField(_('staff status'), default=False)
 
     USERNAME_FIELD = 'email'

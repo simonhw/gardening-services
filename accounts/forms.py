@@ -1,18 +1,106 @@
-from django.contrib.auth.forms import UserCreationForm, UserChangeForm
+from django.contrib.auth.forms import UserChangeForm
+from allauth.account.forms import SignupForm
 from .models import CustomUser
 from django import forms
 from .models import UserAccount
 
-class CustomUserCreationForm(UserCreationForm):
+class CustomUserCreationForm(SignupForm):
     """ Specify the model used for creating a user """
 
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        self.fields['email'].required = True
+    first_name = forms.CharField(
+        max_length = 35,
+        label = '',
+        required = True,
+        widget = forms.TextInput(
+            attrs = {
+                'placeholder': 'First Name *'
+            }
+        )
+        )
+    
+    last_name = forms.CharField(
+        max_length = 35,
+        label = '',
+        required = True,
+        widget = forms.TextInput(
+            attrs = {
+                'placeholder': 'Last Name *'
+            }
+        )
+        )
 
     class Meta:
         model = CustomUser
         fields = ('first_name', 'last_name', 'email')
+        labels = {
+            'first_name': '',
+            'last_name': '',
+            'email': '',
+        }
+        widgets = {
+            'first_name': forms.TextInput(
+                attrs = {
+                    'placeholder': 'First Name *'
+                }
+            ),
+            'last_name': forms.TextInput(
+                attrs = {
+                    'placeholder': 'Last Name *'
+                }
+            ),
+            'email': forms.TextInput(
+                attrs = {
+                    'placeholder': 'Email Address *'
+                }
+            ),
+        }
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        if 'username' in self.fields:
+            del self.fields['username']
+        self.fields['email'].label = ''
+        self.fields['email'].widget = forms.EmailInput(
+            attrs={
+                'placeholder': 'Email Address *'
+                }
+            )
+        self.fields['email2'].label = ''
+        self.fields['email2'].widget = forms.EmailInput(
+            attrs={
+                'placeholder': 'Confirm Email Address *'
+                }
+            )
+        self.fields['password1'].label = ''
+        self.fields['password2'].label = ''
+        self.fields['password1'].widget = forms.PasswordInput(
+            attrs={
+                'placeholder': 'Password *'
+                }
+            )
+        self.fields['password2'].widget = forms.PasswordInput(
+            attrs={
+                'placeholder': 'Confirm Password *'
+                }
+            )
+
+    
+    field_order = [
+        'first_name',
+        'last_name',
+        'email',
+        'email2',
+        'password1',
+        'password2',
+    ]
+    
+    def try_save(self, request):
+        """
+        This method is added because allauth expects it when handling
+        the saving process
+        """
+        user = self.save(request)
+        return user, None
 
 
 class CustomUserChangeForm(UserChangeForm):

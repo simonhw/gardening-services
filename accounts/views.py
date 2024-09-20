@@ -7,12 +7,6 @@ from checkout.models import Order
 
 from .forms import CustomUserCreationForm, UserAccountForm
 
-class SignUpView(CreateView):
-    form_class = CustomUserCreationForm
-    success_url = reverse_lazy("login")
-    template_name = "registration/signup.html"
-
-
 def account(request):
     """ Display the user's account page """
 

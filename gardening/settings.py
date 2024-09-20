@@ -125,14 +125,14 @@ else:
     # DEFAULT_FROM_EMAIL = os.environ.get('EMAIL_HOST_USER')
 DEFAULT_FROM_EMAIL = 'info@thegardenpath.ie'
 
-
+ACCOUNT_USER_MODEL_USERNAME_FIELD = None
 ACCOUNT_AUTHENTICATION_METHOD = 'email'
+ACCOUNT_USERNAME_REQUIRED = False
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
 ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True
 ACCOUNT_USERNAME_MIN_LENGTH = 4
 LOGIN_URL = '/accounts/login/'
-LOGIN_REDIRECT_URL = '/success' # This is having no effect 27/08/2024
 ACCOUNT_FORMS = {'signup': 'accounts.forms.CustomUserCreationForm'}
 
 WSGI_APPLICATION = 'gardening.wsgi.application'
