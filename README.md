@@ -588,6 +588,8 @@ All documentation on the testing of this application can be found in the [TESTIN
 ### Content
 ChatGPT was used to generate most of the text content about the campsite and services offered and was edited by Simon Henleywillis. The "description" and "keywords" meta tags were also generated using ChatGPT.
 
+ChatGPT was used to generate a JSON file of users and their respective reviews.
+
 ### Media
 The business logo was created on [FreeLogoDesign](https://freelogodesign.org). The website states that "[w]hether you use the free or the paid version (high-resolution plan), you are free to use your logo for promotional purposes without having to credit FreeLogoDesign."
 
