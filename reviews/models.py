@@ -1,10 +1,10 @@
 from django.db import models
-from accounts.models import UserAccount
+from accounts.models import CustomUser
 from services.models import Service
 
 class Review(models.Model):
     reviewer = models.ForeignKey(
-        UserAccount,
+        CustomUser,
         on_delete=models.SET_NULL,
         null=True,
         blank=False,
@@ -17,10 +17,10 @@ class Review(models.Model):
         )
     title = models.TextField(max_length=80, blank=False)
     content = models.TextField(max_length=500, blank=False)
-    created_on = models.DateTimeField(auto_now_add=True)
-    updated_on = models.DateTimeField(auto_now=True)
+    created_on = models.DateField(auto_now_add=True)
+    updated_on = models.DateField(auto_now=True)
     approved = models.BooleanField(default=False)
-    rating = models.IntegerField
+    rating = models.IntegerField(null=True, blank=False)
 
     def __str__(self):
         return self.title

@@ -1,0 +1,38 @@
+[
+    {
+        "pk": 11,
+        "model": "accounts.customuser",
+        "fields": {
+            "email": "user1@example.com",
+            "first_name": "Alice",
+            "last_name": "Smith",
+            "is_staff": false,
+            "is_active": true,
+            "is_superuser": false
+        }
+    },
+    {
+        "pk": 12,
+        "model": "accounts.customuser",
+        "fields": {
+            "email": "user2@example.com",
+            "first_name": "Bob",
+            "last_name": "Johnson",
+            "is_staff": false,
+            "is_active": true,
+            "is_superuser": false
+        }
+    },
+    {
+        "pk": 13,
+        "model": "accounts.customuser",
+        "fields": {
+            "email": "user3@example.com",
+            "first_name": "Charlie",
+            "last_name": "Brown",
+            "is_staff": false,
+            "is_active": true,
+            "is_superuser": false
+        }
+    }
+]

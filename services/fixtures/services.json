@@ -7,8 +7,7 @@
             "name": "Grass Cutting",
             "unit_price": 30.0,
             "description": "Our grass cutting service ensures your garden remains beautifully manicured throughout the growing season. We use professional-grade mowers that provide a clean and even cut, promoting healthy grass growth and improving the overall appearance of your outdoor space. Whether you need a one-time cut or regular maintenance, our skilled team will tailor the service to meet your specific needs. You will be left with a garden that is the envy of the neighbourhood.",
-            "rating": 4.7,
-            "image_url": "",
+            "average_rating": null,
             "image": "grass.webp"
         }
       },
@@ -20,8 +19,7 @@
             "name": "Weeding",
             "unit_price": 25.0,
             "description": "Our weeding service is designed to eliminate the invasive plants that can take over your garden if left unchecked. We use a combination of manual removal and targeted herbicide applications to ensure that weeds are not only removed but are also prevented from returning. This service is essential for maintaining the health of your garden, as weeds can compete with your plants for nutrients, water, and sunlight. Our thorough approach ensures that your garden remains pristine and that your plants thrive.",
-            "rating": 4.5,
-            "image_url": "",
+            "average_rating": null,
             "image": "weeds.webp"
         }
       },
@@ -33,8 +31,7 @@
             "name": "Tree Cutting and Pruning",
             "unit_price": 150.0,
             "description": "Our tree cutting and pruning service is ideal for maintaining the health, safety, and aesthetics of your trees. Whether you need to remove dead or dangerous branches, shape your trees for optimal growth, or reduce the risk of storm damage, our certified arborist has the expertise to handle it all. We carefully assess each tree and use precise techniques to ensure the health of your trees while enhancing their natural beauty. This service not only improves the appearance of your landscape but also promotes the long-term health and stability of your trees. Please note that some larger trees may incur an additional cost upon site assessment. Please get in touch with us if you have any questions about this service.",
-            "rating": 4.8,
-            "image_url": "",
+            "average_rating": null,
             "image": "tree.webp"
         }
       },
@@ -46,8 +43,7 @@
             "name": "Hedge Cutting",
             "unit_price": 50.0,
             "description": "Our hedge cutting service keeps your hedges neat, tidy, and healthy. We carefully trim your hedges to promote dense and even growth, and to maintain the desired shape and size. Whether you have formal hedges that require precise, sharp lines, or informal hedges that need a softer, natural look, our team is skilled in all aspects of hedge maintenance. Regular cutting not only improves the appearance of your hedges but also encourages healthy growth and prevents overgrowth that can lead to disease or pest issues.",
-            "rating": 4.6,
-            "image_url": "",
+            "average_rating": null,
             "image": "hedge.webp"
         }
       },
@@ -59,8 +55,7 @@
             "name": "Flowerbed Care",
             "unit_price": 40.0,
             "description": "Our flowerbed care service is a comprehensive solution for maintaining vibrant, healthy flowerbeds that enhance the beauty of your garden. We provide a range of services including planting, mulching, fertilizing, and weeding to ensure that your flowerbeds are always in peak condition. Whether you are looking to establish new flowerbeds or maintain existing ones, our team will work with you to select the best plants for your soil and climate, ensuring a stunning display throughout the year. Regular care and attention to detail are the keys to thriving flowerbeds, and our service is designed to deliver just that.",
-            "rating": 4.7,
-            "image_url": "",
+            "average_rating": null,
             "image": "flowers.webp"
         }
       },
@@ -72,8 +67,7 @@
             "name": "Tree Stump Removal",
             "unit_price": 200.0,
             "description": "Our tree stump removal service is the perfect solution for getting rid of unsightly stumps that can be a hazard or simply detract from the beauty of your landscape. We use specialized equipment to grind the stump down to below ground level, allowing you to replant, re-turf, or simply enjoy the additional space. This service is especially important if you plan to landscape the area or if the stump is in a location where it could cause injury or damage. Our team ensures that the stump is completely removed, leaving your garden free of any remnants of the tree.",
-            "rating": 4.9,
-            "image_url": "",
+            "average_rating": null,
             "image": "stump.webp"
       }
     }
