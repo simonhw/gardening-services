@@ -1,8 +1,9 @@
 from django.contrib.auth.forms import UserChangeForm
-from allauth.account.forms import SignupForm
+from allauth.account.forms import SignupForm, LoginForm, ResetPasswordForm
 from .models import CustomUser
 from django import forms
 from .models import UserAccount
+
 
 class CustomUserCreationForm(SignupForm):
     """ Specify the model used for creating a user """
@@ -101,6 +102,25 @@ class CustomUserCreationForm(SignupForm):
         """
         user = self.save(request)
         return user, None
+
+
+class CustomLoginForm(LoginForm):
+    """ A custom login form to allow for cusomisation """
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+
+        self.fields['login'].label = ''
+        self.fields['password'].label = ''
+
+
+class CustomResetPasswordForm(ResetPasswordForm):
+    """ A custom login form to allow for cusomisation """
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+
+        self.fields['email'].label = ''
 
 
 class CustomUserChangeForm(UserChangeForm):

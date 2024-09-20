@@ -133,7 +133,11 @@ ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
 ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True
 ACCOUNT_USERNAME_MIN_LENGTH = 4
 LOGIN_URL = '/accounts/login/'
-ACCOUNT_FORMS = {'signup': 'accounts.forms.CustomUserCreationForm'}
+ACCOUNT_FORMS = {
+    'signup': 'accounts.forms.CustomUserCreationForm',
+    'login': 'accounts.forms.CustomLoginForm',
+    'reset_password': 'accounts.forms.CustomResetPasswordForm',
+    }
 
 WSGI_APPLICATION = 'gardening.wsgi.application'
 
