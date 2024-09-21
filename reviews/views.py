@@ -6,6 +6,7 @@ from services.models import Service
 from .models import Review
 from django.core.paginator import Paginator
 from django.contrib import messages
+from .forms import ReviewForm
 
 
 class StaffCheck(UserPassesTestMixin, generic.ListView):
@@ -14,6 +15,61 @@ class StaffCheck(UserPassesTestMixin, generic.ListView):
     def test_func(self):
         return self.request.user.is_staff
 
+
+def review_page(request, review_id):
+    """
+    View that displays an individual service review.
+    """
+
+    review = get_object_or_404(Review, pk=review_id)
+
+    context = {
+        'review': review,
+    }
+
+    return render(request, "reviews/review_page.html", context)
+
+
+def create_review(request, service_id):
+    """
+    Method to handle the review form.
+
+    Processes and validates the user-submitted data. Saves data and
+    assigns user as the review owner.
+    Messages are displayed on successful review creation.
+    If validation fails, the form is re-rendered with appropriate error
+    messages.
+    """
+
+    service = get_object_or_404(Service, pk=service_id)
+
+    if request.method == 'POST':
+        review_form = ReviewForm(data=request.POST)
+        if review_form.is_valid:
+            review = review_form.save(commit=False)
+            review.reviewer = request.user
+            review.save()
+            messages.success(
+                request, "Review submitted pending approval."
+            )
+        else:
+            review_form = ReviewForm(data=request.POST)
+            return render(
+                request, 'reviews/create_review.html',
+                {
+                    'review_form': review_form,
+                }
+            )
+    
+    review_form = ReviewForm()
+
+    return render(
+        request, 'reviews/create_review.html',
+        {
+            'review_form': review_form,
+            'service': service,
+        }
+    )
 
 def service_reviews(request, service_id):
     """
@@ -113,17 +169,3 @@ def delete_review(request, service_id, review_id):
         return redirect('unpublished_reviews', service.id)
     else:
         return redirect('home')
-
-
-def review_page(request, review_id):
-    """
-    View that displays an individual service review.
-    """
-
-    review = get_object_or_404(Review, pk=review_id)
-
-    context = {
-        'review': review,
-    }
-
-    return render(request, "reviews/review_page.html", context)

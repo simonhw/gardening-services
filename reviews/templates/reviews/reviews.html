@@ -21,7 +21,7 @@
             <h1 class="mate text-center">{{ service.name }} Reviews{% if user.is_superuser %}: Admin View{% endif %}</h1>
             <div class="text-center">    
                 {% if user.is_authenticated %}
-                    <a href="#" class="btn">Leave a Review</a>
+                    <a href="{% url 'create_review' service.id %}" class="btn hunter-green-bg isabelline">Leave a Review</a>
                 {% else %}
                     <a href="{% url 'account_signup' %}?next={{request.path}}" class="hunter-green">Create an account</a> or 
                     <a href="{% url 'account_login' %}?next={{request.path}}" class="hunter-green">login</a> to leave a review.

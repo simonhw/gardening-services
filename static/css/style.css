@@ -139,7 +139,10 @@ main {
     color: #3A5A40;
 }
 
-.star-ratings {
+/* Star Rating Styles for Services and Review Pages */
+
+.star-ratings,
+.form-check-label {
     unicode-bidi: bidi-override;
     color: #ccc;
     font-size: 25px;
@@ -173,7 +176,36 @@ main {
       padding: 0;
       display: block;
       z-index: 0;
-  }
+}
+
+.form-check,
+.form-check-label {
+    display: inline-block;
+    padding-left:0;
+    cursor: pointer;
+}
+
+.form-check input{
+    width: 0;
+    height: 0;
+    opacity: 0;
+}
+
+.form-check-label { 
+    font-size: 35px;
+}
+
+.form-check-label:hover,
+.form-check-label:hover ~ .form-check-label {
+    color: orange;
+}
+
+.form-star-selected {
+    color: orange;
+}
+
+/* End of Star Rating Styles */
+/* ------------------------- */
 
 footer {
     background-color: #EDEDE8;

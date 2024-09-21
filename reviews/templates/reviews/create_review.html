@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block extra_title %} | Leave a Review{% endblock %}
+
+{% block content %}
+
+<div class="container-fluid">
+
+    <!-- Hero Image -->
+    <div class="row">
+        <div class="col-12 g-0 hero">
+            <img class="img-fluid hero-image" src="{% static 'images/path-blur-768.webp' %}"
+                alt="Two red flowers on steps."/>
+        </div>
+    </div>
+    
+    <div class="row my-3">
+        <div class="col-10 offset-1">
+            <h1 class="mate text-center">Leave a Review: {{ service.name }}</h1>
+            <div class="text-center">    
+                {% if user.is_authenticated %}
+                    <p>Reviewing as: {{ request.user.first_name}} {{ request.user.last_name }}</p>
+                    <form id="reviewForm" method="POST">
+                        {% csrf_token %}
+                        <div class="form-row">
+                            <div class="col-md-6 mb-0">
+                            {{ review_form.title | as_crispy_field }}
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-md-6 mb-0">
+                            {{ review_form.content | as_crispy_field }}
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-md-6 mb-0">
+                            {{ review_form.rating | as_crispy_field }}
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-lg hunter-green-bg isabelline">
+                            Submit
+                        </button>
+                    </form>
+                {% else %}
+                    <a href="{% url 'account_signup' %}?next={{request.path}}" class="hunter-green">Create an account</a> or 
+                    <a href="{% url 'account_login' %}?next={{request.path}}" class="hunter-green">login</a> to leave a review.
+                {% endif %}
+            </div>
+        </div>
+    <div>
+{% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}
+<script src="{% static 'js/star_ratings.js' %}"></script>
+{% endblock %}
