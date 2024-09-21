@@ -65,7 +65,8 @@ def unpublished_reviews(request, service_id):
     }
 
     return render(request, "reviews/unpublished_reviews.html", context)
-    
+
+
 def publish_review(request, service_id, review_id):
     """
     Method to allow staff users to mark a review as published.
@@ -86,6 +87,32 @@ def publish_review(request, service_id, review_id):
     return redirect('unpublished_reviews', service.id)
 
 
+def delete_review(request, service_id, review_id):
+    """
+    Method to allow staff users and review owners to delete a review
+    """
+    service = get_object_or_404(Service, pk=service_id)
+    review = get_object_or_404(Review, pk=review_id)
+    
+    page_check = review.approved
+
+    if request.user.is_staff or request.user == review.reviewer:
+        review.delete()
+        messages.success(
+            request, f'Review "{ review.title }" successfully deleted'
+        )
+    else:
+        messages.ERROR(
+            request, f'Review "{ review.title }" could not be deleted. Please\
+                try again later.'
+        )
+    # Return user to the correct review page
+    if page_check:
+        return redirect('service_reviews', service.id)
+    elif not page_check:
+        return redirect('unpublished_reviews', service.id)
+    else:
+        return redirect('home')
 
 
 def review_page(request, review_id):

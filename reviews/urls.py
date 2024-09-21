@@ -22,4 +22,9 @@ urlpatterns = [
         views.publish_review,
         name='publish_review'
         ),
+    path(
+        '<service_id>/reviews/delete/<review_id>',
+        views.delete_review,
+        name='delete_review'
+        ),
 ]

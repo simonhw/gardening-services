@@ -59,15 +59,17 @@
                                 <div class="card-text">{{ review.content | safe }}</div>
                                 <h6 class="card-subtitle text-end text-muted mb-2">- {{ review.reviewer.first_name }}</h6>
                                 <h6 class="card-subtitle text-end text-muted">{{ review.created_on }}</h6>
-                                {% if user.is_superuser %}
+                                {% if user.is_superuser or user == review.reviewer %}
                                 <hr>
                                 <div class="admin-buttons d-flex justify-content-around">
+                                    {% if user.is_superuser %}
                                     <button class="btn rounded-1 hunter-green-bg isabelline">
                                         Unpublish
                                     </button>
-                                    <button class="btn rouned-1 btn-danger isabelline">
+                                    {% endif %}
+                                    <a href="{% url 'delete_review' service.id review.id %}" class="btn rounded-1 btn-danger isabelline">
                                         Delete
-                                    </button>    
+                                    </a>   
                                 </div>
                                 {% endif %}
                             </div>
