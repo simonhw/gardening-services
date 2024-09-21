@@ -19,40 +19,77 @@
     <div class="row my-3">
         <div class="col-10 offset-1">
             <h1 class="mate text-center">{{ service.name }} Reviews</h1>
+            <div class="text-center">    
+                {% if user.is_authenticated %}
+                    <a href="#" class="btn">Leave a Review</a>
+                {% else %}
+                    <a href="{% url 'account_signup' %}" class="hunter-green">Create an account</a> or 
+                    <a href="{% url 'account_login' %}" class="hunter-green">login</a> to leave a review.
+                {% endif %}
+            </div>
         </div>
+
     <div>
+
 
     <div class="row my-3">
         <div class="col-10 offset-1">
             {% if reviews %}
                 <div class="row">
-                {% for review in reviews %}
-                {% if reviews|length == 1 %}
-                <div class="col-12 my-2">
-                {% elif reviews|length == 2 %}
-                <div class="col-12 col-md-6 my-2">
-                {% else %}
-                <div class="col-12 col-md-6 col-lg-4 my-2">
-                {% endif %}
-                    <div class="card">
-                        <div class="card-body review-card">
-                            <h5 class="title">{{ review.title}}</h5>
-                            <div class="star-ratings mb-1">
-                                <div class="fill-ratings review-fill-ratings" id="fill-ratings-{{review.pk}}" style="width: 0%;">
-                                    <span>★★★★★</span>
+                    {% for review in page_obj %}
+                    {% if review_count == 1 %}
+                    <div class="col-12 col-md-8 offset-md-2 col-lg-6 offset-lg-3 my-2">
+                    {% elif review_count == 2 %}
+                    <div class="col-12 col-md-6 my-2">
+                    {% else %}
+                    <div class="col-12 col-md-6 col-lg-4 my-2">
+                    {% endif %}
+                        <div class="card">
+                            <div class="card-body review-card">
+                                <h5 class="title">{{ review.title}}</h5>
+                                <div class="star-ratings mb-1">
+                                    <div class="fill-ratings review-fill-ratings" id="fill-ratings-{{review.pk}}" style="width: 0%;">
+                                        <span>★★★★★</span>
+                                    </div>
+                                    <div class="empty-ratings">
+                                        <span>★★★★★</span>
+                                    </div>
+                                    <div id="rating-{{review.pk}}" hidden>{{ review.rating }}</div>
                                 </div>
-                                <div class="empty-ratings">
-                                    <span>★★★★★</span>
-                                </div>
-                                <div id="rating-{{review.pk}}" hidden>{{ review.rating }}</div>
+                                <div class="card-text">{{ review.content | safe }}</div>
+                                <h6 class="card-subtitle text-end text-muted mb-2">- {{ review.reviewer.first_name }}</h6>
+                                <h6 class="card-subtitle text-end text-muted">{{ review.created_on }}</h6>
                             </div>
-                            <div class="card-text">{{ review.content | safe }}</div>
-                            <h6 class="card-subtitle text-end text-muted mb-2">- {{ review.reviewer.first_name }}</h6>
-                            <h6 class="card-subtitle text-end text-muted">{{ review.created_on }}</h6>
                         </div>
                     </div>
-                </div>
-                {% endfor %}
+                    {% endfor %}
+                    <!-- Pagination Links -->
+                    <div class="col-12 my-3">
+                        <div class="pagination d-flex justify-content-center">
+                            <span class="step-links">
+                                {% if page_obj.has_previous %}
+                                    <a href="?page=1" class="hunter-green">&laquo; first</a>
+                                    <a href="?page={{ page_obj.previous_page_number }}" class="hunter-green">previous</a>
+                                {% endif %}
+                            </span>
+                            <span class="current mx-2">
+                                Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
+                            </span>
+                            <span class="step-links">
+                                {% if page_obj.has_next %}
+                                    <a href="?page={{ page_obj.next_page_number }}" class="hunter-green">next</a>
+                                    <a href="?page={{ page_obj.paginator.num_pages }}" class="hunter-green">last &raquo;</a>
+                                {% endif %}
+                            </span>
+                        </div>
+                    </div>
+                    <!-- Buttons -->
+                    <div class="col-12 mt-3 text-center">
+                        <a href="{% url 'service_page' service.id %}" class="btn rounded-1 mate isabelline hunter-green-bg">
+                            <i class="fas fa-caret-left"></i>
+                            Back to Service Page
+                        </a>
+                    </div>
                 </div>
             {% else %}
                 <p class="text-center">There are no reviews for this service yet.</p>

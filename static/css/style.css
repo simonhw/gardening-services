@@ -338,6 +338,10 @@ td > img,
     margin-bottom: 16px;
 }
 
+.step-links {
+    width: 104px;
+}
+
 @media (min-width: 473px) {
     #payment-form button {
         margin-left: 1rem;
