@@ -464,7 +464,12 @@ Other pages include:
 
 ### The Services Page
 Gardening Serives offers a number of services to their customers. The different services are displayed in a column on mobile and in a grid on tablet and desktop sizes. Each service has its own page with a full description and price breakdown. Each service has a unit cost depending on the type of work to be done for the customer. The dropdown options show the customer how much they will pay for areas of different sizes.
+ratings only takes the number of published reviews into account
 
+### The reviews page
+show a paginated list of approved reviews,
+
+have a new page for unpublished reviews
 ### Error Pages
 
 ### Features to be Implemented
