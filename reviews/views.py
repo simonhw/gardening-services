@@ -48,6 +48,7 @@ def create_review(request, service_id):
         if review_form.is_valid:
             review = review_form.save(commit=False)
             review.reviewer = request.user
+            review.service = service
             review.save()
             messages.success(
                 request, "Review submitted pending approval."
