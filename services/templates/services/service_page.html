@@ -39,7 +39,11 @@
                     </div>
                     <div>
                         <div class="ms-2 text-muted">
-                            ({% if service.average_rating %}{{ service.average_rating }}{% else %}No Reviews{% endif %})
+                            {% if service.average_rating %}
+                            ({{ service.average_rating }}) <a href="{% url 'service_reviews' service.id %}" class="hunter-green ms-1">{{ service.review_count }} Review{% if service.review_count > 1 %}s{% endif %}</a>
+                            {% else %}
+                            (No Reviews)
+                            {% endif %}
                         </div>
                     </div>
                 </div>

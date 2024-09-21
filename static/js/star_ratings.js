@@ -16,7 +16,7 @@ $(document).ready(function () {
 // REVIEWS PAGE
 $('.review-fill-ratings').each( function () {
     starId = $(this).prop('id');
-    num = starId.slice(-1);
+    num = starId.split("-")[2];
     rating = Number($('#rating-' + num).text());
     percentage = rating * 20;
     $(this).css('width', percentage + "%");
