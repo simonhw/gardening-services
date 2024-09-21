@@ -105,7 +105,7 @@ class CustomUserCreationForm(SignupForm):
 
 
 class CustomLoginForm(LoginForm):
-    """ A custom login form to allow for cusomisation """
+    """ A custom login form to allow for customisation """
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)

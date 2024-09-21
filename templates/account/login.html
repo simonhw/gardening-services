@@ -38,7 +38,7 @@
                         </button>
                     {% endslot %}
                 {% endelement %} -->
-                <form action="{% url 'account_login' %}" method="POST"></form>
+                <form action="{% url 'account_login' %}" method="POST">
                     {% csrf_token %}
                     {{ form | crispy }}
                     <button type="submit" class="btn btn-lg hunter-green-bg isabelline">
