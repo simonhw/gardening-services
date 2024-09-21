@@ -22,5 +22,14 @@ class Review(models.Model):
     approved = models.BooleanField(default=False)
     rating = models.IntegerField(null=True, blank=False)
 
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)
+        self.service.calculate_average_rating()
+
+    def delete(self, *args, **kwargs):
+        service = self.service
+        super().delete(*args, **kwargs)
+        service.calculate_average_rating()
+
     def __str__(self):
         return self.title
