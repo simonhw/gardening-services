@@ -23,8 +23,8 @@
                 {% if user.is_authenticated %}
                     <a href="#" class="btn">Leave a Review</a>
                 {% else %}
-                    <a href="{% url 'account_signup' %}" class="hunter-green">Create an account</a> or 
-                    <a href="{% url 'account_login' %}" class="hunter-green">login</a> to leave a review.
+                    <a href="{% url 'account_signup' %}?next={{request.path}}" class="hunter-green">Create an account</a> or 
+                    <a href="{% url 'account_login' %}?next={{request.path}}" class="hunter-green">login</a> to leave a review.
                 {% endif %}
             </div>
         </div>
@@ -100,6 +100,11 @@
                             <i class="fas fa-caret-left"></i>
                             Back to Service Page
                         </a>
+                        {% if user.is_superuser %}
+                        <a href="{% url 'unpublished_reviews' service.id %}" class="btn rounded-1 mate isabelline btn-dark">
+                            View Pending Reviews
+                        </a>
+                        {% endif %}
                     </div>
                 </div>
             {% else %}

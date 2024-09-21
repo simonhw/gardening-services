@@ -1,10 +1,11 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import user_passes_test
 from django.contrib.auth.mixins import UserPassesTestMixin
 from django.views import generic
 from services.models import Service
 from .models import Review
 from django.core.paginator import Paginator
+from django.contrib import messages
 
 
 class StaffCheck(UserPassesTestMixin, generic.ListView):
@@ -45,30 +46,46 @@ def service_reviews(request, service_id):
 
     return render(request, "reviews/reviews.html", context)
 
-class UnpublishedReviews(StaffCheck, generic.ListView):
+
+def unpublished_reviews(request, service_id):
+    
+    service = get_object_or_404(Service, pk=service_id)
+    reviews = service.reviews.filter(approved=False)
+    review_count = len(reviews)
+
+    paginator = Paginator(reviews, 6)
+    page_number = request.GET.get("page")
+    page_obj = paginator.get_page(page_number)
+
+    context = {
+        'reviews': reviews,
+        'review_count': review_count,
+        'service': service,
+        'page_obj': page_obj,
+    }
+
+    return render(request, "reviews/unpublished_reviews.html", context)
+    
+def publish_review(request, service_id, review_id):
     """
-    View that displays all unpublished reviews for a specific services
-    only to user with staff permissions
+    Method to allow staff users to mark a review as published.
     """
+    service = get_object_or_404(Service, pk=service_id)
+    review = get_object_or_404(Review, pk=review_id)
 
-    def unpublished_reviews(request, service_id):
-        
-        service = get_object_or_404(Service, pk=service_id)
-        reviews = service.reviews.filter(approved=False)
-        review_count = len(reviews)
+    if request.user.is_staff:
+        review.approved = True
+        review.save()
+        messages.success(
+            request, f'Review "{ review.title }" successfully published'
+        )
+    else:
+        messages.ERROR(
+            request, f'Review "{ review.title }" was not published'
+        )
+    return redirect('unpublished_reviews', service.id)
 
-        paginator = Paginator(reviews, 6)
-        page_number = request.GET.get("page")
-        page_obj = paginator.get_page(page_number)
 
-        context = {
-            'reviews': reviews,
-            'review_count': review_count,
-            'service': service,
-            'page_obj': page_obj,
-        }
-
-        return render(request, "reviews/unpublished_reviews.html", context)
 
 
 def review_page(request, review_id):

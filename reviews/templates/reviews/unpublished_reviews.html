@@ -53,9 +53,9 @@
                                 <h6 class="card-subtitle text-end text-muted">{{ review.created_on }}</h6>
                                 <hr>
                                 <div class="admin-buttons d-flex justify-content-around">
-                                    <button class="btn rounded-1 hunter-green-bg isabelline">
+                                    <a href="{% url 'publish_review' service.id review.id %}" class="btn rounded-1 hunter-green-bg isabelline">
                                         Publish
-                                    </button>
+                                    </a>
                                     <button class="btn rouned-1 btn-danger isabelline">
                                         Delete
                                     </button>    
@@ -86,9 +86,9 @@
                     </div>
                     <!-- Buttons -->
                     <div class="col-12 mt-3 text-center">
-                        <a href="{% url 'service_page' service.id %}" class="btn rounded-1 mate isabelline hunter-green-bg">
+                        <a href="{% url 'service_reviews' service.id %}" class="btn rounded-1 mate isabelline hunter-green-bg">
                             <i class="fas fa-caret-left"></i>
-                            Back to Service Page
+                            Back to Published Reviews
                         </a>
                     </div>
                 </div>
