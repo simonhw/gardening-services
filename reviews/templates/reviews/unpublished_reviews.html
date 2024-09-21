@@ -2,7 +2,7 @@
 
 {% load static %}
 
-{% block extra_title %} | {{ service.name }} Reviews{% endblock %}
+{% block extra_title %} | Unpublished {{ service.name }} Reviews{% endblock %}
 
 {% block content %}
 
@@ -18,15 +18,7 @@
     
     <div class="row my-3">
         <div class="col-10 offset-1">
-            <h1 class="mate text-center">{{ service.name }} Reviews{% if user.is_superuser %}: Admin View{% endif %}</h1>
-            <div class="text-center">    
-                {% if user.is_authenticated %}
-                    <a href="#" class="btn">Leave a Review</a>
-                {% else %}
-                    <a href="{% url 'account_signup' %}" class="hunter-green">Create an account</a> or 
-                    <a href="{% url 'account_login' %}" class="hunter-green">login</a> to leave a review.
-                {% endif %}
-            </div>
+            <h1 class="mate text-center">Unpublished Reviews: {{ service.name }}</h1>
         </div>
 
     <div>
@@ -59,17 +51,15 @@
                                 <div class="card-text">{{ review.content | safe }}</div>
                                 <h6 class="card-subtitle text-end text-muted mb-2">- {{ review.reviewer.first_name }}</h6>
                                 <h6 class="card-subtitle text-end text-muted">{{ review.created_on }}</h6>
-                                {% if user.is_superuser %}
                                 <hr>
                                 <div class="admin-buttons d-flex justify-content-around">
                                     <button class="btn rounded-1 hunter-green-bg isabelline">
-                                        Unpublish
+                                        Publish
                                     </button>
                                     <button class="btn rouned-1 btn-danger isabelline">
                                         Delete
                                     </button>    
                                 </div>
-                                {% endif %}
                             </div>
                         </div>
                     </div>

@@ -1,0 +1,32 @@
+
+    <div class="card {% if not review.approved and user.is_superuser or user == review.reviewer %}text-muted light-gray-bg{% endif %}">
+        <div class="card-body review-card">
+            <h5 class="title">{{ review.title}}</h5>
+            {% if not review.approved %}
+            <h6>(Unpublished)</h6>
+            {% endif %}
+            <div class="star-ratings mb-1">
+                <div class="fill-ratings review-fill-ratings" id="fill-ratings-{{review.pk}}"
+                    style="width: 0%;">
+                    <span>★★★★★</span>
+                </div>
+                <div class="empty-ratings">
+                    <span>★★★★★</span>
+                </div>
+                <div id="rating-{{review.pk}}" hidden>{{ review.rating }}</div>
+            </div>
+            <div class="card-text">{{ review.content | safe }}</div>
+            <h6 class="card-subtitle text-end text-muted mb-2">- {{ review.reviewer.first_name }}</h6>
+            <h6 class="card-subtitle text-end text-muted">{{ review.created_on }}</h6>
+            {% if user == review.reviewer %}
+            <button class="btn rounded-1 fern-green-bg isabelline">Edit</button>
+            {% endif %}
+            {% if user.is_superuser %}
+                {% if review.approved %}
+                <button class="btn rounded-1 purple-bg isabelline">Unpublish</button>
+                {% else %}
+                <button class="btn rounded-1 purple-bg isabelline">Publish</button>
+                {% endif %}
+            {% endif %}
+        </div>
+    </div>

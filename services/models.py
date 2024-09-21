@@ -51,7 +51,7 @@ class Service(models.Model):
     has_surface = models.BooleanField(default=False, null=True, blank=True)
 
     def calculate_average_rating(self):
-        reviews = self.reviews.all()
+        reviews = self.reviews.filter(approved=True)
         if reviews:
             summed_ratings = sum(review.rating for review in reviews)
             self.average_rating = summed_ratings / reviews.count()
