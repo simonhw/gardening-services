@@ -33,7 +33,7 @@ urlpatterns = [
         name='edit_review'
         ),
     path(
-        '<service_id>/reviews/delete/<review_id>/',
+        '<service_id>/unpublished_reviews/delete/<review_id>/',
         views.delete_review,
         name='delete_review'
         ),

@@ -61,9 +61,10 @@
                                         Edit
                                     </a>
                                     {% endif %}
-                                    <a href="{% url 'delete_review' service.id review.id %}" class="btn rounded-1 btn-danger">
+                                    <button type="button" class="btn rounded-1 btn-danger isabelline btn-delete" data-bs-toggle="modal"
+                                        data-bs-target="#deleteModal" data-review_id="{{ review.id }}" data-service_id="{{ service.id }}">
                                         Delete
-                                    </a>    
+                                    </button>   
                                 </div>
                             </div>
                         </div>
@@ -103,9 +104,37 @@
             </div>
         </div>
     </div>
+    
+    <!-- Modals -->
+    <!-- Confirming User Delete Action -->
+    <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="deleteModalLabel">Delete Review?</h3>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        Are you sure you want to delete this review?
+                        This action cannot be undone.
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                        Cancel
+                    </button>
+                    <a id="deleteConfirm" href="#" class="btn btn-danger">
+                        Delete
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}
 
 {% block postloadjs %}
 {{ block.super }}
 <script src="{% static 'js/star_ratings.js' %}"></script>
+<script src="{% static 'reviews/js/delete_buttons.js' %}"></script>
 {% endblock %}
