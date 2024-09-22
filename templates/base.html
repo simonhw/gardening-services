@@ -94,18 +94,6 @@
                             <li><a class="dropdown-item" href="{% url 'service_page' 6 %}">Tree Stump Removal</a></li>
                         </ul>
                     </li>
-                    {% if user.is_authenticated %}
-                    <li class="nav-item {% if request.path == url %}active{% endif %}">
-                        <a class="nav-link" href="{% url 'account' %}">My Account</a>
-                    </li>
-                    {% else %}
-                    <li class="nav-item {% if request.path == url %}active{% endif %}">
-                        <a class="nav-link" href="{% url 'login' %}?next={{request.path}}">Log In/Sign Up</a>
-                    </li>
-                    {% endif %}
-                    <li class="nav-item {% if request.path == url %}active{% endif %}">
-                        <a class="nav-link" href="#">Contact Us</a>
-                    </li>
                     <li class="nav-item {% if request.path == url %}active{% endif %}">
                         <div class="cart-dropdown-wrapper">
                             <a class="nav-link" href="{% url 'view_cart' %}">
@@ -113,14 +101,24 @@
                             </a>
                             {% block cartpreview %}
                             {% if total %}
-                                {% include 'includes/cart_preview.html' %}
+                            {% include 'includes/cart_preview.html' %}
                             {% endif %}
                             {% endblock %}
                         </div>
                     </li>
+                    <li class="nav-item {% if request.path == url %}active{% endif %}">
+                        <a class="nav-link" href="#">Contact Us</a>
+                    </li>
                     {% if user.is_authenticated %}
                     <li class="nav-item {% if request.path == url %}active{% endif %}">
+                        <a class="nav-link" href="{% url 'account' %}">My Account</a>
+                    </li>
+                    <li class="nav-item {% if request.path == url %}active{% endif %}">
                         <a class="nav-link" href="{% url 'account_logout' %}">Log Out</a>
+                    </li>
+                    {% else %}
+                    <li class="nav-item {% if request.path == url %}active{% endif %}">
+                        <a class="nav-link" href="{% url 'login' %}?next={{request.path}}">Log In/Sign Up</a>
                     </li>
                     {% endif %}
                 </ul>
