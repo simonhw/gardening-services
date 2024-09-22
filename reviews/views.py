@@ -52,6 +52,7 @@ def create_review(request, service_id):
             review.reviewer = request.user
             review.service = service
             review.save()
+            return redirect('service_reviews', service.id)
             messages.success(
                 request, "Review submitted pending approval."
             )
