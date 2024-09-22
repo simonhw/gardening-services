@@ -54,3 +54,29 @@ class ReviewForm(forms.ModelForm):
         'content',
         'rating',
     ]
+
+    def clean(self):
+        """
+        Validation of form data on the back end.
+
+        The method ensures that input fields cannot be blank.
+
+        If the data validates, the method returns the cleaned data.
+        If invalid, it raises a validation error to inform the user.
+        """
+
+        cleaned_data = super().clean()
+        title = cleaned_data.get('title')
+        content = cleaned_data.get('content')
+        rating = cleaned_data.get('rating')
+
+        if not title:
+            raise ValidationError('You must provide a title.')
+        
+        if not content:
+            raise ValidationError('You must write a review.')
+
+        if not rating:
+            raise ValidationError('You must provide a rating.')
+
+        return cleaned_data

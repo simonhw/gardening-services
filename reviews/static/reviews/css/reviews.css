@@ -14,14 +14,30 @@
     cursor: pointer;
 }
 
+/* Overlap input divs so the previous stars don't momentarally lose their 
+    orange colour when moving the cursor to the next star in the line */
+.form-check {
+    margin-left: -5px;
+    margin-right: -5px;
+}
+
 .form-check-label { 
     font-size: 35px;
+    padding: 0 5px;
 }
 
 .form-check input{
     width: 0;
     height: 0;
     opacity: 0;
+}
+
+.invalid {
+    color: red;
+}
+
+.input-border-red {
+    border-color: red;
 }
 
 .form-star-selected {

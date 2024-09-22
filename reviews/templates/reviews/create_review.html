@@ -26,22 +26,28 @@
             <div class="text-center">    
                 {% if user.is_authenticated %}
                     <p>Reviewing as: {{ request.user.first_name}} {{ request.user.last_name }}</p>
-                    <form id="reviewForm" method="POST">
+                    <form id="reviewForm" method="POST" novalidate>
                         {% csrf_token %}
                         <div class="form-row">
-                            <div class="col-md-6 mb-0">
-                            {{ review_form.title | as_crispy_field }}
+                            <div class="col-12 col-md-6 offset-md-3 mb-0">
+                                {{ review_form.title | as_crispy_field }}
                             </div>
                         </div>
+                        <div class="d-none invalid-message mb-3 invalid fw-bold" id="title-validation">
+                        </div>
                         <div class="form-row">
-                            <div class="col-md-6 mb-0">
+                            <div class="col-12 col-md-6 offset-md-3 mb-0">
                             {{ review_form.content | as_crispy_field }}
                             </div>
                         </div>
+                        <div class="d-none invalid-message mb-3 invalid fw-bold" id="content-validation">
+                        </div>
                         <div class="form-row">
-                            <div class="col-md-6 mb-0">
+                            <div class="col-12 col-md-6 offset-md-3 mb-0">
                             {{ review_form.rating | as_crispy_field }}
                             </div>
+                        </div>
+                        <div class="d-none invalid-message mb-3 invalid fw-bold" id="rating-validation">
                         </div>
                         <button type="submit" class="btn btn-lg hunter-green-bg isabelline">
                             Submit
