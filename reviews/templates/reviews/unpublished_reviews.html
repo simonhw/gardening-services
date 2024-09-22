@@ -84,17 +84,18 @@
                             </span>
                         </div>
                     </div>
-                    <!-- Buttons -->
-                    <div class="col-12 mt-3 text-center">
-                        <a href="{% url 'service_reviews' service.id %}" class="btn rounded-1 mate isabelline hunter-green-bg">
-                            <i class="fas fa-caret-left"></i>
-                            Back to Published Reviews
-                        </a>
-                    </div>
+                    
                 </div>
             {% else %}
-                <p class="text-center">There are no reviews for this service yet.</p>
+                <p class="text-center">There are no pending reviews to publish.</p>
             {% endif %}
+            <!-- Buttons -->
+            <div class="col-12 mt-3 text-center">
+                <a href="{% url 'service_reviews' service.id %}" class="btn rounded-1 mate isabelline hunter-green-bg">
+                    <i class="fas fa-caret-left"></i>
+                    Back to Published Reviews
+                </a>
+            </div>
         </div>
     </div>
 {% endblock %}
