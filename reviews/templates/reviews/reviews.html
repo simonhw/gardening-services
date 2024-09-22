@@ -67,6 +67,11 @@
                                         Unpublish
                                     </button>
                                     {% endif %}
+                                    {% if user == review.reviewer %}
+                                    <a href="{% url 'edit_review' service.id review.id %}" class="btn rounded-1 hunter-green-bg isabelline">
+                                        Edit
+                                    </a>
+                                    {% endif %}
                                     <a href="{% url 'delete_review' service.id review.id %}" class="btn rounded-1 btn-danger isabelline">
                                         Delete
                                     </a>   

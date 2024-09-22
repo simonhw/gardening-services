@@ -53,10 +53,15 @@
                                 <h6 class="card-subtitle text-end text-muted">{{ review.created_on }}</h6>
                                 <hr>
                                 <div class="admin-buttons d-flex justify-content-around">
-                                    <a href="{% url 'publish_review' service.id review.id %}" class="btn rounded-1 hunter-green-bg isabelline">
+                                    <a href="{% url 'publish_review' service.id review.id %}" class="btn rounded-1 btn-dark isabelline">
                                         Publish
                                     </a>
-                                    <a href="{% url 'delete_review' service.id review.id %}" class="btn rounded-1 btn-danger isabelline">
+                                    {% if user == review.reviewer %}
+                                    <a href="{% url 'edit_review' service.id review.id %}" class="btn rounded-1 hunter-green-bg isabelline">
+                                        Edit
+                                    </a>
+                                    {% endif %}
+                                    <a href="{% url 'delete_review' service.id review.id %}" class="btn rounded-1 btn-danger">
                                         Delete
                                     </a>    
                                 </div>

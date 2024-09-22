@@ -7,7 +7,9 @@ from .models import Review
 from django.core.paginator import Paginator
 from django.contrib import messages
 from .forms import ReviewForm
-
+from django.contrib.auth.decorators import login_required
+from django.http import HttpResponseBadRequest
+from django.core.exceptions import PermissionDenied
 
 class StaffCheck(UserPassesTestMixin, generic.ListView):
     """ Check if user account has staff status """
@@ -29,7 +31,7 @@ def review_page(request, review_id):
 
     return render(request, "reviews/review_page.html", context)
 
-
+@login_required
 def create_review(request, service_id):
     """
     Method to handle the review form.
@@ -72,6 +74,7 @@ def create_review(request, service_id):
         }
     )
 
+
 def service_reviews(request, service_id):
     """
     View that displays all reviews for a specific service
@@ -104,6 +107,7 @@ def service_reviews(request, service_id):
     return render(request, "reviews/reviews.html", context)
 
 
+@login_required
 def unpublished_reviews(request, service_id):
     
     service = get_object_or_404(Service, pk=service_id)
@@ -124,6 +128,7 @@ def unpublished_reviews(request, service_id):
     return render(request, "reviews/unpublished_reviews.html", context)
 
 
+@login_required
 def publish_review(request, service_id, review_id):
     """
     Method to allow staff users to mark a review as published.
@@ -144,6 +149,55 @@ def publish_review(request, service_id, review_id):
     return redirect('unpublished_reviews', service.id)
 
 
+@login_required
+def edit_review(request, service_id, review_id):
+    """
+    Allow users to edit their own reviews. Take the review id and
+    pre-fill the form with the correct data for the user to edit.
+    """
+
+    review = get_object_or_404(Review, pk=review_id)
+
+    if review.reviewer == request.user:
+        if request.method == 'GET':
+            review_form = ReviewForm(instance=review)
+            return render(request, 'reviews/create_review.html',
+                {
+                    'review_form': review_form,
+                    'service_id': service_id,
+                    'review_id': review_id,
+                }
+            )
+        elif request.method == 'POST':
+            review_form = ReviewForm(request.POST, instance=review)
+            if review_form.is_valid():
+                review_form.save()
+                messages.success(request, 
+                    f'Review "{review.title}" successfully edited!'
+                    )
+                if review.approved:
+                    return redirect('service_reviews', service_id)
+                else:
+                    return redirect('unpublished_reviews', service_id)
+            else:
+                review_form = ReviewForm(data=request.POST)
+                return render(request, 'reviews/create_review.html',
+                    {
+                        'review_form': review_form,
+                        'service_id': service_id,
+                        'review_id': review_id,
+                    }
+                )
+                messages.error(request, 'Please fully complete the form')
+        else:
+             return HttpResponseBadRequest('Unsupported request method.')
+    else:
+        raise PermissionDenied
+            
+
+
+
+@login_required
 def delete_review(request, service_id, review_id):
     """
     Method to allow staff users and review owners to delete a review

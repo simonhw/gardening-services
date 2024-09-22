@@ -28,6 +28,11 @@ urlpatterns = [
         name='publish_review'
         ),
     path(
+        '<service_id>/reviews/edit/<review_id>/',
+        views.edit_review,
+        name='edit_review'
+        ),
+    path(
         '<service_id>/reviews/delete/<review_id>/',
         views.delete_review,
         name='delete_review'
