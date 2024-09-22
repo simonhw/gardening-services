@@ -23,8 +23,7 @@
                 {% if user.is_authenticated %}
                     <a href="{% url 'create_review' service.id %}" class="btn hunter-green-bg isabelline">Leave a Review</a>
                 {% else %}
-                    <a href="{% url 'account_signup' %}?next={{request.path}}" class="hunter-green">Create an account</a> or 
-                    <a href="{% url 'account_login' %}?next={{request.path}}" class="hunter-green">login</a> to leave a review.
+                    <a href="{% url 'account_login' %}?next={{request.path}}" class="hunter-green">Log in</a> to leave a review.
                 {% endif %}
             </div>
         </div>

@@ -41,6 +41,7 @@
                 <form action="{% url 'account_login' %}" method="POST">
                     {% csrf_token %}
                     {{ form | crispy }}
+                    <input type="hidden" name="next" value="{{ request.GET.next }}">
                     <button type="submit" class="btn btn-lg hunter-green-bg isabelline">
                         {% trans "Sign In" %}
                     </button>
