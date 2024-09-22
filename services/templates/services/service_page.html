@@ -55,7 +55,7 @@
                         <!-- Input Type 1 - Weed Surface -->
                         {% if service.has_surface %}
                         <div id="weed-input" class="py-1">
-                            <label for="weedOption"><strong>Surface Type:</strong></label>
+                            <label for="weedOption"><b>Surface Type:</b></label>
                             <div class="form-group w-75">
                                 <select id="weedOption" name="surface" class="form-select">
                                     <option selected value="Driveway/Patio">Driveway/Patio</option>
@@ -68,7 +68,7 @@
                         <!-- Input Type 2 - Felling or Pruning -->
                         {% if service.has_fellprune %}
                         <div id="tree-input" class="py-1">
-                            <label for="treeOption"><strong>Select Option:</strong></label>
+                            <label for="treeOption"><b>Select Option:</b></label>
                             <div class="form-group w-75">
                                 <select id="treeOption" name="tree" class="form-select">
                                     <option selected value="felling">Felling</option>
@@ -83,8 +83,8 @@
                         <!-- Input Type 3 - Size -->
                         {% if service.has_sizes %}
                         <div id="size-input" class="py-1">
-                            <label for="sizeOption"><strong>Size of <span
-                                        class="service-name">{{ service.name }}</span></strong></label>
+                            <label for="sizeOption"><b>Size of <span
+                                        class="service-name">{{ service.name }}</span></b></label>
                             <div class="form-group w-75">
                                 <select id="grassOption" name="size" class="form-select">
                                     <option selected value="small">Small</option>
@@ -97,8 +97,8 @@
 
                         <!-- Input Type 4 - Number -->
                         <div id="number-input" class="py-1">
-                            <label for="numberOption"><strong>Number of <span
-                                        class="service-name">{{ service.name }}</span>s</strong></label>
+                            <label for="numberOption"><b>Number of <span
+                                        class="service-name">{{ service.name }}</span>s</b></label>
                             <div class="form-group w-75">
                                 <div class="input-group">
                                     <div class="input-group-prepend">
@@ -127,7 +127,7 @@
                         <!-- Input Type 5 - Acres -->
                         {% if service.has_acres %}
                         <div id="acre-input" class="py-1">
-                            <label for="acreOption"><strong>Select Option:</strong></label>
+                            <label for="acreOption"><b>Select Option:</b></label>
                             <div class="form-group w-75">
                                 <select id="acreOption" name="size" class="form-select">
                                     <option selected value="1 acre or less">1 acre or less</option>
@@ -139,7 +139,7 @@
                         {% endif %}
 
                         <div>
-                            <p class="my-2"><strong>Price:</strong> €{{service.unit_price}} each</p>
+                            <p class="my-2"><b>Price:</b> €{{service.unit_price}} each</p>
                         </div>
 
                         <div class="my-3">

@@ -34,15 +34,15 @@
                             <div class="row">
                                 <div class="col-12">
                                     {% if item.surface %}
-                                    <p class="my-0 small"><strong>Type:</strong> {{ item.surface | title }}</p>
+                                    <p class="my-0 small"><b>Type:</b> {{ item.surface | title }}</p>
                                     {% endif %}
                                     {% if item.cuts %}
-                                    <p class="my-0 small"><strong>Type:</strong> {{ item.cuts | title }}</p>
+                                    <p class="my-0 small"><b>Type:</b> {{ item.cuts | title }}</p>
                                     {% endif %}
                                     {% if item.size %}
-                                    <p class="my-0 small"><strong>Size:</strong> {{ item.size | title }}</p>
+                                    <p class="my-0 small"><b>Size:</b> {{ item.size | title }}</p>
                                     {% endif %}
-                                    <p class="my-0 small"><strong>Price:</strong> €{{ item.service.unit_price }} each</p>
+                                    <p class="my-0 small"><b>Price:</b> €{{ item.service.unit_price }} each</p>
                                 </div>
                             </div>
                             <div class="row">
@@ -88,7 +88,7 @@
                             <div class="row">
                                 <div class="d-none d-md-inline col-md-12 d-flex align-items-center">
                                     <!-- Line Subtotal -->
-                                    <p class="my-0 small"><strong>Subtotal:</strong> €{{ item.service.unit_price | calc_subtotal:item.number }}</p>
+                                    <p class="my-0 small"><b>Subtotal:</b> €{{ item.service.unit_price | calc_subtotal:item.number }}</p>
                                 </div>
                             </div>
                             <div class="row">
@@ -109,7 +109,7 @@
                         </div>
                         <div class="col-6 d-md-none mt-2 d-flex align-items-center">
                             <!-- Line Subtotal -->
-                            <p class="my-0 small"><strong>Subtotal:</strong> €{{ item.service.unit_price | calc_subtotal:item.number }}</p>
+                            <p class="my-0 small"><b>Subtotal:</b> €{{ item.service.unit_price | calc_subtotal:item.number }}</p>
                         </div>
                     </div>
                     <hr>

@@ -17,8 +17,8 @@
     </div>
     <div class="row">
         <div class="col-10 offset-1 col-lg-8 offset-lg-2 col-xl-10 offset-xl-1">
-            <p><strong>Name:</strong> {{ user.first_name}} {{ user.last_name }}</p>
-            <p><strong>Email:</strong> {{ user.email }}</p>
+            <p><b>Name:</b> {{ user.first_name}} {{ user.last_name }}</p>
+            <p><b>Email:</b> {{ user.email }}</p>
         </div>
     </div>
     <div class="row">
@@ -28,7 +28,7 @@
     </div>
     <div class="row">
         <div class="col-10 offset-1 col-lg-4 offset-lg-2 offset-xl-1 mt-3 mt-lg-0">
-            <p><strong>Default Location Information</strong></p>
+            <p><b>Default Location Information</b></p>
             <form action="{% url 'account' %}" method="POST" id="profile-update-form">
                 {% csrf_token %}
                 {{ form|crispy }}
@@ -38,7 +38,7 @@
             </form>
         </div>
         <div class="col-10 offset-1 col-lg-4 offset-lg-0 col-xl-5 offset-xl-1 mt-5 mt-lg-0">
-            <p><strong>Order History</strong></p>
+            <p><b>Order History</b></p>
             <div class="order-history table-responsive">
                 <table class="table table-sm table-borderless">
                     <thead>

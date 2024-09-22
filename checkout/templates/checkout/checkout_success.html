@@ -22,7 +22,7 @@
             <div class="order-confirmation-wrapper">
                 <div class="row">
                     <div class="col">
-                        <strong>Order Details:</strong>
+                        <b>Order Details:</b>
                     </div>
                 </div>
                 {% for item in order.lineitems.all %}
@@ -42,16 +42,16 @@
                 {% endfor %}
                 <div class="row mb-3">
                     <div class="col-12 col-md-8">
-                        <p class="mb-0"><strong>Grand Total</strong></p>
+                        <p class="mb-0"><b>Grand Total</b></p>
                     </div>
                     <div class="col-12 col-md-4">
-                        <p class="mb-0"><strong>€{{ order.grand_total }}</strong></p>
+                        <p class="mb-0"><b>€{{ order.grand_total }}</b></p>
                     </div>
                 </div>
                 <!-- Delivery Section -->
                 <div class="row">
                     <div class="col-12">
-                        <strong>Location Details:</strong>
+                        <b>Location Details:</b>
                     </div>
                 </div>
 

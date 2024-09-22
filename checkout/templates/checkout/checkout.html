@@ -143,7 +143,7 @@
                     <div class="">
                         <div class="row mb-3">
                             <div class="col-12 col-md-6">
-                                <span><strong>Address</strong></span>
+                                <span><b>Address</b></span>
                                 <div class="review-paragraphs">
                                     <p id="review_street_address1"></p>
                                     <p id="review_street_address2"></p>
@@ -154,7 +154,7 @@
                                 <div><a class="adjust-address">Change</a></div>
                             </div>
                             <div class="col-12 col-md-6 mt-3 mt-md-0">
-                                <span><strong>Payment</strong></span>
+                                <span><b>Payment</b></span>
                                 <div class="review-paragraphs">
                                     <div class="text-danger" id="card-errors-review" role="alert"></div>
                                     <p id="card-accepted-alert">
@@ -170,10 +170,10 @@
                         <div class="col-12">
                             <div class="row mt-3">
                                 <div class="col-6 col-sm-7 offset-1">
-                                    <p><strong>Service{% if item_count != 1 %}s{% endif %} ({{ item_count }})</strong></p>
+                                    <p><b>Service{% if item_count != 1 %}s{% endif %} ({{ item_count }})</b></p>
                                 </div>
                                 <div class="col-4 col-sm-3 text-start text-sm-center">
-                                    <p><strong>Subtotal</strong></p>
+                                    <p><b>Subtotal</b></p>
                                 </div>
                             </div>
                             {% for item in cart_items %}
@@ -182,7 +182,7 @@
                                         <img src="{{ MEDIA_URL }}{{ item.service.image }}" class="w-100 rounded">
                                     </div>
                                     <div class="col-6 offset-1 col-sm-5 offset-sm-0">
-                                        <p class="my-0"><strong>{{item.number}} x {{ item.service.name }}</strong></p>
+                                        <p class="my-0"><b>{{item.number}} x {{ item.service.name }}</b></p>
                                     </div>
                                     <div class="col-4 col-sm-3 text-center">
                                         <p class="my-0 small text-muted">${{ item.service.unit_price | calc_subtotal:item.number }}</p>
@@ -192,10 +192,10 @@
                             <hr>
                             <div class="row">
                                 <div class="col-6 col-sm-7 offset-1">
-                                    <p class="float-end"><strong>Grand Total:</strong></p>
+                                    <p class="float-end"><b>Grand Total:</b></p>
                                 </div>
                                 <div class="col-4 col-sm-3 text-center">
-                                    <p><strong>€{{ total|floatformat:2 }}</strong></p>
+                                    <p><b>€{{ total|floatformat:2 }}</b></p>
                                 </div>
                             </div>
                         </div>
@@ -224,7 +224,7 @@
                             <span class="icon">
                                 <i class="fas fa-exclamation-circle"></i>
                             </span>
-                            <span>Your card will be charged <strong>€{{ total|floatformat:2 }}</strong> today.</span>
+                            <span>Your card will be charged <b>€{{ total|floatformat:2 }}</b> today.</span>
                         </p>
                     </div>
                 </div>
