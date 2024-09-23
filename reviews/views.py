@@ -115,15 +115,15 @@ def create_review(request, service_id):
 
     if request.method == 'POST':
         review_form = ReviewForm(data=request.POST)
-        if review_form.is_valid:
+        if review_form.is_valid():
             review = review_form.save(commit=False)
             review.reviewer = request.user
             review.service = service
             review.save()
-            return redirect('service_reviews', service.id)
             messages.success(
                 request, "Review submitted pending approval."
             )
+            return redirect('service_reviews', service.id)
         else:
             review_form = ReviewForm(data=request.POST)
             return render(

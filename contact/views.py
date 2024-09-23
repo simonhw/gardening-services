@@ -1,4 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.contrib import messages
+
 from .models import ContactUs
 from .forms import ContactUsForm
 from accounts.models import UserAccount
@@ -9,15 +11,13 @@ def contact_us(request):
 
     if request.method == 'POST':
         contact_us_form = ContactUsForm(data=request.POST)
-        if contact_us_form.is_valid:
+        if contact_us_form.is_valid():
             contact_us = contact_us_form.save(commit=False)
-            if request.user.is_authenticated:
-                contact_us.account = request.user
             contact_us.save()
-            return redirect('home')
-            messagess.success(
+            messages.success(
                 request, 'Message successfully sent.'
             )
+            return redirect('home')
         else:
             contact_us_form = ContactUsForm(data=request.POST)
             return render(
