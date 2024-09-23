@@ -4,12 +4,12 @@ from django.urls import path
 urlpatterns = [
     path(
         '<service_id>/reviews/',
-        views.service_reviews,
+        views.ServiceReviews.as_view(),
         name='service_reviews'
         ),
     path(
         '<service_id>/unpublished_reviews/',
-        views.unpublished_reviews,
+        views.UnpublishedReviews.as_view(),
         name='unpublished_reviews'
         ),
     path(

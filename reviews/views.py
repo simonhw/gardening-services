@@ -1,21 +1,88 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import user_passes_test
-from django.contrib.auth.mixins import UserPassesTestMixin
-from django.views import generic
-from services.models import Service
-from .models import Review
-from django.core.paginator import Paginator
-from django.contrib import messages
-from .forms import ReviewForm
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import UserPassesTestMixin
+from django.views import View
+
+from .models import Review
+from .forms import ReviewForm
+from services.models import Service
+from django.core.paginator import Paginator
+
+from django.contrib import messages
 from django.http import HttpResponseBadRequest
 from django.core.exceptions import PermissionDenied
 
-class StaffCheck(UserPassesTestMixin, generic.ListView):
-    """ Check if user account has staff status """
 
+class StaffCheck(UserPassesTestMixin, View):
     def test_func(self):
         return self.request.user.is_staff
+
+
+class ServiceReviews(View):
+    """
+    View that shows reviews for a particular service ordered by date of
+    creation.
+    """
+
+    def get(self, request, service_id):
+        """
+        Function to handle pagination of reviews
+        """
+
+        service = get_object_or_404(Service, pk=service_id)
+        reviews = service.reviews.filter(approved=True)
+        review_count = len(reviews)
+
+        paginator = Paginator(reviews, 6)
+        page_number = request.GET.get("page")
+        page_obj = paginator.get_page(page_number)
+
+        unpublished_reviews = service.reviews.filter(approved=False)
+        unpublished_review_count = len(unpublished_reviews)
+        unpublished_paginator = Paginator(reviews, 6)
+        unpublished_page_number = request.GET.get("page")
+        unpublished_page_obj = unpublished_paginator.get_page(
+            unpublished_page_number
+            )
+
+        context = {
+            'reviews': reviews,
+            'review_count': review_count,
+            'service': service,
+            'page_obj': page_obj,
+            'unpublished_reviews': unpublished_reviews,
+            'unpublished_review_count': unpublished_review_count,
+            'unpublished_page_obj': unpublished_page_obj,
+        }
+
+        return render(request, "reviews/reviews.html", context)
+
+
+class UnpublishedReviews(StaffCheck, View):
+    """
+    View that shows unpublished reviews for a particular service ordered by date of
+    creation.
+    """
+
+    def get(self, request, service_id):
+        
+        service = get_object_or_404(Service, pk=service_id)
+        reviews = service.reviews.filter(approved=False)
+        review_count = len(reviews)
+
+        paginator = Paginator(reviews, 6)
+        page_number = request.GET.get("page")
+        page_obj = paginator.get_page(page_number)
+
+        context = {
+            'reviews': reviews,
+            'review_count': review_count,
+            'service': service,
+            'page_obj': page_obj,
+        }
+
+        return render(request, "reviews/unpublished_reviews.html", context)
 
 
 def review_page(request, review_id):
@@ -30,6 +97,7 @@ def review_page(request, review_id):
     }
 
     return render(request, "reviews/review_page.html", context)
+
 
 @login_required
 def create_review(request, service_id):
@@ -76,60 +144,7 @@ def create_review(request, service_id):
     )
 
 
-def service_reviews(request, service_id):
-    """
-    View that displays all reviews for a specific service
-    """
-
-    service = get_object_or_404(Service, pk=service_id)
-    reviews = service.reviews.filter(approved=True)
-    review_count = len(reviews)
-
-    paginator = Paginator(reviews, 6)
-    page_number = request.GET.get("page")
-    page_obj = paginator.get_page(page_number)
-
-    unpublished_reviews = service.reviews.filter(approved=False)
-    unpublished_review_count = len(unpublished_reviews)
-    unpublished_paginator = Paginator(reviews, 6)
-    unpublished_page_number = request.GET.get("page")
-    unpublished_page_obj = unpublished_paginator.get_page(unpublished_page_number)
-
-    context = {
-        'reviews': reviews,
-        'review_count': review_count,
-        'service': service,
-        'page_obj': page_obj,
-        'unpublished_reviews': unpublished_reviews,
-        'unpublished_review_count': unpublished_review_count,
-        'unpublished_page_obj': unpublished_page_obj,
-    }
-
-    return render(request, "reviews/reviews.html", context)
-
-
-@login_required
-def unpublished_reviews(request, service_id):
-    
-    service = get_object_or_404(Service, pk=service_id)
-    reviews = service.reviews.filter(approved=False)
-    review_count = len(reviews)
-
-    paginator = Paginator(reviews, 6)
-    page_number = request.GET.get("page")
-    page_obj = paginator.get_page(page_number)
-
-    context = {
-        'reviews': reviews,
-        'review_count': review_count,
-        'service': service,
-        'page_obj': page_obj,
-    }
-
-    return render(request, "reviews/unpublished_reviews.html", context)
-
-
-@login_required
+@user_passes_test(lambda u: u.is_staff)
 def publish_review(request, service_id, review_id):
     """
     Method to allow staff users to mark a review as published.
@@ -195,8 +210,6 @@ def edit_review(request, service_id, review_id):
     else:
         raise PermissionDenied
             
-
-
 
 @login_required
 def delete_review(request, service_id, review_id):

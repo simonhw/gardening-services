@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block extra_title %} | Home{% endblock %}
+
+{% block content %}
+
+<div class="container-fluid my-3">
+    <hr>    
+    <div class="row my-3">
+        <div class="col-10 offset-1 col-md-8 offset-md-2 mt-2 text-center">
+            <h1 class="mate">404 - Not Found</h1>
+            <p>Sorry, we couldn't find the page you were looking for.
+            </p>
+            <a href="{% url 'home' %}" class="btn btn-lg hunter-green-border isabelline-bg hunter-green rounded-1 mb-3"></a>
+                <span class="icon">
+                    <i class="fas fa-caret-left"></i>
+                </span>
+                <span class="font-weight-bold">Back to Homepage</span>
+            </a>
+        </div>
+    </div>
+
+</div>
+{% endblock %}
