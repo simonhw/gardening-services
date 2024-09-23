@@ -107,7 +107,7 @@
                         </div>
                     </li>
                     <li class="nav-item {% if request.path == url %}active{% endif %}">
-                        <a class="nav-link" href="#">Contact Us</a>
+                        <a class="nav-link" href="{% url 'contact_us' %}">Contact Us</a>
                     </li>
                     {% if user.is_authenticated %}
                     <li class="nav-item {% if request.path == url %}active{% endif %}">
