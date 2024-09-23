@@ -3,6 +3,7 @@
 {% load static %}
 
 {% block extra_css %}
+<link rel="stylesheet" href="{% static 'contact/css/contact.css' %}">
 {% endblock %}
 
 {% block extra_title %} | Contact Us{% endblock %}
@@ -21,7 +22,21 @@
     
     <div class="row my-3">
         <div class="col-10 offset-1">
-            <h1 class="mate text-center">Contact Us</h1>
+            <h1 class="mate text-center mt-3 mb-4">Contact Us</h1>
+        </div>
+        <div class="col-10 offset-1 col-md-6 offset-md-3">
+            <form id="contactUsForm" method="POST">
+                {% csrf_token %}
+                {{ contact_us_form | crispy }}
+                <button type="submit" class="btn btn-lg hunter-green-bg isabelline float-end">
+                    Send
+                </button>
+            </form>
         </div>
     <div>
+{% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}
+<script src="{% static 'contact/js/contact_us.js' %}"></script>
 {% endblock %}

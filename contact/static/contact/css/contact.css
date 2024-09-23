@@ -1,0 +1,10 @@
+#contactUsForm input::placeholder,
+#contactUsForm textarea::placeholder,
+#id_contact_reason option:first-child {
+    color: #595c5f;
+}
+
+#id_contact_reason,
+#id_contact_reason option:not(:first-child) {
+    color: #000
+}
