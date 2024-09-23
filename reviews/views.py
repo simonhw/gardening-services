@@ -6,6 +6,7 @@ from django.views import View
 
 from .models import Review
 from .forms import ReviewForm
+from accounts.models import UserAccount
 from services.models import Service
 from django.core.paginator import Paginator
 
@@ -24,14 +25,14 @@ class ServiceReviews(View):
     View that shows reviews for a particular service ordered by date of
     creation.
     """
-
+    
     def get(self, request, service_id):
         """
         Function to handle pagination of reviews
         """
 
         service = get_object_or_404(Service, pk=service_id)
-        reviews = service.reviews.filter(approved=True)
+        reviews = service.reviews.filter(approved=True).order_by('created_on')
         review_count = len(reviews)
 
         paginator = Paginator(reviews, 6)
@@ -46,6 +47,8 @@ class ServiceReviews(View):
             unpublished_page_number
             )
 
+        ordered = self.service_history(request, service)
+
         context = {
             'reviews': reviews,
             'review_count': review_count,
@@ -54,21 +57,39 @@ class ServiceReviews(View):
             'unpublished_reviews': unpublished_reviews,
             'unpublished_review_count': unpublished_review_count,
             'unpublished_page_obj': unpublished_page_obj,
+            'ordered': ordered,
         }
 
         return render(request, "reviews/reviews.html", context)
 
 
+    def service_history(self, request, current_service):
+        """
+        Function to check if a user has previously ordered a particular
+        service.
+        """
+
+        ordered = False
+        account = get_object_or_404(UserAccount, user=request.user)
+        orders = account.orders.all()
+        for order in orders:
+            for item in order.lineitems.all():
+                if item.service.id == current_service.id:
+                    ordered = True
+                    break
+        return ordered
+
+
 class UnpublishedReviews(StaffCheck, View):
     """
-    View that shows unpublished reviews for a particular service ordered by date of
-    creation.
+    View that shows unpublished reviews for a particular service
+    ordered by date of creation.
     """
 
     def get(self, request, service_id):
         
         service = get_object_or_404(Service, pk=service_id)
-        reviews = service.reviews.filter(approved=False)
+        reviews = service.reviews.filter(approved=False).order_by('created_on')
         review_count = len(reviews)
 
         paginator = Paginator(reviews, 6)

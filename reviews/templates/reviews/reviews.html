@@ -19,9 +19,11 @@
     <div class="row my-3">
         <div class="col-10 offset-1">
             <h1 class="mate text-center">{{ service.name }} Reviews{% if user.is_superuser %}: Admin View{% endif %}</h1>
-            <div class="text-center">    
+            <div class="text-center"> 
                 {% if user.is_authenticated %}
-                    <a href="{% url 'create_review' service.id %}" class="btn hunter-green-bg isabelline">Leave a Review</a>
+                    {% if ordered %}
+                        <a href="{% url 'create_review' service.id %}" class="btn hunter-green-bg isabelline">Leave a Review</a>
+                    {% endif %}
                 {% else %}
                     <a href="{% url 'account_login' %}?next={{request.path}}" class="hunter-green">Log in</a> to leave a review.
                 {% endif %}
