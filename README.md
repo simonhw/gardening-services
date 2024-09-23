@@ -642,6 +642,9 @@ Code from the Django documentation on pagination was copied for the reviews page
 
 - [https://docs.djangoproject.com/en/5.1/topics/pagination/](https://docs.djangoproject.com/en/5.1/topics/pagination/)
 
+The JavaScript code to control the color of the select field in the Contact Us form was taken and adapted from the Boutique Ado walkthrough.
+
+
 ## Acknowledgements
 - [Creating Your First README - Kera Cudmore](https://github.com/kera-cudmore/readme-examples)
 - I would like to thank my CI Mentor [Graeme Taylor](https://github.com/G-Taylor) for his support and advice throughout the development phase.
