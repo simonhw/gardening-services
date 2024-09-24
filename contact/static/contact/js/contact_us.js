@@ -11,5 +11,5 @@ $(document).ready(function() {
         } else {
             $(this).css('color', '#000');
         }
-    })
+    });
 });

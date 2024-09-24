@@ -8,3 +8,18 @@
 #id_contact_reason option:not(:first-child) {
     color: #000
 }
+
+legend {
+    font-size: medium;
+    color: #595c5f;
+}
+
+#id_captcha.g-recaptcha.recaptchav2checkbox.form-control {
+    padding: 0;
+    border: 0;
+}
+
+.rc-anchor-light {
+    border: 0;
+    background-color: #fff;
+}

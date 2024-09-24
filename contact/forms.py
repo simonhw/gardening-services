@@ -1,5 +1,6 @@
 from .models import ContactUs
 from django import forms
+from django_recaptcha.fields import ReCaptchaField
 
 CONTACT_REASONS = (
     ('', 'Reason for Contacting Us *'),
@@ -15,6 +16,8 @@ class ContactUsForm(forms.ModelForm):
     """
     A form for sending a message to the business owners
     """
+
+    captcha = ReCaptchaField()
 
     class Meta:
         """
@@ -65,7 +68,10 @@ class ContactUsForm(forms.ModelForm):
         }
 
         for field in self.fields:
-            if self.fields[field].required:
+            if field == 'captcha':
+                self.fields[field].label = ''
+                continue
+            elif self.fields[field].required:
                 placeholder = f'{placeholders[field]} *'
             else:
                 placeholder = placeholders[field]
