@@ -127,6 +127,14 @@ main {
     position: relative;
 }
 
+.img-shadow {
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
+}
+
+.internal-shadow {
+    box-shadow: inset 0px 0px 8px 4px rgba(0, 0, 0, 0.1);
+}
+
 .card-img-top {
     border-radius: 10%;
 }
@@ -430,5 +438,9 @@ td > img,
     /* Forces navbar row to take up the full width of the container. */
     .w-lg-100 {
         width: 100%;
+    }
+
+    #about-hedge {
+        width: 336px;
     }
 }

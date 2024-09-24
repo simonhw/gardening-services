@@ -12,53 +12,98 @@
     <div class="row">
         <div class="col-12 g-0 hero">
             <img class="img-fluid hero-image" src="{% static 'images/path-blur-768.webp' %}"
-                alt="Two red flowers on steps."/>
+                alt="Two red flowers on steps." />
         </div>
     </div>
-    
-    <div class="row my-3">
+
+    <div class="row pt-lg-4 pb-3">
         <div class="col-10 offset-1 col-md-8 offset-md-2 mt-2">
-            <h1 class="mate">The Garden Path</h1>
-            <p>Insert blurb here about the company and general overview of what we do. Insert blurb here about the company and general overview of what we do. 
-                Insert blurb here about the company and general overview of what we do. Insert blurb here about the company and general overview of what we do. 
-                Insert blurb here about the company and general overview of what we do. 
+            <h1 class="mate">About Us</h1>
+            <h2 class="mate text-muted fs-4">The Garden Path</h2>
+            <p>
+                At The Garden Path, we're more than just garden care professionals - we're passionate gardeners who love
+                helping people create and maintain beautiful, thriving outdoor spaces. With years of experience in
+                garden care and maintenance, we've become a trusted name across the western Munster region for
+                delivering exceptional
+                service and stunning results.
             </p>
         </div>
     </div>
 
-    <div class="row">
-        <div class="col-10 offset-1 col-md-8 offset-md-2 text-center">
-            <img class="img-fluid" src="{% static 'images/path-blur-768.webp' %}"
-                alt="Two red flowers on steps."/>
+    <div class="row my-3">
+        <div class="col-10 offset-1 col-md-8 offset-md-2 col-xl-4 col-xxl-5 offset-xl-2 mt-2">
+            <h2 class="mate">Our Story</h2>
+            <p>
+                The Garden Path was founded 15 years ago by Dermot Murphy, a lifelong gardening enthusiast with a
+                passion for
+                transforming outdoor spaces. Dermot grew up surrounded by nature, cultivating his love for plants and
+                gardening from a young age. After years of honing his skills and working in garden care, he decided to
+                start The Garden Path to share his expertise with the local community. Known for his attention to detail
+                and deep knowledge of plants, Dermot built the company on the principles of personalized service,
+                reliability, and a genuine love for nurturing gardens. Today, his legacy of exceptional garden care
+                continues to flourish with a dedicated team that shares his commitment to quality.
+            </p>
+        </div>
+        <div class="col-10 offset-1 col-md-8 offset-md-2 col-xl-4 offset-xl-0 col-xxl-3 mt-xxl-2 px-xxl-5 text-center">
+            <img class="img-fluid img-shadow rounded-2 my-lg-3" src="{% static 'images/man-tablet.webp' %}"
+                alt="Man in Green Coat Holding Tablet" />
         </div>
     </div>
 
-    <div class="d-flex flex-column">
-        <div>
-            <div class="row mt-3">
-                <div class="col-10 offset-1 col-md-8 offset-md-2">
-                    <h2 class="mate">Our Services</h2>
-                    <p>Insert blurb here about the services we provide. Insert blurb here about the services we provide.
-                        Insert blurb here about the services we provide. Insert blurb here about the services we provide.
-                        Insert blurb here about the services we provide. Insert blurb here about the services we provide.
-                    </p>
-                </div>
-            </div>
-
-            <div class="row my-2 text-center">
-                <div class="col-4 offset-4">
-                    <a class="btn hunter-green-bg isabelline mate" href="{% url 'services' %}" role="button">Services</a>
-                </div>
+    <div class="row mt-4 mt-xl-4 isabelline-bg pt-4 pb-2 pb-md-3 py-lg-5 internal-shadow">
+        <div class="col-10 offset-1 col-md-8 offset-md-2 col-lg-3 offset-lg-2">
+            <h2 class="mate">Our Mission</h2>
+            <p>
+                Our mission is simple: to help our clients enjoy their outdoor spaces without the stress of upkeep.
+                Whether it's regular lawn care, precise hedge trimming, or ensuring your flowerbeds bloom year-round, we
+                take pride in delivering top-quality service that exceeds expectations. We believe that every garden
+                deserves to look its best, and we're here to make that happen.
+            </p>
+            <div class="w-100 text-center">
+                <img id="about-hedge" class="img-fluid img-shadow rounded-2 my-lg-3" src="{% static 'images/hedge-768.webp' %}"
+                    alt="Man Cutting a Hedge with a Trimmer in the Garden" />
             </div>
         </div>
 
-        <div>
-            <div class="row pt-2 pb-3">
-                <div class="col-10 offset-1 col-md-8 offset-md-2 text-center">
-                    <img class="img-fluid" src="{% static 'images/path-blur-768.webp' %}"
-                        alt="Two red flowers on steps."/>
-                </div>
+        <div class="col-10 offset-1 pt-4 pt-lg-0 col-md-8 offset-md-2 col-lg-4 offset-lg-1">
+            <h2 class="mate">Why Choose Us?</h2>
+            <ul class="ps-0" style="list-style: none;">
+                <li><strong>Experience:</strong> With years of hands-on experience in garden care, we've developed the
+                    skills and
+                    knowledge to handle gardens of all shapes and sizes.</li>
+                <li><strong>Personalized Service:</strong> We understand that every garden is unique, and we tailor our
+                    services to meet
+                    your garden's specific needs.</li>
+                <li><strong>Reliability:</strong> Our clients trust us for our dependable, timely service and our
+                    commitment to
+                    delivering consistent results.</li>
+                <li><strong>Sustainability:</strong> We care about the environment as much as we do about your garden.
+                    That's why we use
+                    eco-friendly practices and organic products whenever possible to keep your garden healthy and green.
+                </li>
+            </ul>
+            <div class="text-center">
+                <a class="btn btn-lg hunter-green-bg text-white mt-1 mb-4" href="{% url 'contact_us' %}" role="button">
+                    Get a Quote
+                </a>
             </div>
+        </div>
+    </div>
+
+    <div class="row py-4">
+        <div class="col-10 offset-1 col-md-8 offset-md-2 mt-lg-4">
+            <h2 class="mate">Our Commitment to You</h2>
+            <p>
+                At The Garden Path, we treat every garden as if it were our own, and we're dedicated to helping you enjoy a
+                beautiful, hassle-free outdoor space. Whether you need ongoing garden maintenance or one-off services, we're
+                here to provide the care and attention your garden deserves.
+                <br><br>
+                Thank you for choosing The Garden Path. We look forward to growing with you!
+            </p>
+        </div>
+        <div class="col-10 offset-1 col-md-8 offset-md-2 col-lg-6 offset-lg-3 text-center">
+            <img class="img-fluid img-shadow rounded-2 my-lg-3" src="{% static 'images/man-profile.webp' %}"
+                alt="Adult Man Wearing Green Jacket Holding a Tablet" />
         </div>
     </div>
 </div>
