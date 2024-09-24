@@ -18,7 +18,7 @@ class ContactUsForm(forms.ModelForm):
     A form for sending a message to the business owners
     """
 
-    # captcha = ReCaptchaField()
+    captcha = ReCaptchaField()
 
     class Meta:
         """

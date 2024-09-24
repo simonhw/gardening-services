@@ -14,10 +14,6 @@ legend {
     color: #595c5f;
 }
 
-#div_id_captcha {
-    height: 67.2px;
-}
-
 .g-recaptcha {
     transform:scale(0.8);
     transform-origin:0 0;
@@ -30,12 +26,13 @@ legend {
 }
 
 @media (min-width: 375px) {
-    #div_id_captcha {
-        height: 72px;
-    }
-
     .g-recaptcha {
         transform:scale(0.95);
-        margin-left: auto;
+    }
+}
+
+@media (min-width: 425px) {
+    .g-recaptcha {
+        transform:scale(1);
     }
 }
