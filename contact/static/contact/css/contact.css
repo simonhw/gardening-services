@@ -14,12 +14,28 @@ legend {
     color: #595c5f;
 }
 
+#div_id_captcha {
+    height: 67.2px;
+}
+
+.g-recaptcha {
+    transform:scale(0.8);
+    transform-origin:0 0;
+    display: inline-block;
+}
+
 #id_captcha.g-recaptcha.recaptchav2checkbox.form-control {
     padding: 0;
     border: 0;
 }
 
-.rc-anchor-light {
-    border: 0;
-    background-color: #fff;
+@media (min-width: 375px) {
+    #div_id_captcha {
+        height: 72px;
+    }
+
+    .g-recaptcha {
+        transform:scale(0.95);
+        margin-left: auto;
+    }
 }

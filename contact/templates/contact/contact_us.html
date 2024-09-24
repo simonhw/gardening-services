@@ -28,7 +28,7 @@
             <form id="contactUsForm" method="POST">
                 {% csrf_token %}
                 {{ contact_us_form | crispy }}
-                <button type="submit" class="btn btn-lg hunter-green-bg isabelline float-end">
+                <button type="submit" class="btn btn-lg hunter-green-bg isabelline float-start">
                     Send
                 </button>
             </form>
