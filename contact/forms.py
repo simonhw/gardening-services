@@ -2,6 +2,7 @@ from .models import ContactUs
 from django import forms
 from django_recaptcha.fields import ReCaptchaField
 
+
 CONTACT_REASONS = (
     ('', 'Reason for Contacting Us *'),
     ('service_inquiry','Service Inquiry'),
@@ -17,7 +18,7 @@ class ContactUsForm(forms.ModelForm):
     A form for sending a message to the business owners
     """
 
-    captcha = ReCaptchaField()
+    # captcha = ReCaptchaField()
 
     class Meta:
         """

@@ -1,5 +1,9 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
+from django.core.mail import send_mail
+from django.template.loader import render_to_string
+from django.conf import settings
+from .forms import CONTACT_REASONS
 
 from .models import ContactUs
 from .forms import ContactUsForm
@@ -17,6 +21,7 @@ def contact_us(request):
             messages.success(
                 request, 'Message successfully sent.'
             )
+            _send_contact_email(contact_us_form)
             return redirect('home')
         else:
             contact_us_form = ContactUsForm(data=request.POST)
@@ -46,3 +51,40 @@ def contact_us(request):
                     'contact_us_form': contact_us_form,
                 }
             )
+
+
+def _send_contact_email(contact_us_form):
+    """ Send the user a confirmation email. """
+
+    full_name = contact_us_form.cleaned_data['full_name']
+    cust_email = contact_us_form.cleaned_data['email']
+    phone_number = contact_us_form.cleaned_data['phone_number']
+    message = contact_us_form.cleaned_data['message']
+
+    for key, label in CONTACT_REASONS:
+        if key == contact_us_form.cleaned_data['contact_reason']:
+            contact_reason = label
+
+    subject = render_to_string(
+        'contact/contact_emails/contact_email_subject.txt',
+        {
+            'contact_reason': contact_reason
+        }
+    )
+    body = render_to_string(
+        'contact/contact_emails/contact_email_body.txt',
+        {
+            'full_name': full_name,
+            'email': cust_email,
+            'phone_number': phone_number,
+            'contact_reason': contact_reason,
+            'message': message,
+            'contact_email': settings.DEFAULT_FROM_EMAIL
+        }
+    )
+    send_mail(
+        subject,
+        body,
+        settings.DEFAULT_FROM_EMAIL,
+        [cust_email]
+    )

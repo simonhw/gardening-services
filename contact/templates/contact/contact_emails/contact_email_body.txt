@@ -1,0 +1,15 @@
+Hello {{ full_name }}!
+
+Thank you for contact us here at The Garden Path. The contents of your message and your provded details are below:
+
+Name: {{ full_name }}
+Email: {{ email }}
+Phone Number: {{ phone_number }}
+Topic: {{ contact_reason }}
+Message: {{ message|safe }}
+
+We endeavour to reply to your message within 2 working days.
+
+Sincerely,
+
+The Garden Path
