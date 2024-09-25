@@ -407,6 +407,10 @@ td > img,
     .checkout-navbar > div {
         justify-content: center;
     }
+
+    .fs-md-5 {
+        font-size: larger;
+    }
 }
 
 @media (max-width: 991px) {
