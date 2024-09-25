@@ -7,4 +7,5 @@ urlpatterns = [
          views.order_history,
          name="order_history"
         ),
+    path('privacy/', views.privacy_policy, name='privacy_policy')
 ]

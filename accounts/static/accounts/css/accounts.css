@@ -2,3 +2,9 @@
     max-height: 360px;
     overflow-y: auto;
 }
+
+.privacy h2,
+.privacy h3,
+.privacy h4 {
+    font-family: 'Mate';
+}

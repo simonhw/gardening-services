@@ -47,3 +47,12 @@ def order_history(request, order_number):
 
     return render(request, template, context)
 
+def privacy_policy(request):
+    """
+    View that renders the privacy policy page.
+    """
+
+    return render(
+        request,
+        "accounts/privacy.html"
+    )
