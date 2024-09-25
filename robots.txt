@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /accounts/
+Disallow: /cart/
+Disallow: /checkout/
+Sitemap: https://gardening-services-e596b6371c3f.herokuapp.com/sitemap.xml
