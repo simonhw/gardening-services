@@ -16,70 +16,76 @@
         </div>
     </div>
 
-    <div class="row my-3 mt-lg-5 mb-3">
-        <div class="col-10 offset-1 col-md-8 offset-md-2 mt-2">
-            <h1 class="mate">Welcome to The Garden Path</h1>
-            <h2 class="mate text-muted fs-4">Your Local Garden Care Specialists</h2>
-        </div>
-    </div>
-    <div class="row my-3">
-        <div class="col-10 offset-1 col-md-8 offset-md-2 col-xl-4 offset-xl-2 mt-2">
-            <p>
-                At The Garden Path, we've been providing expert garden care and maintenance for over 15 years, helping local
-                homeowners keep their gardens healthy, beautiful, and thriving. With extensive experience in garden
-                upkeep, we understand the unique challenges of maintaining outdoor spaces in Ireland and offer
-                reliable, personalized service tailored to your garden's specific needs.
-            </p>
-            <p>
-                Whether you're looking for regular grass cutting, hedge trimming, or seasonal tree maintenance, our
-                dedicated team is passionate about delivering high-quality garden care that enhances the natural beauty
-                of your space. We pride ourselves on offering expert, friendly service, and we treat every garden with
-                the same level of care as if it were our own.
-            </p>
-
-        </div>
-        <div class="col-10 offset-1 col-md-8 offset-md-2 col-xl-4 offset-xl-0 col-xxl-4 px-xxl-5 text-center">
-            <img class="img-fluid img-shadow rounded-2 my-lg-3" src="{% static 'images/man.webp' %}"
-                alt="Man in Green Jacket Holding a Green Leaf" />
-        </div>
-    </div>
-
-    <div class="row d-flex my-lg-5">
-        <div class="col-10 offset-1 col-md-8 offset-md-2 order-lg-2 col-lg-5 offset-lg-0 col-xl-5">
-            <h2 class="mate">Our Services</h2>
-            <strong class="text-muted font-italic">- Covering the Cork, Kerry, and Limerick regions</strong>
-            <ul class="mt-2">
-                <li>
-                    Grass Cutting: Professional mowing and trimming to keep your lawn neat and healthy.
-                </li>
-                <li>
-                    Weeding: Effective weed removal to maintain clean, thriving garden beds.
-                </li>
-                <li>
-                    Hedge & Tree Maintenance: Expert pruning and trimming for healthy, well-shaped hedges and trees.
-                </li>
-                <li>
-                    Tree Maintenance: Comprehensive tree care to promote strong healthy growth.
-                </li>
-                <li>
-                    Flowerbed Care: Comprehensive care, including planting and seasonal upkeep, to ensure vibrant
-                    flowerbeds.
-                </li>
-                <li>
-                    Tree Stump Removal: Efficient removal of tree stumps for a clean, polished garden space.
-                </li>
-            </ul>
-            <div class="text-center">
-                <a class="btn hunter-green-bg isabelline mt-1 mb-4" href="{% url 'services' %}" role="button">
-                    Services
-                </a>
+    <section id="introduction">
+        <div class="row my-3 mt-lg-5 mb-3">
+            <div class="col-10 offset-1 col-md-8 offset-md-2 mt-2">
+                <h1 class="mate">Welcome to The Garden Path</h1>
+                <h2 class="mate text-muted fs-4">Your Local Garden Care Specialists</h2>
             </div>
         </div>
-        <div
-            class="col-10 offset-1 col-md-8 offset-md-2 order-lg-1 col-lg-4 offset-lg-2 col-xl-3 text-center mt-lg-5 mt-xl-0">
-            <img class="img-fluid img-shadow lawnmower rounded-2" src="{% static 'images/lawnmower.webp' %}"
-                alt="A man cutting grass with a lawnmower." />
+        <div class="row my-3">
+            <div class="col-10 offset-1 col-md-8 offset-md-2 col-xl-4 offset-xl-2 mt-2">
+                <p>
+                    At The Garden Path, we've been providing expert garden care and maintenance for over 15 years, helping local
+                    homeowners keep their gardens healthy, beautiful, and thriving. With extensive experience in garden
+                    upkeep, we understand the unique challenges of maintaining outdoor spaces in Ireland and offer
+                    reliable, personalized service tailored to your garden's specific needs.
+                </p>
+                <p>
+                    Whether you're looking for regular <em>grass cutting</em>, <em>hedge trimming</em>, or seasonal tree maintenance, our
+                    dedicated team is passionate about delivering high-quality garden care that enhances the natural beauty
+                    of your space. We pride ourselves on offering expert, friendly service, and we treat every garden with
+                    the same level of care as if it were our own.
+                </p>
+
+            </div>
+            <div class="col-10 offset-1 col-md-8 offset-md-2 col-xl-4 offset-xl-0 col-xxl-4 px-xxl-5 text-center">
+                <img class="img-fluid img-shadow rounded-2 my-lg-3" src="{% static 'images/man.webp' %}"
+                    alt="Man in Green Jacket Holding a Green Leaf" />
+            </div>
         </div>
-    </div>
+    </section>
+
+    <section id="services-overview">
+        <div class="row d-flex my-lg-5">
+            <div class="col-10 offset-1 col-md-8 offset-md-2 order-lg-2 col-lg-5 offset-lg-0 col-xl-5">
+                <h2 class="mate">Our Services</h2>
+                <strong class="mate text-muted fs-5">Gardening services covering the Cork, Kerry, and Limerick regions</strong>
+                <ul class="plain-list mt-2">
+                    <li>
+                        <strong>Grass Cutting:</strong> Professional mowing and trimming to keep your garden neat and healthy.
+                    </li>
+                    <li>
+                        <strong>Weeding:</strong> Effective <em>weed removal service</em> to maintain clean, thriving garden beds.
+                    </li>
+                    <li>
+                        <strong>Hedge & Tree Maintenance:</strong> Expert pruning and trimming for healthy, well-shaped hedges and trees.
+                    </li>
+                    <li>
+                        <strong>Tree Maintenance:</strong> Comprehensive tree care to promote strong healthy growth.
+                    </li>
+                    <li>
+                        <strong>Flowerbed Care:</strong> Expert planting, seasonal upkeep, or full <em>flowerbed restoration</em>
+                        to ensure vibrant displays throughout the spring and summer months.
+                    </li>
+                    <li>
+                        <strong>Tree Stump Removal:</strong> Efficient removal of tree stumps for a clean, polished garden space.
+                    </li>
+                    <li>
+                        and more...
+                    </li>
+                </ul>
+                <div class="text-center">
+                    <a class="btn hunter-green-bg isabelline mt-1 mb-4" href="{% url 'services' %}" role="button">
+                        View All Services
+                    </a>
+                </div>
+            </div>
+            <div class="col-10 offset-1 col-md-8 offset-md-2 order-lg-1 col-lg-4 offset-lg-2 col-xl-3 text-center mt-lg-5 mt-xl-0">
+                <img class="img-fluid img-shadow lawnmower rounded-2" src="{% static 'images/lawnmower.webp' %}"
+                alt="A man cutting grass with a lawnmower." />
+            </div>
+        </div>
+    </section>
 </div>
 {% endblock %}
