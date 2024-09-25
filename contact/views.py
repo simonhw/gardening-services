@@ -88,3 +88,14 @@ def _send_contact_email(contact_us_form):
         settings.DEFAULT_FROM_EMAIL,
         [cust_email]
     )
+
+
+def subscribe_page(request):
+    """
+    View that renders the newsletter signup page.
+    """
+
+    return render(
+        request,
+        "contact/subscribe.html"
+    )
