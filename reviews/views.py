@@ -47,7 +47,10 @@ class ServiceReviews(View):
             unpublished_page_number
             )
 
-        ordered = self.service_history(request, service)
+        if request.user.is_authenticated:
+            ordered = self.service_history(request, service)
+        else:
+            ordered = False
 
         context = {
             'reviews': reviews,
