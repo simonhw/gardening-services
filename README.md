@@ -21,6 +21,7 @@ Deployed program on Heroku: [Gardening Services]()
     - [User Stories](#user-stories)
     - [Kanban Board](#kanban-board)
     - [Marketing](#marketing)
+    - [Search Engine Optimisation](#search-engine-optimisation)
 - [Design](#design)
     - [Colour Scheme](#colour-scheme)
     - [Typography](#typography)
@@ -188,6 +189,82 @@ The Epics and labels discussed above were used in conjunction with the board and
 ![Image of Kanban Board]()
 
 ### Marketing
+
+### Search Engine Optimisation
+Keyword research was undertaken in order to raise the website's ranking on search engine results. The inital topics chosen were:
+
+- Garden Maintenance
+- Tree Surgeon
+- Landscaping
+
+For each topic, a list of possible short-tail and long-tails keywords that a user would search for was made. Sample searches were made in the Google search engine and the "related searches" lists were analysed for similar keywords that user usually search for.
+
+**Garden Maintenance** | **Tree Surgeon** | **Landscaping**
+----- | ----- | -----
+Gardening | Tree cutting  | Bordering
+Local gardener | Tree felling | Flowerbed care
+Hedge cutting | Coppicing | Tree stump
+Grass cutting | Pollarding | Stump removal
+Grass mowing | Dead tree | Pruning hedges
+Weed treatment | Branch cutting | Pruning shrubs
+Driveway weeding | Local tree surgeon |
+
+**Garden Maintenance** | **Tree Surgeon** | **Landscaping**
+----- | ----- | -----
+Gardening services in Cork  | Tree surgeons in my area | Garden landscapers near me
+Gardening services in Kerry | Affordable tree removal near me | How much does it cost to renovate an overgrown garden?
+Gardening services in Limerick | List of certified arborists near me | How much to remove all the weeds in my garden?
+Professional hedge cutting services | Why do I need a tree surgeon? | Do I need a professional gardener?
+How much do gardeners charge per hour in Ireland?  | How much is a tree surgeon near me? | What tasks does a gardener do?
+Treating my driveway for weeds | Can I cut down trees on my own land in Ireland? | 
+Removing weeds from my flowerbeds | What time of year is best for coppicing? | 
+
+The list of keywords was assessed and some were removed due to their simplicity and likelihood to be less relevant to the exact services offered by The Garden Path. For example, the keyword "gardening" is very broad and likely to be used by people doing their own research as amateur gardeners or for general information.
+
+Using [Wordtracker](https://www.wordtracker.com/), keywords were tested to guage their relevance and authoritativeness. Unfortunately the free version of this service is limited to two searches. Different internet browsers were used to get extra searches but overall this research method was limited behind a paywall. Because of this, the keywords chosen for testing were those most relevant to the services on offer by The Garden Path. Google searches were also performed using the long-tail keywords and those that returned results for relevant webpages were included in the final list.
+
+<details><summary>Wordtracker results for 'gardening services'</summary>
+
+![Wordtracker results for 'gardening services'](static/images/readme/wordtracker-01.png)
+
+</details>
+
+<details><summary>Wordtracker results for 'tree surgeon'</summary>
+
+![Wordtracker results for 'tree surgeon'](static/images/readme/wordtracker-02.png)
+
+</details>
+
+<details><summary>Wordtracker results for 'landscaper'</summary>
+
+![Wordtracker results for 'landscaper'](static/images/readme/wordtracker-03.png)
+
+</details>
+
+<details><summary>Wordtracker results for 'grass cutting'</summary>
+
+![Wordtracker results for 'grass cutting'](static/images/readme/wordtracker-04.png)
+
+</details>
+<br>
+
+From these searchs, some quite good results were discovered with high volume and low competition. This means that lot of user are searching with these terms but the number of other sites with these keywords in place is low.
+
+From this research, the list of keywords for The Garden Path was finalised as:
+
+- Hedge cutting service
+- Tree stump removal
+- Tree surgeon
+- Flowerbed restoration
+- Gardening services near me
+- Gardening services in Cork
+- Grass cutting services near me
+- Weed removal services
+- Tree surgeon near me
+- List of certified arborists near me
+- Affordable tree removal near me
+- Landscapers near me
+- Landscape gardeners near me
 
 ## Design
 An easy payment gateway and authentication system was designed for this application to give the customer the best possible experience in ordering and accessing information on their past or upcoming services booked with the business. Clear descriptions and images of the services on offer will allow the user to make an informed purchase. Ratings and reviews under each service helps the customer to commit to the purchase. 
