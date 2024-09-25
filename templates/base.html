@@ -3,7 +3,11 @@
 {% url 'home' as home_url %}
 {% url 'about' as about_url %}
 {% url 'services' as services_url %}
-{% url 'accounts' as accounts_url %}
+{% url 'view_cart' as cart_url %}
+{% url 'contact_us' as contact_url %}
+{% url 'account' as account_url %}
+{% url 'account_logout' as logout_url %}
+{% url 'login' as login_url %}
 
 
 <!DOCTYPE html>
@@ -79,13 +83,13 @@
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav mate fs-5">
                     <li class="nav-item">
-                        <a class="nav-link {% if request.path == url %}active{% endif %}" aria-current="page" href="{% url 'home' %}">Home</a>
+                        <a class="nav-link {% if request.path == home_url %}active{% endif %}" aria-current="page" href="{% url 'home' %}">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {% if request.path == url %}active{% endif %}" href="{% url 'about' %}">About Us</a>
+                        <a class="nav-link {% if request.path == about_url %}active{% endif %}" href="{% url 'about' %}">About Us</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle {% if request.path == url %}active{% endif %}" href="{% url 'services' %}" role="button" data-bs-toggle="dropdown"
+                        <a class="nav-link dropdown-toggle {% if request.path == services_url %}active{% endif %}" href="{% url 'services' %}" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false">
                             Services
                         </a>
@@ -99,9 +103,9 @@
                             <li><a class="dropdown-item" href="{% url 'service_page' 6 %}">Tree Stump Removal</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item {% if request.path == url %}active{% endif %}">
+                    <li class="nav-item">
                         <div class="cart-dropdown-wrapper">
-                            <a class="nav-link" href="{% url 'view_cart' %}">
+                            <a class="nav-link {% if request.path == cart_url %}active{% endif %}" href="{% url 'view_cart' %}">
                                 Cart{% if total %}: <span class="fw-bold">€{{ total|floatformat:2 }}</span>{% endif %}
                             </a>
                             {% block cartpreview %}
@@ -111,19 +115,19 @@
                             {% endblock %}
                         </div>
                     </li>
-                    <li class="nav-item {% if request.path == url %}active{% endif %}">
-                        <a class="nav-link" href="{% url 'contact_us' %}">Contact Us</a>
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.path == contact_url %}active{% endif %}" href="{% url 'contact_us' %}">Contact Us</a>
                     </li>
                     {% if user.is_authenticated %}
-                    <li class="nav-item {% if request.path == url %}active{% endif %}">
-                        <a class="nav-link" href="{% url 'account' %}">My Account</a>
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.path == account_url %}active{% endif %}" href="{% url 'account' %}">My Account</a>
                     </li>
-                    <li class="nav-item {% if request.path == url %}active{% endif %}">
-                        <a class="nav-link" href="{% url 'account_logout' %}">Log Out</a>
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.path == logout_url %}active{% endif %}" href="{% url 'account_logout' %}">Log Out</a>
                     </li>
                     {% else %}
-                    <li class="nav-item {% if request.path == url %}active{% endif %}">
-                        <a class="nav-link" href="{% url 'login' %}?next={{request.path}}">Log In/Sign Up</a>
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.path == login_url %}active{% endif %}" href="{% url 'login' %}?next={{request.path}}">Log In/Sign Up</a>
                     </li>
                     {% endif %}
                 </ul>
