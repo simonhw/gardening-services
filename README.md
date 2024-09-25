@@ -223,7 +223,7 @@ The list of keywords was assessed and some were removed due to their simplicity 
 
 Using [Wordtracker](https://www.wordtracker.com/), keywords were tested to guage their relevance and authoritativeness. Unfortunately the free version of this service is limited to two searches. Different internet browsers were used to get extra searches but overall this research method was limited behind a paywall. Because of this, the keywords chosen for testing were those most relevant to the services on offer by The Garden Path. Google searches were also performed using the long-tail keywords and those that returned results for relevant webpages were included in the final list.
 
-<details><summary>Wordtracker results for 'gardening services'</summary>
+<details open><summary>Wordtracker results for 'gardening services'</summary>
 
 ![Wordtracker results for 'gardening services'](static/images/readme/wordtracker-01.png)
 
@@ -265,6 +265,12 @@ From this research, the list of keywords for The Garden Path was finalised as:
 - Affordable tree removal near me
 - Landscapers near me
 - Landscape gardeners near me
+
+Some of these keywords were integrated in the website content inside `<strong>` and `<em>` tags, while a more comprehensive list was using in the `<meta>` block.
+
+The footer included links to relevant pages to increase The Garden Path's standing in website rankings. These include a link to the [Associaton of Landscape Contracters in Ireland](https://alci.ie/) and [The Royal Horticultural Society of Ireland](https://rhsi.ie/). Because these anchor tags do not include the `rel="noopener"` attribute, search engines will rank the website higher on lists, but importantly, the websites linked are not direct business competitors.
+
+![Image of footer with relevant links](static/images/readme/new-footer.png)
 
 ## Design
 An easy payment gateway and authentication system was designed for this application to give the customer the best possible experience in ordering and accessing information on their past or upcoming services booked with the business. Clear descriptions and images of the services on offer will allow the user to make an informed purchase. Ratings and reviews under each service helps the customer to commit to the purchase. 
