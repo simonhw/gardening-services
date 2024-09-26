@@ -526,61 +526,110 @@ A key requirement for this project was for users to be able to create, read, upd
 **data related to a user's cart would not yet have been saved to the database*
 
 ### Responsiveness
+Across all pages of the website, Bootstraps powerful grid system was utilised to control content reponsiveness on a wide variety of screen widths. The design of some key website features on different display sizes is demonstrated below. 
+
 #### Navbar
 On small screen sizes the navbar is contained with a dropdown menu accessed on the right hand side of the display. For larger screens the navbar links are displayed in a neat row across the top of the page. This was achieved using Bootstrap. 
 
-<!-- <!-- <details><summary>Comparison of nav bar on small and large screens</summary> -->
+<details open><summary>Comparison of navbar on small and large screens</summary>
 
 ![Nav bar menu on small screens](static/images/readme/navbar-mobile.gif)
 ![Nav bar on larger screens](static/images/readme/navbar-desktop.png)
 
-<!-- </details> -->
+</details>
 
-#### Content
+#### Text Content
 Content on small screens is displayed in single column fashion, displaying text and images appropriately as the user scrolls down their device. On larger screens, text and images are displayed side-by-side to make use of the extra horizontal space.
-<!-- <details><summary>Comparison of content layout on small and large screens</summary> -->
 
-![Content layout on small screens](static/images/readme/about-top.png)
-![Content layout on large screens](static/images/readme/about-large.png)
+<details open><summary>Comparison on text content layout on small and large screens</summary>
 
-<!-- </details><br> -->
+![Content layout on small screens](static/images/readme/content-mobile.gif)
+![Content layout on large screens](static/images/readme/content-desktop.png)
 
-- On tablet-sized screens ....
+</details>
 
-    <!-- <details><summary>Comparison of footer on mobile and tablet screens</summary>
+#### Service Page
+On the service page, the service images are displayed in columns of 1, 2, 3, and 4 as the screen width increases. The four pricing model cards follow a similar trend underneath.
 
-    ![Footer on small screens](static/images/readme/footer-mob.png)
+<details open><summary>Service page on medium screens</summary>
 
-    ![Footer on larger screens](static/images/readme/footer-tablet.png)
+![Service page on small screens](static/images/readme/services-mob.gif)
 
-    </details>
+</details>
 
-    <details><summary>Comparison of booking form and cards on small and large screens</summary>
+<details><summary>Service page on medium screens</summary>
 
-    ![Booking form on small screens](static/images/readme/booking-form.png)
+![Service page on medium screens](static/images/readme/services-tablet.gif)
 
-    ![Booking form on large screens](static/images/readme/booking-form-tablet.png)
+</details>
 
-    ![Booking cards on small screens](static/images/readme/my-bookings.png)
+<details><summary>Service page on large screens</summary>
 
-    ![Booking cards on large screens](static/images/readme/my-bookings-tablet.png)
+![Service page on large screens](static/images/readme/services-desktop.gif)
 
-    </details><br> -->
+</details>
 
-- On large screen sizes ....
+#### Individual Services
+On each service page, the image and service information are displayed either in a single column or in two columns. This is done to maximise the impact of the imagery on wider screen by allowing for a larger image and to make user of the extra space.
 
-    <!-- <details><summary>Booking cards on desktop screens</summary>
+<details open><summary>Comparison of service page on mobile and tablet screens</summary>
 
-    ![Booking cards on dekstop screens](static/images/readme/my-bookings-large.png)
+![Grass Cutting page on mobile screens](static/images/readme/ind-services-mob.gif)
+![Grass Cutting page on tablet screens](static/images/readme/ind-services-tablet.png)
 
-    </details>
+</details>
 
-    <details><summary>Comparison of Sign Out page on small and large screens</summary>
+#### Cart
+The cart and its features are neatly arranged using the grid system on all screen sizes. The order items and checkout card are displayed in a single column on small screen but are placed side-by-side on wider screens. On large screen sizes the order item list in contained in its own scrollable container, so that the user does not have to scroll away from the checkout card.
 
-    ![Sign Out page on small screens](static/images/readme/signout.png)
-    ![Sign Out page on large screens](static/images/readme/signout-desktop.png)
+<details open><summary>Cart on mobile screens</summary>
 
-    </details> -->
+![Cart on mobile screens](static/images/readme/cart-mob.gif)
+
+</details>
+
+<details><summary>Cart on desktop screens</summary>
+
+![Cart on desktop screens](static/images/readme/cart-desktop.gif)
+
+</details>
+
+#### Checkout
+The site logo, secure checkout text, and progress indicator change position at the top of the screen for different displays to neatly use the extra space provided.
+The review order card does not diplay the service images on mobile screen, but on tablets and desktop screens, there is sufficient space to show them.
+
+<details open><summary>Comparison of checkout header on small and large screens</summary>
+
+![Checkout header on mobile screens](static/images/readme/checkout-mob.png)
+![Checkout header on mobile screens](static/images/readme/checkout-tablet.png)
+![Checkout header on mobile screens](static/images/readme/checkout-desktop.png)
+
+</details>
+
+<details open><summary>Comparison of review order card on small and large screens</summary>
+
+![Checkout order review card on mobile screens](static/images/readme/checkout-review-mob.png)
+![Checkout order review card on wider screens](static/images/readme/checkout-review-desktop.png)
+
+</details>
+
+#### Reviews 
+Reviews are displayed in different ways depending on how many there are for a service. With at least three, they are arranged in columns of 1, 2, or 3 as screen sizes widen. If there is only one review, a single column is used on all screens, albeit with appropriate offsets to give the review card a set maximum width. Similarly if there are only two reviews, the maximum number of columns used on larger screens is 2. This is to keep reviews centered on the page regardless of how many there are.
+
+<details open><summary>Comparison of user reviews small and large screens</summary>
+
+![User reviews on mobile screens](static/images/readme/reviews-mob.gif)
+![User reviews on wider screens](static/images/readme/review-tablet.png)
+
+</details>
+
+#### Contact Us
+
+#### Footer
+The footer is displayed in a single column on small screens, with a horizontal line separating the differnet information block. On larger screens, these blocks are arrange in a row, using the full width of the screen. 
+
+![Footer on small screens](static/images/readme/footer-mobile.png)
+![Footer on larger screens](static/images/readme/footer-desktop.png)
 
 ## Features
 The website consists of several main pages:
