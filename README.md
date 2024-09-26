@@ -94,7 +94,10 @@ The Garden Path is designed as a Business to Customer (B2C) e-commerce applicati
 ### User Stories
 Key user stories for the application are outlined below. An exhaustive list can be viewed on its [GitHub Projects page](https://github.com/users/simonhw/projects/4/).
 
-#### Epic: Initial Project Setup
+#### EPIC: Initial Project Setup
+
+<details><summary>Show User Stories</summary>
+
 - **Set Up Django Files**: As a **Developer** I can **set up the Django template files** so that I can **begin to write code for the project**.
     - I can install the correct version of Django.
     - I can create a project called **gardening**.
@@ -117,7 +120,12 @@ Key user stories for the application are outlined below. An exhaustive list can 
     - I can create a staticfiles directory and collect the static files.
     - I can deploy the project on Heroku and ensure all styles are applied.
 
-#### Epic: Create Models
+</details>
+
+#### EPIC: Create Models
+
+<details><summary>Show User Stories</summary>
+
 - **Three Custom Models**: As a **Developer** I can **create three custom models** so that I can **satisfy the assessment criteria for the project**.
     - Custom Model 1: Service
     - Custom Model 2: CustomUser
@@ -153,7 +161,12 @@ Key user stories for the application are outlined below. An exhaustive list can 
     - I can create an app called **contact**
     - I can create the ContactUs model in models.py
 
-#### Epic: User Accounts
+</details>
+
+#### EPIC: User Accounts
+
+<details><summary>Show User Stories</summary>
+
 - **Create an Account**: As a **Site User** I can **create an account** so that I can **view my account details on the website**.
     - When I click the sign-in button, I am prompted to make an account.
     - After registering my details, I can log in and view, create, update, or delete my account details.
@@ -165,7 +178,12 @@ Key user stories for the application are outlined below. An exhaustive list can 
     - I can view and amend my details.
     - I can view my past orders
 
-#### Epic: Website Content
+</details>
+
+#### EPIC: Website Content
+
+<details><summary>Show User Stories</summary>
+
 - **Create Base Template**: As a **Developer** I can **create a base template** so that **the similar aspects of the webpages need only be written once and the UX has a consistent appearance across the app**.
     - I can create a base.html file.
     - I can create a header and nav bar for small screens.
@@ -194,7 +212,12 @@ Key user stories for the application are outlined below. An exhaustive list can 
     - I can view the privacy policy on a dedicated website page
     - I can understand how to contact the business owners with any inquiries about the policy
 
-#### Epic: Services and Checkout
+</details>
+
+#### EPIC: Services and Checkout
+
+<details><summary>Show User Stories</summary>
+
 - **View Individual Service Details**: As a **Site User** I can **view the Service page** so that I can **see all details related to the service and make an informed decision on my purchase**.
     - When I click on a service I can view its details page.
     - I can see the service description, price, and rating.
@@ -224,7 +247,12 @@ Key user stories for the application are outlined below. An exhaustive list can 
     - I can enter my payment information.
     - I can review my order before submitting.
 
-#### Epic: Payment System
+</details>
+
+#### EPIC: Payment System
+
+<details><summary>Show User Stories</summary>
+
 - **Set Up Stripe**: As a **Developer** I can **set up Stripe in my application** so that I can **handle and process payments securely**.
     - I can install Stripe
     - I can set up a webhook handler
@@ -239,7 +267,12 @@ Key user stories for the application are outlined below. An exhaustive list can 
     - I can view the submitted order details on my account page.
     - I can view the order details in an email confirmation.
 
+</details>
+
 #### EPIC: Reviews
+
+<details><summary>Show User Stories</summary>
+
 - **View Reviews**: As a **Site User** I can **view reviews for a service** so that I can **be more informed about the quality of work carried out by the business**.
     - On a particular service page, I can view all reviews for that service.
     - I can navigate through the reviews via pagination.
@@ -261,28 +294,58 @@ Key user stories for the application are outlined below. An exhaustive list can 
     - For a particular review I can delete it if I am the author or a staff user.
     - I can confirm or cancel the delete action before it takes effect.
 
+</details>
+
 #### EPIC: Contact Us
+
+<details><summary>Show User Stories</summary>
+
 - **View Contact Us Page**: As a **Site User** I can **send a message to the business** so that I can **make enquiries directly from the website**.
     - I can navigate to the Contact Us page from the main nav bar.
     - I can view the business' contact details.
-    - I can send a message to the business using a form.    
+    - I can send a message to the business using a form.
+
+</details> 
 
 #### EPIC: Marketing
+
+<details><summary>Show User Stories</summary>
+
 - **Subscribe to Newsletters**: As a **Site User** I can **sign up to the website's newsletter** so that I can **be made aware of upcoming offers and information disseminated by the company**.
-- AC1 I add my email to the newsletter mailing list.
-- AC2 I can receive feedback  confirming that I have been added to the mailing list. 
+    - I add my email to the newsletter mailing list.
+    - I can receive feedback  confirming that I have been added to the mailing list. 
 
 - **Create Facebook Page**: As a **Developer** I can **create a mock-up Facebook business page** so that I can **demonstrate how social media marketing would be implemented for the business**.
-- I can create a mock-up of a Facebook business page for The Garden Path
-- I can add relevant images
-- I can add posts
+    - I can create a mock-up of a Facebook business page for The Garden Path
+    - I can add relevant images
+    - I can add posts
 
-#### Epic: Bugs
+- **Search Engine Optimisation**: As a **Developer** I can **implement various SEO features** so that I can **improve the website's performance for search engine indexing**.
+    - I can conduct research on and implement keywords.
+    - I can create a robots.txt file.
+    - I can create a sitemap.xml file.
+    - I can employ descriptive meta tags.
+    - I can add appropriate `rel` attributes on external links.
+    - I can add links to reputable websites related to my business.
+
+</details> 
+
+#### EPIC: Bugs
+
+<details><summary>Show User Stories</summary>
+
 - As a **Developer** I can **detail and keep track of bugs** so that I can **solve them before release or come up with a plan to address them in the future**.
     - For a full list of bugs, please view [TESTING.md](/TESTING.md)
 
-#### Epic: Writing Documentation
+</details> 
+
+#### EPIC: Writing Documentation
+
+<details><summary>Show User Stories</summary>
+
 - As a **Developer** I can **write README, TESTING, and MARKETING files** so that **others can learn about my app and see the work that has gone into preparing it for final release**.
+
+</details> 
 
 ### Kanban Board
 The GitHub Projects tool was used to manage development progress for this website. A kanban board was used to separate tasks into four columns:
@@ -298,21 +361,21 @@ The Epics and labels discussed above were used in conjunction with the board and
 ## Marketing
 All documentation on the marketing for this e-commerce application can be found in the [MARKETING.md](/MARKETING.md) file.
 
-
 ## Design
-An easy payment gateway and authentication system was designed for this application to give the customer the best possible experience in ordering and accessing information on their past or upcoming services booked with the business. Clear descriptions and images of the services on offer will allow the user to make an informed purchase. Ratings and reviews under each service helps the customer to commit to the purchase. 
-### Colour Scheme
-A palette of ....
 
-![Coolors colour palette]()
+### Colour Scheme
+A palette of greens gradually becoming lighter was chosen for this website. The different green colours are reflecting of the environments in which The Garden Path services are carried out. An off-white colour called Isabelline was added to be able to soften areas of the website and avoid using a complete white shade.
+
+![Coolors colour palette](static/images/readme/the-garden-path-colours.png)
 
 ### Typography
-The Mate font was chosen from the Google Fonts library as its thin and sharp look evoked thought of garden tools, fencing, and ordered lines. This gives the impression of a professional business and links the services offered namely creating something neat and ordered.
+The Mate font was chosen from the Google Fonts library as its thin and sharp look evoked thought of garden tools, fencing, and ordered lines. This gives the impression of a professional business and evokes thoughts of neat and careful services carried out by the business.
 
 ![Mate Font](static/images/readme/mate.png)
 
-
 ### Imagery
+Vibrant and colourful images were chosen for the website to represent the services on offer. Each service image is clear in what it represents with no superfluous information that could mislead the site user. 
+The hero image shows a garden path and steps leading to a patio. Red poppies are in focus in the foreground and other plants and trees are in the blurred background. Some pages did not make use of a hero image due to aesthetic design reflecting the pages' purpose. These include but are not limited to the accounts pages, the cart and checkout pages, and the privacy policy page. Individual reasons for this design choice is discussed further in the [Features](#features) section.
 
 
 ### Wireframes
@@ -434,48 +497,53 @@ Wireframes were created in Balsamiq for the initial front-end design of the webs
 </details>
 
 ### Entity Relationship Diagrams
-An ERD was created to plan out the models that would be created and used in this project. A custom user model was planned as this is reccomenede in the official Django documentation and will afford the developer easier control over its structure. Other models include Service, Order, OrderItem, Category, and Review.
+An ERD was created to plan out the models that would be created and used in this project. In total, 8 custom models were written, including some taken from previous Django projects. These are credited below in the [Code Used](#code-used) section and all custom models are explained in the [Custom Models](#custom-models) section.
 
-![ERDs](static/images/readme/gardening_services_erd.png)
+![ERDs](static/images/readme/erd_the_garden_path.png)
 
 ### CRUD Functionality
 A key requirement for this project was for users to be able to create, read, update, and/or delete data from the database as appropriate. Users could interact with the database in these ways as follows:
 
 #### Create
-* Site users and admin users may **create** by creating .
-* Site users may **create** by creating a .
+* Site users and admin users may **create** by creating a user account.
+* Site users may **create** by creating an order, review, or submitting a message.
 
 #### Read
-* Site users and admin users may **read** by viewing .
-* Site users may **read** by viewing .
-* Admin user may **read** by viewing .
+* Site users and admin users may **read** by viewing website content, services, reviews, the privacy policy, their account details, and their order history.
+* Site users may also **read** by viewing their cart* and account history.
+* Admin users may also **read** by viewing unpublished reviews.
 
 #### Update
-* Site users may **update** by amending their .
-* Admin user may **update** by amending .
+* Site users may **update** by amending their account details, editing their reviews, or editing the number of service items in their cart*.
+* Admin users may **update** by publishing or unpublishing reviews.
 
 #### Delete
-* Site users may **delete** by cancelling .
-* Admin users may **delete** by cancelling .
+* Site users may **delete** by removing items from their cart*, deleting their reviews, or deleting their phone number and address details.
+* Admin users may **delete** by deleting reviews.
+
+<br>
+
+**data related to a user's cart would not yet have been saved to the database*
 
 ### Responsiveness
-- On small screen sizes .... For larger screens ....
+#### Navbar
+On small screen sizes the navbar is contained with a dropdown menu accessed on the right hand side of the display. For larger screens the navbar links are displayed in a neat row across the top of the page. This was achieved using Bootstrap. 
 
-    <!-- <details><summary>Comparison of nav bar on small and large screens</summary>
+<!-- <!-- <details><summary>Comparison of nav bar on small and large screens</summary> -->
 
-    ![Nav bar menu on small screens](static/images/readme/header-dd-user.png)
+![Nav bar menu on small screens](static/images/readme/navbar-mobile.gif)
+![Nav bar on larger screens](static/images/readme/navbar-desktop.png)
 
-    ![Nav bar on larger screens](static/images/readme/header-nav.png)
+<!-- </details> -->
 
-    </details>
+#### Content
+Content on small screens is displayed in single column fashion, displaying text and images appropriately as the user scrolls down their device. On larger screens, text and images are displayed side-by-side to make use of the extra horizontal space.
+<!-- <details><summary>Comparison of content layout on small and large screens</summary> -->
 
-    <details><summary>Comparison of content layout on small and large screens</summary>
+![Content layout on small screens](static/images/readme/about-top.png)
+![Content layout on large screens](static/images/readme/about-large.png)
 
-    ![Content layout on small screens](static/images/readme/about-top.png)
-
-    ![Content layout on large screens](static/images/readme/about-large.png)
-
-    </details><br> -->
+<!-- </details><br> -->
 
 - On tablet-sized screens ....
 
