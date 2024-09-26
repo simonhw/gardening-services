@@ -1,6 +1,7 @@
-# Gardening Services
+# The Garden Path
 
-This responsive website is designed to be viewed on a variety of screen sizes. Its purpose is to allow a visiting user to view information about and make a booking to stay at a campsite, and to allow an administrator to view all bookings and related information.
+The Garden Path is an e-commerce website for a fictional gardening and landscaping business based in Munster, Ireland. The site offers customers a variety of services ranging from grass cutting and weed removal to arboriculture and tree stump removal. Customer reviews are visible to all site users, and registered users can view their order history and update their details.
+This website is responsive and designed to be viewed on a variety of screen sizes. 
 
 ![AmIResponsive Layout of Website]()
 
@@ -54,18 +55,21 @@ Deployed program on Heroku: [The Garden Path](https://gardening-services-e596b63
 
 ## User Experience
 ### Initial Discussion
-The Gardening Services website offers a number of services to homeowners and businesses in the maintenance and upkeep of their green spaces. The goal of the website is to showcase the services on offer and encourage the site user to choose Gardening Services for their gardening needs. The website allows users to book various services and stay up to date with offers and seasonal products.
+The Garden Path website offers a number of services to homeowners and businesses in the maintenance and upkeep of their green spaces. The goal of the website is to showcase the services on offer and encourage the site user to choose The Garden Path for their gardening needs. The website allows users to order and pay for various services and stay up to date with speical offers and seasonal promotions via a newsletter signup link. Customers can leave reviews for services they have purchased and edit or delete their own reviews.
 
 ### Project Planning with the Agile Approach
-The Gardening Services project was built using the Agile method. This involves breaking projects down into smaller manageable sections which allows teams to deliver continuous working releases to the client and end users. These release periods are known as sprints and this project had four sprints over nine weeks.
+Planning and development of The Garden Path e-commerce project was carried out using the Agile method. This involves breaking projects down into smaller manageable sections which allows teams to deliver continuous working releases to the client and end users. These release periods are known as sprints and this project had 4 sprints over 8 weeks.
 
 User Stories were generated and grouped under different Epics to effectively structure the work involved at different stages of the project. These Epics were:
 - "Initial Project Setup"
 - "Create Models"
 - "User Accounts"
+- "Website Content"
 - "Services and Checkout"
 - "Payment System"
-- "Website Content"
+- "Reviews"
+- "Contact Us"
+- "Marketing"
 - "Bugs"
 - "Writing Documentation"
 
@@ -85,9 +89,11 @@ Each user story was assigned a number of labels to aid in the project workflow. 
 Using the Agile method allowed this project to be managed well in small chunks. The developer was able to work on specific tasks without losing focus and manage and project the time required for these tasks optimally.
 
 ### Business Model
-Gardening Services is designed as a Business to Customer (B2C) e-commerce application. Individuals are the main type of customer being targeted for the services being sold, although other businesses can also fall into this category. The deliverables are services; repeat transations are expected based on the positive experience and feedback from customers. A single payment systems is used for Gardening Services, as the services on offer can be seasonal or have extended periods of time before being required again.
+The Garden Path is designed as a Business to Customer (B2C) e-commerce application. Individuals are the main type of customer being targeted for the services being sold, although other businesses can also fall into this category. The deliverables are services; repeat transations are expected based on the positive experience and feedback from customers. A single payment systems is used for The Garden Path, as the services on offer can be seasonal or have extended periods of time before being required again.
 
 ### User Stories
+Key user stories for the application are outlined below. An exhaustive list can be viewed on its [GitHub Projects page](https://github.com/users/simonhw/projects/4/).
+
 #### Epic: Initial Project Setup
 - **Set Up Django Files**: As a **Developer** I can **set up the Django template files** so that I can **begin to write code for the project**.
     - I can install the correct version of Django.
@@ -112,69 +118,171 @@ Gardening Services is designed as a Business to Customer (B2C) e-commerce applic
     - I can deploy the project on Heroku and ensure all styles are applied.
 
 #### Epic: Create Models
-- **Create Bookings Model**: As a **Developer** I can **create a Django model** so that **a user can book a service**.
+- **Three Custom Models**: As a **Developer** I can **create three custom models** so that I can **satisfy the assessment criteria for the project**.
+    - Custom Model 1: Service
+    - Custom Model 2: CustomUser
+    - Custom Model 3: Reviews
+    - Custom Model 4: ContactUs
+
+- **Create Service Model**: As a **Developer** I can **create a custom Services model** so that **I can add services to the website for the user to purchase**.
     - I can create a **services** app.
     - I can create a models file.
     - I can declare the necessary imports.
     - I can create a model with the appropriate fields required.
 
+- **Create Custom User Model**: As a **Developer** I can **create a custom user model** so that I can **customise the user creation process as compared to the default Django model**.
+    - I can create an app called **accounts**
+    - I can create the CustomUser model in models.py
+    - I can update settings.py to use my custom model
+
+- **Create Order Model**: As a **Developer** I can **create an Order model** so that I can **recieve and store customers orders in my database**.
+    - I can create an app called **checkout**
+    - I can create the Order model in models.py
+    - I can add functions to make a unique order number and calculate the total price
+
+- **Create OrderLineIem Model**: As a **Developer** I can **create an OrderLineItem model** so that I can **separate different services into rows on a given order**.
+    - I can create the OrderLineIem model in models.py
+    - I can add a function to calculate the line subtotal
+    
+- **Create Reviews Model**: As a **Developer** I can **create a custom Reviews model** so that I can **display customer reivews and store the data in my database**.
+    - I can create an app called **reviews**
+    - I can create the Review model in models.py
+    - I can add functions to calculate an average rating for a service
+    
+- **Create ContactUs Model**: As a **Developer** I can **create a custom ContactUs model** so that I can **recieve and store customer messages in my database**.
+    - I can create an app called **contact**
+    - I can create the ContactUs model in models.py
+
 #### Epic: User Accounts
-- **Create an Account**: As a **Site User** I can **create an account** so that I can **make bookings and leave reviews**.
+- **Create an Account**: As a **Site User** I can **create an account** so that I can **view my account details on the website**.
     - When I click the sign-in button, I am prompted to make an account.
-    - After registering my details, I can log in and view, create, update, or delete a booking.
+    - After registering my details, I can log in and view, create, update, or delete my account details.
     - I can log out and log back in using the password I created.
+    - I can reset my password.
+
+- **View Account Page**: As a **Site User** I can **navigate to my account page** so that I can **view or amend my details or delete my account**.
+    - When logged in, I can navigate to the My Account page.
+    - I can view and amend my details.
+    - I can view my past orders
 
 #### Epic: Website Content
-- **Create Base Template**: As a **Developer** I can **create a base template and homepage** so that **the similar aspects of the webpages need only be written once and the UX has a consistent appearance across the app**.
+- **Create Base Template**: As a **Developer** I can **create a base template** so that **the similar aspects of the webpages need only be written once and the UX has a consistent appearance across the app**.
     - I can create a base.html file.
     - I can create a header and nav bar for small screens.
     - I can create a footer for small screens.
     - I can create a header and nav bar for larger screens.
     - I can create a footer for larger screens.
 
-- **View Campsite Information**: As a **Site User** I can **view information about the business** so that I can **make an informed decision about booking a service**.
+- **View Homepage**: As a **Site User** I can **view the homepage**  so that I can **understand the purpose of the website and navigate it successfully**.
+    - When a user visits the homepage they can easily understand the purpose of the website
+    - The user can navigate to other pages of the website 
+    - The user can view a brief "About Us" section
+    - The user can see a summary of services offered
+
+- **View Business Information**: As a **Site User** I can **view information about the business** so that I can **make an informed decision about booking a service**.
     - When I visit the About page, I can read the business information.
     - I can view the locations covered by the business.
     - I can view the products and services offered.
 
-- **Create Error Pages**: As a **Developer** I can **create certain error pages** so that **a site user can understand when something goes wrong viewing a webpage**
+- **Create Error Pages**: As a **Developer** I can **create certain error pages** so that **a site user can understand when something goes wrong viewing a webpage**.
     - I can create a 404 error page.
     - I can create a 403 error page.
     - I can create a 500 error page.
 
-#### Epic: Bookings System
-- **Make a Booking**: As a **Site User** I can **select a booking option** so that I can **book a specific service**.
+- **View Privacy Policy**: As a **Site User** I can **view the business' privacy policy** so that I can **understand how the business collects and stores my personal data**.
+    - I can navigate to the privacy policy page from a link in the footer
+    - I can view the privacy policy on a dedicated website page
+    - I can understand how to contact the business owners with any inquiries about the policy
+
+#### Epic: Services and Checkout
+- **View Individual Service Details**: As a **Site User** I can **view the Service page** so that I can **see all details related to the service and make an informed decision on my purchase**.
+    - When I click on a service I can view its details page.
+    - I can see the service description, price, and rating.
+    
+- **Order a Service**: As a **Site User** I can **select a booking option** so that I can **book a specific service**.
     - I can view the types of services that can be booked.
     - I can select an option to book.
-    - I can only select valid date options.
+    - I can add the service to my shopping cart.
+    
+- **View Cart**: As a **Site User** I can **view my cart** so that I can **see what services I am going to order**.
+    - When I view my cart, I see a list of services I have selected to order.
+    - I can see the individual cost of each service.
+    - I can see the total cost of the order.
+    - I can click a button to proceed to the online payment stage.
+    
+- **View Preview of Cart**: As a **Site User** I can **view a preview of the cart when I add a service to it** so that **I can be know the action was successful and confirm what is in the cart without navigating away from the current page**.
+    - When I add a service to the cart on smaller screens, I can see a toast preview with the cart details.
+    - On desktop screens, when I hover over the Cart nav link, I can see a preview of the cart.
+    
+- **Update Services from the Cart Page**: As a **Site User** I can **update or remove services from the cart** so that I can **have an improved experience without navigating back to individual service pages**.
+    - I can change the number of a given service and see the subtotal and order total price change.
+    - I can remove a service from the cart.
+    - When I click remove I can see the order total price change.
+    
+- **Proceed to Checkout**: As a **Site User** I can **navigate to the checkout page with my order** so that I can **enter my details and place my order**.
+    - When I click the checkout button, I can enter my personal and delivery details.
+    - I can enter my payment information.
+    - I can review my order before submitting.
 
-<!-- - **View My Bookings**: As a **Site User** I can **view my bookings** so that I can **see my bookings history as well as upcoming bookings**.
-    - When I open the bookings page, I will see a list of my past and future bookings
-    - When the booking is in the past, I will see it displayed in a different style to future bookings.
-    - When I click on a booking, I will be able to view more detailed information about it.
+#### Epic: Payment System
+- **Set Up Stripe**: As a **Developer** I can **set up Stripe in my application** so that I can **handle and process payments securely**.
+    - I can install Stripe
+    - I can set up a webhook handler
+    - I can implement views to process the payment and order data
 
-- **Edit a Booking**: As a **Site User** I can **edit a booking of mine** so that I can **have control over the details of my bookings**.
-    - I can select an upcoming booking to edit.
-    - For a past booking, I do not have the option to edit the details.
-    - When editing booking details, I can change any details they wish and save the changes.
-    - If the booking is less than 48 hours away, I cannot edit the booking and I am instead prompted to ring the campsite for further instruction.
+- **Pay for an Order**: As a **Site User** I can **enter my payment details successfully** so that I can **secure my order**.
+    - I can enter my payment details in the checkout process
+    - I can be informed of the success or failure of the payment attempt.
 
-- **Delete a Booking**: As a **Site User** I can **cancel a booking** so that I can **manage my stay at the campsite**.
-    - I can navigate to my bookings page and cancel a booking.
-    - If the booking is less than 48 hours away, I will not have the option to cancel and will be prompted to ring the campsite for further advice.
-    - Otherwise, a modal prompt will ask me to confirm this irreversible action.
-    - On successful deletion, a confirmation message will be displayed to me.
+- **Receive Confirmation of Orders**: As a **Site User** I can **receive confirmation of my successful order** so that I can **confirm that my order was received and have the details available to me outside of the website**.
+    - When I submit an order, I can see a confirmation message on the site with an order number provided.
+    - I can view the submitted order details on my account page.
+    - I can view the order details in an email confirmation.
 
-- **Manage All Bookings**: As a **Site Admin** I can **view and manage all bookings** so that I can **understand when and have control over how customers will use the campsite**.
-    - I can view a list of all bookings and their details.
-    - For a given booking, I can amend or delete it.
-    - For a booking in the past, I cannot amend or delete it. -->
+#### EPIC: Reviews
+- **View Reviews**: As a **Site User** I can **view reviews for a service** so that I can **be more informed about the quality of work carried out by the business**.
+    - On a particular service page, I can view all reviews for that service.
+    - I can navigate through the reviews via pagination.
+    
+- **Review a Service**: As a **Site User** I can **review a service that I have ordered** so that I can **leave feedback as a customer and feel like I am interacting with the website and business directly**.
+    - I can interact with a "Leave a Review" button
+    - I can rate the service out of 5 stars
+    - I can write a brief review on my experience with the service
+    
+- **Edit a Review**: As a **Site User** I can **edit a review that I previously made** so that I can **be in control of content created by me on the website**.
+    - For a particular review I have made I can click an edit button
+    - I can edit the rating and text content of my reviews and save the changes
+    
+- **Publish Reviews**: As a **Site Admin** I can **publish pending reviews or unpublish them on the live website** so that I can **ensure only genuine reviews are visible for the business' services**.
+    - For a given pending review, I can publish it to the website and make it publicly visible
+    - For a given published review, I can unpublish it so that users cannot see it.
+    
+- **Delete a Review**: As a **Site User** I can **delete a review that I previously made** so that I can **be in control of content created by me on the website**. As a **Site Admin** I can **delete any review** so that I can **be in control of content displayed on the website**.
+    - For a particular review I can delete it if I am the author or a staff user.
+    - I can confirm or cancel the delete action before it takes effect.
+
+#### EPIC: Contact Us
+- **View Contact Us Page**: As a **Site User** I can **send a message to the business** so that I can **make enquiries directly from the website**.
+    - I can navigate to the Contact Us page from the main nav bar.
+    - I can view the business' contact details.
+    - I can send a message to the business using a form.    
+
+#### EPIC: Marketing
+- **Subscribe to Newsletters**: As a **Site User** I can **sign up to the website's newsletter** so that I can **be made aware of upcoming offers and information disseminated by the company**.
+- AC1 I add my email to the newsletter mailing list.
+- AC2 I can receive feedback  confirming that I have been added to the mailing list. 
+
+- **Create Facebook Page**: As a **Developer** I can **create a mock-up Facebook business page** so that I can **demonstrate how social media marketing would be implemented for the business**.
+- I can create a mock-up of a Facebook business page for The Garden Path
+- I can add relevant images
+- I can add posts
 
 #### Epic: Bugs
 - As a **Developer** I can **detail and keep track of bugs** so that I can **solve them before release or come up with a plan to address them in the future**.
+    - For a full list of bugs, please view [TESTING.md](/TESTING.md)
 
 #### Epic: Writing Documentation
-- As a **Developer** I can **write a README and TESTING file** so that **others can learn about my app and see the work that has gone into preparing it for final release**.
+- As a **Developer** I can **write README, TESTING, and MARKETING files** so that **others can learn about my app and see the work that has gone into preparing it for final release**.
 
 ### Kanban Board
 The GitHub Projects tool was used to manage development progress for this website. A kanban board was used to separate tasks into four columns:
@@ -465,7 +573,7 @@ Other pages include:
 ### The Sign Out Page
 
 ### The Services Page
-Gardening Serives offers a number of services to their customers. The different services are displayed in a column on mobile and in a grid on tablet and desktop sizes. Each service has its own page with a full description and price breakdown. Each service has a unit cost depending on the type of work to be done for the customer. The dropdown options show the customer how much they will pay for areas of different sizes.
+The Garden Path offers a number of services to their customers. The different services are displayed in a column on mobile and in a grid on tablet and desktop sizes. Each service has its own page with a full description and price breakdown. Each service has a unit cost depending on the type of work to be done for the customer. The dropdown options show the customer how much they will pay for areas of different sizes.
 ratings only takes the number of published reviews into account
 
 ### The reviews page
