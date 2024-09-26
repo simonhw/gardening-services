@@ -7,6 +7,7 @@ Deployed program on Heroku: [The Garden Path](https://gardening-services-e596b63
 
 ## Contents
 - [Strategy Planning](#strategy-planning)
+- [Business Research](#business-research)
 - [Content Marketing](#content-marketing)
 - [Email Marketing](#email-marketing)
 - [Social Media Marketing](#social-media-marketing)
@@ -18,25 +19,42 @@ Deployed program on Heroku: [The Garden Path](https://gardening-services-e596b63
 In order to assess the best type of marketing strategies to use for this business, the below questions were considered:
 
 ### Who are our users?
-
-
-### Which online platforms would we find lots of our users?
-
+Homeowners and business owners with gardens of all shaped and sizes.
 
 ### Would our users use social media? Which platforms do we think we would find them on?
-
+An older age group of customers who may have reduced ability to tend to their own gardens, and thus be a good target customer base, would not nessecarily have social media accounts.
+The young to middle-aged demographic of our target users would likely have social media accounts on Facebook or Instagram. Regular engagement on these platforms
+would be beneficial to increasing the customer base for this demographic.
 
 ### What do our users need? Could we meet that need with useful content? How could we best deliver that content to them?
-
+Professional and comprehensive gardening services, either to save them time from carrying out the work themselves, or to provide a professional service that would otherwise be impossible or unsafe for them to manage. We can provide a wide range of services and delivery those services directly to them.
 
 ### Would our business run sales or offer discounts? How do we think our users would most like to hear about these offers?
-
+The business could offer discounts or special offers to encourage business in the quieter months of the year. Some customers would not be aware of the correct time of year to carry out certain tasks in the garden e.g. pruning hedges before the summer or preparing flowerbeds in the winter. Newsletters for existing customers and posts on social media accounts would be the best way to circulate this information.
 
 ### What are the goals of our business? Which marketing strategies would offer the best ways to meet those goals?
+The main business goal is to deliver good quality and professional gardening services to the customer, and to sustain further business based on their positive feedback. Content, Email, and Social Media marketing are therefore the best strategies to achieve this.
 
+### Would our business have a budget to spend on advertising or would it need to work with free or low-cost options to market itself?
+The Garden Path would initially build on marketing strategies that do not cost money. Instragram reels and YouTube shorts are fast becoming an effective way to market products and services, and are completely free. Once a solid customer base had been built up from these methods, the option of paid advertising could then be considered; however, this additional cost cannot be to the detriment of the customer service quality on offer.  
 
-### Would our business have a budget to spend on advertising or would it need to work with free or low cost options to market itself?
+## Business Research
+Various gardening and landscaping websites were visited in the planning stage of this project. Three sites in particular inspired various aspects of The Garden Path
 
+- [Huntergreen](https://www.huntergreen.nyc/)
+
+    The minimalist design of the landing page, especially the navbar, conveys a sense of professionalism. This was an important factor to consider when designing the visual look of The Garden Path.
+
+- [Mulkern Landscaping & Nursery](https://mulkernlandscaping.com/)
+
+    This business displayed vibrant photos on their homepage and large pictures on their services page. This allows customers to visualise the type and quality of work offered by the business.
+    Colourful and visually descriptive imagery was seen as essential for encouraging potential customers to purchase a service on The Garden Path
+
+- [Garden Pro](https://gardenpro.ie/)
+
+    This website has a quite busy landing page, and is not the type of style that was envisioned for The Garden Path; however, positive design features that could encourage business include short descriptive paragraphs paired with images and a dropdown service list in the navbar giving users quick access to specific service pages.
+
+The positive elements from each of these business were analysed and incorporated into the inital design process of The Garden Path.
 
 ## Content Marketing
 The Garden Path allows user to leave reviews for services they have purchased. Reviews are visible to all site users, regardless of their authentication status. While reviews are not published until a site admin approved the review, this step is only intended to be a bulwark against malicious or spam reviews. Showing all genuine reviews on the website, regardless of the rating, builds trust and credibility in the eyes of the customer. Many customers based their purchase decisions wholly on the contents of reviews. On each service page, the star rating and number of reviews are visible to the user under the service description., with their attention immediatly drawn to the orange colours of the stars.
