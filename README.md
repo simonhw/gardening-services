@@ -624,9 +624,17 @@ Reviews are displayed in different ways depending on how many there are for a se
 </details>
 
 #### Contact Us
+The Contact Us page displays its form fields in columns of width 10 with an offset of 1 on mobile screens, and columns of width 6 with an offset of 3 on tablet-sized screens and larger. Specific CSS styling had to be applied to the third-party reCAPTCHA container on smaller screens so that it did not extend past the width of the `<html>` element and create a horizonal scroll.
+
+<details open><summary>The Contact Us page on small and large screens</summary>
+
+![Contact Us page on mobile screens](static/images/readme/contact-mob.png)
+![Contact Us page on mobile screens](static/images/readme/contact-desktop.png)
+
+</details>
 
 #### Footer
-The footer is displayed in a single column on small screens, with a horizontal line separating the differnet information block. On larger screens, these blocks are arrange in a row, using the full width of the screen. 
+The footer is displayed in a single column on small screens, with a horizontal line separating the differnet information block. On larger screens, these blocks are arranged in a row that uses the full width of the screen, and the horizontal lines are hidden. 
 
 ![Footer on small screens](static/images/readme/footer-mobile.png)
 ![Footer on larger screens](static/images/readme/footer-desktop.png)
