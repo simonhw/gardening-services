@@ -162,6 +162,7 @@
         <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Toggle right offcanvas</button>
         <!-- Offcanvas Cart Preview -->
         <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+            <div class="d-none" id="serviceAdded">{{ service_added }}</div>
             <div class="offcanvas-header hunter-green-bg isabelline img-shadow">
                 <h5 class="offcanvas-title" id="offcanvasRightLabel">Cart Updated!</h5>
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -169,40 +170,46 @@
             <div class="offcanvas-body">
                 <h6>Items in Cart: {{ item_count }}</h6>
                 <hr>
-                {% for item in cart_items %}
-                    <!-- Service Name, Image, and Details -->
-                    <div class="row">
-                        <div class="col-12 mb-2">
-                            <p class="my-0"><span class="fw-bold">{{ item.service.name }}</span></p>
-                        </div>
-                        <div class="col-4">
-                            <img src="{{ MEDIA_URL }}{{ item.service.image }}">
-                        </div>
-                        <div class="col-8">
-                            <div class="row">
-                                <div class="col-12">
-                                    {% if item.surface %}
-                                    <p class="my-0 small"><b>Type:</b> {{ item.surface | title }}</p>
-                                    {% endif %}
-                                    {% if item.cuts %}
-                                    <p class="my-0 small"><b>Type:</b> {{ item.cuts | title }}</p>
-                                    {% endif %}
-                                    {% if item.size %}
-                                    <p class="my-0 small"><b>Size:</b> {{ item.size | title }}</p>
-                                    {% endif %}
-                                    <p class="my-0 small"><b>Price:</b> €{{ item.service.unit_price }} each</p>
+                <div class="desktop-cart-preview-wrapper">
+                    {% for item in cart_items %}
+                        <!-- Service Name, Image, and Details -->
+                        <div class="row">
+                            <div class="col-12 mb-2">
+                                <p class="my-0"><span class="fw-bold">{{ item.service.name }} {% if item.number > 1 %}({{ item.number }}){% endif %}</span></p>
+                            </div>
+                            <div class="col-4">
+                                <img src="{{ MEDIA_URL }}{{ item.service.image }}">
+                            </div>
+                            <div class="col-8">
+                                <div class="row">
+                                    <div class="col-12">
+                                        {% if item.surface %}
+                                        <p class="my-0 small"><b>Type:</b> {{ item.surface | title }}</p>
+                                        {% endif %}
+                                        {% if item.cuts %}
+                                        <p class="my-0 small"><b>Type:</b> {{ item.cuts | title }}</p>
+                                        {% endif %}
+                                        {% if item.size %}
+                                        <p class="my-0 small"><b>Size:</b> {{ item.size | title }}</p>
+                                        {% endif %}
+                                        <p class="my-0 small"><b>Price:</b> €{{ item.service.unit_price }} each</p>
+                                    </div>
+                                </div>
+                                <!-- Remove and Subtotal for Larger Screens -->
+                                <div class="col-12 d-flex align-items-center">
+                                    <!-- Line Subtotal -->
+                                    <p class="my-0 small"><b>Subtotal:</b> €{{ item.service.unit_price | calc_subtotal:item.number }}</p>
                                 </div>
                             </div>
-                            <!-- Remove and Subtotal for Larger Screens -->
-                            <div class="col-12 d-flex align-items-center">
-                                <!-- Line Subtotal -->
-                                <p class="my-0 small"><b>Subtotal:</b> €{{ item.service.unit_price | calc_subtotal:item.number }}</p>
+                        </div>
+                        <div class="row">
+                            <div class="col-11">
+                                <hr>
                             </div>
                         </div>
-                    </div>
-                    <hr>
-                {% endfor %}
-                <p class="mb-1"><span class="fw-bold">Grand Total:</span> €{{ total|floatformat:2 }}</p>
+                    {% endfor %}
+                </div>
+                <p class="pt-3 pb-2"><span class="fw-bold">Grand Total:</span> €{{ total|floatformat:2 }}</p>
                 <a href="{% url 'view_cart' %}" class="btn hunter-green hunter-green-border mate isabelline-bg fw-bold rounded-1 mb-2">
                     <span class="text-uppercase">View Cart</span>
                     <i class="fas fa-caret-right"></i>
@@ -291,6 +298,7 @@
             $('.toast').toast('show');
         });
     </script>
+    <script type="text/javascript" src="{% static 'js/cart_preview.js' %}"></script>
     {% endblock %}
     
 </body>

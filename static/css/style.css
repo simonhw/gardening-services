@@ -452,6 +452,11 @@ td > img,
         max-width: 100px;
     }
 
+    .desktop-cart-preview-wrapper {
+        max-height: 75%;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
     /* .offcanvas-items {
         max-height: 80vh;
         overflow-x: hidden;
