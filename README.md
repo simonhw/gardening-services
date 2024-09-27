@@ -720,7 +720,7 @@ The homepage contains two sections: a general introduction and a services overvi
 
 ### The About Page
 Three distinct sections are displayed on the About page.
-- The first is a short statement about the business following by a paragraph on the founding of the business by the fictional Dermot Murphy. This history instills a sense of trust and customer care in the user as they think of The Garden Path as one that started as a local business run by someone passionate about their work that has become successful and increased in size. A picture of the same mature man amongst vegetation reading from tablet makes the user think of the business as one with good attention to detail.
+- The first is a short statement about the business following by a paragraph on the founding of the business by the fictional Dermot Murphy. This history instills a sense of trust and customer care in the user as they think of The Garden Path as one that started as a local business run by someone passionate about their work that has become successful and increased in size. A picture of "Dermot" amongst vegetation reading from a tablet makes the user think of the business as one with good attention to detail.
 
     ![Our Story section of About Us page](static/images/readme/about-story.png)
 
@@ -728,14 +728,32 @@ Three distinct sections are displayed on the About page.
 
     ![Our Mission section of About Us page](static/images/readme/about-mission.png)
 
-- The third section is brief paragraph that speaks directly to the prospective customer. It communicates that the business is dedicated to quality service and delivering exactly what the customer wants. A image of the mature man smiling and looking directly at the camera make a connection with the user as if they were speaking in person to a staff member.
+- The third section is brief paragraph that speaks directly to the prospective customer. It communicates that the business is dedicated to quality service and delivering exactly what the customer wants. A image of "Dermot" smiling and looking directly at the camera make a connection with the user as if they were speaking in person to a staff member.
 
     ![Our Mission section of About Us page](static/images/readme/about-committment.png)
 
 
 ### The Service Pages
-The Garden Path offers a number of services to their customers. The different services are displayed in a column on mobile and in a grid on tablet and desktop sizes. Each service has its own page with a full description and price breakdown. Each service has a unit cost depending on the type of work to be done for the customer. The dropdown options show the customer how much they will pay for areas of different sizes.
-ratings only takes the number of published reviews into account
+#### All Services
+The All Services page consists of two sections: the list of services and the pricing model.
+- Currently offering 6 types of services, the business displays each as a card containing a large vibrant image with a title underneath it. Clicking any of the images or titles will bring the user to the individual service page.
+
+    ![The All Services page services section](static/images/readme/services-section.png)
+
+- The pricing model section outlines the hourly rates for each category of service and, if applicable, the minimum number of hours for the service to be carried out.
+
+    ![The pricing model section](static/images/readme/pricing-section.png)
+
+#### Individual Service Pages
+For each individal service, the page is displayed with the hero image, to draw the user's eye to the colours in the image and in the star ratings. A brief description of the service is given, under which sits the star rating. The average rating is displayed as a number of stars out of 5 filled with an orange colour. The decimal value of the rating is listed next to the stars as well as the number of reviews. The number of reviews is a link to the reviews page for the service and is one of the few links on the website outside of the footer where the underline has not been removed for styling reasons. It must be present so that the user understand they can click the link to view the list of reviews.
+
+Underneath the rating are the option(s) for the user to select. These can range from 1-3 options e.g. the size of the area for grass cutting (1 option) or the type of tree service, the size of the tree, and the number of trees (3 options). The price per number of services is shown underneath the options along with two buttons that either allow the user to go back to the list of all services or to add the current service to the user's cart with the selected options.
+
+![An individual service page](static/images/readme/ind-services-tablet.png)
+
+Underneath each service's title are breadcrumb links of the form "All Services > Category > Service". Clicking on the Services breadcrumb takes the user back to the All Services page. Clicking the category breadcrumb (in the above image called "Garden Maintenance") renders the all services page with a category filter so that only services of the current category are shown and with the category name appended to the page's heading. The breadcrumb is shown in bold for the level of page that the user is currently viewing.
+
+![The service category page for Garden Maintenance](static/images/readme/category-page.png)
 
 ### The Reviews page
 show a paginated list of approved reviews,
