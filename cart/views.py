@@ -21,8 +21,6 @@ def add_to_cart(request, item_id):
     service = get_object_or_404(Service, pk=item_id)
     number = int(request.POST.get('number'))
     redirect_url = request.POST.get('redirect_url')
-    redirect_url_full = request.get_full_path()
-    print(redirect_url_full)
 
     size = None
     tree = None
@@ -151,8 +149,6 @@ def add_to_cart(request, item_id):
         if item_id in list(cart.keys()):
             if size in cart[item_id]['sizes'].keys():
                 cart[item_id]['sizes'][size] += number
-                print('item_id', item_id)
-                print(type(item_id))
                 if item_id == '1':
                     messages.success(
                         request, f'Added {size.title()} {service.name}\
