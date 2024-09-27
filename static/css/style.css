@@ -434,8 +434,9 @@ td > img,
     }
 
     .navbar-nav .nav-link.active {
-        border-top: 1px solid #3A5A40;
-        border-bottom: 1px solid #3A5A40;
+        color: #3A5A40;
+        font-weight: bold;
+        text-shadow: 0 0 5px #EDEDE8;
     }
 
     .cart-dropdown-wrapper:hover .cart-dropdown {
