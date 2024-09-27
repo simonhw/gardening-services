@@ -77,7 +77,7 @@ Each user story was assigned a number of labels to aid in the project workflow. 
 
 - `Sprint 1/2/3/4` - To denote in which sprint the user story will be worked on.
 - `Story Points: 1/2/3` - To denote how much effort each user story requires.
-- `Must-Have` - A user story relating to a feature without which the website will not function correctly.
+- `Must-Have` - A user story relating to a feature without which the website will not function correctly. This tag is also used for features which are a requirement for the Code Institute assessment criteria but which would otherwise not impede the site's essential functionality.
 - `Should-Have` - A user story relating to a feature that will complement the core website features and enhance the user experience.
 - `Could-Have` - A user story relating to a feature that could be of benefit to the user but without which the site will still achieve all its design goals.
 - `Site User` - A user story from the perspective of a regular site user.
@@ -152,7 +152,7 @@ Key user stories for the application are outlined below. An exhaustive list can 
     - I can create the OrderLineIem model in models.py
     - I can add a function to calculate the line subtotal
     
-- **Create Reviews Model**: As a **Developer** I can **create a custom Reviews model** so that I can **display customer reivews and store the data in my database**.
+- **Create Reviews Model**: As a **Developer** I can **create a custom Reviews model** so that I can **display customer reviews and store the data in my database**.
     - I can create an app called **reviews**
     - I can create the Review model in models.py
     - I can add functions to calculate an average rating for a service
@@ -197,7 +197,7 @@ Key user stories for the application are outlined below. An exhaustive list can 
     - The user can view a brief "About Us" section
     - The user can see a summary of services offered
 
-- **View Business Information**: As a **Site User** I can **view information about the business** so that I can **make an informed decision about booking a service**.
+- **View Business Information**: As a **Site User** I can **view information about the business** so that I can **make an informed decision about ordering a service**.
     - When I visit the About page, I can read the business information.
     - I can view the locations covered by the business.
     - I can view the products and services offered.
@@ -235,7 +235,7 @@ Key user stories for the application are outlined below. An exhaustive list can 
     
 - **View Preview of Cart**: As a **Site User** I can **view a preview of the cart when I add a service to it** so that **I can be know the action was successful and confirm what is in the cart without navigating away from the current page**.
     - When I add a service to the cart on smaller screens, I can see a toast preview with the cart details.
-    - On desktop screens, when I hover over the Cart nav link, I can see a preview of the cart.
+    - On desktop screens, when I add a service to the cart, I can see a preview of the cart contents in an offcanvas element.
     
 - **Update Services from the Cart Page**: As a **Site User** I can **update or remove services from the cart** so that I can **have an improved experience without navigating back to individual service pages**.
     - I can change the number of a given service and see the subtotal and order total price change.
@@ -364,7 +364,7 @@ All documentation on the marketing for this e-commerce application can be found 
 ## Design
 
 ### Colour Scheme
-A palette of greens gradually becoming lighter was chosen for this website. The different green colours are reflecting of the environments in which The Garden Path services are carried out. An off-white colour called Isabelline was added to be able to soften areas of the website and avoid using a complete white shade.
+A palette of greens gradually becoming lighter was chosen for this website. The different green colours are reflective of the environments in which The Garden Path services are carried out. An off-white colour called Isabelline was added to be able to soften areas of the website and avoid using a complete white shade.
 
 ![Coolors colour palette](static/images/readme/the-garden-path-colours.png)
 
@@ -509,32 +509,39 @@ A key requirement for this project was for users to be able to create, read, upd
 * Site users may **create** by creating an order, review, or submitting a message.
 
 #### Read
-* Site users and admin users may **read** by viewing website content, services, reviews, the privacy policy, their account details, and their order history.
-* Site users may also **read** by viewing their cart* and account history.
+* Site users and admin users may **read** by viewing services, reviews, their account details, and their order history.
 * Admin users may also **read** by viewing unpublished reviews.
 
 #### Update
-* Site users may **update** by amending their account details, editing their reviews, or editing the number of service items in their cart*.
+* Site users may **update** by amending their account details or editing their reviews.
 * Admin users may **update** by publishing or unpublishing reviews.
 
 #### Delete
-* Site users may **delete** by removing items from their cart*, deleting their reviews, or deleting their phone number and address details.
+* Site users may **delete** by deleting their reviews, or deleting their phone number and address details on their account page.
 * Admin users may **delete** by deleting reviews.
 
 <br>
 
-**data related to a user's cart would not yet have been saved to the database*
 
 ### Responsiveness
-Across all pages of the website, Bootstraps powerful grid system was utilised to control content reponsiveness on a wide variety of screen widths. The design of some key website features on different display sizes is demonstrated below. 
+Across all pages of the website, Bootstrap's powerful grid system was utilised to control content reponsiveness on a wide variety of screen widths. The design of some key website features on different display sizes is demonstrated below. 
 
 #### Navbar
-On small screen sizes the navbar is contained with a dropdown menu accessed on the right hand side of the display. For larger screens the navbar links are displayed in a neat row across the top of the page. This was achieved using Bootstrap. 
+On small screen sizes the navbar is a dropdown menu accessed on the right hand side of the display. For larger screens the navbar links are displayed in a neat row across the top of the page. This was achieved using the navbar code in the Bootstrap documentation.
 
 <details open><summary>Comparison of navbar on small and large screens</summary>
 
 ![Nav bar menu on small screens](static/images/readme/navbar-mobile.gif)
 ![Nav bar on larger screens](static/images/readme/navbar-desktop.png)
+
+</details>
+
+#### Hero Image
+The hero image is shown with its original aspect ratio of ~3:2 on screen sizes up to 768 pixels width. For larger screens, the `<img>` element has a custom CSS stlye of `display: none` applied and its parent div is given a `background-image` of the same picture with a fixed height so that the website content is not completely pushed down out of sight.
+
+<details open><summary>Responsiveness of hero image with differing screen widths</summary>
+
+![Responsiveness of Hero Image](static/images/readme/hero-responsive.gif)
 
 </details>
 
@@ -596,7 +603,6 @@ The cart and its features are neatly arranged using the grid system on all scree
 
 #### Checkout
 The site logo, secure checkout text, and progress indicator change position at the top of the screen for different displays to neatly use the extra space provided.
-The review order card does not diplay the service images on mobile screen, but on tablets and desktop screens, there is sufficient space to show them.
 
 <details open><summary>Comparison of checkout header on small and large screens</summary>
 
@@ -605,6 +611,8 @@ The review order card does not diplay the service images on mobile screen, but o
 ![Checkout header on mobile screens](static/images/readme/checkout-desktop.png)
 
 </details>
+
+The review order card does not diplay the service images on mobile screen, but on tablets and desktop screens, there is sufficient space to show them.
 
 <details open><summary>Comparison of review order card on small and large screens</summary>
 
@@ -634,16 +642,16 @@ The Contact Us page displays its form fields in columns of width 10 with an offs
 </details>
 
 #### Footer
-The footer is displayed in a single column on small screens, with a horizontal line separating the differnet information block. On larger screens, these blocks are arranged in a row that uses the full width of the screen, and the horizontal lines are hidden. 
+The footer is displayed in a single column on small screens, with a horizontal line separating the different information block. On larger screens, these blocks are arranged in a row that uses the full width of the screen, and the horizontal lines are hidden. 
 
 ![Footer on small screens](static/images/readme/footer-mobile.png)
 ![Footer on larger screens](static/images/readme/footer-desktop.png)
 
 ## Features
-The website consists of 21 pages with variying accessibility to different types of users:
+The website consists of 21 pages with varying levels of accessibility for different types of users:
 
 **Page** | **All Users** | **Authenticated User** | **Staff Users**
---- | :---: | :---: | :---:
+:--- | :---: | :---: | :---:
 Homepage | &check; |  | 
 About Us | &check; |  | 
 All Services | &check; |  | 
@@ -706,23 +714,39 @@ When a user is signed in, the header links change.
 ![Website Footer](static/images/readme/footer-desktop.png)
 
 ### The Homepage
+The homepage contains two sections: a general introduction and a services overview. A heading welcomes the user with a smaller muted heading below it communicating that the business is local and specialists in garden care. An image of a smartly-dressed mature man holding a leaf is displayed next to the introduction. This gives the user a sense that the business offers experience and knowledge. The services sub-heading lists the location covered by the business so that the user understands without having to navigate further through the website if they can avail of The Garden Path's services. An image of a man driving a ride-on lawnmower is shown next to the summary of service, and a button which links to the service page is displayed underneath.
+
+![The website' homepage](static/images/readme/content-desktop.png)
 
 ### The About Page
+Three distinct sections are displayed on the About page.
+- The first is a short statement about the business following by a paragraph on the founding of the business by the fictional Dermot Murphy. This history instills a sense of trust and customer care in the user as they think of The Garden Path as one that started as a local business run by someone passionate about their work that has become successful and increased in size. A picture of the same mature man amongst vegetation reading from tablet makes the user think of the business as one with good attention to detail.
 
+    ![Our Story section of About Us page](static/images/readme/about-story.png)
+
+- The second section has a different background colour and inset shadow both to seperate it clearly from the other sections and to break up the amount of white on the page. This section contains two different headings which detail the business' mission and the top reasons to patronise The Garden Path. There is a button underneath the "Why Choose Us?" list which brings the customer directly to the Contact Us page if they want to get a quote for the work to be carried out.
+
+    ![Our Mission section of About Us page](static/images/readme/about-mission.png)
+
+- The third section is brief paragraph that speaks directly to the prospective customer. It communicates that the business is dedicated to quality service and delivering exactly what the customer wants. A image of the mature man smiling and looking directly at the camera make a connection with the user as if they were speaking in person to a staff member.
+
+    ![Our Mission section of About Us page](static/images/readme/about-committment.png)
+
+
+### The Service Pages
+The Garden Path offers a number of services to their customers. The different services are displayed in a column on mobile and in a grid on tablet and desktop sizes. Each service has its own page with a full description and price breakdown. Each service has a unit cost depending on the type of work to be done for the customer. The dropdown options show the customer how much they will pay for areas of different sizes.
+ratings only takes the number of published reviews into account
+
+### The Reviews page
+show a paginated list of approved reviews,
+
+have a new page for unpublished reviews
 ### The Signup Page
 
 ### The Sign In Page
 
 ### The Sign Out Page
 
-### The Services Page
-The Garden Path offers a number of services to their customers. The different services are displayed in a column on mobile and in a grid on tablet and desktop sizes. Each service has its own page with a full description and price breakdown. Each service has a unit cost depending on the type of work to be done for the customer. The dropdown options show the customer how much they will pay for areas of different sizes.
-ratings only takes the number of published reviews into account
-
-### The reviews page
-show a paginated list of approved reviews,
-
-have a new page for unpublished reviews
 ### Error Pages
 
 ### Features to be Implemented
