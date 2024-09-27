@@ -21,6 +21,8 @@ def add_to_cart(request, item_id):
     service = get_object_or_404(Service, pk=item_id)
     number = int(request.POST.get('number'))
     redirect_url = request.POST.get('redirect_url')
+    redirect_url_full = request.get_full_path()
+    print(redirect_url_full)
 
     size = None
     tree = None
@@ -195,8 +197,13 @@ def add_to_cart(request, item_id):
                 request, f'Added {service.name} x{number} to cart.'
             )
     
+    context = {
+        'service': service,
+        'service_added': True
+    }
+    
     request.session['cart'] = cart
-    return redirect(redirect_url)
+    return render(request, 'services/service_page.html', context)
 
 
 def amend_cart(request, item_id):
