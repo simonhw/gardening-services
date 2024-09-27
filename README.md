@@ -640,52 +640,70 @@ The footer is displayed in a single column on small screens, with a horizontal l
 ![Footer on larger screens](static/images/readme/footer-desktop.png)
 
 ## Features
-The website consists of several main pages:
-- the homepage
-- the about page
-- the services page
-- the contact us page
-- individual service pages
-- the shopping bag page
-- the checkout page
+The website consists of 21 pages with variying accessibility to different types of users:
 
-Other pages include:
-- the signup page
-- the sign in page
-- the sign out page
-- the 404, 403, and 500 error pages
+**Page** | **All Users** | **Authenticated User** | **Staff Users**
+--- | :---: | :---: | :---:
+Homepage | &check; |  | 
+About Us | &check; |  | 
+All Services | &check; |  | 
+Individual Services | &check; |  | 
+Service Reviews | &check; |  | 
+Cart | &check; |  | 
+Checkout | &check; |  | 
+Confirmation Order page | &check; |  | 
+Contact Us | &check; |  | 
+Signup and Sign in pages | &check; |  | 
+Error pages: 404, 403, and 500 | &check; |  | 
+Newsletter page | &check; |  | 
+Privacy Policy page | &check; |  | 
+My Account |  | &check; | 
+Past Order Confirmation pages |  | &check; | 
+Leave a Review page |  | &check; | 
+Edit a Review page |  | &check; | 
+Sign Out page |  | &check; | 
+Unpublished Reviews page |  |  | &check;
 
-**All pages on the website have:**
-1. A favicon of a pair of gloves. This icon was chosen to reflect a hands-on and professional business to the customer.  
 
-    ![Gloves favicon](static/images/readme/gloves-favicon.png)
+### All pages on the website have:
 
-2. A header with a title and nav bar or menu dropdown for page links
+**1.** A favicon of a pair of gloves. This icon was chosen to reflect a hands-on and professional business to the customer.  
 
-    <!-- ![Website Header](static/images/readme/header-nav.png)
+![Gloves favicon](static/images/readme/gloves-favicon.png)
 
-    ![Website Header](static/images/readme/header-dd.png)
+**2.** A header with a logo and nav bar or menu dropdown for page links (except the checkout page)
 
-    The header contains links to the main pages of the website, depending on the authentication status of the site user. 
-    - The website title "The Garden Path" is a link which when clicked will return the user to the `index.html` page.
-    - "About" brings the user to the `about.html` page.
-    - "Book Now" brings the user to the `bookings.html` page.
-    - "Log In" and "Sign Up" will direct the user to the respective account pages of `login.html` and `signup.html`.
-    
-    When a user is signed in, the header links change.
-    - A new link "My Bookings" brings the user to the `user_bookings.html` page.
-    - "Log In" and "Sign Up" are hidden and "Log Out" is shown, which will direct the user to the `logout.html` account page.
+![Website Header on mobile](static/images/readme/header-mobile.png)
+![Website Header on desktop](static/images/readme/header-desktop.png)
 
-        ![Website Header when user is logged in](static/images/readme/header-nav-user.png)
+The header contains direct links to the main pages of the website, depending on the authentication status of the site user. The nav link for the page currently being viewed is made distinct with a CSS style of `active` which is represented by a background colour of Sage and text colour of Isabelline when the nav bar is in dropdown form, and a bold font weight with a subtle Isabelline text shadow on larger screens.
+- The website logo "The Garden Path" is a link which when clicked will return the user to the `index.html` page.
+- "About Us" brings the user to the `about.html` page.
+- The "Services" dropdown displays a list of options which include the `services.html` and `service_page` pages.
+- "Cart" links to the `cart.html` page.
+- "Contact Us" bring the user to `contactus.html`
+- "Log In/Sign Up" will direct the user to the `login.html` page which itself contains a link to `signup.html`.
 
-        ![Website Header when user is logged in](static/images/readme/header-dd-user.png)
+When a user is signed in, the header links change.
+- A new link "My Account" brings the user to the `account.html` page.
+- "Log In/Sign Up" is hidden and "Log Out" is shown, which will direct the user to the `logout.html` account page.
 
-    When a user with staff status is logged in, instead of "My Bookings", a link titled "Manage Bookings" is shown which brings the user to the `manage_bookings.html` page.
-    <br> -->
+    ![Website Header on mobile when user is logged in](static/images/readme/header-authenticated-mobile.png)
+    ![Website Header on dekstop when user is logged in](static/images/readme/header-authenticated-desktop.png)
 
-3. A footer with contact information and social media links
-<!-- 
-    ![Website Footer](static/images/readme/footer-mob.png) -->
+
+**3.** A footer with contact information, social media links, and links to important internal pages and relevant external sites.
+
+- The phone number link opens the device's calling app with the number displayed. The email link similary open the device's email app with the email already entered in the "To:" field.
+- The Facebook and Instagram links direct the user to the homepages for those sites, but for a real business these links would point to the business' pages on those platforms.
+- Two links are included for SEO reasons and are discussed further in the [MARKETING.md](/MARKETING.md) file.
+    - A link to the Associaton of Landscape Contracters in Ireland website
+    - A link to the Royal Horticultural Society of Ireland website
+- Two other links are for important pages on the website:
+    - The privacy policy page
+    - The newsletter signup page
+
+![Website Footer](static/images/readme/footer-desktop.png)
 
 ### The Homepage
 
