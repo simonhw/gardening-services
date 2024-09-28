@@ -28,7 +28,7 @@ $(document).ready(function() {
     }
 
     // Navigate back to the Address Details section
-    $('.show-address, .adjust-address').click(function(e) {
+    $('.show-address, .adjust-address').click(function() {
         $('.details-fields').removeClass('d-none');
         $('.payment-fields').addClass('d-none');
         $('.review-order').addClass('d-none');
@@ -43,7 +43,7 @@ $(document).ready(function() {
     });
 
     // Show the Payment Details section
-    $('.show-payment, .adjust-payment').click(function(e) {
+    $('.show-payment, .adjust-payment').click(function() {
 
         // If email field is valid, allow user to move to the payment details
         // otherwise inform the user of their error.
@@ -65,7 +65,7 @@ $(document).ready(function() {
     });
 
     // Show the Order Review section
-    $('.show-review').click(function(e) {
+    $('.show-review').click(function() {
         $('.details-fields').addClass('d-none');
         $('.payment-fields').addClass('d-none');
         $('.review-order').removeClass('d-none');
