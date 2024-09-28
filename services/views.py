@@ -7,7 +7,7 @@ def all_services(request):
     View that displays all services on offer
     '''
 
-    services = Service.objects.all()
+    services = Service.objects.all().order_by('pk')
     categories = None
     category_heading = None
 
