@@ -13,7 +13,7 @@ $(document).ready(function() {
         });
     }
 
-    // Add orange color on hover
+    // Add orange colour class to stars on hover
     $stars.hover(
         function() {
             let index = $stars.index($(this));
@@ -32,23 +32,27 @@ $(document).ready(function() {
         }
     );
 
-    // Custom Form Validation
-    $('#reviewForm').on('submit', function(e) {
+    // Apply orange colour to stars on page load when editing an existing review
+    let existingRating = $('input[name="rating"]:checked').val();
+    if (existingRating) {
+        updateStars(existingRating);
+    }
+
+    // Custom Form Validation. If any fields are empty, prevent form submission and 
+    // display error messages and styles.
+    $('#form-submit-button').on('click', function(e) {
         let title = $.trim($('input[name="title"]').val());
         let content = $.trim($('textarea[name="content"]').val());
         let rating = $('input[name="rating"]:checked').length > 0;
-        console.log('content', content);
         
         if (!title){
             e.preventDefault();
-            console.log('!title')
             $('#id_title').addClass('input-border-red');
             $('#id_content').removeClass('input-border-red');
             $('.form-check-label').removeClass('invalid');
             $('#title-validation').removeClass('d-none').text('Title cannot be empty!');
         } else if (!content) {
             e.preventDefault();
-            console.log('!content')
             $('#id_title').removeClass('input-border-red');
             $('#id_content').addClass('input-border-red');
             $('.form-check-label').removeClass('invalid');
@@ -56,7 +60,6 @@ $(document).ready(function() {
 
         } else if (!rating) {
             e.preventDefault();
-            console.log('!rating')
             $('#id_title').removeClass('input-border-red');
             $('#id_content').removeClass('input-border-red');
             $('.form-check-label').addClass('invalid');
