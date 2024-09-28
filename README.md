@@ -834,13 +834,69 @@ The success page itself also confirms this as well as providing the unique order
 ![Checkout success page](static/images/readme/checkout-success.png)
 
 ### The Reviews page
-A review page exists for each service that The Garden Path Offers. Only users who have previously ordered a particular service can write reviews for it. The link to the review page is presented next to the star rating on each service page. When clicked, the user may read the various reviews that have been published by the site administrators.
+A review page exists for each service that The Garden Path offers. Only users who have previously ordered a particular service can write reviews for it. The link to the review page is presented next to the star rating on each service page. When clicked, the user may read the various reviews that have been approved by the site administrators.
 
 ![Reviews page](static/images/readme/reviews-mob.gif)
 
 A maximum of 6 reviews are displayed at any one time. If more reviews exists, then pagination controls are shown underneath the reviews as well as an indication of how many pages of reviews there are.
 
+<details><summary>Pagination of reviews</summary>
+
 ![Reviews pagination](static/images/readme/reviews-pagination.png)
+
+</details>
+
+#### Writing a Review
+If a user has previously ordered a particular service, they will see a Leave a Review button under the page's heading. Clicking it will bring them to the `create_review.html` page. Confirmation of the account under which the review is being made is given above the review form. The user must complete three fields: a title, review content, and rating out of 5. A green Submit button will allow the user to submit their review and a confirmation toast message is displayed stating that the review is pending approval.
+
+<details open><summary>The Leave a Review button</summary>
+
+![Leave a Review button](static/images/readme/review-button.png)
+
+</details>
+
+<details><summary>The review form page</summary>
+
+![The review form page](static/images/readme/review-form.png)
+
+</details>
+
+<details><summary>The review confirmation toast message</summary>
+
+![The review confirmation toast message](static/images/readme/review-toast.png)
+
+</details>
+
+#### Deleting or Editing a Review
+When a user in logged in they may edit or delete their published reviews. In these cases, a horizontal line is added to the review card and two distinct Edit and Delete buttons are presented.
+
+<details open><summary>A review with Edit and Delete buttons</summary>
+
+![Review card as seen by its author](static/images/readme/reviews-author.png)
+
+</details>
+
+If the user clicks the Edit button, the review form page is loaded with an amended page title, form heading, and with the form data populated in the fields. Similar to above, a toast message confirms that the review was edited and is not awaiting staff approval. The review can no longer been seen in the list of reviews.
+
+<details><summary>The Edit Review page with amended heading and pre-filled form data</summary>
+
+![Review card as seen by its author](static/images/readme/reviews-edit.png)
+
+</details>
+
+<details><summary>The edit review toast message</summary>
+
+![The review confirmation toast message](static/images/readme/review-edit-toast.png)
+
+</details>
+
+If the user clicks the delete button, a confirmation modal is displayed informing them that the delete action cannot be undone. A cancel button will close the modal without deleting the review.
+
+<details><summary>The Delete Confirmation Modal for reviews.</summary>
+
+![Delete review modal window](static/images/readme/review-modal.png)
+
+</details>
 
 
 ### The Signup Page
