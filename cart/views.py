@@ -7,10 +7,10 @@ from services.models import Service
 def view_cart(request):
     ''' View that renders the shopping cart page '''
 
-    return render(
-        request,
-        "cart/cart.html"
-    )
+    context = {
+        'on_cart_page': True
+    }
+    return render(request, "cart/cart.html", context)
 
 
 def add_to_cart(request, item_id):
@@ -195,7 +195,7 @@ def add_to_cart(request, item_id):
     
     context = {
         'service': service,
-        'service_added': True
+        'service_added': True,
     }
     
     request.session['cart'] = cart

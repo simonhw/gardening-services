@@ -1,4 +1,4 @@
-<div class="toast toast-success custom-toast hunter-green-bg isabelline rounded-b-2" data-bs-autohide="false">
+<div class="toast toast-success custom-toast hunter-green-bg isabelline {% if total %}{% if not on_account_page and not on_cart_page %}rounded-b-2{% endif %}{% endif %}" data-bs-autohide="false">
     <div class="toast-body">
         <div class="d-flex gap-4">
         <span><i class="fa-solid fa-circle-check fa-lg"></i></span>
@@ -12,41 +12,43 @@
         </div>
     </div>
     <div class="toast-cart isabelline-bg text-dark d-lg-none img-shadow rounded-b-2">
-        {% if total and not on_account_page %}
-            <p class="mate text-center pt-1 mb-1"><span class="fw-bold">Cart: {{ item_count }} items</span></p>
-            <hr class="mt-1 mb-0 text-center">
-            <div class="cart-notification-wrapper text-dark ">
-                {% for item in cart_items %}
-                    <div class="row">
-                        <div class="col-3 offset-1 my-1">
-                            <img src="{{ MEDIA_URL }}{{ item.service.image }}" class="w-100 rounded">
+        {% if total %} 
+            {% if not on_account_page and not on_cart_page %}
+                <p class="mate text-center pt-1 mb-1"><span class="fw-bold">Cart: {{ item_count }} items</span></p>
+                <hr class="mt-1 mb-0 text-center">
+                <div class="cart-notification-wrapper text-dark ">
+                    {% for item in cart_items %}
+                        <div class="row">
+                            <div class="col-3 offset-1 my-1">
+                                <img src="{{ MEDIA_URL }}{{ item.service.image }}" class="w-100 rounded">
+                            </div>
+                            <div class="col-7">
+                                <p class="my-0"><span class="fw-bold fs-smaller">{{ item.service.name }} {% if item.number > 1 %}({{ item.number }}){% endif %}</span></p>
+                                {% if item.surface %}
+                                    <p class="my-0 fs-smaller"><span class="fw-bold">Type:</span> {{ item.surface }}</p>
+                                {% endif %}
+                                {% if item.cuts %}
+                                    <p class="my-0 fs-smaller"><span class="fw-bold">Type:</span> {{ item.cuts }}</p>
+                                {% endif %}
+                                {% if item.size %}
+                                    <p class="my-0 fs-smaller"><span class="fw-bold">Size:</span> {{ item.size }}</p>
+                                {% endif %}
+                            </div>
                         </div>
-                        <div class="col-7">
-                            <p class="my-0"><span class="fw-bold fs-smaller">{{ item.service.name }} {% if item.number > 1 %}({{ item.number }}){% endif %}</span></p>
-                            {% if item.surface %}
-                                <p class="my-0 fs-smaller"><span class="fw-bold">Type:</span> {{ item.surface }}</p>
-                            {% endif %}
-                            {% if item.cuts %}
-                                <p class="my-0 fs-smaller"><span class="fw-bold">Type:</span> {{ item.cuts }}</p>
-                            {% endif %}
-                            {% if item.size %}
-                                <p class="my-0 fs-smaller"><span class="fw-bold">Size:</span> {{ item.size }}</p>
-                            {% endif %}
-                        </div>
-                    </div>
-                {% endfor %}
-                
-            </div>
-            <hr class="mt-0 text-center">
-            <div class="row">
-                <div class="col">
-                    <p class="mb-1"><span class="fw-bold py-2">Grand Total: €{{ total|floatformat:2 }}</span></p>
-                    <a href="{% url 'view_cart' %}" class="btn hunter-green hunter-green-border mate isabelline-bg fw-bold rounded-1 my-2">
-                        <span class="text-uppercase">View Cart</span>
-                        <i class="fas fa-caret-right"></i>
-                    </a>
+                    {% endfor %}
+                    
                 </div>
-            </div>
+                <hr class="mt-0 text-center">
+                <div class="row">
+                    <div class="col">
+                        <p class="mb-1"><span class="fw-bold py-2">Grand Total: €{{ total|floatformat:2 }}</span></p>
+                        <a href="{% url 'view_cart' %}" class="btn hunter-green hunter-green-border mate isabelline-bg fw-bold rounded-1 my-2">
+                            <span class="text-uppercase">View Cart</span>
+                            <i class="fas fa-caret-right"></i>
+                        </a>
+                    </div>
+                </div>
+            {% endif %}
         {% endif %}
     </div>
 </div>
