@@ -8,11 +8,9 @@
 
 <div class="container-fluid">
 
-    <!-- Hero Image -->
     <div class="row">
-        <div class="col-12 g-0 hero">
-            <img class="img-fluid hero-image" src="{% static 'images/path-blur-768.webp' %}"
-                alt="Two red flowers on steps."/>
+        <div class="col-10 offset-1">
+            <hr>
         </div>
     </div>
     
@@ -50,7 +48,8 @@
                                 </div>
                                 <div class="card-text">{{ review.content | safe }}</div>
                                 <h6 class="card-subtitle text-end text-muted mb-2">- {{ review.reviewer.first_name }}</h6>
-                                <h6 class="card-subtitle text-end text-muted">{{ review.created_on }}</h6>
+                                <h6 class="card-subtitle text-end text-muted mb-2">Email: {{ review.reviewer.email }}</h6>
+                                <h6 class="card-subtitle text-end text-muted mb-2">{{ review.created_on }}</h6>
                                 <hr>
                                 <div class="admin-buttons d-flex justify-content-around">
                                     <a href="{% url 'publish_review' service.id review.id %}" class="btn rounded-1 btn-dark isabelline">
@@ -97,7 +96,7 @@
             {% endif %}
             <!-- Buttons -->
             <div class="col-12 mt-3 text-center">
-                <a href="{% url 'service_reviews' service.id %}" class="btn rounded-1 mate isabelline hunter-green-bg">
+                <a href="{% url 'service_reviews' service.id %}" class="btn rounded-1 isabelline hunter-green-bg">
                     <i class="fas fa-caret-left"></i>
                     Back to Published Reviews
                 </a>

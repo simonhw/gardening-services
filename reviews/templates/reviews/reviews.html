@@ -58,15 +58,18 @@
                                     <div id="rating-{{review.pk}}" hidden>{{ review.rating }}</div>
                                 </div>
                                 <div class="card-text">{{ review.content | safe }}</div>
-                                <h6 class="card-subtitle text-end text-muted mb-2">- {{ review.reviewer.first_name }}</h6>
-                                <h6 class="card-subtitle text-end text-muted">{{ review.created_on }}</h6>
+                                <h6 class="card-subtitle text-end text-muted mb-2">- {{ review.reviewer.first_name}}</h6>
+                                {% if user.is_superuser %}
+                                <h6 class="card-subtitle text-end text-muted mb-2">Email: {{ review.reviewer.email }}</h6>
+                                {% endif %}
+                                <h6 class="card-subtitle text-end text-muted mb-2">{{ review.created_on }}</h6>
                                 {% if user.is_superuser or user == review.reviewer %}
                                 <hr>
                                 <div class="admin-buttons d-flex justify-content-around">
                                     {% if user.is_superuser %}
-                                    <button class="btn rounded-1 hunter-green-bg isabelline">
+                                    <a href="{% url 'publish_review' service.id review.id %}" class="btn rounded-1 btn-dark isabelline">
                                         Unpublish
-                                    </button>
+                                    </a>
                                     {% endif %}
                                     {% if user == review.reviewer %}
                                     <a href="{% url 'edit_review' service.id review.id %}" class="btn rounded-1 hunter-green-bg isabelline">
@@ -105,12 +108,12 @@
                     </div>
                     <!-- Buttons -->
                     <div class="col-12 mt-3 text-center">
-                        <a href="{% url 'service_page' service.id %}" class="btn rounded-1 mate isabelline hunter-green-bg">
+                        <a href="{% url 'service_page' service.id %}" class="btn rounded-1 isabelline hunter-green-bg">
                             <i class="fas fa-caret-left"></i>
                             Back to Services Page
                         </a>
                         {% if user.is_superuser %}
-                        <a href="{% url 'unpublished_reviews' service.id %}" class="btn rounded-1 mate isabelline btn-dark">
+                        <a href="{% url 'unpublished_reviews' service.id %}" class="btn rounded-1 isabelline btn-dark">
                             View Pending Reviews
                         </a>
                         {% endif %}

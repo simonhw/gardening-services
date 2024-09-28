@@ -161,22 +161,36 @@ def create_review(request, service_id):
 @user_passes_test(lambda u: u.is_staff)
 def publish_review(request, service_id, review_id):
     """
-    Method to allow staff users to mark a review as published.
+    Method to allow staff users to toggle the publication state of a
+    review.
     """
     service = get_object_or_404(Service, pk=service_id)
     review = get_object_or_404(Review, pk=review_id)
 
     if request.user.is_staff:
-        review.approved = True
-        review.save()
-        messages.success(
-            request, f'Review "{ review.title }" successfully published'
-        )
-    else:
-        messages.ERROR(
-            request, f'Review "{ review.title }" was not published'
-        )
-    return redirect('unpublished_reviews', service.id)
+        try:
+            if review.approved:
+                review.approved = False
+                review.save()
+                messages.success(
+                    request,
+                    f'Review "{ review.title }" successfully unpublished'
+                )
+                return redirect('service_reviews', service.id)
+            else:
+                review.approved = True
+                review.save()
+                messages.success(
+                    request,
+                    f'Review "{ review.title }" successfully published'
+                )
+                return redirect('unpublished_reviews', service.id)
+
+        except:
+            messages.error(
+                request, "There was a problem changing that review's status"
+            )
+        return redirect('service_reviews', service.id)
 
 
 @login_required
