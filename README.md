@@ -755,10 +755,51 @@ Underneath each service's title are breadcrumb links of the form "All Services >
 
 ![The service category page for Garden Maintenance](static/images/readme/category-page.png)
 
+### The Shopping Cart
+When viewing the cart page without any services having been added to it, a message saying "Your cart is empty" is displayed with a button that will bring the user back to the All Services page. The heading indicates the number of services in the cart at any given time.
+
+<details open><summary>Comparison of the cart page when empty and when containing one service</summary>
+
+![Empty Cart page](static/images/readme/cart-empty.png)
+
+![Cart page with one service](static/images/readme/cart-01.png)
+
+</details>
+
+When greater than zero, the total price of the services in the cart is appended after the Cart nabvar link. When the cart has multiple services the list is displayed underneath the checkout card on mobile, and in a fixed height scrollable container on larger screens. For mobile screens, a button that bring the user back to the top of the page is shown when the user scrolls down through the list of services.
+
+<details open><summary>Comparison of the cart page with several services on different screen sizes</summary>
+
+![A cart with many services on small screens](static/images/readme/cart-mob.gif)
+
+![A cart with many services on larger screens](static/images/readme/cart-desktop.gif)
+
+</details>
+
+#### Quantity and Remove buttons
+To amend the number of services directly from the cart, the user can click the **-** or **+** buttons to immediatley update the value. The decrement button is disabled when the value is 1 but the user may enter 0 directly into the field in which case the service will be removed from the cart.
+
+![Removing a service from the cart by setting the number to 0](static/images/readme/cart-0-remove.gif)
+
+The remove button is given a prominent size, either as wide as the image or the details container. The `btn-outline-danger` Bootstrap class is used instead of a solid red fill for three different reasons: 
+- To keep the association of red with removal or deletion
+- To not distract from the colours in the vibrant images
+- To avoid clashing with the various green shades used
+
+![Removing an item from the cart with the remove button](static/images/readme/cart-remove-button.gif)
+
+#### The Cart Preview
+When adding services to the cart, the user is shown a summary of the current contents of their cart and the total price. This is displayed in the toast message on mobile and tablet screens, and in an offcanvas element on desktop screens. Both types of preview feature a scrollable list for many services and a "View Cart" button to bring the user directly to the cart page.
+
+![Cart preview on smaller screens](static/images/readme/cart-preview-mob.gif)
+
+![Cart preview on desktop screens](static/images/readme/cart-preview-desktop.gif)
+
 ### The Reviews page
 show a paginated list of approved reviews,
 
 have a new page for unpublished reviews
+
 ### The Signup Page
 
 ### The Sign In Page
@@ -911,36 +952,17 @@ Images were resized and cropped where necessary.
 **All code in this project was written entirely by Simon Henleywillis unless otherwise specified below.**
 Various Bootstrap classes and components were used in the styling of this website and were learned about from reading the Bootstrap documentation. Chunks of code that were copied or adapted are specifically credited below.
 
-The below tutorial was followed when creating the custom User model:
-
- - [Learn Django - Django Custom User Model](https://learndjango.com/tutorials/django-custom-user-model)
-
- The Category model was taken from the Boutique Ado walkthrough.
-
-The JavaScript code to control the decrement and increment of the number input field on the service pages was taken from the Boutique Ado walkthrough.
-
-Getting the toasts to show with B5:
-
-- [Bootstrap 5 Jquery Is It Possible To Force Bootstrap 5 To Inject Its Jquery P](https://stackoverflow.com/questions/67953465/bootstrap-5-jquery-is-it-possible-to-force-bootstrap-5-to-inject-its-jquery-p)
-
-The styling of the toast messages was adapted frome examples in the below article:
-
--[https://fastbootstrap.com/components/toast/](https://fastbootstrap.com/components/toast/)
-
-The checkout forms and disabling of buttons based on fields
-
-- [https://stackoverflow.com/questions/5614399/disabling-submit-button-until-all-fields-have-values](https://stackoverflow.com/questions/5614399/disabling-submit-button-until-all-fields-have-values)
-
-The following articles were used as guidance when creating the custom user model:
-
-- [https://medium.com/django-unleashed/custom-user-model-in-django-98b9a401a6a2#4826](https://medium.com/django-unleashed/custom-user-model-in-django-98b9a401a6a2#4826)
-- [https://docs.djangoproject.com/en/3.2/topics/auth/customizing/#a-full-example](https://docs.djangoproject.com/en/3.2/topics/auth/customizing/#a-full-example)
-
-Code from the Django documentation on pagination was copied for the reviews page:
-
-- [https://docs.djangoproject.com/en/5.1/topics/pagination/](https://docs.djangoproject.com/en/5.1/topics/pagination/)
-
-The JavaScript code to control the color of the select field in the Contact Us form was taken and adapted from the Boutique Ado walkthrough.
+**Feature** | **Source**
+--- | ---
+Articles used as guidance when creating the CustomUser model | [Learn Django - Django Custom User Model](https://learndjango.com/tutorials/django-custom-user-model) <br> [Medium.com - Custom User Model In Django](https://medium.com/django-unleashed/custom-user-model-in-django-98b9a401a6a2#4826) <br> [Django documentation - Customizing authentication in Django](https://docs.djangoproject.com/en/3.2/topics/auth/customizing/#a-full-example)
+The Category model | Taken from the Boutique Ado walkthrough
+The JavaScript code to control the decrement and increment of the number input field on the service pages | Taken from the Boutique Ado walkthrough
+The HTML structure of the toast messages | Adapted from examples in this article: [https://fastbootstrap.com/components/toast/](https://fastbootstrap.com/components/toast/)
+Disabling the checkout form buttons dynamically | [StackOverflow - Disabling submit button until all fields have values](https://stackoverflow.com/questions/5614399/disabling-submit-button-until-all-fields-have-values)
+Pagination of reviews | Taken from the Django documentation: [https://docs.djangoproject.com/en/5.1/topics/pagination/](https://docs.djangoproject.com/en/5.1/topics/pagination/)
+The JavaScript code to control the color of the select field in the Contact Us form | Taken and adapted from the Boutique Ado walkthrough
+The HTML, CSS, and JavaScript code for the scroll to top button on the cart page | Taken from this tutorial: [MDB - Scroll back to top button](https://mdbootstrap.com/docs/standard/extended/back-to-top/)
+The Offcanvas cart preview | The HTML code was copied from the [Bootsrap documentation](https://getbootstrap.com/docs/5.0/components/offcanvas/)
 
 
 ## Acknowledgements
