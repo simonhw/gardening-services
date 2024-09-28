@@ -795,6 +795,15 @@ When adding services to the cart, the user is shown a summary of the current con
 
 ![Cart preview on desktop screens](static/images/readme/cart-preview-desktop.gif)
 
+### The Checkout Page
+When a user proceeds to the checkout page, the navbar is not shown. The site logo is still present, but in the navbar's place is now text saying "Secure Checkout" with a padlock icon, and a custom progress indicator for the checkout process.
+
+![Checkout Page header](static/images/readme/checkout-mob.png)
+
+The user is presented with form fields related to their personal details and address. All fields except for "Street Address 2" and "Eircode" are required. The "Continue to Payment" button is disabled until all required input fields contain data. This validation is explained in detail in the [TESTING.md](/TESTING.md) file.
+
+![Checkout address fields and proceed button enable/disable feature](static/images/readme/checkout-address.gif)
+
 ### The Reviews page
 show a paginated list of approved reviews,
 
