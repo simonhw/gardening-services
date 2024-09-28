@@ -11,27 +11,27 @@
         </div>
         </div>
     </div>
-    <div class="toast-cart isabelline-bg text-dark d-lg-none img-shadow rounded-b-2">
+    <div class="toast-cart white-bg text-dark d-lg-none img-shadow rounded-b-2">
         {% if total %} 
             {% if not on_account_page and not on_cart_page %}
-                <p class="mate text-center pt-1 mb-1"><span class="fw-bold">Cart: {{ item_count }} items</span></p>
+                <p class="text-center pt-1 mb-1"><span class="fw-bold">Cart ({{ item_count }})</span></p>
                 <hr class="mt-1 mb-0 text-center">
                 <div class="cart-notification-wrapper text-dark ">
                     {% for item in cart_items %}
                         <div class="row">
-                            <div class="col-3 offset-1 my-1">
+                            <div class="col-3 offset-1 my-1 pe-0">
                                 <img src="{{ MEDIA_URL }}{{ item.service.image }}" class="w-100 rounded">
                             </div>
                             <div class="col-7">
                                 <p class="my-0"><span class="fw-bold fs-smaller">{{ item.service.name }} {% if item.number > 1 %}({{ item.number }}){% endif %}</span></p>
                                 {% if item.surface %}
-                                    <p class="my-0 fs-smaller"><span class="fw-bold">Type:</span> {{ item.surface }}</p>
+                                    <p class="my-0 fs-smaller"><span class="fw-bold">Type:</span> {{ item.surface | title }}</p>
                                 {% endif %}
                                 {% if item.cuts %}
-                                    <p class="my-0 fs-smaller"><span class="fw-bold">Type:</span> {{ item.cuts }}</p>
+                                    <p class="my-0 fs-smaller"><span class="fw-bold">Type:</span> {{ item.cuts | title }}</p>
                                 {% endif %}
                                 {% if item.size %}
-                                    <p class="my-0 fs-smaller"><span class="fw-bold">Size:</span> {{ item.size }}</p>
+                                    <p class="my-0 fs-smaller"><span class="fw-bold">Size:</span> {{ item.size | title }}</p>
                                 {% endif %}
                             </div>
                         </div>
