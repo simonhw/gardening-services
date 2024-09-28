@@ -796,18 +796,52 @@ When adding services to the cart, the user is shown a summary of the current con
 ![Cart preview on desktop screens](static/images/readme/cart-preview-desktop.gif)
 
 ### The Checkout Page
-When a user proceeds to the checkout page, the navbar is not shown. The site logo is still present, but in the navbar's place is now text saying "Secure Checkout" with a padlock icon, and a custom progress indicator for the checkout process.
+When a user proceeds to the checkout page, the navbar is not shown. The site logo is still present, but in the navbar's place is now text saying "Secure Checkout" with a padlock icon, and a custom progress indicator for the checkout process. 
 
 ![Checkout Page header](static/images/readme/checkout-mob.png)
 
-The user is presented with form fields related to their personal details and address. All fields except for "Street Address 2" and "Eircode" are required. The "Continue to Payment" button is disabled until all required input fields contain data. This validation is explained in detail in the [TESTING.md](/TESTING.md) file.
+#### Progress Indicator
+The indicator consists of three filled grey circles connected by grey lines representing the three steps of the checkout process. This is made clear to the user with subheadings under each circle titled "Address", "Payment", and "Review". The circle representing the current step is twice the diameter of the others and has a black colour. When a user moves to the next step, the previous step's circle and the connecting line retain their black colour, but the circle becomes smaller again. This allows the user to understand exactly where they are in the checkout process, what steps they have completed, and how many steps are left.
+
+<details><summary>Demonstration of checkout progress indicator</summary>
+
+![Demonstration of checkout progress indicator](static/images/readme/checkout-progress.gif)
+
+</details>
+
+#### Address Details
+The user is first presented with form fields related to their personal details and address. All fields except for "Street Address 2" and "Eircode" are required. The "Continue to Payment" button is disabled until all required input fields contain data. This validation is explained in detail in the [TESTING.md](/TESTING.md) file.
 
 ![Checkout address fields and proceed button enable/disable feature](static/images/readme/checkout-address.gif)
 
-### The Reviews page
-show a paginated list of approved reviews,
+#### Payment Details
+Continuing to the next stage, the user must enter valid card details into a Stripe input field. The "Review Order" button is disabled until valid details are entered into the field with no errors present.
 
-have a new page for unpublished reviews
+![Checkout payment input and review order button](static/images/readme/checkout-payment.gif)
+
+#### Review Order
+Moving to the final step of the checkout process, an orange text box explains that this is the final step and that user may review their order details below before making the payment. The user's address details are displayed with a "Change" link to go directly back to the address section in case they wish to change any data. The payment details are not explicitly displayed but a message saying that the input was complete is present with a green check box. A change link is also present here in case the user wants to change their card details. Underneath is present a summary of the cart. Only the service name is presented here, as adding the various options affected the presentation poorly. If the user is unsure of the cart contents, there is an "Adjust Cart" button which they can use to navigate back to the cart page. A larger yellow button with the text "Pay and Place Order" draws the eye of the user with its bright colour and padlock icon. This helps the user understand that one they click this button, the checkout process will complete and they can no longer make any adjustments. When clicked, the button text changes to "Processing..." and the padlock turns into a spinner indicating that the payment is being processed. This is especially useful when an unexpected payment or server error occurs. The user will know that the website is in fact attempting to submit the order.
+
+![Checkout submission and success page](static/images/readme/checkout-success.gif)
+
+#### Checkout Success
+On successful checkout, a confirmation toast message is shown and informs the user that copy of the order details will be sent to the provided email.
+
+![Checkout success toast message](static/images/readme/checkout-success-toast.png)
+
+The success page itself also confirms this as well as providing the unique order number. A summary of the order details is given with a button allowing the user to navigate back to the website's homepage.
+
+![Checkout success page](static/images/readme/checkout-success.png)
+
+### The Reviews page
+A review page exists for each service that The Garden Path Offers. Only users who have previously ordered a particular service can write reviews for it. The link to the review page is presented next to the star rating on each service page. When clicked, the user may read the various reviews that have been published by the site administrators.
+
+![Reviews page](static/images/readme/reviews-mob.gif)
+
+A maximum of 6 reviews are displayed at any one time. If more reviews exists, then pagination controls are shown underneath the reviews as well as an indication of how many pages of reviews there are.
+
+![Reviews pagination](static/images/readme/reviews-pagination.png)
+
 
 ### The Signup Page
 
