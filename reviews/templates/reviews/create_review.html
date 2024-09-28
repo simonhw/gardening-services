@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="{% static 'reviews/css/reviews.css' %}">
 {% endblock %}
 
-{% block extra_title %} | Leave a Review{% endblock %}
+{% block extra_title %} | {% if edit_review %}Edit{% else %}Leave a{% endif %} Review{% endblock %}
 
 {% block content %}
 
@@ -22,7 +22,7 @@
     
     <div class="row my-3">
         <div class="col-10 offset-1">
-            <h1 class="mate text-center">Leave a Review: {{ service.name }}</h1>
+            <h1 class="mate text-center">{% if edit_review %}Edit{% else %}Leave a{% endif %} Review: {{ service.name }}</h1>
             <div class="text-center">    
                 {% if user.is_authenticated %}
                     <p>Reviewing as: {{ request.user.first_name}} {{ request.user.last_name }}</p>
@@ -49,8 +49,8 @@
                         </div>
                         <div class="d-none invalid-message mb-3 invalid fw-bold" id="rating-validation">
                         </div>
-                        <button type="submit" class="btn btn-lg hunter-green-bg isabelline">
-                            Submit
+                        <button type="submit" class="btn btn-lg hunter-green-bg isabelline" id="form-submit-button">
+                            {% if edit_review %}Update{% else %}Submit{% endif %}
                         </button>
                     </form>
                 {% else %}
