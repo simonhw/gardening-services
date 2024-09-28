@@ -898,6 +898,20 @@ If the user clicks the delete button, a confirmation modal is displayed informin
 
 </details>
 
+#### Publishing and Unpublishing a Review
+Staff users may view a page containing all unpublished reviews and delete or publish them at their discretion. When viewing the main reviews page for a service, they may unpublish or delete any reviews listed, though they do not have the ability to edit any reviews that are not their own. There is no hero image on the unpublished reviews page as only staff users will ever see it and reduces the load on the browser. Staff users can also see the reviewer's contact email address at the bottom of the review card so that they can directly address any concerns the user may have communicated in the review.
+
+<details><summary>Admin view of reviews page</summary>
+
+![Admin view of reviews page](static/images/readme/reviews-admin.png)
+
+</details>
+
+<details><summary>The unpublished reviews page</summary>
+
+![The unpublished reviews page](static/images/readme/reviews-unpublished.png)
+
+</details>
 
 ### The Signup Page
 
