@@ -3,6 +3,7 @@ from django.contrib.auth.decorators import user_passes_test
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import UserPassesTestMixin
 from django.views import View
+from django.utils.html import strip_tags
 
 from .models import Review
 from .forms import ReviewForm
@@ -39,14 +40,6 @@ class ServiceReviews(View):
         page_number = request.GET.get("page")
         page_obj = paginator.get_page(page_number)
 
-        unpublished_reviews = service.reviews.filter(approved=False)
-        unpublished_review_count = len(unpublished_reviews)
-        unpublished_paginator = Paginator(reviews, 6)
-        unpublished_page_number = request.GET.get("page")
-        unpublished_page_obj = unpublished_paginator.get_page(
-            unpublished_page_number
-            )
-
         if request.user.is_authenticated:
             ordered = self.service_history(request, service)
         else:
@@ -57,9 +50,6 @@ class ServiceReviews(View):
             'review_count': review_count,
             'service': service,
             'page_obj': page_obj,
-            'unpublished_reviews': unpublished_reviews,
-            'unpublished_review_count': unpublished_review_count,
-            'unpublished_page_obj': unpublished_page_obj,
             'ordered': ordered,
         }
 
@@ -196,26 +186,40 @@ def edit_review(request, service_id, review_id):
     pre-fill the form with the correct data for the user to edit.
     """
 
+    service = get_object_or_404(Service, pk=service_id)
     review = get_object_or_404(Review, pk=review_id)
+
+
 
     if review.reviewer == request.user:
         if request.method == 'GET':
+            review.content = strip_tags(review.content)
             review_form = ReviewForm(instance=review)
             return render(request, 'reviews/create_review.html',
                 {
                     'review_form': review_form,
+                    'service': service,
                     'service_id': service_id,
                     'review_id': review_id,
+                    'edit_review': True
                 }
             )
         elif request.method == 'POST':
             review_form = ReviewForm(request.POST, instance=review)
             if review_form.is_valid():
-                review_form.save()
+                review = review_form.save(commit=False)
+                # Mark the review as unpublished if the user editing it is
+                # not a staff user.
+                if not request.user.is_staff:
+                    review.approved = False
+                review.save()
                 messages.success(request, 
-                    f'Review "{review.title}" successfully edited!'
+                    f'Review "{review.title}" successfully edited pending \
+                        approval.'
                     )
-                if review.approved:
+                if not request.user.is_staff:
+                    return redirect('service_reviews', service_id)
+                elif request.user.is_staff and review.approved:
                     return redirect('service_reviews', service_id)
                 else:
                     return redirect('unpublished_reviews', service_id)
@@ -224,8 +228,10 @@ def edit_review(request, service_id, review_id):
                 return render(request, 'reviews/create_review.html',
                     {
                         'review_form': review_form,
+                        'service': service,
                         'service_id': service_id,
                         'review_id': review_id,
+                        'edit_review': True
                     }
                 )
                 messages.error(request, 'Please fully complete the form')
