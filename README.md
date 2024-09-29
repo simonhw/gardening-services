@@ -1267,7 +1267,7 @@ To deploy this program locally on your device, please follow the steps below:
 
 #### Setting up reCAPTCHA
 1. Navigate to the [reCAPTCHA](https://www.google.com/recaptcha/about/) website and click **Get Started with Enterprise** at the top of the page.
-2. Enter a name for your project, click eofrin, and wait for the site to set up your account.
+2. Enter a name for your project, click **Get Started**, and wait for the site to set up your account.
 3. Click **Cloud Console** and enter a display name for your site and select "website" as your platform type.
 4. Enter your website domain and click done.
 5. Click the blue dropdown arrow and enable the **Use checkbox challenge** key.
@@ -1298,14 +1298,97 @@ To deploy this program locally on your device, please follow the steps below:
 
 ### Live Deployment
 To deploy this project yourself on Heroku, please follow the following additional steps:
-<!-- 
+
+#### Storing Static files and images.
+**Part I**
+1. Log in or sign up to [Amazon Web Services](https://aws.amazon.com/).
+2. Go to the **S3** service and create a new bucket.
+3. Enter a bucket name and region and enable ACLS. Tick "Bucket owner preferred" under **Object Ownership**.
+4. Click **Create Bucket**.
+5. Click the name of your new bucket and navigate to the properties tab.
+6. Scroll to the bottom and under **Static website hosting**, tick "Use this bucket to host a website", and click save.
+7. On the **Permissions** tab, paste the following code into the CORS section:
+    ```
+    [
+        {
+            "AllowedHeaders": [
+                "Authorization"
+            ],
+            "AllowedMethods": [
+                "GET"
+            ],
+            "AllowedOrigins": [
+                "*"
+            ],
+            "ExposeHeaders": []
+        }
+    ]
+    ```
+8. Copy the ARN at the top of the permissions tabs.
+9. On the **Bucket Policy** tab, create a new policy with the generator:
+    - Type of Policy: S3 Bucket Policy
+    - Principal: *
+    - Actions: Get Object
+    - ARN: paste in the copied ARN from step 8
+10. Click **Generate Policy** and copy the result.
+11. Paste the code into the bucket policy window and add `/*` at the end of the **Resource** key.
+12. Click **Save** and navigate to the **Acess Control List** tab.
+13. Click edit and enable **List** for "Everyone (public access), accepting the warning message that appears.
+
+**Part II**
+1. Now navigate to the IAM service on your dashboard.
+2. Click **Create Group** in the sidebar and give it an appropriate name before clicking **Next Step** until you can see the **Create Group** button. Click **Create Group**.
+3. Go to the **Create Policy** page and on the JSON tab, click **Import managed policy**.
+4. Find "AmazonS3FullAccess" in the list of options and import it.
+5. Update the Resource key in the following format:
+    ```
+    "Resource": [
+        "<arn-string>",
+        "<arn-string>/*"
+    ]
+    ```
+    where `<arn-string>` is the copied ARN from above.
+6. Click Review Policy and enter an appropriate name and description before clicking Create Policy.
+7. Attach this policy to the group you created above via the **User Groups** permissions tab.
+8. Click **Users** in the sidebar and click **Add User**.
+9. Enter an appropriate name and enable programmatic access.
+10. Add the user to the user group you created earlier and click next until you are able to click **Create User**.
+11. From the Users tabs, click the user you just created and go to the **Security Credentials** tab.
+12. Scroll to **Access Keys** and click **Create access key**.
+13. Select **Application running outside AWS** and click the next button.
+14. Click **Create Access Key** and download the .csv file on the resulting page.
+
+**Part III**
+1. In your `settings.py` file, update the values of `AWS_STORAGE_BUCKET_NAME` and `AWS_S3_REGION_NAME` with the values from step 3 in Part I.
+2. Download the contents of the `/media/` directory to your computer.
+3. Go your S3 Bucket overview tab and click **Create folder**.
+4. Name the folder "media" and click save.
+5. Select the images to upload, grant public read access, and click upload.
+
+#### Heroku
 1. Log in or sign up to [Heroku](https://www.heroku.com/).
 2. Create a new app with a unique name in a region close to you.
-3. In the Settings tab under Config Vars, add the key `DATABASE_URL` with a value of the database URL, and the key `SECRET_KEY` with a value of the secret key you created.
+3. In the Settings tab under Config Vars, add the following keys from your `env.py` with their respective values:
+    - `DATABASE_URL`
+    - `SECRET_KEY`
+    - `STRIPE_PUBLIC_KEY`
+    - `STRIPE_SECRET_KEY`
+    - `EMAIL_HOST_USER`
+    - `EMAIL_HOST_PASS`
+    - `RECAPTCHA_PUBLIC_KEY`
+    - `RECAPTCHA_PRIVATE_KEY`
+5. Add the below AWS-related keys in the same way. The access key and secret key are in the .csv file you downloaded in Part II Step 14.
+    - `AWS_ACCESS_KEY_ID`
+    - `AWS_SECRET_ACCESS_KEY`
+    - `USE_AWS:` with a value of `True`
 4. Confirm that the `Procfile` is present in your directory.
 5. Set Debug to False in `settings.py` and commit and push your code to your GitHub repository.
 6. In the Deploy tab on Heroku, connect your GitHub repo and manually deploy the **main** branch.
-7. Click "View App" to open your deployed website. -->
+7. Add the deployed web address to the list of allowed hosts in your `settings.py` file and commit and push your code.
+7. Follow steps 4-8 of [Setting Up Stripe](#setting-up-stripe) to create a new webhook using the domain name of your deployed website.
+8. Add the `STRIPE_WH_SECRET` key to your Heroku Config Vars with the new signing secret as its value.
+9. Manually deploy your **main** brach again. 
+7. Click **View App** to open your deployed website.
 
 ## Testing
 All documentation on the testing of this application can be found in the [TESTING.md](/TESTING.md) file.
