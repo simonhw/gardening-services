@@ -9,6 +9,7 @@
 {% url 'account' as account_url %}
 {% url 'account_logout' as logout_url %}
 {% url 'login' as login_url %}
+{% url 'account_signup' as signup_url %}
 
 
 <!DOCTYPE html>
@@ -121,7 +122,7 @@
                     </li>
                     {% else %}
                     <li class="nav-item">
-                        <a class="nav-link {% if request.path == login_url %}active{% endif %}" href="{% url 'login' %}?next={{request.path}}">Log In/Sign Up</a>
+                        <a class="nav-link {% if request.path == login_url %}active{% endif %}{% if request.path == signup_url %}active{% endif %}" href="{% url 'login' %}?next={{request.path}}">Log In/Sign Up</a>
                     </li>
                     {% endif %}
                 </ul>

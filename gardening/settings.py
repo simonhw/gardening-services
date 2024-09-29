@@ -142,6 +142,9 @@ ACCOUNT_FORMS = {
     'login': 'accounts.forms.CustomLoginForm',
     'reset_password': 'accounts.forms.CustomResetPasswordForm',
     }
+    
+# Remember Me button in login page uses this value of 7 days
+SESSION_COOKIE_AGE = 604800
 
 WSGI_APPLICATION = 'gardening.wsgi.application'
 

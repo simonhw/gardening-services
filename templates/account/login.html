@@ -12,7 +12,7 @@
         <hr>
     </div>
     <div class="row my-3">
-        <div class="col-10 offset-1 col-md-6 offset-md-3">
+        <div class="col-10 offset-1 col-md-6 offset-md-3 col-lg-4 offset-lg-4">
             <h1 class="mate">{% trans "Sign In" %}</h1>
             {% if not SOCIALACCOUNT_ONLY %}
                 {% setvar link %}
@@ -24,23 +24,9 @@
                 {% element p %}
                     {% blocktranslate %}If you have not created an account yet, then please {{ link }}sign up{{ end_link }} first.{% endblocktranslate %}
                 {% endelement %}
-                <!-- {% url 'account_login' as login_url %}
-                {% element form form=form method="post" action=login_url tags="entrance,login" %}
-                    {% slot body %}
-                        {% csrf_token %}
-                        {% element fields form=form unlabeled=True %}
-                        {% endelement %}
-                        {{ redirect_field }}
-                    {% endslot %}
-                    {% slot actions %}
-                        <button type="submit" class="btn btn-lg hunter-green-bg isabelline">
-                            {% trans "Sign In" %}
-                        </button>
-                    {% endslot %}
-                {% endelement %} -->
                 <form action="{% url 'account_login' %}" method="POST">
                     {% csrf_token %}
-                    {{ form | crispy }}
+                    {{ form|crispy }}
                     <input type="hidden" name="next" value="{{ request.GET.next }}">
                     <button type="submit" class="btn btn-lg hunter-green-bg isabelline">
                         {% trans "Sign In" %}
