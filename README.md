@@ -1057,13 +1057,41 @@ Staff users may view a page containing all unpublished reviews and delete or pub
 
 </details>
 
-### The Signup Page
+### The Contact Us Page
 
-### The Sign In Page
+### The Newsletter Page
+Users may sign up to a newsletter mailing list by navigating to this page and entering their email address into the MailChimp form. A link to the page is present in the footer of every page on the website.
 
-### The Sign Out Page
+<details><summary>The newsletter page with MailChimp form</summary>
+
+![The newsletter page with MailChimp form](static/images/readme/newsletter-page.png)
+
+</details>
+
+### The Privacy Policy Page
+The website's privacy policy is presented on its own webpage. Usert may view the policy by following the link provided in the footer on each page. Users are informed that any queries realated to the privacy policy can be sent to the business by using the Contact Us form.
+
+<details><summary>The privacy policy page</summary>
+
+![The privacy policy webpage](static/images/readme/privacy-policy.png)
+
+![The section of the privacy policy regarding inquiries](static/images/readme/privacy-contact.png)
+
+</details>
 
 ### Error Pages
+Custom templates for 403, 404, and 500 error were created for the website. Each page informs the user that something has gone wrong and gives them a navigation option to go back to the main site. The navbar may also be used on each of these pages
+
+<details><summary>The 403, 404, and 500 errors page</summary>
+
+![The 403 error page](static/images/readme/403.png)
+![The 404 error page](static/images/readme/404.png)
+![The 500 error page](static/images/readme/500.png)
+
+
+</details>
+
+### Email Functionality
 
 ### Features to be Implemented
 
