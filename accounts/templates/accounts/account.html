@@ -39,6 +39,9 @@
         </div>
         <div class="col-10 offset-1 col-lg-4 offset-lg-0 col-xl-5 offset-xl-1 mt-5 mt-lg-0">
             <p><b>Order History</b></p>
+            {% if not orders %}
+            <p>You have no orders associated with this account.</p>
+            {% else %}
             <div class="order-history table-responsive">
                 <table class="table table-sm table-borderless">
                     <thead>
@@ -70,13 +73,14 @@
                                 </ul>
                             </td>
                             <td>
-                                ${{ order.grand_total }}
+                                €{{ order.grand_total }}
                             </td>
                         </tr>
                         {% endfor %}
                     </tbody>
                 </table>
             </div>
+            {% endif %}
         </div>
     </div>
     <div class="row">
