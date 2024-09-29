@@ -1427,12 +1427,13 @@ Various Bootstrap classes and components were used in the styling of this websit
 Articles used as guidance when creating the CustomUser model | [Learn Django - Django Custom User Model](https://learndjango.com/tutorials/django-custom-user-model) <br> [Medium.com - Custom User Model In Django](https://medium.com/django-unleashed/custom-user-model-in-django-98b9a401a6a2#4826) <br> [Django documentation - Customizing authentication in Django](https://docs.djangoproject.com/en/3.2/topics/auth/customizing/#a-full-example)
 The UserAccount model | Adapted from the UserProfile model in the Boutique Ado walkthrough
 The Category model | Taken from the Boutique Ado walkthrough
-The Service views.py file | Taken from the Boutique Ado walkthrough with minor adjustments made.
+The Services app's `views.py` file | Taken from the Boutique Ado walkthrough with minor adjustments made.
 The JavaScript code to control the decrement and increment of the number input field on the service pages | Taken from the Boutique Ado walkthrough
 The Order model | Adapted from the Boutique Ado walkthrough
 The OrderLineItem model | Adapted from the Boutique Ado walkthrough
 The Stripe Webhook handler | Taken from the Boutique Ado walkthrough with some additions made.
-The Cart contexts.py file | Taken from the Boutique Ado walkthrough and adapted to work with my Service model structure.
+The `stripe_elements.js` file | Take from the Boutique Ado walkthrough.
+The Cart app's `contexts.py` file | Taken from the Boutique Ado walkthrough and adapted to work with my Service model structure.
 The HTML, CSS, and JavaScript code for the scroll to top button on the cart page | Taken from this tutorial: [MDB - Scroll back to top button](https://mdbootstrap.com/docs/standard/extended/back-to-top/)
 Disabling the checkout form buttons dynamically | [StackOverflow - Disabling submit button until all fields have values](https://stackoverflow.com/questions/5614399/disabling-submit-button-until-all-fields-have-values)
 The HTML structure of the toast messages | Adapted from examples in this article: [https://fastbootstrap.com/components/toast/](https://fastbootstrap.com/components/toast/)
