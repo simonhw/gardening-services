@@ -33,10 +33,16 @@ Deployed program on Heroku: [The Garden Path](https://gardening-services-e596b63
 - [Features](#features)
     - [The Homepage](#the-homepage)
     - [The About Page](#the-about-page)
-    - [Accounts Pages](#the-signup-page)
-    - [The Booking Page](#the-booking-page)
-    - [User Bookings](#user-bookings)
-    - [Managing Bookings](#managing-bookings)
+    - [The Service Pages](#the-service-pages)
+    - [The Shopping Cart](#the-shopping-cart)
+    - [The Checkout Page](#the-checkout-page)
+    - [Signup, Login, and Logout](#signup-login-and-logout)
+    - [My Account Page](#my-account-page)
+    - [The Reviews Page](#the-reviews-page)
+    - [Contact Us Page](#contact-us-page)
+    - [Newsletter Page](#newsletter-page)
+    - [Privacy Policy](#privacy-policy)
+    - [Email Functionality](#email-functionality)
     - [Error Pages](#error-pages)
     - [Features to be Implemented](#features-to-be-implemented)
 - [Technologies Used](#technologies-used)
@@ -832,6 +838,96 @@ On successful checkout, a confirmation toast message is shown and informs the us
 The success page itself also confirms this as well as providing the unique order number. A summary of the order details is given with a button allowing the user to navigate back to the website's homepage.
 
 ![Checkout success page](static/images/readme/checkout-success.png)
+
+### User Accounts
+#### Signing Up
+Visitors to the website can register for a user account via a number of links to the Signup Page. The navbar contains the link "Login/Signup" which takes the user to the login page. If the visitor has no account yet, they may used the Sign Up link to navigate to the account creation page. Here they are presented with a signup form which has required fields of first name, last name, email, confirm email, password, and confirm password. The confirm email field is cruicial here as users do not create usernames but instead use their email addresses to log into their accounts.
+
+<details open><summary>The Sign Up page</summary>
+
+![The Sign Up page](static/images/readme/signup.png)
+
+</details>
+
+After entering valid details, the user can click the Sign Up button to be brought to the Verify Email Address page. This page informs the user that a confirmation email has been sent to the address they provided which they must verify beforen they can log in to the website. If they attempt to log in before verifying their email address, they are redirected to the same page that explains the confirmation email. On successfully verifying their email address, the login page is rendered with an information toast message confirming that the user's email has been verified.
+
+<details><summary>The Signup form being submitted</summary>
+
+![The Sign Up form being submitted](static/images/readme/verify-email.gif)
+
+</details>
+
+<details><summary>The Verify Email toast message</summary>
+
+![The Verify Email toast message](static/images/readme/verify-toast.png)
+
+</details>
+
+<details><summary>Verifying the email address</summary>
+
+![The verify email page](static/images/readme/email-confirm.png)
+
+![Toast message after email verification](static/images/readme/email-confirmed.png)
+
+</details>
+
+#### Logging In
+Existing users may log in using their email and password. On the login form there is a Remember Me checkbox which when checked will keep the user logged in on their current device for 7 days as opposed to the default behaviour which would be until the browser is closed. A password reset link is presented underneath the password field. On successful login, a toast message confirms the account under which the user has just signed in.
+
+<details open><summary>The Sign In page</summary>
+
+![The Sign In page](static/images/readme/login.png)
+
+</details>
+
+<details><summary>Login toast message</summary>
+
+![The Verify Email toast message](static/images/readme/login-toast.png)
+
+</details>
+
+#### Password Reset
+If a registered user enters a valid email into the reset password form and submits it, a page is rendered informing them to check their email inbox for a password reset link. When the user follows the link, they may change their account password. If the new password if valid, a success page and toast message is rendered confirming that their password was changed. A button underneath the message allows to the user to quickly navigate back to the login page.
+
+<details open><summary>Password Reset page</summary>
+
+![Password Reset page](static/images/readme/password-reset.png)
+
+</details>
+
+<details><summary>Password Reset information page</summary>
+
+![Password Reset page](static/images/readme/password-email.png)
+
+</details>
+
+<details><summary>Password Reset form</summary>
+
+![Password Reset page](static/images/readme/change-password.png)
+
+</details>
+
+<details><summary>Password Reset success page</summary>
+
+![Password Reset page](static/images/readme/password-changed.png)
+
+</details>
+
+#### Signing Out
+A user may sign out when authenticated by clicking the Log Out nav link. They are asked to confirm the action before signing out of their account, and can use the Back button to go back if they change their mind. On successful logout, a toast message is displayed to the user.
+
+<details><summary>Sign Out page</summary>
+
+![Password Reset page](static/images/readme/logout.png)
+
+</details>
+
+<details><summary>Toast message after signing out</summary>
+
+![Password Reset page](static/images/readme/logout-toast.png)
+
+</details>
+
 
 ### The Reviews page
 A review page exists for each service that The Garden Path offers. Only users who have previously ordered a particular service can write reviews for it. The link to the review page is presented next to the star rating on each service page. When clicked, the user may read the various reviews that have been approved by the site administrators.
