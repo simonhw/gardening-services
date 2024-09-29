@@ -816,19 +816,37 @@ The indicator consists of three filled grey circles connected by grey lines repr
 </details>
 
 #### Address Details
-The user is first presented with form fields related to their personal details and address. All fields except for "Street Address 2" and "Eircode" are required. The "Continue to Payment" button is disabled until all required input fields contain data. This validation is explained in detail in the [TESTING.md](/TESTING.md) file.
+The user is first presented with form fields related to their personal details and address. All fields except for "Street Address 2" and "Eircode" are required. The "Continue to Payment" button is disabled until all required input fields contain data. This validation is explained in detail in the [TESTING.md](/TESTING.md) file. An authenticated user can interact with a checkbox that saves the entered details to their user account.
+
+<details><summary>Checkout address fields and proceed button enable/disable feature</summary>
 
 ![Checkout address fields and proceed button enable/disable feature](static/images/readme/checkout-address.gif)
+
+</details>
+
+<details><summary>Save details checkbox in checkout form</summary>
+
+![Save details checkbox in checkout form](static/images/readme/checkout-save-details.png)
+
+</details>
 
 #### Payment Details
 Continuing to the next stage, the user must enter valid card details into a Stripe input field. The "Review Order" button is disabled until valid details are entered into the field with no errors present.
 
+<details><summary>Checkout payment input and review order button</summary>
+
 ![Checkout payment input and review order button](static/images/readme/checkout-payment.gif)
+
+</details>
 
 #### Review Order
 Moving to the final step of the checkout process, an orange text box explains that this is the final step and that user may review their order details below before making the payment. The user's address details are displayed with a "Change" link to go directly back to the address section in case they wish to change any data. The payment details are not explicitly displayed but a message saying that the input was complete is present with a green check box. A change link is also present here in case the user wants to change their card details. Underneath is present a summary of the cart. Only the service name is presented here, as adding the various options affected the presentation poorly. If the user is unsure of the cart contents, there is an "Adjust Cart" button which they can use to navigate back to the cart page. A larger yellow button with the text "Pay and Place Order" draws the eye of the user with its bright colour and padlock icon. This helps the user understand that one they click this button, the checkout process will complete and they can no longer make any adjustments. When clicked, the button text changes to "Processing..." and the padlock turns into a spinner indicating that the payment is being processed. This is especially useful when an unexpected payment or server error occurs. The user will know that the website is in fact attempting to submit the order.
 
-![Checkout submission and success page](static/images/readme/checkout-success.gif)
+<details><summary>Review Order section and checkout submission</summary>
+
+![Review Order section and checkout submission](static/images/readme/checkout-success.gif)
+
+</details>
 
 #### Checkout Success
 On successful checkout, a confirmation toast message is shown and informs the user that copy of the order details will be sent to the provided email.
@@ -928,6 +946,36 @@ A user may sign out when authenticated by clicking the Log Out nav link. They ar
 
 </details>
 
+#### My Account Page
+An authenticated user may view their account page via a link in the nav bar. On this page they will see their full name and email that was provided on registration. These two details are read-only. The Default Location Information form contains the user's details if present. These details can be rendered if the user previously placed an order and clicked the save details checkbox, or by entering the data directly on this page and clicking the Save Changes button.
+
+<details open><summary>My Account page</summary>
+
+![My Account page](static/images/readme/account.png)
+
+</details>
+
+The user's order history is listed if it exists. The order number, date of purchase, summary of order items, and total price is displayed in a table. The order number is truncated in the table and is itself a link to the order confirmation page with full details of the past order. Hovering over the link on desktop screens will display the full order number. When the order confirmation page is visited from this link, an information toast message is displayed stating that this order was in the past. If the user has no order history, a statement confirming this is presented instead of an empty table. A "Back to My Account" button allows the user to navigate directly back to their account page.
+
+<details><summary>Toast message and changed button text on past order confirmation page</summary>
+
+![Toast message on past order confirmation page](static/images/readme/past-order-toast.png)
+
+![Changed button text on past order confirmation page](static/images/readme/past-order-button.png)
+
+</details>
+
+<details><summary>Order number displayed on mouse hover</summary>
+
+![Order number displayed on mouse hover](static/images/readme/order-number-hover.png)
+
+</details>
+
+<details><summary>Order history section when user has no order history</summary>
+
+![Order history section when user has no order history](static/images/readme/account-no-orders.png)
+
+</details>
 
 ### The Reviews page
 A review page exists for each service that The Garden Path offers. Only users who have previously ordered a particular service can write reviews for it. The link to the review page is presented next to the star rating on each service page. When clicked, the user may read the various reviews that have been approved by the site administrators.
