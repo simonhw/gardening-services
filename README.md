@@ -1136,7 +1136,7 @@ Adding a feature where staff users can publicy reply to reviews would demonstrat
 Allowing users to sort reviews based on their ratings would be of benefit to the prospective customer. Seeing the number of 5 stars reviews compared to number of lower star reviews can influence a customer's purchase more than the average rating itself. Since this is a gardening and landscaping website, being able to sort reviews by the season they were written in would help customer's understand how the business performs various services in different conditions.
 
 #### Updating Website Content
-Staff users would be able to directly edit website content from the front-end. This would involve a button in the navbar that toggles an "Editing Mode" for the current page. Edit buttons would be displayed next to blocks of text which when clicked would enable the staff user to update or delete text. The text would be edited in a form that is displayed in a modal. When submitted the text content of the form could replace the previous text using JavaScript code and functions such as `.innerHTML()`.
+Staff users would be able to directly edit website content from the front-end. Content models would be created to store the text on the database allowing staff to update the database using forms. Staff would have access to a button in the navbar that toggles an "Editing Mode" for the current page. Edit buttons would be displayed next to blocks of text which when clicked would enable the staff user to update or delete the content. The text would be edited in a form that is displayed in a modal. When submitted successfully, the database would be updated and the new content displayed when the page reloads.
 
 ## Technologies Used
 ### Languages
@@ -1145,7 +1145,7 @@ Staff users would be able to directly edit website content from the front-end. T
 - Python
 - Javascript
 
-Relational database: PostgreSQL.
+Relational database: PostgreSQL
 
 ### Frameworks, Libraries, and Programs
 [Am I Responsive?](https://ui.dev/amiresponsive) - To showcase the website on different screen sizes for this README.
@@ -1160,11 +1160,11 @@ Adobe Photoshop 2020 - To resize and crop images.
 
 Chrome Developer Tools - To visualise and test changes to the website code.
 
+Code Institute Postgres Database server - To create and store the database.
+
 [Coolors](https://coolors.co/) - To showcase the colour palette of the website.
 
 [Django](https://www.djangoproject.com/) - A Python framework used to design the website.
-
-[ElephantSQL](https://www.elephantsql.com/) - To create and store the database.
 
 [Favicon.io](https://favicon.io/) - To source the favicon used.
 
@@ -1176,7 +1176,11 @@ Chrome Developer Tools - To visualise and test changes to the website code.
 
 [Gitpod](https://www.gitpod.io/) - The IDE used to write my code.
 
+[Gmail](https://www.gmail.com/) - To send email via an SMTP server.
+
 [Google Fonts](https://fonts.google.com/) - For imported fonts used on the website.
+
+[Google reCAPTCHA](https://www.google.com/recaptcha/about/) - To verify form submission are genuine and prevent fraud and abuse.
 
 [Heroku](https://www.heroku.com/) - To host the deployed version of the program.
 
@@ -1192,6 +1196,8 @@ Chrome Developer Tools - To visualise and test changes to the website code.
 
 [Shutter Encoder](https://www.shutterencoder.com/) - To convert images to .webp format.
 
+[Stripe](https://stripe.com/) - To process and manage payments.
+
 [TinyPNG](https://tinypng.com/) - To compress images.
 
 [W3C Markup Validation Service](https://validator.w3.org/) - To validate the HTML and CSS files.
@@ -1204,15 +1210,15 @@ The live version of this website was deployed on Heroku.
 ### Local Deployment
 To deploy this program locally on your device, please follow the steps below:
 
-<!-- #### Forking
+#### Forking
 1. Log in or sign up to [GitHub](https://github.com/).
-2. Navigate to the repository for [Lakeview Campsite](https://github.com/simonhw/campsite-bookings).
-3. Click the Fork button located in the top right part of the webpage.
+2. Navigate to the repository for [The Garden Path](https://github.com/simonhw/gardening-services).
+3. Click the **Fork** button located in the top right part of the webpage.
 
 #### Cloning
 1. Log in or sign up to GitHub.
-2. Navigate to the repository for [Lakeview Campsite](https://github.com/simonhw/campsite-bookings).
-3. Click on the green Code button, select your preferred option of HTTPS, SSH, or GitHub CLI, and copy the relevant link.
+2. Navigate to the repository for [The Garden Path](https://github.com/simonhw/gardening-services).
+3. Click on the green **Code** button, select your preferred option of HTTPS, SSH, or GitHub CLI, and copy the relevant link.
 4. Open the terminal in your IDE and navigate to your directory of choice for this new clone.
 5. Type `git clone` into the terminal and paste in your copied link. Press enter.
 
@@ -1227,16 +1233,68 @@ To deploy this program locally on your device, please follow the steps below:
 2. Find the database URL and copy it to the clipboard.
 3. Create an `env.py` file in your IDE root directory and confirm that it is listed in the `.gitignore` file.
 4. Create a secret key yourself or by using a website of your choice such as [Secret Key Generator](https://secretkeygen.vercel.app/).
-5. Add the following code to your `env.py` file making sure to replace `enter-copied-url-here` with the URL you copied in step 2 and `your-secret-key` with the one you generated in step 4:
+5. Add the following code to your `env.py` file making sure to replace `<enter-copied-url-here>` with the URL you copied in step 2 and `<your-secret-key>` with the one you generated in step 4:
     ```
       import os
 
-      os.environ.setdefault(
-          "DATABASE_URL", "<enter-copied-url-here>")
-      os.environ.setdefault("SECRET_KEY", "<your-secret-key>")
+      os.environ['DATABASE_URL'] = '<enter-copied-url-here>'
+      os.environ['SECRET_KEY'] = '<your-secret-key>'
     ```
 6. Run the following command in your IDE terminal to create your database tables: `python3 manage.py migrate`.
-7. Create a superuser account by running `python3 manage.py createsuperuser` and enter details as prompted. -->
+7. Create a superuser account by running `python3 manage.py createsuperuser` and enter details as prompted.
+
+#### Setting up Stripe
+1. Log in or sign up to [Stripe](https://stripe.com/)
+2. Navigate to your Dashboard and click the **Developers** button at the top of the page.
+3. Click the **API Keys** heading to reveal your keys.
+3. Copy your Publishable key and Secret key and save them in your `env.py` file in the following format:
+    ```
+    os.environ['STRIPE_PUBLIC_KEY'] = '<publishable-key>'
+    os.environ['STRIPE_SECRET_KEY'] = '<secret-key>'
+    ```
+    ensuring you replace `<publishable-key>` and `<secret-key>` with the respective keys you copied above.
+4. Click the **Webhooks** heading and click **Add Endpoint** on the right-hand side of the screen.
+5. Paste in the url of your local website and append the address with `checkout/wh/`.
+6. Under **Select events to listen to**, tick **Select all events**.
+7. At the bottom of this list, click **Add Endpoint**.
+8. On your new webhook's page, click **Reveal** under Signing secret at the top of the page and copy the key.
+9. In `env.py` add this key using the following format:
+    ```
+    os.environ['STRIPE_WH_SECRET'] = '<signing-secret>'
+    ```
+    where `<signing-secret>` is the key you just copied.
+10. Note that you will need to set your local port to public for Stripe to correctly process all webhook events.
+
+#### Setting up reCAPTCHA
+1. Navigate to the [reCAPTCHA](https://www.google.com/recaptcha/about/) website and click **Get Started with Enterprise** at the top of the page.
+2. Enter a name for your project, click eofrin, and wait for the site to set up your account.
+3. Click **Cloud Console** and enter a display name for your site and select "website" as your platform type.
+4. Enter your website domain and click done.
+5. Click the blue dropdown arrow and enable the **Use checkbox challenge** key.
+6. Click **Create Key**.
+7. Copy the ID at the top of the page. This is your reCAPTCHA public key.
+8. Click **USE LEGACY KEY** on the right-hand side of the page and copy the key. This is your reCAPTCHA private key.
+9. Add these keys to your `env.py` file in the following format:
+    ```
+    os.environ['RECAPTCHA_PUBLIC_KEY'] = '<public-key>'
+    os.environ['RECAPTCHA_PRIVATE_KEY'] = '<private-key>'
+    ```
+    ensuring you replace `<public-key>` and `<private-key>` with your reCAPTCHA public and private keys respectively.
+
+#### Setting up Email Functionality
+1. Log in or sign up to [Google](https://accounts.google.com/)
+2. Go to your account settings and navigate to the **Security** tab.
+3. Enable 2-Step Verification and follow the onscreen instructions.
+4. In the search bar at the top of the page, enter "app passwords" and click on the result of the same name.
+5. Follow the on-screen instructions until you see the "App name" input field.
+6. Enter an appropriate app name and click **Create**.
+7. Copy the app password that is shown on your screen.
+8. In your `env.py` file, add the following lines:
+    ```
+    os.environ['EMAIL_HOST_USER'] = '<your-email>'
+    os.environ['EMAIL_HOST_PASS'] = '<your-app-password>'
+    ```
+    where `<your-email>` is the email address you used and `<your-app-password>` is the password you copied in step 7.
 
 ### Live Deployment
 To deploy this project yourself on Heroku, please follow the following additional steps:
