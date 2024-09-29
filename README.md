@@ -1058,6 +1058,27 @@ Staff users may view a page containing all unpublished reviews and delete or pub
 </details>
 
 ### The Contact Us Page
+The Contact Us form is available for all site visitors to use, regardless of their authentication status. There are 6 form fields, all of which are required:
+- Full name
+- Contact email
+- Phone Number
+- Reason for inquiry
+- Message content
+- Google reCAPTCHA check
+
+If a user is authenticated, the name, email, and phone number fields will already be completed using their user account data. The user must select a reason for contacting the business from a set list of options. Given that the page is publicly accessible to all site visitors, the reCAPTCHA check has been included to combat automated malicious form submissions.
+
+<details><summary>The contact us form</summary>
+
+![The contact us form](static/images/readme/contact-desktop.png)
+
+</details>
+
+<details><summary>The contact us form with user detail fields already completed</summary>
+
+![The contact us form with user detail fields already completed](static/images/readme/contact-filled.gif)
+
+</details>
 
 ### The Newsletter Page
 Users may sign up to a newsletter mailing list by navigating to this page and entering their email address into the MailChimp form. A link to the page is present in the footer of every page on the website.
@@ -1092,8 +1113,30 @@ Custom templates for 403, 404, and 500 error were created for the website. Each 
 </details>
 
 ### Email Functionality
+The Garden Path website utilises a Gmail SMTP Server to send emails to its site users. User are sent emails in the following situations:
+- To verify the email address provided when creating a new user account
+- To reset their user account password
+- Receiving an order confirmation after successfully paying for and placing an order
+- Receiving a summary of a submitted contact us form
 
 ### Features to be Implemented
+Some features could not be implemented in this release of The Garden Path e-commerce website. Below are discussed some of those features that would benefit the site user or help generate more income for the business.
+
+#### Social Media Accounts
+Users often create accounts on website more easily when they have the option to sign in via social media accounts, e.g. Google or Facebook. Offering this feature would potentially increase user engagement and lead to more revenue for The Garden Path. Social media logins could be implemented using the Django allauth package and API credentials generated for the business on those social media platforms.
+
+#### Message History
+Allowing users to view their messaging history on their account page would improve the customer experience by keeping their website data accessible from the same secure page.
+Staff users would also benefit from being able to view all message submitted via the contact us form with the ability to reply to users from an admin messages page. As part of this feature, staff users would receive a notification when new messages have been submitted since they last logged in.
+
+#### Responding to Reviews
+Adding a feature where staff users can publicy reply to reviews would demonstrate that the business is trustworthy and maintains open communication with its customers. Knowing that The Garden Path has real people behind it who are ready to deal with any issues the customers have could encourage repeat business. Similarly to above, staff users would receive a notification when new reviews have been submitted since they last logged in. This would be very beneficial as staff users must mark reviews as approved before they are published to the main reviews page.
+
+#### Sorting Reviews
+Allowing users to sort reviews based on their ratings would be of benefit to the prospective customer. Seeing the number of 5 stars reviews compared to number of lower star reviews can influence a customer's purchase more than the average rating itself. Since this is a gardening and landscaping website, being able to sort reviews by the season they were written in would help customer's understand how the business performs various services in different conditions.
+
+#### Updating Website Content
+Staff users would be able to directly edit website content from the front-end. This would involve a button in the navbar that toggles an "Editing Mode" for the current page. Edit buttons would be displayed next to blocks of text which when clicked would enable the staff user to update or delete text. The text would be edited in a form that is displayed in a modal. When submitted the text content of the form could replace the previous text using JavaScript code and functions such as `.innerHTML()`.
 
 ## Technologies Used
 ### Languages
