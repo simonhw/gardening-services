@@ -1,5 +1,5 @@
-// Code adapted from Boutique Ado walkthrough
 $(document).ready(function() {
+    // Code adapted from Boutique Ado walkthrough
     let reasonSelected = $('#id_contact_reason').val();
     if ( !reasonSelected ) {
         $('#id_contact_reason').css('color', '#595c5f');

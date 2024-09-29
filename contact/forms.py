@@ -18,7 +18,7 @@ class ContactUsForm(forms.ModelForm):
     A form for sending a message to the business owners
     """
 
-    captcha = ReCaptchaField()
+    captcha = ReCaptchaField(required=True)
 
     class Meta:
         """
@@ -71,6 +71,9 @@ class ContactUsForm(forms.ModelForm):
         for field in self.fields:
             if field == 'captcha':
                 self.fields[field].label = ''
+                continue
+            elif field == 'contact_reason':
+                self.fields[field].label = False
                 continue
             elif self.fields[field].required:
                 placeholder = f'{placeholders[field]} *'

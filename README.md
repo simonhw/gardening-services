@@ -1180,11 +1180,13 @@ Code Institute Postgres Database server - To create and store the database.
 
 [Google Fonts](https://fonts.google.com/) - For imported fonts used on the website.
 
-[Google reCAPTCHA](https://www.google.com/recaptcha/about/) - To verify form submission are genuine and prevent fraud and abuse.
+[Google reCAPTCHA](https://www.google.com/recaptcha/about/) - To verify form submissions are genuine and prevent fraud and abuse.
 
 [Heroku](https://www.heroku.com/) - To host the deployed version of the program.
 
 [JSHint](https://jshint.com/) - To validate the JavaScript code.
+
+[JQuery](https://jquery.com/) - A JavaScript library used to simplify event and DOM handling.
 
 [LucidChart](https://lucid.app/) - To create Entity Relationship Diagrams
 
@@ -1394,46 +1396,52 @@ To deploy this project yourself on Heroku, please follow the following additiona
 All documentation on the testing of this application can be found in the [TESTING.md](/TESTING.md) file.
 
 ## Credits
-
 ### Content
-ChatGPT was used to generate most of the text content about the campsite and services offered and was edited by Simon Henleywillis. The "description" and "keywords" meta tags were also generated using ChatGPT.
+ChatGPT was used to generate most of the text content in the homepage, about page, and service descriptions which was then edited by Simon Henleywillis.
 
-ChatGPT was used to generate a JSON file of users and their respective reviews.
+ChatGPT was used to generate large JSON files of users and their reviews to quickly populate the database.
 
 ### Media
 The business logo was created on [FreeLogoDesign](https://freelogodesign.org). The website states that "[w]hether you use the free or the paid version (high-resolution plan), you are free to use your logo for promotional purposes without having to credit FreeLogoDesign."
 
-All other images used were found on [Pexels](https://www.pexels.com/). The Pexels website states that "*All photos and videos on Pexels can be downloaded and used for free*".
+All images used were found on [Pexels](https://www.pexels.com/). The Pexels website states that "*All photos and videos on Pexels can be downloaded and used for free*".
 Images were resized and cropped where necessary.
 
-- Hero image: [two-red-flowers-on-stairs](https://www.pexels.com/photo/two-red-flowers-on-stairs-68470/)
-- Homepage images: [https://www.pexels.com/photo/a-man-mowing-the-green-lawn-12087398/](https://www.pexels.com/photo/a-man-mowing-the-green-lawn-12087398/), [https://www.pexels.com/photo/man-in-green-jacket-holding-a-green-leaf-3782994/](https://www.pexels.com/photo/man-in-green-jacket-holding-a-green-leaf-3782994/)
-- About page images: [https://www.pexels.com/photo/adult-man-wearing-green-jacket-holding-a-tablet-3781932/](https://www.pexels.com/photo/adult-man-wearing-green-jacket-holding-a-tablet-3781932/)
-- Grass-cutting Service: [a-person-using-a-lawn-mower](https://www.pexels.com/photo/a-person-using-a-lawn-mower-6728919/)
-- Weed Service: [a-group-of-dandelions-in-a-field](https://unsplash.com/photos/a-group-of-dandelions-in-a-field-lYWEUytAj6s)
-- Tree service: [https://www.pexels.com/photo/a-firefighter-cutting-a-tree-with-a-chainsaw-7812853/](https://www.pexels.com/photo/a-firefighter-cutting-a-tree-with-a-chainsaw-7812853/)
-- Hedge service: [https://www.pexels.com/photo/man-cutting-a-hedge-with-a-trimmer-in-the-garden-24595769/](https://www.pexels.com/photo/man-cutting-a-hedge-with-a-trimmer-in-the-garden-24595769/)
-- Flowerbed service: [https://www.pexels.com/photo/photo-of-assorted-color-flowers-at-daytime-1039129/](https://www.pexels.com/photo/photo-of-assorted-color-flowers-at-daytime-1039129/)
-- Tree Stump service: [https://www.pexels.com/photo/a-close-up-shot-of-a-tree-stump-10814837/](https://www.pexels.com/photo/a-close-up-shot-of-a-tree-stump-10814837/)
+- Hero image: [Two Red Flowers on Stairs](https://www.pexels.com/photo/two-red-flowers-on-stairs-68470/)
+- Homepage images: [A Man Mowing the Green Lawn](https://www.pexels.com/photo/a-man-mowing-the-green-lawn-12087398/), [Man in green jacket holding a green leaf](https://www.pexels.com/photo/man-in-green-jacket-holding-a-green-leaf-3782994/)
+- About page images:  [Man in Green Coat Holding Tablet](https://www.pexels.com/photo/man-in-green-coat-holding-tablet-3781942/), [Adult Man Wearing Green Jacket Holding a Tablet ](https://www.pexels.com/photo/adult-man-wearing-green-jacket-holding-a-tablet-3781932/)
+- Grass-cutting Service: [A Person Using a Lawn Mower](https://www.pexels.com/photo/a-person-using-a-lawn-mower-6728919/)
+- Weed Service: [A Group of Dandelions in a Field](https://unsplash.com/photos/a-group-of-dandelions-in-a-field-lYWEUytAj6s)
+- Tree service: [A Firefighter Cutting a Tree with a Chainsaw](https://www.pexels.com/photo/a-firefighter-cutting-a-tree-with-a-chainsaw-7812853/)
+- Hedge service: [Man Cutting a Hedge With a Trimmer in the Garden](https://www.pexels.com/photo/man-cutting-a-hedge-with-a-trimmer-in-the-garden-24595769/)
+- Flowerbed service: [Photo of Assorted Color Flowers at Daytime](https://www.pexels.com/photo/photo-of-assorted-color-flowers-at-daytime-1039129/)
+- Tree Stump service: [A Close Up Shot of a Tree Stump](https://www.pexels.com/photo/a-close-up-shot-of-a-tree-stump-10814837/)
 
 
 ### Code Used
 **All code in this project was written entirely by Simon Henleywillis unless otherwise specified below.**
-Various Bootstrap classes and components were used in the styling of this website and were learned about from reading the Bootstrap documentation. Chunks of code that were copied or adapted are specifically credited below.
+Various Bootstrap classes and components were used in the styling of this website and were learned about from reading the Bootstrap documentation. Chunks of code that were copied or adapted are specifically credited below. The Boutique Ado walkthrough was used as guidance when creating some views for this project. Where code is directly copied from Boutique Ado without any significant editing or additions on my part, it is credited below.
 
 **Feature** | **Source**
 --- | ---
 Articles used as guidance when creating the CustomUser model | [Learn Django - Django Custom User Model](https://learndjango.com/tutorials/django-custom-user-model) <br> [Medium.com - Custom User Model In Django](https://medium.com/django-unleashed/custom-user-model-in-django-98b9a401a6a2#4826) <br> [Django documentation - Customizing authentication in Django](https://docs.djangoproject.com/en/3.2/topics/auth/customizing/#a-full-example)
+The UserAccount model | Adapted from the UserProfile model in the Boutique Ado walkthrough
 The Category model | Taken from the Boutique Ado walkthrough
+The Service views.py file | Taken from the Boutique Ado walkthrough with minor adjustments made.
 The JavaScript code to control the decrement and increment of the number input field on the service pages | Taken from the Boutique Ado walkthrough
-The HTML structure of the toast messages | Adapted from examples in this article: [https://fastbootstrap.com/components/toast/](https://fastbootstrap.com/components/toast/)
+The Order model | Adapted from the Boutique Ado walkthrough
+The OrderLineItem model | Adapted from the Boutique Ado walkthrough
+The Stripe Webhook handler | Taken from the Boutique Ado walkthrough with some additions made.
+The Cart contexts.py file | Taken from the Boutique Ado walkthrough and adapted to work with my Service model structure.
+The HTML, CSS, and JavaScript code for the scroll to top button on the cart page | Taken from this tutorial: [MDB - Scroll back to top button](https://mdbootstrap.com/docs/standard/extended/back-to-top/)
 Disabling the checkout form buttons dynamically | [StackOverflow - Disabling submit button until all fields have values](https://stackoverflow.com/questions/5614399/disabling-submit-button-until-all-fields-have-values)
+The HTML structure of the toast messages | Adapted from examples in this article: [https://fastbootstrap.com/components/toast/](https://fastbootstrap.com/components/toast/)
+The Offcanvas cart preview | The HTML code was copied from the [Bootsrap documentation](https://getbootstrap.com/docs/5.0/components/offcanvas/)
 Pagination of reviews | Taken from the Django documentation: [https://docs.djangoproject.com/en/5.1/topics/pagination/](https://docs.djangoproject.com/en/5.1/topics/pagination/)
 The JavaScript code to control the color of the select field in the Contact Us form | Taken and adapted from the Boutique Ado walkthrough
-The HTML, CSS, and JavaScript code for the scroll to top button on the cart page | Taken from this tutorial: [MDB - Scroll back to top button](https://mdbootstrap.com/docs/standard/extended/back-to-top/)
-The Offcanvas cart preview | The HTML code was copied from the [Bootsrap documentation](https://getbootstrap.com/docs/5.0/components/offcanvas/)
 
 
 ## Acknowledgements
 - [Creating Your First README - Kera Cudmore](https://github.com/kera-cudmore/readme-examples)
-- I would like to thank my CI Mentor [Graeme Taylor](https://github.com/G-Taylor) for his support and advice throughout the development phase.
+- I would like to thank my CI Mentor [Graeme Taylor](https://github.com/G-Taylor) for his encouragement and advice over the last 12 months of this course.
+- To my partner Luiza, thank you for encouraging me to face new challenges and supporting me every step of the way. I could not have achieved all that I have without your love and support.

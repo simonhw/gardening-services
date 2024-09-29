@@ -43,9 +43,6 @@ class ReviewForm(forms.ModelForm):
                 choices = [
                     (1,'★'), (2,'★'), (3,'★'), (4,'★'), (5,'★'),
                 ],
-                attrs = {
-                    'class': 'review-stars'
-                }
             ),
         }
     

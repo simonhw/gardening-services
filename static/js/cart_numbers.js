@@ -1,11 +1,11 @@
-$('.update-link').click(function(e) {
+$('.update-link').click(function() {
     let form = $(this).parent().prev('.update-form');
     form.submit();
 });
 
-$('.remove-item').click(function(e) {
+$('.remove-item').click(function() {
     var csrfToken = $('input[name="csrfmiddlewaretoken"]').val();
-    let itemId = $(this).attr('id').split('remove_')[1];
+    let itemId = $(this).data('item-id');
     let size = $(this).data('size');
     let surface = $(this).data('surface');
     let cuts = $(this).data('cuts');
