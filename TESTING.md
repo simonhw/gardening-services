@@ -301,7 +301,7 @@ Flake8 was used to check original Python code to ensure compliance with PEP8 sta
 
 Flake8 flagged E501 errors in migrations files for lines longer than 79 characters. These files are automatically generated and editing them could result in migration errors. These errors were therefore ignored in this context and no corrections were made to the files.
 
-<details><summary>The Gardening app - Acceptable errors</summary>
+<details><summary>The Gardening app - Acceptable error</summary>
 
 There were two different types of errors flagged in the `settings.py` file:
 - The first was flagging `env` as being imported but not used. This is because the linter is looking for the word `env` being called elsewhere in the file and not finding it; however, this is an acceptable error as the file is still using the imported data but calling it via `os.environ.get`.
@@ -309,8 +309,9 @@ There were two different types of errors flagged in the `settings.py` file:
     - PEP8 [allows for this](https://peps.python.org/pep-0008/#a-foolish-consistency-is-the-hobgoblin-of-little-minds):
     "However, know when to be inconsistent – sometimes style guide recommendations just aren't applicable. When in doubt, use your best judgment. Look at other examples and decide what looks best. And don't hesitate to ask! ... ... Some other good reasons to ignore a particular guideline:
     When applying the guideline would make the code less readable, even for someone who is used to reading code that follows this PEP."
+    - The comment `# noqa` was added after each of these long lines so that the linter would ignore the error.
 
-![Flake8 command run in the gardening directory](static/images/testing/flake8-gardening.png)
+    ![Flake8 command run in the gardening directory](static/images/testing/flake8-gardening.png)
 
 </details>
 
