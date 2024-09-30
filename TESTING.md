@@ -65,6 +65,45 @@ The only validation messages that the user can see in this section relate to an 
 
 </details>
 
+#### Payment Details
+This section consists of a single Stripe input field. Similar to above, the button that bring the user to the next step in the checkout process is disabled while the Stripe field remains empty. Realtime error handling is achieved in the `stripe_elements.js` file. An change event listener checks if any error events are detected and displays the error messages in a div under the input. The **Review Order** button has a `disabled` attribute applied to it in these cases. If a "complete" event is detected, the script removes the disabled attribute from the **Review Order** button. If any other event occur, the button is kept disabled. In this way, the user may only continue to the final step of the checkout process when the Stripe input has been completed with no errors.
+
+![Empty Stripe input and disabled button](static/images/testing/card-empty.png)
+![Complete Stripe input and enabled button](static/images/testing/card-complete.png)
+
+<details><summary>Stripe input error messages</summary>
+
+![Stripe input error messages](static/images/testing/card-incomplete.png)
+
+![Stripe input error messages](static/images/testing/card-invalid.png)
+
+![Stripe input error messages](static/images/testing/card-expiry.png)
+
+![Stripe input error messages](static/images/testing/card-cvc.png)
+
+![Stripe input error messages](static/images/testing/card-code.png)
+
+</details>
+
+<details><summary>Enabling and disabling button when data is deleted</summary>
+
+![Enabling and disabling button when data is deleted](static/images/testing/card-dynamic-button.gif)
+
+</details>
+
+#### Review Order
+In this section, the user will not find any form fields to complete, only a button to submit their order. Upon form submission, there should be no possibility that the user has left any form fields blank or with invalid data. There may still be a problem processing the user's payment and in these cases, feedback is given to the user under the Payment heading. One scenario would be a user with insufficient funds on their card. In cases like this where Stripe returns an error event, the error message is displayed and the user may navigate back to the payment section to amend their details.
+
+<details><summary>Payment error feedback in the Review Order section</summary>
+
+![Payment error feedback in the Review Order section](static/images/testing/card-declined.gif)
+
+</details>
+
+On the back end, the checkout view utilises a number of try-except blocks and if-else statements to ensure the submitted data is valid, and if not, raise validation errors:
+- If the order form is valid, each item in the cart is added to the card inside a try block. If this fails for any reason, the process is abandoned, the order is deleted, an error toast message displayed to the user, and the user is redirected back to their cart.
+- If the front-end validation failed somehow and invalid form data is received, an error toast message is displayed telling the user that their form is not correct and to double check their inputs again.
+
 ### Full Testing
 The program was deployed on Heroku and tested there on a Windows 10 desktop with a 26" monitor and on a One Plus 9 Pro mobile phone.
 
