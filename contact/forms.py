@@ -1,6 +1,7 @@
 from .models import ContactUs
 from django import forms
 from django_recaptcha.fields import ReCaptchaField
+from django.core.exceptions import ValidationError
 
 
 CONTACT_REASONS = (
@@ -81,3 +82,43 @@ class ContactUsForm(forms.ModelForm):
                 placeholder = placeholders[field]
             self.fields[field].widget.attrs['placeholder'] = placeholder
             self.fields[field].label = False
+
+
+    def clean(self):
+        """
+        Validation of form data on the back end.
+
+        The method ensures that input fields cannot be blank.
+
+        If the data validates, the method returns the cleaned data.
+        If invalid, it raises a validation error to inform the user.
+        """
+
+        cleaned_data = super().clean()
+        full_name = cleaned_data.get('full_name')
+        email = cleaned_data.get('email')
+        phone_number = cleaned_data.get('phone_number')
+        contact_reason = cleaned_data.get('contact_reason')
+        message = cleaned_data.get('message')
+        captcha = cleaned_data.get('captcha')
+
+
+        if not full_name:
+            raise ValidationError('You must provide your full name.')
+
+        if not email:
+            raise ValidationError('You must provide a valid email.')
+
+        if not phone_number:
+            raise ValidationError('You must provide a phone number.')
+
+        if not contact_reason:
+            raise ValidationError('You must select a reason.')
+
+        if not message:
+            raise ValidationError('You must write a message.')
+
+        if not captcha:
+            raise ValidationError('You must complete the reCAPTCHA.')
+
+        return cleaned_data
