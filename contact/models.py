@@ -21,8 +21,5 @@ class ContactUs(models.Model):
     message = models.CharField(max_length=500, blank=False)
     created_on = models.DateField(auto_now_add=True)
 
-    class Meta:
-        verbose_name_plural: 'Contact Us Messages'
-
     def __str__(self):
         return self.contact_reason

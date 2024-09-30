@@ -142,7 +142,7 @@ ACCOUNT_FORMS = {
     'login': 'accounts.forms.CustomLoginForm',
     'reset_password': 'accounts.forms.CustomResetPasswordForm',
     }
-    
+
 # Remember Me button in login page uses this value of 7 days
 SESSION_COOKIE_AGE = 604800
 
@@ -161,7 +161,7 @@ DATABASES = {
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
 
 AUTHENTICATION_BACKENDS = [
-    "django.contrib.auth.backends.ModelBackend", # this line fixed my problem
+    "django.contrib.auth.backends.ModelBackend",
 ]
 
 AUTH_PASSWORD_VALIDATORS = [
@@ -208,14 +208,16 @@ if 'USE_AWS' in os.environ:
         'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
         'CacheControl': 'max-age=94608000',
     }
-    
+
     AWS_STORAGE_BUCKET_NAME = 'gardening-services-e596b6371c3f'
     AWS_S3_REGION_NAME = 'eu-west-1'
     AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
     AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
-    # The below line is longer than 79 characters as using a \ to split it
-    # onto a new line breaks the url link on the deployed website.
-    AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.{AWS_S3_REGION_NAME}.amazonaws.com'
+    # The AWS custom domain is assigned temporarily here as the original line
+    # was longer than 79 characters. Attempting to split it onto a new line
+    # with \ or () broke the url link on the deployed website.
+    P8_DOM = f'{AWS_STORAGE_BUCKET_NAME}.s3.{AWS_S3_REGION_NAME}.amazonaws.com'
+    AWS_S3_CUSTOM_DOMAIN = P8_DOM
 
     STATICFILES_STORAGE = 'custom_storages.StaticStorage'
     STATICFILES_LOCATION = 'static'

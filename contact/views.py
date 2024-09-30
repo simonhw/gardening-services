@@ -5,7 +5,6 @@ from django.template.loader import render_to_string
 from django.conf import settings
 from .forms import CONTACT_REASONS
 
-from .models import ContactUs
 from .forms import ContactUsForm
 from accounts.models import UserAccount
 
@@ -41,10 +40,10 @@ def contact_us(request):
                 'phone_number': account.default_phone_number,
             })
         except UserAccount.DoesNotExist:
-                contact_us_form = ContactUsForm()
+            contact_us_form = ContactUsForm()
     else:
         contact_us_form = ContactUsForm()
-    
+
     return render(
                 request, 'contact/contact_us.html',
                 {

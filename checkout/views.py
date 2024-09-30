@@ -1,5 +1,6 @@
-from django.shortcuts import render, redirect, reverse, get_object_or_404,\
-    HttpResponse
+from django.shortcuts import (
+    render, redirect, reverse, get_object_or_404, HttpResponse
+)
 from django.views.decorators.http import require_POST
 from django.contrib import messages
 from django.conf import settings
@@ -8,12 +9,12 @@ from .forms import OrderForm
 from .models import Order, OrderLineItem
 from services.models import Service
 from cart.contexts import cart_contents
-from accounts.forms import CustomUserCreationForm
-from accounts.models import CustomUser, UserAccount
+from accounts.models import UserAccount
 from accounts.forms import UserAccountForm
 
 import stripe
 import json
+
 
 @require_POST
 def cache_checkout_data(request):
@@ -70,10 +71,12 @@ def checkout(request):
                         order_line_item.save()
                     else:
                         if 'surfaces' in item_data.keys():
-                            if 'Driveway/Patio' in item_data\
-                                ['surfaces'].keys():
-                                for surface, number in item_data\
-                                    ['surfaces'].items():
+                            if 'Driveway/Patio' in (
+                                item_data['surfaces'].keys()
+                            ):
+                                for surface, number in (
+                                    item_data['surfaces'].items()
+                                ):
                                     if surface == 'Driveway/Patio':
                                         order_line_item = OrderLineItem(
                                             order=order,
@@ -86,8 +89,10 @@ def checkout(request):
                                         continue
                             if 'Bed/Planter' in item_data['surfaces'].keys():
                                 surface = 'Bed/Planter'
-                                for size, number in item_data['surfaces']\
-                                    [surface]['sizes'].items():
+                                for size, number in (
+                                    item_data['surfaces'][surface]
+                                    ['sizes'].items()
+                                ):
                                     order_line_item = OrderLineItem(
                                         order=order,
                                         service=service,
@@ -98,8 +103,9 @@ def checkout(request):
                                     order_line_item.save()
                         elif 'cuts' in item_data.keys():
                             for cuts in item_data['cuts'].keys():
-                                for size, number in item_data['cuts'][cuts]\
-                                    ['sizes'].items():
+                                for size, number in (
+                                    item_data['cuts'][cuts]['sizes'].items()
+                                ):
                                     order_line_item = OrderLineItem(
                                         order=order,
                                         service=service,
@@ -125,10 +131,10 @@ def checkout(request):
                     )
                     order.delete()
                     return redirect(reverse('view_cart'))
-            
+
             request.session['save_info'] = 'save-info' in request.POST
             return redirect(reverse(
-                'checkout_success',args=[order.order_number]
+                'checkout_success', args=[order.order_number]
                 ))
         else:
             messages.error(request, 'There was an error with your form. \
@@ -163,7 +169,7 @@ def checkout(request):
                     'eircode': account.default_eircode,
                 })
             except UserAccount.DoesNotExist:
-                    order_form = OrderForm()
+                order_form = OrderForm()
         else:
             order_form = OrderForm()
 
@@ -184,7 +190,6 @@ def checkout(request):
 
 def checkout_success(request, order_number):
     """ Handle successful checkouts """
-
 
     save_info = request.session.get('save_info')
     order = get_object_or_404(Order, order_number=order_number)
@@ -209,7 +214,7 @@ def checkout_success(request, order_number):
 
     messages.success(request, f'Order successfully processed! A confirmation\
          email will be sent to {order.email}.')
-    
+
     if 'cart' in request.session:
         del request.session['cart']
 

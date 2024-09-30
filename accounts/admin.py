@@ -1,9 +1,9 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
-from django.utils import timezone
 
 from .forms import CustomUserCreationForm, CustomUserChangeForm
 from .models import CustomUser
+
 
 class CustomUserAdmin(UserAdmin):
     """
@@ -21,10 +21,8 @@ class CustomUserAdmin(UserAdmin):
     fieldsets = (
         (None, {'fields': ('email', 'password')}),
         ('Personal info', {'fields': ('first_name', 'last_name',)}),
-        ('Permissions', {'fields': ('is_staff','is_superuser',)}),
+        ('Permissions', {'fields': ('is_staff', 'is_superuser',)}),
     )
-    # add_fieldsets is not a standard ModelAdmin attribute. UserAdmin
-    # overrides get_fieldsets to use this attribute when creating a user.
     add_fieldsets = (
         (None, {
             'classes': ('wide',),
@@ -33,5 +31,6 @@ class CustomUserAdmin(UserAdmin):
     )
 
     ordering = ('email',)
+
 
 admin.site.register(CustomUser, CustomUserAdmin)

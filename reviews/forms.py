@@ -1,5 +1,6 @@
 from .models import Review
 from django import forms
+from django.core.exceptions import ValidationError
 
 
 class ReviewForm(forms.ModelForm):
@@ -29,23 +30,23 @@ class ReviewForm(forms.ModelForm):
         }
         widgets = {
             'title': forms.TextInput(
-                attrs = {
+                attrs={
                     'placeholder': 'Title *'
                 }
             ),
             'content': forms.Textarea(
-                attrs = {
+                attrs={
                     'placeholder': 'Write a review... *',
                     'style': 'height: 200px;',
                 }
             ),
             'rating': forms.RadioSelect(
-                choices = [
-                    (1,'★'), (2,'★'), (3,'★'), (4,'★'), (5,'★'),
+                choices=[
+                    (1, '★'), (2, '★'), (3, '★'), (4, '★'), (5, '★'),
                 ],
             ),
         }
-    
+
     field_order = [
         'title',
         'content',
@@ -69,7 +70,7 @@ class ReviewForm(forms.ModelForm):
 
         if not title:
             raise ValidationError('You must provide a title.')
-        
+
         if not content:
             raise ValidationError('You must write a review.')
 

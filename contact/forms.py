@@ -5,11 +5,11 @@ from django_recaptcha.fields import ReCaptchaField
 
 CONTACT_REASONS = (
     ('', 'Reason for Contacting Us *'),
-    ('service_inquiry','Service Inquiry'),
-    ('quote_request','Request a Quote'),
-    ('cancel_reschedule','Cancellation or Rescheduling'),
-    ('general_inquiry','General Inquiries'),
-    ('other','Other'),
+    ('service_inquiry', 'Service Inquiry'),
+    ('quote_request', 'Request a Quote'),
+    ('cancel_reschedule', 'Cancellation or Rescheduling'),
+    ('general_inquiry', 'General Inquiries'),
+    ('other', 'Other'),
 )
 
 
@@ -36,13 +36,13 @@ class ContactUsForm(forms.ModelForm):
         }
         widgets = {
             'contact_reason': forms.Select(
-                choices = CONTACT_REASONS,
-                attrs = {
+                choices=CONTACT_REASONS,
+                attrs={
                     'class': 'select-placeholder'
                 }
             ),
             'message': forms.Textarea(
-                attrs = {
+                attrs={
                     'style': 'height: 200px;'
                 }
             )
@@ -55,7 +55,7 @@ class ContactUsForm(forms.ModelForm):
         'contact_reason',
         'message',
     ]
-    
+
     def __init__(self, *args, **kwargs):
         """ Add placeholders and remove labels """
 
@@ -81,4 +81,3 @@ class ContactUsForm(forms.ModelForm):
                 placeholder = placeholders[field]
             self.fields[field].widget.attrs['placeholder'] = placeholder
             self.fields[field].label = False
-            

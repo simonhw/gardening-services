@@ -26,7 +26,7 @@ class ServiceReviews(View):
     View that shows reviews for a particular service ordered by date of
     creation.
     """
-    
+
     def get(self, request, service_id):
         """
         Function to handle pagination of reviews
@@ -55,7 +55,6 @@ class ServiceReviews(View):
 
         return render(request, "reviews/reviews.html", context)
 
-
     def service_history(self, request, current_service):
         """
         Function to check if a user has previously ordered a particular
@@ -80,7 +79,7 @@ class UnpublishedReviews(StaffCheck, View):
     """
 
     def get(self, request, service_id):
-        
+
         service = get_object_or_404(Service, pk=service_id)
         reviews = service.reviews.filter(approved=False).order_by('created_on')
         review_count = len(reviews)
@@ -146,7 +145,7 @@ def create_review(request, service_id):
                     'review_form': review_form,
                 }
             )
-    
+
     review_form = ReviewForm()
 
     return render(
@@ -174,7 +173,7 @@ def publish_review(request, service_id, review_id):
                 review.save()
                 messages.success(
                     request,
-                    f'Review "{ review.title }" successfully unpublished'
+                    f'Review "{review.title}" successfully unpublished'
                 )
                 return redirect('service_reviews', service.id)
             else:
@@ -182,13 +181,14 @@ def publish_review(request, service_id, review_id):
                 review.save()
                 messages.success(
                     request,
-                    f'Review "{ review.title }" successfully published'
+                    f'Review "{review.title}" successfully published'
                 )
                 return redirect('unpublished_reviews', service.id)
 
-        except:
+        except Exception as e:
             messages.error(
-                request, "There was a problem changing that review's status"
+                request,
+                f"There was a problem changing that review's status: {e}"
             )
         return redirect('service_reviews', service.id)
 
@@ -203,13 +203,13 @@ def edit_review(request, service_id, review_id):
     service = get_object_or_404(Service, pk=service_id)
     review = get_object_or_404(Review, pk=review_id)
 
-
-
     if review.reviewer == request.user:
         if request.method == 'GET':
             review.content = strip_tags(review.content)
             review_form = ReviewForm(instance=review)
-            return render(request, 'reviews/create_review.html',
+            return render(
+                request,
+                'reviews/create_review.html',
                 {
                     'review_form': review_form,
                     'service': service,
@@ -227,9 +227,10 @@ def edit_review(request, service_id, review_id):
                 if not request.user.is_staff:
                     review.approved = False
                 review.save()
-                messages.success(request, 
-                    f'Review "{review.title}" successfully edited pending \
-                        approval.'
+                messages.success(
+                    request,
+                    f'Review "{review.title}" successfully edited pending\
+                    approval.'
                     )
                 if not request.user.is_staff:
                     return redirect('service_reviews', service_id)
@@ -239,7 +240,9 @@ def edit_review(request, service_id, review_id):
                     return redirect('unpublished_reviews', service_id)
             else:
                 review_form = ReviewForm(data=request.POST)
-                return render(request, 'reviews/create_review.html',
+                return render(
+                    request,
+                    'reviews/create_review.html',
                     {
                         'review_form': review_form,
                         'service': service,
@@ -250,10 +253,10 @@ def edit_review(request, service_id, review_id):
                 )
                 messages.error(request, 'Please fully complete the form')
         else:
-             return HttpResponseBadRequest('Unsupported request method.')
+            return HttpResponseBadRequest('Unsupported request method.')
     else:
         raise PermissionDenied
-            
+
 
 @login_required
 def delete_review(request, service_id, review_id):
@@ -262,17 +265,17 @@ def delete_review(request, service_id, review_id):
     """
     service = get_object_or_404(Service, pk=service_id)
     review = get_object_or_404(Review, pk=review_id)
-    
+
     page_check = review.approved
 
     if request.user.is_staff or request.user == review.reviewer:
         review.delete()
         messages.success(
-            request, f'Review "{ review.title }" successfully deleted'
+            request, f'Review "{review.title}" successfully deleted'
         )
     else:
         messages.ERROR(
-            request, f'Review "{ review.title }" could not be deleted. Please\
+            request, f'Review "{review.title}" could not be deleted. Please\
                 try again later.'
         )
     # Return user to the correct review page

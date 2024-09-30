@@ -5,13 +5,13 @@ from django.utils.translation import gettext_lazy as _
 from django.db.models.signals import post_save
 from django.dispatch import receiver
 
-# Create your models here.
+
 class CustomUserManager(BaseUserManager):
     """ Model for creating user accounts """
 
     def create_user(
         self, email, password, first_name, last_name, **extra_fields
-        ):
+    ):
         """
         Create a user with a supplied email, password, and first and
         last name
@@ -28,10 +28,10 @@ class CustomUserManager(BaseUserManager):
         user.set_password(password)
         user.save()
         return user
-    
+
     def create_superuser(
         self, email, password, first_name, last_name, **extra_fields
-        ):
+    ):
         """
         Create a superuser with a supplied email, password and first
         and last name. Add the additional fields of is_staff,
@@ -73,6 +73,7 @@ class CustomUser(AbstractUser, PermissionsMixin):
     REQUIRED_FIELDS = ['first_name', 'last_name',]
 
     objects = CustomUserManager()
+
     def __str__(self):
         return self.email
 
@@ -106,7 +107,6 @@ class UserAccount(models.Model):
         )
     default_county = models.CharField(max_length=80, null=True, blank=True)
     default_eircode = models.CharField(max_length=20, null=True, blank=True)
-
 
     def __str__(self):
         return self.user.email

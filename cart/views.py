@@ -20,12 +20,11 @@ def add_to_cart(request, item_id):
 
     service = get_object_or_404(Service, pk=item_id)
     number = int(request.POST.get('number'))
-    redirect_url = request.POST.get('redirect_url')
 
     size = None
     tree = None
     surface = None
-    
+
     if 'size' in request.POST:
         size = request.POST.get('size')
     if 'tree' in request.POST:
@@ -43,21 +42,23 @@ def add_to_cart(request, item_id):
                     # When there is already a Bed/Planter service in
                     #  the cart, check if there is one of the same size
                     #  and increment the number if so, otherwise add
-                    #  the new size. 
-                    if size in cart[item_id]['surfaces'][surface]\
-                        ['sizes'].keys():
-                        cart[item_id]['surfaces'][surface]\
-                            ['sizes'][size] += number
+                    #  the new size.
+                    if size in (
+                        cart[item_id]['surfaces'][surface]['sizes'].keys()
+                    ):
+                        cart[item_id]['surfaces'][surface]['sizes'][size] \
+                            += number
                         messages.success(
                             request, f'Added {number} {size.title()}\
                             {surface} {service.name} to cart'
                         )
                     else:
-                        cart[item_id]['surfaces'][surface]\
-                            ['sizes'][size] = number
+                        cart[item_id]['surfaces'][surface]['sizes'][size] \
+                            = number
                         messages.success(
-                            request, f'Added {number} {size.title()}\
-                            {surface} {service.name} to cart'
+                            request,
+                            f'Added {number} {size.title()} {surface}\
+                                {service.name} to cart'
                         )
                 else:
                     # In this case, there is a Driveway/Patio service
@@ -73,8 +74,9 @@ def add_to_cart(request, item_id):
             else:
                 # There is no Weeding service already in the cart.
                 #  Create a new dictionary.
-                cart[item_id] = {'surfaces':\
-                     {surface: {'sizes': {size: number}}}}
+                cart[item_id] = {
+                    'surfaces': {surface: {'sizes': {size: number}}}
+                    }
                 messages.success(
                     request, f'Added {number} {size.title()} {surface}\
                         {service.name} to cart'
@@ -90,13 +92,13 @@ def add_to_cart(request, item_id):
                     messages.success(
                         request, f'Added {number} {surface}\
                         {service.name} to cart'
-                    ) 
+                    )
                 else:
                     cart[item_id]['surfaces'][surface] = number
                     messages.success(
                         request, f'Added {number} {surface}\
                         {service.name} to cart'
-                    ) 
+                    )
             else:
                 # There is no Weeding service already in the cart.
                 #  Create a new dictionary.
@@ -104,7 +106,7 @@ def add_to_cart(request, item_id):
                 messages.success(
                     request, f'Added {number} {surface}\
                         {service.name} to cart'
-                )    
+                )
     elif tree:
         # For carts where there is already a Tree Maintenance service,
         #  check if the specific tree service already has a dictionary
@@ -192,12 +194,12 @@ def add_to_cart(request, item_id):
             messages.success(
                 request, f'Added {service.name} x{number} to cart.'
             )
-    
+
     context = {
         'service': service,
         'service_added': True,
     }
-    
+
     request.session['cart'] = cart
     return render(request, 'services/service_page.html', context)
 
@@ -211,7 +213,7 @@ def amend_cart(request, item_id):
     size = None
     tree = None
     surface = None
-    
+
     if 'size' in request.POST:
         size = request.POST.get('size')
     if 'cuts' in request.POST:
@@ -304,7 +306,7 @@ def amend_cart(request, item_id):
             messages.success(
                 request, f'Removed {service.name} from cart'
             )
-    
+
     request.session['cart'] = cart
     return redirect(reverse('view_cart'))
 
@@ -318,7 +320,7 @@ def remove_from_cart(request, item_id):
         size = None
         tree = None
         surface = None
-        
+
         if 'size' in request.POST:
             size = request.POST.get('size')
         if 'cuts' in request.POST:
@@ -352,7 +354,7 @@ def remove_from_cart(request, item_id):
         elif tree:
             # Delete the specific size of tree service, then check if
             #  any other sizes exists. If they don't delete the
-            #  specific tree service. 
+            #  specific tree service.
             del cart[item_id]['cuts'][tree]['sizes'][size]
             if not cart[item_id]['cuts'][tree]['sizes']:
                 del cart[item_id]['cuts'][tree]
@@ -378,8 +380,7 @@ def remove_from_cart(request, item_id):
             # Remove a number-only service
             cart.pop(item_id)
             messages.success(request, f'Removed {service.name} from cart')
-            
-        
+
         request.session['cart'] = cart
         return HttpResponse(status=200)
     except Exception as e:

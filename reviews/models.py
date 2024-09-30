@@ -2,6 +2,7 @@ from django.db import models
 from accounts.models import CustomUser
 from services.models import Service
 
+
 class Review(models.Model):
     reviewer = models.ForeignKey(
         CustomUser,

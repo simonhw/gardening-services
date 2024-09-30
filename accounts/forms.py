@@ -9,22 +9,22 @@ class CustomUserCreationForm(SignupForm):
     """ Specify the model used for creating a user """
 
     first_name = forms.CharField(
-        max_length = 35,
-        label = '',
-        required = True,
-        widget = forms.TextInput(
-            attrs = {
+        max_length=35,
+        label='',
+        required=True,
+        widget=forms.TextInput(
+            attrs={
                 'placeholder': 'First Name *'
             }
         )
         )
-    
+
     last_name = forms.CharField(
-        max_length = 35,
-        label = '',
-        required = True,
-        widget = forms.TextInput(
-            attrs = {
+        max_length=35,
+        label='',
+        required=True,
+        widget=forms.TextInput(
+            attrs={
                 'placeholder': 'Last Name *'
             }
         )
@@ -40,17 +40,17 @@ class CustomUserCreationForm(SignupForm):
         }
         widgets = {
             'first_name': forms.TextInput(
-                attrs = {
+                attrs={
                     'placeholder': 'First Name *'
                 }
             ),
             'last_name': forms.TextInput(
-                attrs = {
+                attrs={
                     'placeholder': 'Last Name *'
                 }
             ),
             'email': forms.TextInput(
-                attrs = {
+                attrs={
                     'placeholder': 'Email Address *'
                 }
             ),
@@ -85,7 +85,6 @@ class CustomUserCreationForm(SignupForm):
                 }
             )
 
-    
     field_order = [
         'first_name',
         'last_name',
@@ -94,7 +93,7 @@ class CustomUserCreationForm(SignupForm):
         'password1',
         'password2',
     ]
-    
+
     def try_save(self, request):
         """
         This method is added because allauth expects it when handling
