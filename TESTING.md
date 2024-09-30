@@ -161,6 +161,19 @@ Any site user may send a message to the business by using the contact form. Ther
 
 When a user is logged in, the form can be pre-filled with their name and email address and, if saved on their profile, their phone number. This is achieved in the view by checking the user authentication status and getting the data from their UserAccount database entry in a try-except block. If the user data is not found or if they are not authenticated, an empty instance of the form is rendered. This ensures that user data is only displayed if the user is logged in and currently has data saved to their UserAccount on the database.
 
+### Updating Account Details
+An authenticated user has the option of updating or deleting their phone number and address details on their My Account page. Currently no fields in this form are required, as the user can submit the form with blank fields to delete their information from the database. Functionality does exist for any of these fields to be required in the future, and one field was set as required just for the purposes of demonstrating the validation for this discussion. This was done by simply adding the following line to the `UserAccountForm` class in `forms.py`:
+```
+default_phone_number = forms.CharField(required=True)
+```
+An existing code block adds an asterisk to any form field that is required, so no further changes to the code were necessary to make the user aware of the change to the form.
+
+<details><summary>Demonstration of Account Details form validation</summary>
+
+![Account Details form validation](static/images/testing/accounts-validation.png)
+
+</details>
+
 ## Testing
 ### Full Testing
 The program was deployed on Heroku and tested there on a Windows 10 desktop with a 26" monitor and on a One Plus 9 Pro mobile phone.
