@@ -7,7 +7,12 @@ Deployed program on Heroku: [The Garden Path](https://gardening-services-e596b63
 
 ## Contents
 - [Form Validation](#form-validation)
-    - []()
+    - [Service Form](#adding-a-service-to-the-cart)
+    - [Checkout Form](#the-checkout-form)
+    - [Review Form]()
+    - [Contact Us Form]()
+    - [My Account Details]()
+    - [Authentication Pages]()
 - [Testing](#testing)
     - [Manual Testing](#manual-testing)
     - [Full Testing](#full-testing)
@@ -104,6 +109,59 @@ On the back end, the checkout view utilises a number of try-except blocks and if
 - If the order form is valid, each item in the cart is added to the card inside a try block. If this fails for any reason, the process is abandoned, the order is deleted, an error toast message displayed to the user, and the user is redirected back to their cart.
 - If the front-end validation failed somehow and invalid form data is received, an error toast message is displayed telling the user that their form is not correct and to double check their inputs again.
 
+### Creating a Review
+Users who have previously ordered a service may leave a review for it. The review form may be accessed through the **Leave a Review** button on the service's reviews page. This button is displayed dynamically through the the use of the `service_history` function and a Boolean context variable `ordered` returned from the view. The user's order history is looped through and if any have the service, `ordered` is returned which by default is set to `False` but in this case has now been set to `True`. This allows the user to interact with the **Leave a Review** button and navigate to the form page.
+
+Three input fields are presented to the user and each have custom validation. All three are set as required fields on the backend and the data is cleaned and checked for validity on form submission. If either of the three fields are not complete, ValidationErrors are raised and the fields outlined in red with an error message in bold red text displayed under the field. The ratings stars are given a red colour if the input is left blank.
+
+![Blank review form](static/images/testing/review-empty.png)
+
+<details><summary>ValidationError messages and styles</summary>
+
+![No title validation error](static/images/testing/review-title.png)
+
+![No content validation error](static/images/testing/review-content.png)
+
+![No rating validation error](static/images/testing/review-stars.png)
+
+</details>
+
+<details><summary>Error styling resetting when inputs are corrected</summary>
+
+![Error styling resetting when inputs are corrected](static/images/testing/review-errors-reset.gif)
+
+</details>
+
+### Contact Us Form
+Any site user may send a message to the business by using the contact form. There are six input fields presented to the user all of which are required. The first five fields will show browser validation messages without reloading the page if left blank when the **Send** button is clicked. The email field will show additional custom validation if the user enters an incomplete email of the form `example@email` without a top-level domain. This validation message is displayed after the user clicks the **Send** button and the page reloads. The reCAPTCHA field validation is displayed in the same way. This was achieved by cleaning the form data on the back end and raising ValidationError messages if any data was missing.
+
+![Blank Contact Us form](static/images/testing/contact.png)
+
+<details><summary>ValidationError messages and styles</summary>
+
+![No name validation error](static/images/testing/contact-name.png)
+
+![No email validation error](static/images/testing/contact-email-00.png)
+
+![Invalid email validation error 1](static/images/testing/contact-email-01.png)
+
+![Invalid email validation error 2](static/images/testing/contact-email-02.png)
+
+![Invalid email validation error 3](static/images/testing/contact-email-03.png)
+
+![No phone number validation error](static/images/testing/contact-phone-01.png)
+
+![No reason validation error](static/images/testing/contact-reason.png)
+
+![No message validation error](static/images/testing/contact-message.png)
+
+![No captcha validation error](static/images/testing/contact-captcha.png)
+
+</details>
+
+When a user is logged in, the form can be pre-filled with their name and email address and, if saved on their profile, their phone number. This is achieved in the view by checking the user authentication status and getting the data from their UserAccount database entry in a try-except block. If the user data is not found or if they are not authenticated, an empty instance of the form is rendered. This ensures that user data is only displayed if the user is logged in and currently has data saved to their UserAccount on the database.
+
+## Testing
 ### Full Testing
 The program was deployed on Heroku and tested there on a Windows 10 desktop with a 26" monitor and on a One Plus 9 Pro mobile phone.
 
