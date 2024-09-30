@@ -17,7 +17,6 @@ if ( serviceName.includes('weed') ) {
     
     weedInput.addEventListener('change', function () {
         let weedOption = document.getElementById('weedOption');
-        console.log("weedOption.value:", weedOption.value);
         if ( weedOption.value == 'Bed/Planter' ) {
             updateServiceName(serviceNoun, "Bed/Planter");
             numberInput.removeAttribute('class', 'd-none');

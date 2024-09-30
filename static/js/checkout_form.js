@@ -20,7 +20,6 @@ $(document).ready(function() {
     function allFilled() {
         var filled = true;
         $('.details-fields input[required]').each(function() {
-            console.log('this is', $(this).val());
             if ($(this).val() == ''){
                 filled = false;
             }

@@ -34,12 +34,10 @@ card.addEventListener('change', function (event) {
     var errorDiv = document.getElementById('card-errors');
     var errorDivReview = document.getElementById('card-errors-review');
     if (event.complete) {
-        console.log('event.complete', event.complete);
         $('#show-review').removeAttr('disabled');
         $('#card-accepted-alert').prop("hidden", false);
     }
     else if (event.error) {
-        console.log('event.error', event.error);
         var html = `
         <span class="icon" role="alert">
         <i class="fas fa-times"></i>
@@ -52,7 +50,6 @@ card.addEventListener('change', function (event) {
         $('#card-accepted-alert').prop("hidden", true);
 
     } else {
-        console.log('other event');
         errorDiv.textContent = '';
         errorDivReview.textContent = '';
         $('#show-review').prop("disabled", true);
