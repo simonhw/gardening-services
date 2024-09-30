@@ -83,7 +83,6 @@ class ContactUsForm(forms.ModelForm):
             self.fields[field].widget.attrs['placeholder'] = placeholder
             self.fields[field].label = False
 
-
     def clean(self):
         """
         Validation of form data on the back end.
@@ -101,7 +100,6 @@ class ContactUsForm(forms.ModelForm):
         contact_reason = cleaned_data.get('contact_reason')
         message = cleaned_data.get('message')
         captcha = cleaned_data.get('captcha')
-
 
         if not full_name:
             raise ValidationError('You must provide your full name.')

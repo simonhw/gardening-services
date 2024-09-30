@@ -71,8 +71,6 @@ class StripeWH_Handler:
 
         account = None
         username = intent.metadata.username
-        print('intent.metadata.username', intent.metadata.username)
-        print("username != 'AnonymousUser'", username != 'AnonymousUser')
         if username != 'AnonymousUser':
             account = UserAccount.objects.get(user__email=username)
             if save_info:
