@@ -9,10 +9,10 @@ Deployed program on Heroku: [The Garden Path](https://gardening-services-e596b63
 - [Form Validation](#form-validation)
     - [Service Form](#adding-a-service-to-the-cart)
     - [Checkout Form](#the-checkout-form)
-    - [Review Form]()
-    - [Contact Us Form]()
-    - [My Account Details]()
-    - [Authentication Pages]()
+    - [Review Form](#creating-a-review)
+    - [Contact Us Form](#contact-us-form)
+    - [My Account Details](#updating-account-details)
+    - [Authentication Pages](#authetication-pages)
 - [Testing](#testing)
     - [Manual Testing](#manual-testing)
     - [Full Testing](#full-testing)
@@ -174,7 +174,59 @@ An existing code block adds an asterisk to any form field that is required, so n
 
 </details>
 
+### Authetication Pages
+Various allauth templates were used in this application and those that have forms came with built-in form validation. These templates are `login.html`, `signup.html`, `password_reset.html`, and `password_reset_from_key.html`. Full testing if these pages is demonstrated below in the [Full Testing](#full-testing) section.
+
 ## Testing
+### Manual Testing
+**User Stories** | **Achieved By:** | **Supporting Images**
+--- | --- | ---
+**Initial Project Setup** | |
+Set Up Django Files | Installing the correct version of Django in the IDE. Creating a project named "gardening". Creating an app called "home" and writing a basic view to display "Hello World!" on the homepage. | ![Closed Issue on kanban board](static/images/testing/kanban/setup.png)
+Create PostgreSQL Database | Creating a new PostgreSQL instance, copying the URL in the Details section, creating the `env.py` file and setting the `DATABASE_URL` constant, installing the relevant packages for database connection, and running migrations. | ![Closed Issue on kanban board](static/images/testing/kanban/database.png)
+Deploy Project to Heroku | Creating a Heroku app with a unique name, updating the code for deployment with Gunicorn, and deploying the app on Heroku. | ![Closed Issue on kanban board](static/images/testing/kanban/deploy-01.png)
+Deploy Heroku App with Static Files | Creating a staticfiles directory and collecting the static files, deploying the project on Heroku, and ensuring all styles are applied. | ![Closed Issue on kanban board](static/images/testing/kanban/deploy-02.png)
+**Create Models** | |
+Three Custom Models | | ![Closed Issue on kanban board](static/images/testing/kanban/three-models.png)
+Create Service Model | Creating a **services** app, creating a models file, declaring the necessary imports, and creating a model with the appropriate fields required. | ![Closed Issue on kanban board](static/images/testing/kanban/service-model.png)
+Create Custom User Model | Creating an app called **accounts**, creating the CustomUser model in `models.py`, and updating `settings.py` to use the custom model. | ![Closed Issue on kanban board](static/images/testing/kanban/user-model.png)
+Create Order Model | Creating an app called **checkout**, creating the Order model in `models.py`, and adding functions to generate a unique order number and calculate the total price. | ![Closed Issue on kanban board](static/images/testing/kanban/order-model.png)
+Create OrderLineIem Model | Creating the OrderLineItem model in `models.py` and adding a function to calculate the line subtotal. | ![Closed Issue on kanban board](static/images/testing/kanban/orderline-model.png)
+Create Reviews Model | Creating an app called **reviews**, creating the Review model in `models.py`, and adding functions to calculate an average rating for a service. | ![Closed Issue on kanban board](static/images/testing/kanban/reviews-model.png)
+Create ContactUs Model | Creating an app called **contact** and creating the ContactUs model in `models.py`. | ![Closed Issue on kanban board](static/images/testing/kanban/contact-model.png)
+**User Accounts** | |
+Create an Account | Clicking the sign-in button to prompt account creation. Verifying email address and logging out and logging back in using the created password. | ![Closed Issue on kanban board](static/images/testing/kanban/account-create.png)
+View Account Page | Navigating to the My Account page and viewing and amending details, and viewing past orders. | ![Closed Issue on kanban board](static/images/testing/kanban/account-view.png)
+**Website Content** | |
+Create Base Template | Creating a `base.html` file, creating a header and nav bar for small screens, creating a footer for small screens, creating a header and nav bar for larger screens, and creating a footer for larger screens. | ![Closed Issue on kanban board](static/images/testing/kanban/base.png)
+View Homepage | Viewing the landing page on website load. | ![Closed Issue on kanban board](static/images/testing/kanban/home.png)
+View Business Information | Viewing the About Us page. Reading the business information, viewing the locations covered by the business, and seeing the products and services offered. | ![Closed Issue on kanban board](static/images/testing/kanban/about.png)
+Create Error Pages | Creating 404, 403, and 500 error page templates. | ![Closed Issue on kanban board](static/images/testing/kanban/error.png)
+View Privacy Policy | Navigating to the privacy policy page from a link in the footer and reading the privacy policy on a dedicated webpage. | ![Closed Issue on kanban board](static/images/testing/kanban/privacy.png)
+**Services and Checkout** | |
+View Individual Service Details | | ![Closed Issue on kanban board](static/images/testing/kanban)
+Order a Service | | ![Closed Issue on kanban board](static/images/testing/kanban)
+View Cart | | ![Closed Issue on kanban board](static/images/testing/kanban)
+View Preview of Cart | | ![Closed Issue on kanban board](static/images/testing/kanban)
+Update Services from the Cart Page | | ![Closed Issue on kanban board](static/images/testing/kanban)
+Proceed to Checkout | | ![Closed Issue on kanban board](static/images/testing/kanban)
+**Payment System** | |
+Set Up Stripe | | ![Closed Issue on kanban board](static/images/testing/kanban)
+Pay for an Order | | ![Closed Issue on kanban board](static/images/testing/kanban)
+Receive Confirmation of Orders | | ![Closed Issue on kanban board](static/images/testing/kanban)
+**Reviews** | |
+View Reviews | | ![Closed Issue on kanban board](static/images/testing/kanban)
+Review a Service | | ![Closed Issue on kanban board](static/images/testing/kanban)
+Edit a Review | | ![Closed Issue on kanban board](static/images/testing/kanban)
+Publish Reviews | | ![Closed Issue on kanban board](static/images/testing/kanban)
+Delete a Review | | ![Closed Issue on kanban board](static/images/testing/kanban)
+**Contact Us** | |
+View Contact Us Page | | ![Closed Issue on kanban board](static/images/testing/kanban)
+**Marketing** | |
+Subscribe to Newsletters | | ![Closed Issue on kanban board](static/images/testing/kanban)
+Create Facebook Page | | ![Closed Issue on kanban board](static/images/testing/kanban)
+Search Engine Optimisation | | ![Closed Issue on kanban board](static/images/testing/kanban)
+
 ### Full Testing
 The program was deployed on Heroku and tested there on a Windows 10 desktop with a 26" monitor and on a One Plus 9 Pro mobile phone.
 
