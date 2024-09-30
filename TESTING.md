@@ -17,7 +17,53 @@ Deployed program on Heroku: [The Garden Path](https://gardening-services-e596b63
     - [Solved Bugs](#solved-bugs)
 
 ## Form Validation
-Validating the data to be submitted by the user is done both on the back and front end. 
+### Adding a Service to the Cart
+For each of the 6 services available to the user, there is at least 1 and at most 3 form fields to interact with. These include select and number inputs, depending on the type of service.
+For all select inputs, it is impossible for the user not to select one of the options, as each input has one value already marked as selected.
+
+![Service select field](static/images/testing/service-select-input.gif)
+
+The form on each service pages differs as follows:
+- Grass Cutting
+    - One select input for a range of areas to cut
+- Weeding
+    - One select input for the type of surface, either "Driveway/Patio" or "Bed/Planter"
+    - If the user selects "Bed/Planter", another select input is displayed with a range of sizes.
+    - A number input representing the number of surfaces.
+- Tree Felling and Maintenance
+    - A select input for the type of tree service (felling, pruning, coppicing, or pollarding).
+    - A select input with a range of sizes for the tree.
+    - A number input for the number of trees.
+- Hedge Cutting and Flowerbed Care
+    - Both of these services have one select input with a range of sizes and a number input for the number of hedge/flowerbeds
+- Tree Stump Removal
+    - This service has just one number input.
+
+Each number input has a minimum value of 1 and a maximum value of 99. The decrement button is disabled by JavaScript code when the value is 1 and the increment button disabled when the value reaches 99. On desktop screens, the user can click the default arrow buttons inside the input field or use the keyboard to increase or decrease the numbers but the values will not go outside the set range of 1-99. The user may manually edit the number in the field to be less than 1 or greater than 99, but the form will not submit in this case and a validation message is displayed to the user.
+
+![Service number field](static/images/testing/service-number-input.gif)
+
+### The Checkout Form
+The checkout form is displayed to the user in three distinct sections and custom validation was written for each section.
+
+#### Personal Details
+The first set of fields presented to the user are personal, contact, and address details. Required fields are marked with an asterisk and the **Continue to Payment** button is disabled until those fields contain data. This is achieved using [custom JavaScript code](https://github.com/simonhw/gardening-services/blob/main/static/js/checkout_form.js). An keyup event listener is added to each required input field which calls the `continueCheck()` and `allFilled()` functions. This functions together check the the value of each required input field, and if any are blank or only contain whitespace(s), keep the continue button disabled and only enable it when all required inputs contain text. In cases where users are logged in and have their personal details saved on their profile, these fields will already be filled with their data. For this reason, the `continueCheck()` function is also called when the page first loads.
+
+![The Personal Details fields and Continue button](static/images/readme/checkout-address.gif)
+
+<details><summary>Continue button being enabled on page load</summary>
+
+![Continue button being enabled on page load](static/images/testing/checkout-account-details.gif)
+
+</details>
+
+The only validation messages that the user can see in this section relate to an invalid email address. If the user does not enter an email in the correct format, a validation message will appear when they click the **Continue to Payment** button.
+
+<details><summary>Email address validation warnings</summary>
+
+![Email address validation warnings](static/images/testing/checkout-email-validation.gif)
+
+</details>
 
 ### Full Testing
 The program was deployed on Heroku and tested there on a Windows 10 desktop with a 26" monitor and on a One Plus 9 Pro mobile phone.
