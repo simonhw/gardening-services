@@ -5,6 +5,7 @@
     CSS from here: 
     https://stripe.com/docs/stripe-js
 */
+/*jshint jquery: true */
 
 var stripePublicKey = $('#id_stripe_public_key').text().slice(1, -1);
 var clientSecret = $('#id_client_secret').text().slice(1, -1);
@@ -137,5 +138,5 @@ form.addEventListener('submit', function(ev) {
     }).fail(function () {
         // Reload the page and show the error in django messages
         location.reload();
-    })
+    });
 });

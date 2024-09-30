@@ -20,7 +20,7 @@
                     {% for item in cart_items %}
                         <div class="row">
                             <div class="col-3 offset-1 my-1 pe-0">
-                                <img src="{{ MEDIA_URL }}{{ item.service.image }}" class="w-100 rounded">
+                                <img src="{{ MEDIA_URL }}{{ item.service.image }}" class="w-100 rounded" alt="Image of a {{ service.name }} service">
                             </div>
                             <div class="col-7">
                                 <p class="my-0"><span class="fw-bold fs-smaller">{{ item.service.name }} {% if item.number > 1 %}({{ item.number }}){% endif %}</span></p>

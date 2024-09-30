@@ -1,7 +1,5 @@
 let sizeInput = document.getElementById('size-input');
 let numberInput = document.getElementById('number-input');
-let acreInput = document.getElementById('acre-input');
-let treeInput = document.getElementById('tree-input');
 let weedInput = document.getElementById('weed-input');
 
 let serviceName = document.getElementById('service-name').innerText.toLowerCase();

@@ -1,3 +1,4 @@
+/*jshint jquery: true */
 $(document).ready(function() {
     // Code adapted from Boutique Ado walkthrough
     let reasonSelected = $('#id_contact_reason').val();

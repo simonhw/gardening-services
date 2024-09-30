@@ -1,9 +1,10 @@
+/*jshint jquery: true */
 $(document).ready(function() {
     // INDIVIDUAL SERVICE PAGES 
     // Apply the correct width to the orange review stars
     let rating = Number($('#rating').text());
     let percentage = rating * 20;
-    $('.fill-ratings').css('width', percentage + "%")
+    $('.fill-ratings').css('width', percentage + "%");
 
 
     // Gets the span width of the filled-ratings span

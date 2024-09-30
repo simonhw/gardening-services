@@ -1,3 +1,5 @@
+/*jshint jquery: true */
+
 $(document).ready(function() {
     let cartOffcanvas = $('#offcanvasRight');
     let serviceAdded = $('#serviceAdded').text();

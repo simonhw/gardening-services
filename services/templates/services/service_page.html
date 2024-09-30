@@ -86,7 +86,7 @@
                             <label for="sizeOption"><b>Size of <span
                                         class="service-name">{{ service.name }}</span></b></label>
                             <div class="form-group w-75">
-                                <select id="grassOption" name="size" class="form-select">
+                                <select id="sizeOption" name="size" class="form-select">
                                     <option selected value="small">Small</option>
                                     <option value="medium">Medium</option>
                                     <option value="large">Large</option>
@@ -97,7 +97,7 @@
 
                         <!-- Input Type 4 - Number -->
                         <div id="number-input" class="py-1">
-                            <label for="numberOption"><b>Number of <span
+                            <label for="id_number_{{ service.id }}"><b>Number of <span
                                         class="service-name">{{ service.name }}</span>s</b></label>
                             <div class="form-group w-75">
                                 <div class="input-group">

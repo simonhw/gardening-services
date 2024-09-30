@@ -1,3 +1,4 @@
+/*jshint jquery: true */
 $(document).ready(function() {
     let $radios = $('.form-check-input');  // Select all radio inputs
     let $stars = $('.form-check-label'); // Select all star labels
@@ -25,7 +26,7 @@ $(document).ready(function() {
                 let selectedIndex = $radios.index(selected);
                 updateStars(selectedIndex);
                 $('.form-check-label').removeClass('invalid');
-                $('#rating-validation').addClass('d-none')
+                $('#rating-validation').addClass('d-none');
             } else {
                 updateStars(-1);
             }
@@ -65,7 +66,7 @@ $(document).ready(function() {
             $('.form-check-label').addClass('invalid');
             $('#rating-validation').removeClass('d-none').text('You must provide a rating!');
         } else {
-            $('#validation-message').addClass('d-none')
+            $('#validation-message').addClass('d-none');
             $('#reviewForm').submit();
         }
     });
@@ -73,10 +74,10 @@ $(document).ready(function() {
     // Remove red border from fields when user enters text.
     $('input[name="title"]').on('keyup', function(){
         $('#id_title').removeClass('input-border-red');
-        $('#title-validation').addClass('d-none')
+        $('#title-validation').addClass('d-none');
     });
     $('textarea[name="content"]').on('keyup', function(){
         $('#id_title').removeClass('input-border-red');
-        $('#content-validation').addClass('d-none')
+        $('#content-validation').addClass('d-none');
     });
 });

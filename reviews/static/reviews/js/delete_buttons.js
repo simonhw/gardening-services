@@ -1,3 +1,4 @@
+/*jshint jquery: true */
 $(document).ready(function() {
    let $deleteButtons = $('.btn-delete');
 

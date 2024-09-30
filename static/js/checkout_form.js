@@ -1,3 +1,4 @@
+/*jshint jquery: true */
 $(document).ready(function() {
     // For pre-filled data, check if continue button should be enabled
     continueCheck();

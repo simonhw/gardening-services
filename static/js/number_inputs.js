@@ -1,3 +1,4 @@
+/*jshint jquery: true */
 function handleEnableDisable(itemId) {
     let currentValue = parseInt($(`#id_number_${itemId}`).val());
     let minusDisabled = currentValue < 2;

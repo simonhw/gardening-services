@@ -198,11 +198,6 @@ main {
       top: 0;
       left: 0;
       overflow: hidden;
-      
-      /* Allows us to grab the width of the span elements */
-      span {
-        display: inline-block;
-      }
 }
 
 .empty-ratings {
