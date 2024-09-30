@@ -89,9 +89,52 @@ JavaScript File | Passed with no Errors or Warnings? | Comments
 [stripe_elements.js](static/images/testing/jshint-stripe-elements.png) | &check; | One variable flagged as undefined: `Stripe`. This variable is defined in `<script src="https://js.stripe.com/v3/"></script>` which is called before `stripe_elements.js` allowing it to be used correctly.
 
 #### Python
-<details><summary>.py - No errors</summary>
+Flake8 was used to check original Python code to ensure compliance with PEP8 standards. This was done by navigating to each Django app in turn and running `python3 -m flake8` in workspace terminal. Any issues were then listed in the terminal along with the filename and location within the file. When no issues remain, the terminal did not print any output.
 
-![](static/images/readme)
+Flake8 flagged E501 errors in migrations files for lines longer than 79 characters. These files are automatically generated and editing them could result in migration errors. These errors were therefore ignored in this context and no corrections were made to the files.
+
+<details><summary>The Gardening app - Acceptable errors</summary>
+
+There were two different types of errors flagged in the `settings.py` file:
+- The first was flagging `env` as being imported but not used. This is because the linter is looking for the word `env` being called elsewhere in the file and not finding it; however, this is an acceptable error as the file is still using the imported data but calling it via `os.environ.get`.
+- The second related to lines longer than 79 characters in the `ALLOWED_ORIGINS` and `AUTH_PASSWORD_VALIDATORS` blocks. There was no realistic way of splitting these lines in two and not breaking the functionality of the website; therefore, these errors flagged by the linter were deemed acceptable to have.
+    - PEP8 [allows for this](https://peps.python.org/pep-0008/#a-foolish-consistency-is-the-hobgoblin-of-little-minds):
+    "However, know when to be inconsistent – sometimes style guide recommendations just aren't applicable. When in doubt, use your best judgment. Look at other examples and decide what looks best. And don't hesitate to ask! ... ... Some other good reasons to ignore a particular guideline:
+    When applying the guideline would make the code less readable, even for someone who is used to reading code that follows this PEP."
+
+![Flake8 command run in the gardening directory](static/images/testing/flake8-gardening.png)
+
+</details>
+
+<details><summary>The About app - No errors</summary>
+
+![Flake8 command run in the about directory](static/images/testing/flake8-about.png)
+
+</details>
+
+<details><summary>The Accounts app - No errors</summary>
+
+![Flake8 command run in the accounts directory](static/images/testing/flake8-about.png)
+
+</details>
+
+<details><summary>The Cart app - No errors</summary>
+
+![Flake8 command run in the cart directory](static/images/testing/flake8-cart.png)
+
+</details>
+
+<details><summary>The Checkout app - No true errors</summary>
+
+In `apps.py`, Flake8 flags `checkout.signals` as being imported but never used. This is due to the linter seeing this file in isolation and not understanding the purpose of the import. It is included so that Django is aware of the signals module and the update listeners contained within.
+
+![Flake8 command run in the checkout directory](static/images/testing/flake8-checkout.png)
+
+</details>
+
+<details><summary>The Reviews app - No errors</summary>
+
+![Flake8 command run in the reviews directory](static/images/testing/flake8-reviews.png)
 
 </details>
 
