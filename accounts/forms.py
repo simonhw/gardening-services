@@ -104,9 +104,10 @@ class CustomUserCreationForm(SignupForm):
         cleaned_data = super().clean()
         email = cleaned_data.get('email')
         
-        if CustomUser.objects.get(email=email):
-            raise ValidationError('This email address is already in use')
-        else:
+        try:
+            if CustomUser.objects.get(email=email):
+                raise ValidationError('This email address is already in use')
+        except CustomUser.DoesNotExist:
             return email
 
     def try_save(self, request):
