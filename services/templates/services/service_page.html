@@ -11,39 +11,42 @@
     <div class="row my-3">
         <div class="col-10 offset-1 col-lg-8 offset-lg-2 col-xl-6 offset-xl-3 mt-2">
             <h1 class="mate">{{ service.name }}</h1>
-            <p class="small sage-green mb-0"><a href="{% url 'services' %}"
-                    class="plain-anchor sage-green service-link">Services</a> > <a
+            <p class="small hunter-green mb-0"><a href="{% url 'services' %}"
+                    class="plain-anchor hunter-green service-link">Services</a> > <a
                     href="{% url 'services' %}?category={{ service.category }}"
-                    class="plain-anchor sage-green service-link">{{ service.category.friendly_name }}</a> >
+                    class="plain-anchor hunter-green service-link">{{ service.category.friendly_name }}</a> >
                 <span class="fw-bold">{{ service.name }}</span></p>
         </div>
     </div>
 
     <div class="row pb-3">
         <div class="col-10 offset-1 col-sm-4 col-md-5 offset-md-1 col-lg-4 offset-lg-2 col-xl-2 offset-xl-3">
-            <img src="{{ MEDIA_URL }}{{ service.image }}" class="card-img-top img-shadow mb-2" alt="Image of a {{ service.name }} service">
+            <img src="{{ MEDIA_URL }}{{ service.image }}" class="card-img-top img-shadow mb-2" alt="{{ service.alt }}">
         </div>
         <div class="col-10 offset-1 col-sm-6 offset-sm-0 col-md-5 col-lg-4">
             <div class="service-details-container">
-                <!-- <h5 class="mate">{{ service.name }}</h5> -->
                 <p class="mb-0">{{ service.description | safe }}</p>
-                <div class="d-flex align-items-center mb-3">
-                    <div class="star-ratings mb-1">
-                        <div class="fill-ratings" style="width: 0%;">
-                            <span>★★★★★</span>
-                        </div>
-                        <div class="empty-ratings">
-                            <span>★★★★★</span>
-                        </div>
-                        <div id="rating" hidden>{{ service.average_rating }}</div>
-                    </div>
-                    <div>
-                        <div class="ms-2 text-muted">
-                            {% if service.average_rating %}
-                            ({{ service.average_rating }}) <a href="{% url 'service_reviews' service.id %}" class="hunter-green ms-1">{{ service.review_count }} Review{% if service.review_count > 1 %}s{% endif %}</a>
-                            {% else %}
-                            (No Reviews)
-                            {% endif %}
+                <div class="row">
+                    <div class="col-10 offset-1 col-md-12 offset-md-0 mx-md-2">
+                        <div class="row mb-3 hunter-green-bg rounded-1 my-2 px-3 justify-content-center">
+                            <div class="col-12 col-md-6 d-flex align-items-center star-ratings mb-1">
+                                <div class="fill-ratings" style="width: 0%;">
+                                    <span>★★★★★</span>
+                                </div>
+                                <div class="empty-ratings">
+                                    <span>★★★★★</span>
+                                </div>
+                                <div id="rating" hidden>{{ service.average_rating }}</div>
+                            </div>
+                            <div class="col-12 col-md-6 d-flex w-100 pb-2 isabelline ms-2">
+                                <div class="text-center w-sm-100">
+                                    {% if service.average_rating %}
+                                    ({{ service.average_rating }}) <a href="{% url 'service_reviews' service.id %}" class="hunter-green ms-1 isabelline">{{ service.review_count }} Review{% if service.review_count > 1 %}s{% endif %}</a>
+                                    {% else %}
+                                    (No Reviews)
+                                    {% endif %}
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -102,7 +105,7 @@
                             <div class="form-group w-75">
                                 <div class="input-group">
                                     <div class="input-group-prepend">
-                                        <button class="decrement-number btn hunter-green-bg isabelline" 
+                                        <button class="decrement-number btn hunter-green-bg isabelline" aria-label="Decrement button for number of services"
                                             data-item_id="{{ service.id }}" id="decrement-number_{{ service.id }}">
                                             <span class="icon">
                                                 <i class="fas fa-minus"></i>
@@ -113,7 +116,7 @@
                                         min="1" max="99" data-item_id="{{ service.id }}"
                                         id="id_number_{{ service.id }}">
                                     <div class="input-group-append">
-                                        <button class="increment-number btn hunter-green-bg isabelline" 
+                                        <button class="increment-number btn hunter-green-bg isabelline" aria-label="Increment button for number of services"
                                             data-item_id="{{ service.id }}" id="increment-number_{{ service.id }}">
                                             <span class="icon">
                                                 <i class="fas fa-plus"></i>
