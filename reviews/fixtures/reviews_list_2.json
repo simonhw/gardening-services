@@ -1,0 +1,212 @@
+[
+    {
+        "pk": 110,
+        "model": "reviews.review",
+        "fields": {
+            "reviewer": 38,
+            "service": 2,
+            "title": "Will Use Again",
+            "content": "Quick, friendly, and effective weed removal service.",
+            "created_on": "2023-12-28",
+            "updated_on": null,
+            "approved": true,
+            "rating": 3
+        }
+    },
+    {
+        "pk": 111,
+        "model": "reviews.review",
+        "fields": {
+            "reviewer": 39,
+            "service": 2,
+            "title": "Impressive Results",
+            "content": "Very pleased with their thorough weed removal approach.",
+            "created_on": "2023-04-21",
+            "updated_on": null,
+            "approved": true,
+            "rating": 4
+        }
+    },
+    {
+        "pk": 112,
+        "model": "reviews.review",
+        "fields": {
+            "reviewer": 32,
+            "service": 2,
+            "title": "Reliable and Efficient",
+            "content": "No more weeds! I'm so happy with the results.",
+            "created_on": "2023-05-12",
+            "updated_on": null,
+            "approved": true,
+            "rating": 3
+        }
+    },
+    {
+        "pk": 113,
+        "model": "reviews.review",
+        "fields": {
+            "reviewer": 26,
+            "service": 2,
+            "title": "A Job Well Done",
+            "content": "Quick, friendly, and effective weed removal service.",
+            "created_on": "2023-05-31",
+            "updated_on": null,
+            "approved": true,
+            "rating": 3
+        }
+    },
+    {
+        "pk": 114,
+        "model": "reviews.review",
+        "fields": {
+            "reviewer": 78,
+            "service": 2,
+            "title": "Exceeded Expectations",
+            "content": "No more weeds! I'm so happy with the results.",
+            "created_on": "2024-02-09",
+            "updated_on": null,
+            "approved": true,
+            "rating": 4
+        }
+    },
+    {
+        "pk": 115,
+        "model": "reviews.review",
+        "fields": {
+            "reviewer": 91,
+            "service": 2,
+            "title": "Highly Recommended",
+            "content": "I was impressed with their attention to detail in weed removal.",
+            "created_on": "2023-06-21",
+            "updated_on": null,
+            "approved": true,
+            "rating": 5
+        }
+    },
+    {
+        "pk": 116,
+        "model": "reviews.review",
+        "fields": {
+            "reviewer": 86,
+            "service": 2,
+            "title": "Loved the Service",
+            "content": "Highly effective weed removal. Will definitely call them again.",
+            "created_on": "2024-08-23",
+            "updated_on": null,
+            "approved": true,
+            "rating": 3
+        }
+    },
+    {
+        "pk": 117,
+        "model": "reviews.review",
+        "fields": {
+            "reviewer": 77,
+            "service": 2,
+            "title": "Reliable and Efficient",
+            "content": "Excellent service! My flower beds are now weed-free.",
+            "created_on": "2023-09-21",
+            "updated_on": null,
+            "approved": true,
+            "rating": 4
+        }
+    },
+    {
+        "pk": 118,
+        "model": "reviews.review",
+        "fields": {
+            "reviewer": 68,
+            "service": 2,
+            "title": "Amazing Transformation",
+            "content": "My yard has never looked cleaner, thanks to their weed removal service.",
+            "created_on": "2023-06-04",
+            "updated_on": null,
+            "approved": true,
+            "rating": 5
+        }
+    },
+    {
+        "pk": 119,
+        "model": "reviews.review",
+        "fields": {
+            "reviewer": 88,
+            "service": 2,
+            "title": "Amazing Transformation",
+            "content": "I noticed a significant improvement in my garden after their service.",
+            "created_on": "2023-05-15",
+            "updated_on": null,
+            "approved": true,
+            "rating": 3
+        }
+    },
+    {
+        "pk": 120,
+        "model": "reviews.review",
+        "fields": {
+            "reviewer": 46,
+            "service": 2,
+            "title": "Fantastic Experience",
+            "content": "Excellent service! My flower beds are now weed-free.",
+            "created_on": "2023-12-28",
+            "updated_on": null,
+            "approved": true,
+            "rating": 3
+        }
+    },
+    {
+        "pk": 121,
+        "model": "reviews.review",
+        "fields": {
+            "reviewer": 49,
+            "service": 2,
+            "title": "Will Use Again",
+            "content": "I was impressed with their attention to detail in weed removal.",
+            "created_on": "2024-06-13",
+            "updated_on": null,
+            "approved": false,
+            "rating": 3
+        }
+    },
+    {
+        "pk": 122,
+        "model": "reviews.review",
+        "fields": {
+            "reviewer": 53,
+            "service": 2,
+            "title": "Worth Every Penny",
+            "content": "They did an amazing job removing all the weeds from my garden.",
+            "created_on": "2024-04-28",
+            "updated_on": null,
+            "approved": false,
+            "rating": 4
+        }
+    },
+    {
+        "pk": 123,
+        "model": "reviews.review",
+        "fields": {
+            "reviewer": 48,
+            "service": 2,
+            "title": "Will Use Again",
+            "content": "My yard has never looked cleaner, thanks to their weed removal service.",
+            "created_on": "2023-10-20",
+            "updated_on": null,
+            "approved": false,
+            "rating": 3
+        }
+    },
+    {
+        "pk": 124,
+        "model": "reviews.review",
+        "fields": {
+            "reviewer": 21,
+            "service": 2,
+            "title": "Impressive Results",
+            "content": "No more weeds! I'm so happy with the results.",
+            "created_on": "2023-12-24",
+            "updated_on": null,
+            "approved": false,
+            "rating": 3
+        }
+    }
+]

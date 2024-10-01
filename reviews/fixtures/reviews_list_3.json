@@ -1,0 +1,142 @@
+[
+    {
+        "pk": 125,
+        "model": "reviews.review",
+        "fields": {
+            "reviewer": 50,
+            "service": 3,
+            "title": "Worth Every Penny",
+            "content": "Very professional and efficient pollarding service.",
+            "created_on": "2024-08-06",
+            "updated_on": null,
+            "approved": true,
+            "rating": 3
+        }
+    },
+    {
+        "pk": 126,
+        "model": "reviews.review",
+        "fields": {
+            "reviewer": 39,
+            "service": 3,
+            "title": "Will Use Again",
+            "content": "I'm impressed with how quickly they took down my old tree.",
+            "created_on": "2024-06-06",
+            "updated_on": null,
+            "approved": true,
+            "rating": 5
+        }
+    },
+    {
+        "pk": 127,
+        "model": "reviews.review",
+        "fields": {
+            "reviewer": 97,
+            "service": 3,
+            "title": "A Job Well Done",
+            "content": "Great attention to detail during the tree pruning.",
+            "created_on": "2023-07-30",
+            "updated_on": null,
+            "approved": true,
+            "rating": 4
+        }
+    },
+    {
+        "pk": 128,
+        "model": "reviews.review",
+        "fields": {
+            "reviewer": 57,
+            "service": 3,
+            "title": "Reliable and Efficient",
+            "content": "Their team managed the felling process with great care.",
+            "created_on": "2023-12-26",
+            "updated_on": null,
+            "approved": true,
+            "rating": 4
+        }
+    },
+    {
+        "pk": 129,
+        "model": "reviews.review",
+        "fields": {
+            "reviewer": 98,
+            "service": 3,
+            "title": "Very Satisfied",
+            "content": "The tree felling service was efficient and professional.",
+            "created_on": "2023-10-29",
+            "updated_on": null,
+            "approved": true,
+            "rating": 4
+        }
+    },
+    {
+        "pk": 130,
+        "model": "reviews.review",
+        "fields": {
+            "reviewer": 94,
+            "service": 3,
+            "title": "Loved the Service",
+            "content": "My trees look amazing after the pruning service.",
+            "created_on": "2023-11-22",
+            "updated_on": null,
+            "approved": true,
+            "rating": 3
+        }
+    },
+    {
+        "pk": 131,
+        "model": "reviews.review",
+        "fields": {
+            "reviewer": 51,
+            "service": 3,
+            "title": "Top Notch",
+            "content": "I'm impressed with how quickly they took down my old tree.",
+            "created_on": "2024-08-30",
+            "updated_on": null,
+            "approved": true,
+            "rating": 5
+        }
+    },
+    {
+        "pk": 132,
+        "model": "reviews.review",
+        "fields": {
+            "reviewer": 76,
+            "service": 3,
+            "title": "Loved the Service",
+            "content": "They trimmed my trees perfectly, enhancing the yard's beauty.",
+            "created_on": "2024-05-14",
+            "updated_on": null,
+            "approved": true,
+            "rating": 3
+        }
+    },
+    {
+        "pk": 133,
+        "model": "reviews.review",
+        "fields": {
+            "reviewer": 31,
+            "service": 3,
+            "title": "Will Use Again",
+            "content": "My trees look amazing after the pruning service.",
+            "created_on": "2023-12-06",
+            "updated_on": null,
+            "approved": false,
+            "rating": 5
+        }
+    },
+    {
+        "pk": 134,
+        "model": "reviews.review",
+        "fields": {
+            "reviewer": 69,
+            "service": 3,
+            "title": "Very Satisfied",
+            "content": "I appreciate the knowledgeable approach to coppicing.",
+            "created_on": "2024-08-04",
+            "updated_on": null,
+            "approved": false,
+            "rating": 5
+        }
+    }
+]

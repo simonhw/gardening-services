@@ -1,0 +1,408 @@
+[
+    {
+        "pk": 140,
+        "model": "reviews.review",
+        "fields": {
+            "reviewer": 76,
+            "service": 5,
+            "title": "Great Job",
+            "content": "The care they provided for my flowerbeds is unmatched.",
+            "created_on": "2023-11-10",
+            "updated_on": null,
+            "approved": false,
+            "rating": 5
+        }
+    },
+    {
+        "pk": 141,
+        "model": "reviews.review",
+        "fields": {
+            "reviewer": 41,
+            "service": 5,
+            "title": "A Job Well Done",
+            "content": "I'm so pleased with how they brought my flowerbed back to life.",
+            "created_on": "2024-04-10",
+            "updated_on": null,
+            "approved": false,
+            "rating": 5
+        }
+    },
+    {
+        "pk": 142,
+        "model": "reviews.review",
+        "fields": {
+            "reviewer": 92,
+            "service": 5,
+            "title": "Perfect Outcome",
+            "content": "They took the time to understand my vision for the flowerbed.",
+            "created_on": "2024-01-08",
+            "updated_on": null,
+            "approved": false,
+            "rating": 5
+        }
+    },
+    {
+        "pk": 143,
+        "model": "reviews.review",
+        "fields": {
+            "reviewer": 100,
+            "service": 5,
+            "title": "Exceptional Service",
+            "content": "I'm impressed by how quickly they revitalized my flowerbeds.",
+            "created_on": "2023-05-07",
+            "updated_on": null,
+            "approved": false,
+            "rating": 4
+        }
+    },
+    {
+        "pk": 144,
+        "model": "reviews.review",
+        "fields": {
+            "reviewer": 47,
+            "service": 5,
+            "title": "Exceptional Service",
+            "content": "They planted beautiful flowers that thrive in my garden.",
+            "created_on": "2023-09-02",
+            "updated_on": null,
+            "approved": false,
+            "rating": 5
+        }
+    },
+    {
+        "pk": 145,
+        "model": "reviews.review",
+        "fields": {
+            "reviewer": 68,
+            "service": 5,
+            "title": "Will Use Again",
+            "content": "They truly care about their work and it shows.",
+            "created_on": "2023-08-28",
+            "updated_on": null,
+            "approved": false,
+            "rating": 4
+        }
+    },
+    {
+        "pk": 146,
+        "model": "reviews.review",
+        "fields": {
+            "reviewer": 70,
+            "service": 5,
+            "title": "Will Use Again",
+            "content": "They provided excellent recommendations for flower varieties.",
+            "created_on": "2024-06-06",
+            "updated_on": null,
+            "approved": false,
+            "rating": 4
+        }
+    },
+    {
+        "pk": 147,
+        "model": "reviews.review",
+        "fields": {
+            "reviewer": 97,
+            "service": 5,
+            "title": "Fantastic Experience",
+            "content": "I'm thrilled with the flowerbed care service I received.",
+            "created_on": "2023-12-14",
+            "updated_on": null,
+            "approved": false,
+            "rating": 4
+        }
+    },
+    {
+        "pk": 148,
+        "model": "reviews.review",
+        "fields": {
+            "reviewer": 99,
+            "service": 5,
+            "title": "Perfect Outcome",
+            "content": "I'm thrilled with the flowerbed care service I received.",
+            "created_on": "2023-06-06",
+            "updated_on": null,
+            "approved": false,
+            "rating": 5
+        }
+    },
+    {
+        "pk": 149,
+        "model": "reviews.review",
+        "fields": {
+            "reviewer": 98,
+            "service": 5,
+            "title": "A Job Well Done",
+            "content": "They transformed my neglected flowerbed into a vibrant display.",
+            "created_on": "2023-10-24",
+            "updated_on": null,
+            "approved": false,
+            "rating": 5
+        }
+    },
+    {
+        "pk": 150,
+        "model": "reviews.review",
+        "fields": {
+            "reviewer": 61,
+            "service": 5,
+            "title": "Amazing Transformation",
+            "content": "The flowerbed care they provided exceeded my expectations.",
+            "created_on": "2023-11-02",
+            "updated_on": null,
+            "approved": false,
+            "rating": 5
+        }
+    },
+    {
+        "pk": 151,
+        "model": "reviews.review",
+        "fields": {
+            "reviewer": 79,
+            "service": 5,
+            "title": "Fantastic Experience",
+            "content": "They helped me design a stunning layout for my flowerbed.",
+            "created_on": "2023-08-08",
+            "updated_on": null,
+            "approved": false,
+            "rating": 4
+        }
+    },
+    {
+        "pk": 152,
+        "model": "reviews.review",
+        "fields": {
+            "reviewer": 72,
+            "service": 5,
+            "title": "Worth Every Penny",
+            "content": "They took the time to understand my vision for the flowerbed.",
+            "created_on": "2024-05-10",
+            "updated_on": null,
+            "approved": false,
+            "rating": 3
+        }
+    },
+    {
+        "pk": 153,
+        "model": "reviews.review",
+        "fields": {
+            "reviewer": 31,
+            "service": 5,
+            "title": "Very Satisfied",
+            "content": "The flowerbed care they provided exceeded my expectations.",
+            "created_on": "2024-04-25",
+            "updated_on": null,
+            "approved": false,
+            "rating": 4
+        }
+    },
+    {
+        "pk": 154,
+        "model": "reviews.review",
+        "fields": {
+            "reviewer": 82,
+            "service": 5,
+            "title": "Worth Every Penny",
+            "content": "They took the time to understand my vision for the flowerbed.",
+            "created_on": "2024-01-05",
+            "updated_on": null,
+            "approved": false,
+            "rating": 3
+        }
+    },
+    {
+        "pk": 155,
+        "model": "reviews.review",
+        "fields": {
+            "reviewer": 49,
+            "service": 5,
+            "title": "Loved the Service",
+            "content": "Very professional and efficient service.",
+            "created_on": "2024-02-22",
+            "updated_on": null,
+            "approved": false,
+            "rating": 3
+        }
+    },
+    {
+        "pk": 156,
+        "model": "reviews.review",
+        "fields": {
+            "reviewer": 77,
+            "service": 5,
+            "title": "Impressive Results",
+            "content": "I'm so pleased with how they brought my flowerbed back to life.",
+            "created_on": "2024-05-14",
+            "updated_on": null,
+            "approved": false,
+            "rating": 4
+        }
+    },
+    {
+        "pk": 157,
+        "model": "reviews.review",
+        "fields": {
+            "reviewer": 21,
+            "service": 5,
+            "title": "Impressive Results",
+            "content": "Very professional and efficient service.",
+            "created_on": "2024-03-15",
+            "updated_on": null,
+            "approved": false,
+            "rating": 5
+        }
+    },
+    {
+        "pk": 158,
+        "model": "reviews.review",
+        "fields": {
+            "reviewer": 40,
+            "service": 5,
+            "title": "Perfect Outcome",
+            "content": "The care they provided for my flowerbeds is unmatched.",
+            "created_on": "2023-05-09",
+            "updated_on": null,
+            "approved": false,
+            "rating": 3
+        }
+    },
+    {
+        "pk": 159,
+        "model": "reviews.review",
+        "fields": {
+            "reviewer": 57,
+            "service": 5,
+            "title": "Loved the Service",
+            "content": "I'm impressed by how quickly they revitalized my flowerbeds.",
+            "created_on": "2023-07-04",
+            "updated_on": null,
+            "approved": false,
+            "rating": 4
+        }
+    },
+    {
+        "pk": 160,
+        "model": "reviews.review",
+        "fields": {
+            "reviewer": 48,
+            "service": 5,
+            "title": "Loved the Service",
+            "content": "I'm impressed by how quickly they revitalized my flowerbeds.",
+            "created_on": "2024-07-07",
+            "updated_on": null,
+            "approved": false,
+            "rating": 3
+        }
+    },
+    {
+        "pk": 161,
+        "model": "reviews.review",
+        "fields": {
+            "reviewer": 25,
+            "service": 5,
+            "title": "Fantastic Experience",
+            "content": "They planted beautiful flowers that thrive in my garden.",
+            "created_on": "2024-08-12",
+            "updated_on": null,
+            "approved": false,
+            "rating": 3
+        }
+    },
+    {
+        "pk": 162,
+        "model": "reviews.review",
+        "fields": {
+            "reviewer": 42,
+            "service": 5,
+            "title": "Very Satisfied",
+            "content": "I appreciate their attention to detail in maintaining my flowerbeds.",
+            "created_on": "2024-04-06",
+            "updated_on": null,
+            "approved": false,
+            "rating": 4
+        }
+    },
+    {
+        "pk": 163,
+        "model": "reviews.review",
+        "fields": {
+            "reviewer": 37,
+            "service": 5,
+            "title": "Amazing Transformation",
+            "content": "They took the time to understand my vision for the flowerbed.",
+            "created_on": "2024-04-29",
+            "updated_on": null,
+            "approved": false,
+            "rating": 4
+        }
+    },
+    {
+        "pk": 164,
+        "model": "reviews.review",
+        "fields": {
+            "reviewer": 89,
+            "service": 5,
+            "title": "Amazing Transformation",
+            "content": "My flowerbed has never looked so healthy and well-kept.",
+            "created_on": "2024-01-28",
+            "updated_on": null,
+            "approved": false,
+            "rating": 3
+        }
+    },
+    {
+        "pk": 165,
+        "model": "reviews.review",
+        "fields": {
+            "reviewer": 46,
+            "service": 5,
+            "title": "Perfect Outcome",
+            "content": "They truly care about their work and it shows.",
+            "created_on": "2024-04-24",
+            "updated_on": null,
+            "approved": true,
+            "rating": 4
+        }
+    },
+    {
+        "pk": 166,
+        "model": "reviews.review",
+        "fields": {
+            "reviewer": 81,
+            "service": 5,
+            "title": "Great Job",
+            "content": "They did a fantastic job cleaning up my flowerbed.",
+            "created_on": "2024-06-23",
+            "updated_on": null,
+            "approved": true,
+            "rating": 4
+        }
+    },
+    {
+        "pk": 167,
+        "model": "reviews.review",
+        "fields": {
+            "reviewer": 39,
+            "service": 5,
+            "title": "Will Use Again",
+            "content": "The flowerbed care they provided exceeded my expectations.",
+            "created_on": "2023-06-17",
+            "updated_on": null,
+            "approved": true,
+            "rating": 5
+        }
+    },
+    {
+        "pk": 168,
+        "model": "reviews.review",
+        "fields": {
+            "reviewer": 95,
+            "service": 5,
+            "title": "A Job Well Done",
+            "content": "The care they provided for my flowerbeds is unmatched.",
+            "created_on": "2024-01-02",
+            "updated_on": null,
+            "approved": true,
+            "rating": 5
+        }
+    }
+]

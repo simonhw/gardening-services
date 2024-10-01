@@ -1,0 +1,72 @@
+[
+    {
+        "pk": 135,
+        "model": "reviews.review",
+        "fields": {
+            "reviewer": 54,
+            "service": 4,
+            "title": "Great Job",
+            "content": "I appreciate their attention to detail in hedge trimming.",
+            "created_on": "2024-01-29",
+            "updated_on": null,
+            "approved": true,
+            "rating": 5
+        }
+    },
+    {
+        "pk": 136,
+        "model": "reviews.review",
+        "fields": {
+            "reviewer": 70,
+            "service": 4,
+            "title": "Exceeded Expectations",
+            "content": "I will definitely use their hedge trimming service again.",
+            "created_on": "2023-05-13",
+            "updated_on": null,
+            "approved": true,
+            "rating": 4
+        }
+    },
+    {
+        "pk": 137,
+        "model": "reviews.review",
+        "fields": {
+            "reviewer": 95,
+            "service": 4,
+            "title": "Amazing Transformation",
+            "content": "They did a fantastic job trimming my hedges!",
+            "created_on": "2023-11-25",
+            "updated_on": null,
+            "approved": true,
+            "rating": 5
+        }
+    },
+    {
+        "pk": 138,
+        "model": "reviews.review",
+        "fields": {
+            "reviewer": 39,
+            "service": 4,
+            "title": "Highly Recommended",
+            "content": "My garden looks so much better with well-trimmed hedges.",
+            "created_on": "2023-06-03",
+            "updated_on": null,
+            "approved": true,
+            "rating": 5
+        }
+    },
+    {
+        "pk": 139,
+        "model": "reviews.review",
+        "fields": {
+            "reviewer": 20,
+            "service": 4,
+            "title": "Worth Every Penny",
+            "content": "My garden looks so much better with well-trimmed hedges.",
+            "created_on": "2023-06-17",
+            "updated_on": null,
+            "approved": false,
+            "rating": 5
+        }
+    }
+]

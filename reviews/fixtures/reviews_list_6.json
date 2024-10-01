@@ -1,0 +1,30 @@
+[
+    {
+        "pk": 170,
+        "model": "reviews.review",
+        "fields": {
+            "reviewer": 36,
+            "service": 6,
+            "title": "Loved the Service",
+            "content": "I was amazed at how fast they got rid of the stump.",
+            "created_on": "2024-04-17",
+            "updated_on": null,
+            "approved": false,
+            "rating": 5
+        }
+    },
+    {
+        "pk": 171,
+        "model": "reviews.review",
+        "fields": {
+            "reviewer": 29,
+            "service": 6,
+            "title": "Amazing Transformation",
+            "content": "The team was professional and left my yard clean after stump removal.",
+            "created_on": "2023-08-18",
+            "updated_on": null,
+            "approved": false,
+            "rating": 5
+        }
+    }
+]
