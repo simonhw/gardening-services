@@ -326,7 +326,7 @@ Key user stories for the application are outlined below. An exhaustive list can 
 
 - **Subscribe to Newsletters**: As a **Site User** I can **sign up to the website's newsletter** so that I can **be made aware of upcoming offers and information disseminated by the company**.
     - I add my email to the newsletter mailing list.
-    - I can receive feedback  confirming that I have been added to the mailing list. 
+    - I can receive feedback confirming that I have been added to the mailing list. 
 
 - **Create Facebook Page**: As a **Developer** I can **create a mock-up Facebook business page** so that I can **demonstrate how social media marketing would be implemented for the business**.
     - I can create a mock-up of a Facebook business page for The Garden Path
@@ -661,20 +661,22 @@ The footer is displayed in a single column on small screens, with a horizontal l
 ![Footer on larger screens](static/images/readme/footer-desktop.png)
 
 ## Features
-The website consists of 21 pages with varying levels of accessibility for different types of users:
+The website consists of 42 pages with varying levels of accessibility for different types of users:
 
 **Page** | **All Users** | **Authenticated User** | **Staff Users**
 :--- | :---: | :---: | :---:
 Homepage | &check; |  | 
 About Us | &check; |  | 
 All Services | &check; |  | 
-Individual Services | &check; |  | 
-Service Reviews | &check; |  | 
+Individual Services (6) | &check; |  | 
+Service Reviews (6) | &check; |  | 
 Cart | &check; |  | 
 Checkout | &check; |  | 
 Confirmation Order page | &check; |  | 
 Contact Us | &check; |  | 
 Signup and Sign in pages | &check; |  | 
+Verify Email pages (2)
+Password Reset pages (4) | &check; | |
 Error pages: 404, 403, and 500 | &check; |  | 
 Newsletter page | &check; |  | 
 Privacy Policy page | &check; |  | 
@@ -683,7 +685,7 @@ Past Order Confirmation pages |  | &check; |
 Leave a Review page |  | &check; | 
 Edit a Review page |  | &check; | 
 Sign Out page |  | &check; | 
-Unpublished Reviews page |  |  | &check;
+Unpublished Reviews (6) |  |  | &check;
 
 
 ### All pages on the website have:
@@ -1073,7 +1075,7 @@ The Contact Us form is available for all site visitors to use, regardless of the
 - Message content
 - Google reCAPTCHA check
 
-If a user is authenticated, the name, email, and phone number fields will already be completed using their user account data. The user must select a reason for contacting the business from a set list of options. Given that the page is publicly accessible to all site visitors, the reCAPTCHA check has been included to combat automated malicious form submissions.
+If a user is authenticated, the name, email, and phone number fields will already be completed using their user account data. The user must select a reason for contacting the business from a set list of options. Given that the page is publicly accessible to all site visitors, the reCAPTCHA check has been included to combat automated malicious form submissions. When the contact form is submitted successfully, the user is redirected to the homepage, a success toast message is displayed, and a copy of the message details is sent to the email address they provided in the form.
 
 <details><summary>The contact us form</summary>
 
@@ -1084,6 +1086,12 @@ If a user is authenticated, the name, email, and phone number fields will alread
 <details><summary>The contact us form with user detail fields already completed</summary>
 
 ![The contact us form with user detail fields already completed](static/images/readme/contact-filled.gif)
+
+</details>
+
+<details><summary>The contact us form success toast message</summary>
+
+![The contact us form success toast message](static/images/readme/contact-toast.png)
 
 </details>
 
@@ -1243,7 +1251,7 @@ To deploy this program locally on your device, please follow the steps below:
 3. Create an `env.py` file in your IDE root directory and confirm that it is listed in the `.gitignore` file.
 4. Create a secret key yourself or by using a website of your choice such as [Secret Key Generator](https://secretkeygen.vercel.app/).
 5. Add the following code to your `env.py` file making sure to replace `<enter-copied-url-here>` with the URL you copied in step 2 and `<your-secret-key>` with the one you generated in step 4:
-    ```
+    ```python
       import os
 
       os.environ['DATABASE_URL'] = '<enter-copied-url-here>'
@@ -1257,7 +1265,7 @@ To deploy this program locally on your device, please follow the steps below:
 2. Navigate to your Dashboard and click the **Developers** button at the top of the page.
 3. Click the **API Keys** heading to reveal your keys.
 3. Copy your Publishable key and Secret key and save them in your `env.py` file in the following format:
-    ```
+    ```python
     os.environ['STRIPE_PUBLIC_KEY'] = '<publishable-key>'
     os.environ['STRIPE_SECRET_KEY'] = '<secret-key>'
     ```
@@ -1268,7 +1276,7 @@ To deploy this program locally on your device, please follow the steps below:
 7. At the bottom of this list, click **Add Endpoint**.
 8. On your new webhook's page, click **Reveal** under Signing secret at the top of the page and copy the key.
 9. In `env.py` add this key using the following format:
-    ```
+    ```python
     os.environ['STRIPE_WH_SECRET'] = '<signing-secret>'
     ```
     where `<signing-secret>` is the key you just copied.
@@ -1284,7 +1292,7 @@ To deploy this program locally on your device, please follow the steps below:
 7. Copy the ID at the top of the page. This is your reCAPTCHA public key.
 8. Click **USE LEGACY KEY** on the right-hand side of the page and copy the key. This is your reCAPTCHA private key.
 9. Add these keys to your `env.py` file in the following format:
-    ```
+    ```python
     os.environ['RECAPTCHA_PUBLIC_KEY'] = '<public-key>'
     os.environ['RECAPTCHA_PRIVATE_KEY'] = '<private-key>'
     ```
@@ -1299,7 +1307,7 @@ To deploy this program locally on your device, please follow the steps below:
 6. Enter an appropriate app name and click **Create**.
 7. Copy the app password that is shown on your screen.
 8. In your `env.py` file, add the following lines:
-    ```
+    ```python
     os.environ['EMAIL_HOST_USER'] = '<your-email>'
     os.environ['EMAIL_HOST_PASS'] = '<your-app-password>'
     ```
@@ -1317,7 +1325,7 @@ To deploy this project yourself on Heroku, please follow the following additiona
 5. Click the name of your new bucket and navigate to the properties tab.
 6. Scroll to the bottom and under **Static website hosting**, tick "Use this bucket to host a website", and click save.
 7. On the **Permissions** tab, paste the following code into the CORS section:
-    ```
+    ```json
     [
         {
             "AllowedHeaders": [
@@ -1350,7 +1358,7 @@ To deploy this project yourself on Heroku, please follow the following additiona
 3. Go to the **Create Policy** page and on the JSON tab, click **Import managed policy**.
 4. Find "AmazonS3FullAccess" in the list of options and import it.
 5. Update the Resource key in the following format:
-    ```
+    ```json
     "Resource": [
         "<arn-string>",
         "<arn-string>/*"
