@@ -328,6 +328,14 @@ td > img,
     padding: 10px;
 }
 
+/* Make summary of cart with many services a scrollable list on
+   the chekout page */
+.checkout-services-wrapper {
+    max-height: 250px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
 /* Border classes for testing grid layouts */
 .bdr-r {
     border: 1px solid red;
@@ -373,6 +381,14 @@ td > img,
 
 .step-links {
     width: 104px;
+}
+
+/* Smaller font size on mobiles for service names
+   in checkout cart summary */
+@media (max-width: 473px) {
+    .fs-mob-smaller {
+        font-size: smaller;
+    }
 }
 
 @media (min-width: 473px) {

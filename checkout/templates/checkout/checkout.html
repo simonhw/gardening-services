@@ -178,19 +178,21 @@
                                         <p><b>Subtotal</b></p>
                                     </div>
                                 </div>
-                                {% for item in cart_items %}
-                                <div class="row">
-                                    <div class="d-none d-sm-inline col-sm-2 offset-sm-1 my-1">
-                                        <img src="{{ MEDIA_URL }}{{ item.service.image }}" class="w-100 rounded"  alt="Image of a {{ service.name }} service"/>
+                                <div class="checkout-services-wrapper">
+                                    {% for item in cart_items %}
+                                    <div class="row">
+                                        <div class="d-none d-sm-inline col-sm-2 offset-sm-1 my-1">
+                                            <img src="{{ MEDIA_URL }}{{ item.service.image }}" class="w-100 rounded"  alt="Image of a {{ service.name }} service"/>
+                                        </div>
+                                        <div class="col-6 offset-1 col-sm-5 offset-sm-0">
+                                            <p class="my-0 fs-mob-smaller"><b>{{item.number}} x {{ item.service.name }}</b></p>
+                                        </div>
+                                        <div class="col-4 col-sm-3 text-center">
+                                            <p class="my-0 small text-muted">${{ item.service.unit_price | calc_subtotal:item.number }}</p>
+                                        </div>
                                     </div>
-                                    <div class="col-6 offset-1 col-sm-5 offset-sm-0">
-                                        <p class="my-0"><b>{{item.number}} x {{ item.service.name }}</b></p>
-                                    </div>
-                                    <div class="col-4 col-sm-3 text-center">
-                                        <p class="my-0 small text-muted">${{ item.service.unit_price | calc_subtotal:item.number }}</p>
-                                    </div>
+                                    {% endfor %}
                                 </div>
-                                {% endfor %}
                                 <hr>
                                 <div class="row">
                                     <div class="col-6 col-sm-7 offset-1">
