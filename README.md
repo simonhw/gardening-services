@@ -311,6 +311,13 @@ Key user stories for the application are outlined below. An exhaustive list can 
     - I can view the business' contact details.
     - I can send a message to the business using a form.
 
+- **Contact Us Email Confirmation**: As a **Site User** I can **receive an email copy of my enquiry** so that I can **have my own record of the correspondence**.
+    - When I send a message via the Contact Us form, I can receive a copy of the message sent to me via email.
+
+
+- **Pre-filled Contact Us Form**: As a **Site User** I can **have my account details pre-filled in the contact us form** so that I can **avoid typing out data already provided by my user account**.
+    - When I am logged in and navigate to the contact us form, I can find my name, email, and phone number pre-filled in the form.
+
 </details> 
 
 #### EPIC: Marketing

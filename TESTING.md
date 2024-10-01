@@ -204,28 +204,30 @@ View Business Information | Viewing the About Us page. Reading the business info
 Create Error Pages | Creating 404, 403, and 500 error page templates. | ![Closed Issue on kanban board](static/images/testing/kanban/error.png)
 View Privacy Policy | Navigating to the privacy policy page from a link in the footer and reading the privacy policy on a dedicated webpage. | ![Closed Issue on kanban board](static/images/testing/kanban/privacy.png)
 **Services and Checkout** | |
-View Individual Service Details | | ![Closed Issue on kanban board](static/images/testing/kanban)
-Order a Service | | ![Closed Issue on kanban board](static/images/testing/kanban)
-View Cart | | ![Closed Issue on kanban board](static/images/testing/kanban)
-View Preview of Cart | | ![Closed Issue on kanban board](static/images/testing/kanban)
-Update Services from the Cart Page | | ![Closed Issue on kanban board](static/images/testing/kanban)
-Proceed to Checkout | | ![Closed Issue on kanban board](static/images/testing/kanban)
+View Individual Service Details | Clicking on a service link in the navbar or services page. Reading the service description, price, and rating. | ![Closed Issue on kanban board](static/images/testing/kanban/service.png)
+Order a Service | Viewing the list of services that can be booked, selecting the relevant options, and adding the service(s) to the shopping cart. | ![Closed Issue on kanban board](static/images/testing/kanban/add-service.png)
+View Cart | Navigating to the cart page and viewing the list of services. Viewing each service's individual cost and the total cost of the order. | ![Closed Issue on kanban board](static/images/testing/kanban/cart.png)
+View Preview of Cart | Adding a service to the cart on smaller screens and viewing the toast message with the cart details. On desktop screens, adding a service to the cart and viewing the cart preview in the offcanvas window. | ![Closed Issue on kanban board](static/images/testing/kanban/cart-preview.png)
+Update Services from the Cart Page | Changing the number of a given service with the **+** and **-** buttons and seeing the subtotal price change. Removing a service from the cart with the remove button or by entering 0 into the number field. Viewing the order total update after updating or deleting a service. | ![Closed Issue on kanban board](static/images/testing/kanban/update-services.png)
+Proceed to Checkout | Clicking the checkout button and entering personal details, delivery details, and payment information before reviewing a summary of the order. | ![Closed Issue on kanban board](static/images/testing/kanban/checkout.png)
 **Payment System** | |
-Set Up Stripe | | ![Closed Issue on kanban board](static/images/testing/kanban)
-Pay for an Order | | ![Closed Issue on kanban board](static/images/testing/kanban)
-Receive Confirmation of Orders | | ![Closed Issue on kanban board](static/images/testing/kanban)
+Set Up Stripe | Installing Stripe, setting up a webhook handler, and implementing views to process the payment and order data. | ![Closed Issue on kanban board](static/images/testing/kanban/stripe.png)
+Pay for an Order | Entering payment details in the checkout process and being informed of the success or failure of the payment attempt. | ![Closed Issue on kanban board](static/images/testing/kanban/pay.png)
+Receive Confirmation of Orders | Seeing a confirmation message on the site with an order number provided, viewing the submitted order details on the account page, and viewing the order details in an email confirmation. | ![Closed Issue on kanban board](static/images/testing/kanban/confirm.png)
 **Reviews** | |
-View Reviews | | ![Closed Issue on kanban board](static/images/testing/kanban)
-Review a Service | | ![Closed Issue on kanban board](static/images/testing/kanban)
-Edit a Review | | ![Closed Issue on kanban board](static/images/testing/kanban)
-Publish Reviews | | ![Closed Issue on kanban board](static/images/testing/kanban)
-Delete a Review | | ![Closed Issue on kanban board](static/images/testing/kanban)
+View Reviews | On a particular service page, viewing all reviews for that service and navigating through the reviews via pagination. | ![Closed Issue on kanban board](static/images/testing/kanban/reviews.png)
+Review a Service | Interacting with a "Leave a Review" button, rating the service out of 5 stars, and writing a title and brief review. | ![Closed Issue on kanban board](static/images/testing/kanban/create.png)
+Edit a Review | For a particular review made, clicking the edit button and amending the title, content, and or the rating and saving the changes. | ![Closed Issue on kanban board](static/images/testing/kanban/edit.png)
+Publish Reviews | For a given pending review, publishing it to the website making it publicly visible.  For a given published review, unpublishing and preventing users from seeing it. | ![Closed Issue on kanban board](static/images/testing/kanban/publish.png)
+Delete a Review | Clicking the delete button when rendered and interacting with the modal to  with the option to confirm or cancel the delete action before it takes effect. | ![Closed Issue on kanban board](static/images/testing/kanban/delete.png)
 **Contact Us** | |
-View Contact Us Page | | ![Closed Issue on kanban board](static/images/testing/kanban)
+View Contact Us Page | Navigating to the Contact Us page from the main nav bar and sending a message to the business using a form. | ![Closed Issue on kanban board](static/images/testing/kanban/contact.png)
+Contact Us Email Confirmation | Submitting a message using the Contact Us form and receiving a copy of the message via email. | ![Closed Issue on kanban board](static/images/testing/kanban/contact-confirm.png)
+Pre-filled Contact Us Form | Being logged into an account with details saved to the database and navigating to the Contact Us page. Seeing that the full name, email, and phone number fields are already completed using this data. | ![Closed Issue on kanban board](static/images/testing/kanban/contact-filled.png)
 **Marketing** | |
-Subscribe to Newsletters | | ![Closed Issue on kanban board](static/images/testing/kanban)
-Create Facebook Page | | ![Closed Issue on kanban board](static/images/testing/kanban)
-Search Engine Optimisation | | ![Closed Issue on kanban board](static/images/testing/kanban)
+Subscribe to Newsletters | Submitting an email in the newsletter form and receiving visual feedback confirming successful addition to the mailing list. | ![Closed Issue on kanban board](static/images/testing/kanban/newsletter.png)
+Create Facebook Page | Creating a mock-up of a Facebook business page for The Garden Path with relevant images and text. | ![Closed Issue on kanban board](static/images/testing/kanban/facebook.png)
+Search Engine Optimisation | Conducting research on and implementing keywords, creating a `robots.txt` file, creating a `sitemap.xml` file, employing descriptive meta tags, adding appropriate `rel` attributes on external links, and adding links to reputable websites related to the business. | ![Closed Issue on kanban board](static/images/testing/kanban)
 
 ### Full Testing
 The program was deployed on Heroku and tested there on a Windows 10 desktop with a 26" monitor and on a One Plus 9 Pro mobile phone.
