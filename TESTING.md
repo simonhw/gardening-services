@@ -227,7 +227,7 @@ Pre-filled Contact Us Form | Being logged into an account with details saved to 
 **Marketing** | |
 Subscribe to Newsletters | Submitting an email in the newsletter form and receiving visual feedback confirming successful addition to the mailing list. | ![Closed Issue on kanban board](static/images/testing/kanban/newsletter.png)
 Create Facebook Page | Creating a mock-up of a Facebook business page for The Garden Path with relevant images and text. | ![Closed Issue on kanban board](static/images/testing/kanban/facebook.png)
-Search Engine Optimisation | Conducting research on and implementing keywords, creating a `robots.txt` file, creating a `sitemap.xml` file, employing descriptive meta tags, adding appropriate `rel` attributes on external links, and adding links to reputable websites related to the business. | ![Closed Issue on kanban board](static/images/testing/kanban)
+Search Engine Optimisation | Conducting research on and implementing keywords, creating a `robots.txt` file, creating a `sitemap.xml` file, employing descriptive meta tags, adding appropriate `rel` attributes on external links, and adding links to reputable websites related to the business. | ![Closed Issue on kanban board](static/images/testing/kanban/seo.png)
 
 ### Full Testing
 The program was deployed on Heroku and tested there on a Windows 10 desktop with a 26" monitor and on a One Plus 9 Pro mobile phone.
@@ -662,17 +662,43 @@ In `apps.py`, Flake8 flags `checkout.signals` as being imported but never used. 
 </details>
 
 #### Accessibility Testing
-The WAVE tool was used to assess the website for any errors or issues associated with accessibility. The results and comments for each page are as follows:
+The WAVE tool was used to assess the website for any errors or issues associated with accessibility. The results and comments for each page are listed below.
+- All pages with the navbar contained an alert for a redundant homepage link. Both the site logo and the Home navbar link direct the user to the homepage. This in an intended design feature as users expect to click a site's logo to get back to the homepage and on mobile screens the user tap the logo to get back to the homepage instead of having to open the dropdown navbar menu. 
+This alert is not discussed again in the below list but is seen in the WAVE screenshots.
 
-##### Index Page
-No errors were detected.
-
-![WAVE results for index.html](static/images/testing/wave-index.png)
-
-##### About Page
-No errors were detected.
-
-![WAVE results for about.html](static/images/testing/wave-about.png)
+Page | No Errors | Comments | Supporting Image
+:--- | :---: | :--- | :---: 
+Homepage | &check; | | ![WAVE results for index.html](static/images/testing/wave-index.png)
+About Us | &check; | | ![WAVE results for about.html](static/images/testing/wave-about.png)
+My Account | | | ![WAVE results for .html](static/images/testing)
+All Services |  &check;| | ![WAVE results for .html](static/images/testing)
+Grass Cutting | | | ![WAVE results for .html](static/images/testing)
+Weeding | | | ![WAVE results for .html](static/images/testing)
+Tree Maintenance | | | ![WAVE results for .html](static/images/testing)
+Hedge Cutting | | | ![WAVE results for .html](static/images/testing)
+Flowerbed Care | | | ![WAVE results for .html](static/images/testing)
+Tree Stump Removal | | | ![WAVE results for .html](static/images/testing)
+Reviews | | | ![WAVE results for .html](static/images/testing)
+Create Reviews | | | ![WAVE results for .html](static/images/testing)
+Unpublished Reviews | | | ![WAVE results for .html](static/images/testing)
+Cart | | | ![WAVE results for .html](static/images/testing)
+Checkout | | | ![WAVE results for .html](static/images/testing)
+Checkout Success | | | ![WAVE results for .html](static/images/testing)
+Contact Us | | | ![WAVE results for .html](static/images/testing)
+Newsletter | | | ![WAVE results for .html](static/images/testing)
+Privacy Policy | | | ![WAVE results for .html](static/images/testing)
+403 | | | ![WAVE results for .html](static/images/testing)
+404 | | | ![WAVE results for .html](static/images/testing)
+500 | | | ![WAVE results for .html](static/images/testing)
+Sign In | | | ![WAVE results for .html](static/images/testing)
+Sign Up | | | ![WAVE results for .html](static/images/testing)
+Sign Out | | | ![WAVE results for .html](static/images/testing)
+Reset Password | | | ![WAVE results for .html](static/images/testing)
+Reset Password Done | | | ![WAVE results for .html](static/images/testing)
+Change Password | | | ![WAVE results for .html](static/images/testing)
+Password Changed | | | ![WAVE results for .html](static/images/testing)
+Sign Up Email Sent | | | ![WAVE results for .html](static/images/testing)
+Verify Email | | | ![WAVE results for .html](static/images/testing)
 
 #### Lighthouse Testing
 ##### Home Page
