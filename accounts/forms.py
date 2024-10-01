@@ -3,6 +3,7 @@ from allauth.account.forms import SignupForm, LoginForm, ResetPasswordForm
 from .models import CustomUser
 from django import forms
 from .models import UserAccount
+from django.core.exceptions import ValidationError
 
 
 class CustomUserCreationForm(SignupForm):
@@ -93,6 +94,20 @@ class CustomUserCreationForm(SignupForm):
         'password1',
         'password2',
     ]
+
+    def clean_email(self):
+        """
+        Check if the provided email address already exists in the
+        database and raise a ValidationError if so.
+        """
+
+        cleaned_data = super().clean()
+        email = cleaned_data.get('email')
+        
+        if CustomUser.objects.get(email=email):
+            raise ValidationError('This email address is already in use')
+        else:
+            return email
 
     def try_save(self, request):
         """
