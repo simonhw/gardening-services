@@ -3,7 +3,7 @@
 The Garden Path is an e-commerce website for a fictional gardening and landscaping business based in Munster, Ireland. The site offers customers a variety of services ranging from grass cutting and weed removal to arboriculture and tree stump removal. Customer reviews are visible to all site users, and registered users can view their order history and update their details.
 This website is responsive and designed to be viewed on a variety of screen sizes. 
 
-![AmIResponsive Layout of Website]()
+![AmIResponsive Layout of Website](static/images/readme/amiresponsive-gardenpath.png)
 
 Deployed program on Heroku: [The Garden Path](https://gardening-services-e596b6371c3f.herokuapp.com/)
 
