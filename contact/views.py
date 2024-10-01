@@ -18,7 +18,8 @@ def contact_us(request):
             contact_us = contact_us_form.save(commit=False)
             contact_us.save()
             messages.success(
-                request, 'Message successfully sent.'
+                request, f'Message successfully sent. A copy of your message \
+                    has been sent to {contact_us.email}'
             )
             _send_contact_email(contact_us_form)
             return redirect('home')
