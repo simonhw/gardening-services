@@ -225,7 +225,11 @@ def amend_cart(request, item_id):
 
     if surface:
         if surface == 'Bed/Planter':
-            if number > 0:
+            if number > 99:
+                messages.error(
+                    request, 'Number of services must be 99 or less.'
+                )
+            elif number > 0:
                 # Update the number of the specific size Bed/Planter
                 cart[item_id]['surfaces'][surface]['sizes'][size] = number
                 messages.success(
@@ -243,7 +247,11 @@ def amend_cart(request, item_id):
                 if not cart[item_id]['surfaces']:
                     cart.pop(item_id)
         else:
-            if number > 0:
+            if number > 99:
+                messages.error(
+                    request, 'Number of services must be 99 or less.'
+                )
+            elif number > 0:
                 # Update the number of the specific size Driveway/Patio
                 cart[item_id]['surfaces'][surface] = number
                 messages.success(
@@ -260,7 +268,11 @@ def amend_cart(request, item_id):
                 if not cart[item_id]['surfaces']:
                     cart.pop(item_id)
     elif tree:
-        if number > 0:
+        if number > 99:
+                messages.error(
+                    request, 'Number of services must be 99 or less.'
+                )
+        elif number > 0:
             # Update the number of the specific size tree service
             cart[item_id]['cuts'][tree]['sizes'][size] = number
             messages.success(
@@ -278,7 +290,11 @@ def amend_cart(request, item_id):
             if not cart[item_id]['cuts']:
                 cart.pop(item_id)
     elif size:
-        if number > 0:
+        if number > 99:
+                messages.error(
+                    request, 'Number of services must be 99 or less.'
+                )
+        elif number > 0:
             # Update the number of the specific size service
             cart[item_id]['sizes'][size] = number
             messages.success(
@@ -294,7 +310,11 @@ def amend_cart(request, item_id):
             if not cart[item_id]['sizes']:
                 cart.pop(item_id)
     else:
-        if number > 0:
+        if number > 99:
+                messages.error(
+                    request, 'Number of services must be 99 or less.'
+                )
+        elif number > 0:
             # Update the number of the specific service
             cart[item_id] = number
             messages.success(
