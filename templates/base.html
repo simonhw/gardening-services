@@ -91,7 +91,7 @@
                         <a class="nav-link {% if request.path == about_url %}active{% endif %}" href="{% url 'about' %}">About Us</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle {% if request.path == services_url %}active{% endif %}" href="{% url 'services' %}" role="button" data-bs-toggle="dropdown"
+                        <a class="nav-link dropdown-toggle {% if request.path == services_url %}active{% endif %}" href="" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false">
                             Services
                         </a>
@@ -170,7 +170,7 @@
                                 <p class="my-0"><span class="fw-bold">{{ item.service.name }} {% if item.number > 1 %}({{ item.number }}){% endif %}</span></p>
                             </div>
                             <div class="col-4">
-                                <img src="{{ MEDIA_URL }}{{ item.service.image }}" alt="Image of a {{ service.name }} service"/>
+                                <img src="{{ MEDIA_URL }}{{ item.service.image }}" alt="{{ service.alt }}"/>
                             </div>
                             <div class="col-8">
                                 <div class="row">
@@ -221,7 +221,7 @@
                     <div class="row">
                         <div class="col-12">
                             <i class="fa-solid fa-phone"></i>
-                            <a href="tel:087-1234567" class="fern-green" rel="noopener"
+                            <a href="tel:087-1234567" class="hunter-green" rel="noopener"
                             aria-label="Call us (opens your phone app or program and auto-fills our phone number)">
                                 087 123 4567
                             </a>
@@ -230,7 +230,7 @@
                     <div class="row">
                         <div class="col-12">
                             <i class="fa-solid fa-envelope"></i>
-                            <a href="mailto:info@thegardenpath.ie" class="fern-green" rel="noopener"
+                            <a href="mailto:info@thegardenpath.ie" class="hunter-green" rel="noopener"
                             aria-label="Email us (opens your email app or program with our email in the To field)">
                                 info@thegardenpath.ie
                             </a>
@@ -258,13 +258,13 @@
                     <span class="fw-bold">Useful Links</span>
                     <ul class="plain-list">
                         <li>
-                            <a href="{% url 'privacy_policy' %}" class="fern-green">Our Privacy Policy</a>
+                            <a href="{% url 'privacy_policy' %}" class="hunter-green">Our Privacy Policy</a>
                         </li>
                         <li>
-                            <a href="{% url 'subscribe' %}" class="fern-green">Join our Mailing List</a>
+                            <a href="{% url 'subscribe' %}" class="hunter-green">Join our Mailing List</a>
                         </li>
                         <li>
-                            <a href="https://rhsi.ie/" class="fern-green" target="_blank" aria-label="Open the Royal Horticultural Society of Ireland website in a new tab">The Royal Horticultural Society of Ireland</a>
+                            <a href="https://rhsi.ie/" class="hunter-green" target="_blank" aria-label="Open the Royal Horticultural Society of Ireland website in a new tab">The Royal Horticultural Society of Ireland</a>
                         </li>
                     </ul>
                 </div>
@@ -272,13 +272,13 @@
                 <!-- External Links Div -->
                 <div class="col-12 py-2 col-md-4 order-md-1 py-md-0 d-md-flex flex-md-column justify-content-md-center hunter-green">
                     <div>
-                        The Garden Path is an accredited member of the <a href="https://alci.ie/" class="fern-green" target="_blank" aria-label="Open the Associaton of Landscape Contracters in Ireland website in a new tab">Associaton of Landscape Contracters in Ireland</a>
+                        The Garden Path is an accredited member of the <a href="https://alci.ie/" class="hunter-green" target="_blank" aria-label="Open the Associaton of Landscape Contracters in Ireland website in a new tab">Associaton of Landscape Contracters in Ireland</a>
                     </div>
                 </div>
             </div>
             <hr class="col-10 offset-1 d-md-none">
             <!-- Copyright Div -->
-            <div class="row mt-2 mb-2 text-center fern-green fs-10">
+            <div class="row mt-2 mb-2 text-center hunter-green fs-10">
                 <p>Copyright 2024 &copy; The Garden Path</p>
             </div>
         </div>

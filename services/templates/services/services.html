@@ -33,9 +33,9 @@
                             <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 mb-1">
                                 <div class="card h-100 border-0">
                                     <a href="{% url 'service_page' service.id %}" class="plain-anchor">
-                                        <img src="{{ MEDIA_URL }}{{ service.image }}" class="card-img-top img-shadow" alt="Image of a {{ service.name }} service">
+                                        <img src="{{ MEDIA_URL }}{{ service.image }}" class="card-img-top img-shadow" alt="{{ service.alt }}">
                                         <div class="card-body">
-                                            <h5 class="card-title mate hunter-green text-center">{{ service.name }}</h5>
+                                            <h2 class="card-title mate hunter-green text-center fs-5">{{ service.name }}</h2>
                                         </div>
                                     </a>
                                 </div>
@@ -51,29 +51,29 @@
     <section id="pricing-cards">
         <div class="row sage-green-bg pt-3 pb-4">
             <div class="col-10 offset-1">
-                <h2 class="mate text-center isabelline">Pricing Model</h2>
+                <h2 class="mate text-center text-dark">Pricing Model</h2>
                 <div class="d-flex flex-wrap justify-content-center pricing-cards">
                     <div class="card m-2">
                         <div class="card-body">
-                            <h5 class="card-title mate text-center">Garden Maintenance</h5>
+                            <h3 class="card-title mate text-center fs-5">Garden Maintenance</h3>
                             <p class="card-text">€70 per man hour.<br>All grass and border work including flowerbed care. Two hour minimum.</p>
                         </div>
                     </div>
                     <div class="card m-2">
                         <div class="card-body">
-                            <h5 class="card-title mate text-center">Clearance Work</h5>
+                            <h3 class="card-title mate text-center fs-5">Clearance Work</h3>
                             <p class="card-text">€90 per man hour.<br>Weeding and removal of wood and green waste. Weed treatment on driveways and paths. Two hour minimum.</p>
                         </div>
                     </div>
                     <div class="card m-2">
                         <div class="card-body">
-                            <h5 class="card-title mate text-center">Shrubs and Hedges</h5>
+                            <h3 class="card-title mate text-center fs-5">Shrubs and Hedges</h3>
                             <p class="card-text">€50-€70 per hour.<br>Shaping, pruning, and removal services for all types of hedges and shrubbery.</p>
                         </div>
                     </div>
                     <div class="card m-2">
                         <div class="card-body">
-                            <h5 class="card-title mate text-center">Trees and Stumps</h5>
+                            <h3 class="card-title mate text-center fs-5">Trees and Stumps</h3>
                             <p class="card-text">€140 per man hour.<br>Specialist tree surgeon will fell, trim, or coppice trees on site. Stump removal incurs an additional €50 per stump. </p>
                         </div>
                     </div>

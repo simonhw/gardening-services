@@ -41,6 +41,7 @@ class Service(models.Model):
     unit_price = models.DecimalField(max_digits=6, decimal_places=2)
     description = models.TextField()
     image = models.ImageField(null=True, blank=True)
+    alt = models.CharField(null=True, max_length=254)
     review_count = models.PositiveIntegerField(null=True, blank=True)
     average_rating = models.DecimalField(
                                  max_digits=2, decimal_places=1,
