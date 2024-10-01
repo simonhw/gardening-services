@@ -10,3 +10,11 @@ def index_page(request):
         request,
         "home/index.html"
     )
+
+
+def test_500_error_page(request):
+    """
+    Method to raise an Exception and trigger the 500 error page
+    """
+
+    raise Exception("Testing the 500 error page")
