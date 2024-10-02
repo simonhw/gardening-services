@@ -15,7 +15,8 @@ class CustomUserCreationForm(SignupForm):
         required=True,
         widget=forms.TextInput(
             attrs={
-                'placeholder': 'First Name *'
+                'placeholder': 'First Name *',
+                'aria-label': 'First Name'
             }
         )
         )
@@ -26,7 +27,8 @@ class CustomUserCreationForm(SignupForm):
         required=True,
         widget=forms.TextInput(
             attrs={
-                'placeholder': 'Last Name *'
+                'placeholder': 'First Name *',
+                'aria-label': 'Last Name'
             }
         )
         )
@@ -64,25 +66,29 @@ class CustomUserCreationForm(SignupForm):
         self.fields['email'].label = ''
         self.fields['email'].widget = forms.EmailInput(
             attrs={
-                'placeholder': 'Email Address *'
+                'placeholder': 'Email Address *',
+                'aria-label': 'Email Address',
                 }
             )
         self.fields['email2'].label = ''
         self.fields['email2'].widget = forms.EmailInput(
             attrs={
-                'placeholder': 'Confirm Email Address *'
+                'placeholder': 'Confirm Email Address *',
+                'aria-label': 'Confirm Email Address',
                 }
             )
         self.fields['password1'].label = ''
         self.fields['password2'].label = ''
         self.fields['password1'].widget = forms.PasswordInput(
             attrs={
-                'placeholder': 'Password *'
+                'placeholder': 'Password *',
+                'aria-label': 'Password',
                 }
             )
         self.fields['password2'].widget = forms.PasswordInput(
             attrs={
-                'placeholder': 'Confirm Password *'
+                'placeholder': 'Confirm Password *',
+                'aria-label': 'Confirm Password',
                 }
             )
 
@@ -122,11 +128,23 @@ class CustomUserCreationForm(SignupForm):
 class CustomLoginForm(LoginForm):
     """ A custom login form to allow for customisation """
 
+
+
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
         self.fields['login'].label = ''
+        self.fields['login'].widget.attrs.update(
+            {
+                'aria-label': 'Email Address'
+            }
+        )
         self.fields['password'].label = ''
+        self.fields['password'].widget.attrs.update(
+            {
+                'aria-label': 'Password'
+            }
+        )
 
 
 class CustomResetPasswordForm(ResetPasswordForm):
@@ -136,7 +154,11 @@ class CustomResetPasswordForm(ResetPasswordForm):
         super().__init__(*args, **kwargs)
 
         self.fields['email'].label = ''
-
+        self.fields['email'].widget.attrs.update(
+            {
+                'aria-label': 'Email Address'
+            }
+        )
 
 class CustomUserChangeForm(UserChangeForm):
     """ Specify the model used for editing a user """
@@ -180,3 +202,8 @@ class UserAccountForm(forms.ModelForm):
             self.fields[field].widget.attrs['placeholder'] = placeholder
             self.fields[field].widget.attrs['class'] = 'stripe-style-input'
             self.fields[field].label = False
+            self.fields[field].widget.attrs.update(
+                {
+                    'aria-label': placeholder
+                }
+            )
