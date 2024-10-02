@@ -156,11 +156,11 @@
         <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
             <div class="d-none" id="serviceAdded">{{ service_added }}</div>
             <div class="offcanvas-header hunter-green-bg isabelline img-shadow">
-                <h5 class="offcanvas-title" id="offcanvasRightLabel">Cart Updated!</h5>
+                <h2 class="offcanvas-title fs-5" id="offcanvasRightLabel">Cart Updated!</h2>
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
             <div class="offcanvas-body">
-                <h6>Items in Cart: {{ item_count }}</h6>
+                <h3 class="fs-6">Items in Cart: {{ item_count }}</h3>
                 <hr>
                 <div class="desktop-cart-preview-wrapper">
                     {% for item in cart_items %}
