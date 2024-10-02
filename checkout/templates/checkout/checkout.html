@@ -90,10 +90,8 @@
                             <input type="checkbox" class="form-check-input ml-2 mr-0" id="id-save-info" name="save-info" checked>
                             <label for="id-save-info" class="form-check-label">Save these details to my profile</label>
                             {% else %}
-                            <label for="id-save-info" class="form-check-label">
-                                <a href="{% url 'account_signup' %}" class="hunter-green">Create an account</a> or 
-                                <a href="{% url 'account_login' %}" class="hunter-green">login</a> to save this information.
-                            </label>
+                            <a href="{% url 'account_signup' %}" class="hunter-green">Create an account</a> or 
+                            <a href="{% url 'account_login' %}" class="hunter-green">login</a> to save this information.
                             {% endif %}
                         </div>
                     </fieldset>
