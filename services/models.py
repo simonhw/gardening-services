@@ -27,7 +27,6 @@ class Service(models.Model):
         category (ForeignKey) - The category type of the service
         name (CharField) - The name of the service
         unit_price (DecimalField) - The minimum price of the service
-                                    based on how it is carried out
         description (TextField) - A full description of the service
         image (URLField) - An image representing the service
         alt (CharField) - Image alt test for accessibility

@@ -8,10 +8,10 @@ This website is responsive and designed to be viewed on a variety of screen size
 Deployed program on Heroku: [The Garden Path](https://gardening-services-e596b6371c3f.herokuapp.com/)
 
 ![GitHub last commit](https://img.shields.io/github/last-commit/simonhw/gardening-services)
-![HTML Static Badge]()
-![CSS Static Badge]()
-![Python Static Badge]()
-![JavaScript Static Badge]()
+![HTML Static Badge](https://img.shields.io/badge/HTML5-%20validated%20-%20green?style=flat&logo=HTML5&logoColor=white&labelColor=%23E44D26&color=light%20green)
+![CSS Static Badge](https://img.shields.io/badge/CSS%20-%20validated%20-%20green?style=flat&logo=CSS3&logoColor=white&labelColor=%23264de4&color=light%20green)
+![Python Static Badge](https://img.shields.io/badge/Python%20-%20validated%20-%20green?style=flat&logo=Python&logoColor=white&labelColor=blue&color=light%20green)
+![JavaScript Static Badge](https://img.shields.io/badge/JavaScript%20-%20validated%20-%20green?style=flat&logo=JavaScript&logoColor=white&labelColor=%23e4a125&color=light%20green)
 ![GitHub contributors](https://img.shields.io/github/contributors/simonhw/gardening-services)
 
 ## Contents
@@ -31,17 +31,18 @@ Deployed program on Heroku: [The Garden Path](https://gardening-services-e596b63
     - [CRUD Functionality](#crud-functionality)
     - [Responsiveness](#responsiveness)
 - [Features](#features)
+    - [Custom Models](#custom-models)
     - [The Homepage](#the-homepage)
     - [The About Page](#the-about-page)
     - [The Service Pages](#the-service-pages)
     - [The Shopping Cart](#the-shopping-cart)
     - [The Checkout Page](#the-checkout-page)
-    - [Signup, Login, and Logout](#signup-login-and-logout)
+    - [Signup, Login, and Logout](#user-accounts)
     - [My Account Page](#my-account-page)
     - [The Reviews Page](#the-reviews-page)
-    - [Contact Us Page](#contact-us-page)
-    - [Newsletter Page](#newsletter-page)
-    - [Privacy Policy](#privacy-policy)
+    - [Contact Us Page](#the-contact-us-page)
+    - [Newsletter Page](#the-newsletter-page)
+    - [Privacy Policy](#the-privacy-policy-page)
     - [Email Functionality](#email-functionality)
     - [Error Pages](#error-pages)
     - [Features to be Implemented](#features-to-be-implemented)
@@ -95,7 +96,7 @@ Each user story was assigned a number of labels to aid in the project workflow. 
 Using the Agile method allowed this project to be managed well in small chunks. The developer was able to work on specific tasks without losing focus and manage and project the time required for these tasks optimally.
 
 ### Business Model
-The Garden Path is designed as a Business to Customer (B2C) e-commerce application. Individuals are the main type of customer being targeted for the services being sold, although other businesses can also fall into this category. The deliverables are services; repeat transations are expected based on the positive experience and feedback from customers. A single payment systems is used for The Garden Path, as the services on offer can be seasonal or have extended periods of time before being required again.
+The Garden Path is designed as a Business to Customer (B2C) e-commerce application. Individuals are the main type of customer being targeted for the services being sold, although other businesses can also fall into this category. The deliverables are services; repeat transations are expected based on the positive experience and feedback from customers. A single payment system is used for The Garden Path, as the services on offer can be seasonal or have extended periods of time before being required again.
 
 ### User Stories
 Key user stories for the application are outlined below. An exhaustive list can be viewed on its [GitHub Projects page](https://github.com/users/simonhw/projects/4/).
@@ -198,12 +199,12 @@ Key user stories for the application are outlined below. An exhaustive list can 
     - I can create a footer for larger screens.
 
 - **View Homepage**: As a **Site User** I can **view the homepage**  so that I can **understand the purpose of the website and navigate it successfully**.
-    - When a user visits the homepage they can easily understand the purpose of the website
+    - When a user visits the homepage, they can easily understand the purpose of the website
     - The user can navigate to other pages of the website 
     - The user can view a brief "About Us" section
     - The user can see a summary of services offered
 
-- **View Business Information**: As a **Site User** I can **view information about the business** so that I can **make an informed decision about ordering a service**.
+- **View Business Information**: As a **Site User**, I can **view information about the business** so that I can **make an informed decision about ordering a service**.
     - When I visit the About page, I can read the business information.
     - I can view the locations covered by the business.
     - I can view the products and services offered.
@@ -225,7 +226,7 @@ Key user stories for the application are outlined below. An exhaustive list can 
 <details><summary>Show User Stories</summary>
 
 - **View Individual Service Details**: As a **Site User** I can **view the Service page** so that I can **see all details related to the service and make an informed decision on my purchase**.
-    - When I click on a service I can view its details page.
+    - When I click on a service, I can view its details page.
     - I can see the service description, price, and rating.
     
 - **Order a Service**: As a **Site User** I can **select a booking option** so that I can **book a specific service**.
@@ -243,12 +244,12 @@ Key user stories for the application are outlined below. An exhaustive list can 
     - When I add a service to the cart on smaller screens, I can see a toast preview with the cart details.
     - On desktop screens, when I add a service to the cart, I can see a preview of the cart contents in an offcanvas element.
     
-- **Update Services from the Cart Page**: As a **Site User** I can **update or remove services from the cart** so that I can **have an improved experience without navigating back to individual service pages**.
+- **Update Services from the Cart Page**: As a **Site User**, I can **update or remove services from the cart** so that I can **have an improved experience without navigating back to individual service pages**.
     - I can change the number of a given service and see the subtotal and order total price change.
     - I can remove a service from the cart.
-    - When I click remove I can see the order total price change.
+    - When I click remove, I can see the total price change for the order.
     
-- **Proceed to Checkout**: As a **Site User** I can **navigate to the checkout page with my order** so that I can **enter my details and place my order**.
+- **Proceed to Checkout**: As a **Site User**, I can **navigate to the checkout page with my order** so that I can **enter my details and place my order**.
     - When I click the checkout button, I can enter my personal and delivery details.
     - I can enter my payment information.
     - I can review my order before submitting.
@@ -279,17 +280,17 @@ Key user stories for the application are outlined below. An exhaustive list can 
 
 <details><summary>Show User Stories</summary>
 
-- **View Reviews**: As a **Site User** I can **view reviews for a service** so that I can **be more informed about the quality of work carried out by the business**.
+- **View Reviews**: As a **Site User**, I can **view reviews for a service** so that I can **be more informed about the quality of work carried out by the business**.
     - On a particular service page, I can view all reviews for that service.
     - I can navigate through the reviews via pagination.
     
-- **Review a Service**: As a **Site User** I can **review a service that I have ordered** so that I can **leave feedback as a customer and feel like I am interacting with the website and business directly**.
+- **Review a Service**: As a **Site User**, I can **review a service that I have ordered** so that I can **leave feedback as a customer and feel like I am interacting with the website and business directly**.
     - I can interact with a "Leave a Review" button
     - I can rate the service out of 5 stars
     - I can write a brief review on my experience with the service
     
 - **Edit a Review**: As a **Site User** I can **edit a review that I previously made** so that I can **be in control of content created by me on the website**.
-    - For a particular review I have made I can click an edit button
+    - For a particular review I have made, I can click an edit button
     - I can edit the rating and text content of my reviews and save the changes
     
 - **Publish Reviews**: As a **Site Admin** I can **publish pending reviews or unpublish them on the live website** so that I can **ensure only genuine reviews are visible for the business' services**.
@@ -297,7 +298,7 @@ Key user stories for the application are outlined below. An exhaustive list can 
     - For a given published review, I can unpublish it so that users cannot see it.
     
 - **Delete a Review**: As a **Site User** I can **delete a review that I previously made** so that I can **be in control of content created by me on the website**. As a **Site Admin** I can **delete any review** so that I can **be in control of content displayed on the website**.
-    - For a particular review I can delete it if I am the author or a staff user.
+    - For a particular review, I can delete it if I am the author or a staff user.
     - I can confirm or cancel the delete action before it takes effect.
 
 </details>
@@ -306,7 +307,7 @@ Key user stories for the application are outlined below. An exhaustive list can 
 
 <details><summary>Show User Stories</summary>
 
-- **View Contact Us Page**: As a **Site User** I can **send a message to the business** so that I can **make enquiries directly from the website**.
+- **View Contact Us Page**: As a **Site User**, I can **send a message to the business** so that I can **make enquiries directly from the website**.
     - I can navigate to the Contact Us page from the main nav bar.
     - I can view the business' contact details.
     - I can send a message to the business using a form.
@@ -315,7 +316,7 @@ Key user stories for the application are outlined below. An exhaustive list can 
     - When I send a message via the Contact Us form, I can receive a copy of the message sent to me via email.
 
 
-- **Pre-filled Contact Us Form**: As a **Site User** I can **have my account details pre-filled in the contact us form** so that I can **avoid typing out data already provided by my user account**.
+- **Pre-filled Contact Us Form**: As a **Site User**, I can **have my account details pre-filled in the Contact Us form** so that I can **avoid typing out data already provided by my user account**.
     - When I am logged in and navigate to the contact us form, I can find my name, email, and phone number pre-filled in the form.
 
 </details> 
@@ -381,14 +382,16 @@ A palette of greens gradually becoming lighter was chosen for this website. The 
 
 ![Coolors colour palette](docs/images/readme/the-garden-path-colours.png)
 
+Some original design choices had to be altered after WAVE Accessibility testing was carried out. Instances of the lighter green colours had to be replaced with the darker shade to resolve contrast errors. The most noticable design change is the colour and background of the review star ratings. A direct comparison is provided in the [WAVE Accessibility Testing](/TESTING.md#accessibility-testing) section of  the TESTING file.
+
 ### Typography
-The Mate font was chosen from the Google Fonts library as its thin and sharp look evoked thought of garden tools, fencing, and ordered lines. This gives the impression of a professional business and evokes thoughts of neat and careful services carried out by the business.
+The Mate font was chosen from the Google Fonts library as its thin and sharp look evoked thoughts of garden tools, fencing, and ordered lines. This gives the impression of a professional business and evokes thoughts of neat and careful services carried out by the business.
 
 ![Mate Font](docs/images/readme/mate.png)
 
 ### Imagery
 Vibrant and colourful images were chosen for the website to represent the services on offer. Each service image is clear in what it represents with no superfluous information that could mislead the site user. 
-The hero image shows a garden path and steps leading to a patio. Red poppies are in focus in the foreground and other plants and trees are in the blurred background. Some pages did not make use of a hero image due to aesthetic design reflecting the pages' purpose. These include but are not limited to the accounts pages, the cart and checkout pages, and the privacy policy page. Individual reasons for this design choice is discussed further in the [Features](#features) section.
+The hero image shows a garden path and steps leading to a patio. Red poppies are in focus in the foreground, and other plants and trees are in the blurred background. Some pages did not make use of a hero image due to aesthetic design reflecting the pages' purpose. These include but are not limited to the accounts pages, the cart and checkout pages, and the privacy policy page. Individual reasons for this design choice are discussed further in the [Features](#features) section.
 
 
 ### Wireframes
@@ -396,18 +399,25 @@ Wireframes were created in Balsamiq for the initial front-end design of the webs
 
 **Home Page**
 
-#### Homepage Wireframe - Mobile
+#### Homepage Wireframes
+
+<details open><summary>Homepage Wireframe - Mobile</summary>
 
 ![Homepage Wireframe - Mobile](docs/images/readme/mobile-wireframe-home.png)
 
-#### Homepage Wireframe - Tablet
+</details>
+
+<details><summary>Homepage Wireframe - Tablet</summary>
 
 ![Homepage Wireframe - Tablet](docs/images/readme/tablet-wireframe-home.png)
 
-#### Homepage Wireframe - Desktop
+</details>
+
+<details><summary>Homepage Wireframe - Desktop</summary>
 
 ![Homepage Wireframe - Desktop](docs/images/readme/desktop-wireframe-home.png)
 
+</details>
 
 **About Us Page**
 
@@ -510,7 +520,7 @@ Wireframes were created in Balsamiq for the initial front-end design of the webs
 </details>
 
 ### Entity Relationship Diagrams
-An ERD was created to plan out the models that would be created and used in this project. In total, 8 custom models were written, including some taken from previous Django projects. These are credited below in the [Code Used](#code-used) section and all custom models are explained in the [Custom Models](#custom-models) section.
+An ERD was created to plan out the models that would be created and used in this project. In total, 8 custom models were written, including some taken from previous Django projects. These are credited below in the [Code Used](#code-used) section, and all custom models are explained in the [Custom Models](#custom-models) section.
 
 ![ERDs](docs/images/readme/erd_the_garden_path.png)
 
@@ -519,7 +529,7 @@ A key requirement for this project was for users to be able to create, read, upd
 
 #### Create
 * Site users and admin users may **create** by creating a user account.
-* Site users may **create** by creating an order, review, or submitting a message.
+* Site users may **create** by creating an order, reviewing a service, or submitting a message.
 
 #### Read
 * Site users and admin users may **read** by viewing services, reviews, their account details, and their order history.
@@ -530,7 +540,7 @@ A key requirement for this project was for users to be able to create, read, upd
 * Admin users may **update** by publishing or unpublishing reviews.
 
 #### Delete
-* Site users may **delete** by deleting their reviews, or deleting their phone number and address details on their account page.
+* Site users may **delete** by deleting their reviews or deleting their phone number and address details on their account page.
 * Admin users may **delete** by deleting reviews.
 
 <br>
@@ -542,7 +552,7 @@ Across all pages of the website, Bootstrap's powerful grid system was utilised t
 #### Navbar
 On small screen sizes the navbar is a dropdown menu accessed on the right hand side of the display. For larger screens the navbar links are displayed in a neat row across the top of the page. This was achieved using the navbar code in the Bootstrap documentation.
 
-<details open><summary>Comparison of navbar on small and large screens</summary>
+<details><summary>Comparison of navbar on small and large screens</summary>
 
 ![Nav bar menu on small screens](docs/images/readme/navbar-mobile.gif)
 ![Nav bar on larger screens](docs/images/readme/navbar-desktop.png)
@@ -550,9 +560,9 @@ On small screen sizes the navbar is a dropdown menu accessed on the right hand s
 </details>
 
 #### Hero Image
-The hero image is shown with its original aspect ratio of ~3:2 on screen sizes up to 768 pixels width. For larger screens, the `<img>` element has a custom CSS stlye of `display: none` applied and its parent div is given a `background-image` of the same picture with a fixed height so that the website content is not completely pushed down out of sight.
+The hero image is shown with its original aspect ratio of ~3:2 on screen sizes up to 768 pixels width. For larger screens, the `<img>` element has a custom CSS style of `display: none` applied, and its parent div is given a `background-image` of the same picture with a fixed height so that the website content is not completely pushed down out of sight.
 
-<details open><summary>Responsiveness of hero image with differing screen widths</summary>
+<details><summary>Responsiveness of hero image with differing screen widths</summary>
 
 ![Responsiveness of Hero Image](docs/images/readme/hero-responsive.gif)
 
@@ -561,7 +571,7 @@ The hero image is shown with its original aspect ratio of ~3:2 on screen sizes u
 #### Text Content
 Content on small screens is displayed in single column fashion, displaying text and images appropriately as the user scrolls down their device. On larger screens, text and images are displayed side-by-side to make use of the extra horizontal space.
 
-<details open><summary>Comparison on text content layout on small and large screens</summary>
+<details><summary>Comparison on text content layout on small and large screens</summary>
 
 ![Content layout on small screens](docs/images/readme/content-mobile.gif)
 ![Content layout on large screens](docs/images/readme/content-desktop.png)
@@ -571,7 +581,7 @@ Content on small screens is displayed in single column fashion, displaying text 
 #### Service Page
 On the service page, the service images are displayed in columns of 1, 2, 3, and 4 as the screen width increases. The four pricing model cards follow a similar trend underneath.
 
-<details open><summary>Service page on medium screens</summary>
+<details><summary>Service page on medium screens</summary>
 
 ![Service page on small screens](docs/images/readme/services-mob.gif)
 
@@ -592,7 +602,7 @@ On the service page, the service images are displayed in columns of 1, 2, 3, and
 #### Individual Services
 On each service page, the image and service information are displayed either in a single column or in two columns. This is done to maximise the impact of the imagery on wider screen by allowing for a larger image and to make user of the extra space.
 
-<details open><summary>Comparison of service page on mobile and tablet screens</summary>
+<details><summary>Comparison of service page on mobile and tablet screens</summary>
 
 ![Grass Cutting page on mobile screens](docs/images/readme/ind-services-mob.gif)
 ![Grass Cutting page on tablet screens](docs/images/readme/ind-services-tablet.png)
@@ -602,7 +612,7 @@ On each service page, the image and service information are displayed either in 
 #### Cart
 The cart and its features are neatly arranged using the grid system on all screen sizes. The order items and checkout card are displayed in a single column on small screen but are placed side-by-side on wider screens. On large screen sizes the order item list in contained in its own scrollable container, so that the user does not have to scroll away from the checkout card.
 
-<details open><summary>Cart on mobile screens</summary>
+<details><summary>Cart on mobile screens</summary>
 
 ![Cart on mobile screens](docs/images/readme/cart-mob.gif)
 
@@ -617,7 +627,7 @@ The cart and its features are neatly arranged using the grid system on all scree
 #### Checkout
 The site logo, secure checkout text, and progress indicator change position at the top of the screen for different displays to neatly use the extra space provided.
 
-<details open><summary>Comparison of checkout header on small and large screens</summary>
+<details><summary>Comparison of checkout header on small and large screens</summary>
 
 ![Checkout header on mobile screens](docs/images/readme/checkout-mob.png)
 ![Checkout header on mobile screens](docs/images/readme/checkout-tablet.png)
@@ -627,7 +637,7 @@ The site logo, secure checkout text, and progress indicator change position at t
 
 The review order card does not diplay the service images on mobile screen, but on tablets and desktop screens, there is sufficient space to show them.
 
-<details open><summary>Comparison of review order card on small and large screens</summary>
+<details><summary>Comparison of review order card on small and large screens</summary>
 
 ![Checkout order review card on mobile screens](docs/images/readme/checkout-review-mob.png)
 ![Checkout order review card on wider screens](docs/images/readme/checkout-review-desktop.png)
@@ -635,9 +645,9 @@ The review order card does not diplay the service images on mobile screen, but o
 </details>
 
 #### Reviews 
-Reviews are displayed in different ways depending on how many there are for a service. With at least three, they are arranged in columns of 1, 2, or 3 as screen sizes widen. If there is only one review, a single column is used on all screens, albeit with appropriate offsets to give the review card a set maximum width. Similarly if there are only two reviews, the maximum number of columns used on larger screens is 2. This is to keep reviews centered on the page regardless of how many there are.
+Reviews are displayed in different ways depending on how many there are for a service. With at least three, they are arranged in columns of 1, 2, or 3 as screen sizes widen. If there is only one review, a single column is used on all screens, albeit with appropriate offsets to give the review card a set maximum width. Similarly, if there are only two reviews, the maximum number of columns used on larger screens is 2. This is to keep reviews centred on the page regardless of how many there are.
 
-<details open><summary>Comparison of user reviews small and large screens</summary>
+<details><summary>Comparison of user reviews small and large screens</summary>
 
 ![User reviews on mobile screens](docs/images/readme/reviews-mob.gif)
 ![User reviews on wider screens](docs/images/readme/review-tablet.png)
@@ -645,9 +655,9 @@ Reviews are displayed in different ways depending on how many there are for a se
 </details>
 
 #### Contact Us
-The Contact Us page displays its form fields in columns of width 10 with an offset of 1 on mobile screens, and columns of width 6 with an offset of 3 on tablet-sized screens and larger. Specific CSS styling had to be applied to the third-party reCAPTCHA container on smaller screens so that it did not extend past the width of the `<html>` element and create a horizonal scroll.
+The Contact Us page displays its form fields in columns of width 10 with an offset of 1 on mobile screens, and columns of width 6 with an offset of 3 on tablet-sized screens and larger. Specific CSS styling had to be applied to the third-party reCAPTCHA container on smaller screens so that it did not extend past the width of the `<html>` element and create a horizontal scroll.
 
-<details open><summary>The Contact Us page on small and large screens</summary>
+<details><summary>The Contact Us page on small and large screens</summary>
 
 ![Contact Us page on mobile screens](docs/images/readme/contact-mob.png)
 ![Contact Us page on mobile screens](docs/images/readme/contact-desktop.png)
@@ -657,8 +667,12 @@ The Contact Us page displays its form fields in columns of width 10 with an offs
 #### Footer
 The footer is displayed in a single column on small screens, with a horizontal line separating the different information block. On larger screens, these blocks are arranged in a row that uses the full width of the screen, and the horizontal lines are hidden. 
 
+<details><summary>Comparison of Footer on small and large screens</summary>
+
 ![Footer on small screens](docs/images/readme/footer-mobile.png)
 ![Footer on larger screens](docs/images/readme/footer-desktop.png)
+
+</details>
 
 ## Features
 The website consists of 42 pages with varying levels of accessibility for different types of users:
@@ -687,6 +701,20 @@ Edit a Review page |  | &check; |
 Sign Out page |  | &check; | 
 Unpublished Reviews (6) |  |  | &check;
 
+### Custom Models
+Original custom models were written for this e-commerce application:
+- CustomUser
+    - A custom user model to allow use of an email as the login attribute. The model explicity sets the username field to use email addresses and sets the first_name and last_name fields as required fields. The CustomUserManager model is set as the model to use when creating
+    new CustomUser model instances.
+- CustomUserManager
+    - For creating user accounts when a site visitor signs up for the first time. A user account is created with the supplied email, password, and first and last name. Superuser creation is also specified and adds the additional Boolean fields of `is_staff`, `is_active`, and `is_superuser` and sets them to `True`.
+- Services
+    - A custom model for the gardening services on offer. It contains fields for the category type of the service, the name of the service, its price, a full description of the service, a URL for an image representing the service, image alt text for accessibility reasons, the number of published reviews the service has, the average value of all the published review ratings the service has, and Boolean fields denoting whether the service can have the size, acre, tree, or surface attribute.
+    - Its `calculate_average_rating` method loops through all approved reviews for the service, sums their ratings, and divides the result by the total number of approved reviews to get an average value.
+- Reviews
+    - A custom model for service reviews. The model contains fields for a foreign key linked to the authenticated user leaving the review, the service being reviewed, a title, a body of text, the date that the review was originally submitted, the date that the review was last edited or published, the user's rating from 1 to 5, and if the review has been published or not.
+- Contact
+    - A custom model for a "Contact Us" submission. The model has fields for a foreign key linking the user's message to their UserAccount if they were authenticated, the user's full name, their contact email, their contact number, a specific reason for sending a message, the message content, and the date that the message was submitted.
 
 ### All pages on the website have:
 
@@ -700,16 +728,16 @@ Unpublished Reviews (6) |  |  | &check;
 ![Website Header on desktop](docs/images/readme/header-desktop.png)
 
 The header contains direct links to the main pages of the website, depending on the authentication status of the site user. The nav link for the page currently being viewed is made distinct with a CSS style of `active` which is represented by a background colour of Sage and text colour of Isabelline when the nav bar is in dropdown form, and a bold font weight with a subtle Isabelline text shadow on larger screens.
-- The website logo "The Garden Path" is a link which when clicked will return the user to the `index.html` page.
+- The website logo "The Garden Path" is a link which, when clicked, will return the user to the `index.html` page.
 - "About Us" brings the user to the `about.html` page.
-- The "Services" dropdown displays a list of options which include the `services.html` and `service_page` pages.
+- The "Services" dropdown displays a list of options, which include the `services.html` and `service_page` pages.
 - "Cart" links to the `cart.html` page.
-- "Contact Us" bring the user to `contactus.html`
+- "Contact Us" brings the user to `contact.html`.
 - "Log In/Sign Up" will direct the user to the `login.html` page which itself contains a link to `signup.html`.
 
 When a user is signed in, the header links change.
-- A new link "My Account" brings the user to the `account.html` page.
-- "Log In/Sign Up" is hidden and "Log Out" is shown, which will direct the user to the `logout.html` account page.
+- A new link, "My Account", brings the user to the `account.html` page.
+- "Log In/Sign Up" is hidden, and "Log Out" is shown, which will direct the user to the `logout.html` account page.
 
     ![Website Header on mobile when user is logged in](docs/images/readme/header-authenticated-mobile.png)
     ![Website Header on dekstop when user is logged in](docs/images/readme/header-authenticated-desktop.png)
@@ -729,7 +757,7 @@ When a user is signed in, the header links change.
 ![Website Footer](docs/images/readme/footer-desktop.png)
 
 ### The Homepage
-The homepage contains two sections: a general introduction and a services overview. A heading welcomes the user with a smaller muted heading below it communicating that the business is local and specialists in garden care. An image of a smartly-dressed mature man holding a leaf is displayed next to the introduction. This gives the user a sense that the business offers experience and knowledge. The services sub-heading lists the location covered by the business so that the user understands without having to navigate further through the website if they can avail of The Garden Path's services. An image of a man driving a ride-on lawnmower is shown next to the summary of service, and a button which links to the service page is displayed underneath.
+The homepage contains two sections: a general introduction and a services overview. A heading welcomes the user with a smaller muted heading below it, communicating that the business is local and specialises in garden care. An image of a smartly dressed mature man holding a leaf is displayed next to the introduction. This gives the user a sense that the business offers experience and knowledge. The services sub-heading lists the location covered by the business so that the user understands without having to navigate further through the website if they can avail of The Garden Path's services. An image of a man driving a ride-on lawnmower is shown next to the summary of service, and a button which links to the service page is displayed underneath.
 
 ![The website' homepage](docs/images/readme/content-desktop.png)
 
@@ -739,7 +767,7 @@ Three distinct sections are displayed on the About page.
 
     ![Our Story section of About Us page](docs/images/readme/about-story.png)
 
-- The second section has a different background colour and inset shadow both to seperate it clearly from the other sections and to break up the amount of white on the page. This section contains two different headings which detail the business' mission and the top reasons to patronise The Garden Path. There is a button underneath the "Why Choose Us?" list which brings the customer directly to the Contact Us page if they want to get a quote for the work to be carried out.
+- The second section has a different background colour and inset shadow both to seperate it clearly from the other sections and to break up the amount of white on the page. This section contains two different headings which detail the business' mission and the top reasons to patronise The Garden Path. There is a button underneath the "Why Choose Us?" list, which brings the customer directly to the Contact Us page if they want to get a quote for the work to be carried out.
 
     ![Our Mission section of About Us page](docs/images/readme/about-mission.png)
 
@@ -751,7 +779,7 @@ Three distinct sections are displayed on the About page.
 ### The Service Pages
 #### All Services
 The All Services page consists of two sections: the list of services and the pricing model.
-- Currently offering 6 types of services, the business displays each as a card containing a large vibrant image with a title underneath it. Clicking any of the images or titles will bring the user to the individual service page.
+- Currently offering six types of services, the business displays each as a card containing a large vibrant image with a title underneath it. Clicking any of the images or titles will bring the user to the individual service page.
 
     ![The All Services page services section](docs/images/readme/services-section.png)
 
@@ -760,9 +788,9 @@ The All Services page consists of two sections: the list of services and the pri
     ![The pricing model section](docs/images/readme/pricing-section.png)
 
 #### Individual Service Pages
-For each individal service, the page is displayed with the hero image, to draw the user's eye to the colours in the image and in the star ratings. A brief description of the service is given, under which sits the star rating. The average rating is displayed as a number of stars out of 5 filled with an orange colour. The decimal value of the rating is listed next to the stars as well as the number of reviews. The number of reviews is a link to the reviews page for the service and is one of the few links on the website outside of the footer where the underline has not been removed for styling reasons. It must be present so that the user understand they can click the link to view the list of reviews.
+For each individual service, the page is displayed with the hero image to draw the user's eye to the colours in the image and in the star ratings. A brief description of the service is given, under which sits the star rating. The average rating is displayed as a number of stars out of 5 filled with an orange colour. The decimal value of the rating is listed next to the stars, as well as the number of reviews. The number of reviews is a link to the reviews page for the service and is one of the few links on the website outside of the footer where the underline has not been removed for styling reasons. It must be present so that the user understand they can click the link to view the list of reviews.
 
-Underneath the rating are the option(s) for the user to select. These can range from 1-3 options e.g. the size of the area for grass cutting (1 option) or the type of tree service, the size of the tree, and the number of trees (3 options). The price per number of services is shown underneath the options along with two buttons that either allow the user to go back to the list of all services or to add the current service to the user's cart with the selected options.
+Underneath the rating are the option(s) for the user to select. These can range from 1-3 options e.g. the size of the area for grass cutting (1 option) or the type of tree service, the size of the tree, and the number of trees (3 options). The price per number of services is shown underneath the options, along with two buttons that either allow the user to go back to the list of all services or add the current service to the user's cart with the selected options.
 
 ![An individual service page](docs/images/readme/ind-services-tablet.png)
 
@@ -781,7 +809,7 @@ When viewing the cart page without any services having been added to it, a messa
 
 </details>
 
-When greater than zero, the total price of the services in the cart is appended after the Cart nabvar link. When the cart has multiple services the list is displayed underneath the checkout card on mobile, and in a fixed height scrollable container on larger screens. For mobile screens, a button that bring the user back to the top of the page is shown when the user scrolls down through the list of services.
+When greater than zero, the total price of the services in the cart is appended after the Cart navbar link. When the cart has multiple services the list is displayed underneath the checkout card on mobile, and in a fixed height scrollable container on larger screens. For mobile screens, a button that bring the user back to the top of the page is shown when the user scrolls down through the list of services.
 
 <details open><summary>Comparison of the cart page with several services on different screen sizes</summary>
 
@@ -849,7 +877,7 @@ Continuing to the next stage, the user must enter valid card details into a Stri
 </details>
 
 #### Review Order
-Moving to the final step of the checkout process, an orange text box explains that this is the final step and that user may review their order details below before making the payment. The user's address details are displayed with a "Change" link to go directly back to the address section in case they wish to change any data. The payment details are not explicitly displayed but a message saying that the input was complete is present with a green check box. A change link is also present here in case the user wants to change their card details. Underneath is present a summary of the cart. Only the service name is presented here, as adding the various options affected the presentation poorly. If the user is unsure of the cart contents, there is an "Adjust Cart" button which they can use to navigate back to the cart page. A larger yellow button with the text "Pay and Place Order" draws the eye of the user with its bright colour and padlock icon. This helps the user understand that one they click this button, the checkout process will complete and they can no longer make any adjustments. When clicked, the button text changes to "Processing..." and the padlock turns into a spinner indicating that the payment is being processed. This is especially useful when an unexpected payment or server error occurs. The user will know that the website is in fact attempting to submit the order.
+Moving to the final step of the checkout process, an orange text box explains that this is the final step and that user may review their order details below before making the payment. The user's address details are displayed with a "Change" link to go directly back to the address section in case they wish to change any data. The payment details are not explicitly displayed, but a message saying that the input was complete is present with a green check box. A change link is also present here in case the user wants to change their card details. Underneath is presented a summary of the cart. Only the service name is presented here, as adding the various options affected the presentation poorly. If the user is unsure of the cart contents, there is an "Adjust Cart" button, which they can use to navigate back to the cart page. A larger yellow button with the text "Pay and Place Order" draws the eye of the user with its bright colour and padlock icon. This helps the user understand that once they click this button, the checkout process will complete, and they can no longer make any adjustments. When clicked, the button text changes to "Processing..." and the padlock turns into a spinner, indicating that the payment is being processed. This is especially useful when an unexpected payment or server error occurs. The user will know that the website is, in fact, attempting to submit the order.
 
 <details><summary>Review Order section and checkout submission</summary>
 
@@ -868,7 +896,7 @@ The success page itself also confirms this as well as providing the unique order
 
 ### User Accounts
 #### Signing Up
-Visitors to the website can register for a user account via a number of links to the Signup Page. The navbar contains the link "Login/Signup" which takes the user to the login page. If the visitor has no account yet, they may used the Sign Up link to navigate to the account creation page. Here they are presented with a signup form which has required fields of first name, last name, email, confirm email, password, and confirm password. The confirm email field is cruicial here as users do not create usernames but instead use their email addresses to log into their accounts.
+Visitors to the website can register for a user account via a number of links to the Signup Page. The navbar contains the link "Login/Signup", which takes the user to the login page. If the visitor has no account yet, they may used the Sign Up link to navigate to the account creation page. Here, they are presented with a signup form which has required fields of first name, last name, email, confirm email, password, and confirm password. The confirm email field is cruicial here as users do not create usernames but instead use their email addresses to log into their accounts.
 
 <details open><summary>The Sign Up page</summary>
 
@@ -876,7 +904,7 @@ Visitors to the website can register for a user account via a number of links to
 
 </details>
 
-After entering valid details, the user can click the Sign Up button to be brought to the Verify Email Address page. This page informs the user that a confirmation email has been sent to the address they provided which they must verify beforen they can log in to the website. If they attempt to log in before verifying their email address, they are redirected to the same page that explains the confirmation email. On successfully verifying their email address, the login page is rendered with an information toast message confirming that the user's email has been verified.
+After entering valid details, the user can click the Sign Up button to be brought to the Verify Email Address page. This page informs the user that a confirmation email has been sent to the address they provided, which they must verify before they can log in to the website. If they attempt to log in before verifying their email address, they are redirected to the same page that explains the confirmation email. On successfully verifying their email address, the login page is rendered with an information toast message confirming that the user's email has been verified.
 
 <details><summary>The Signup form being submitted</summary>
 
@@ -899,7 +927,7 @@ After entering valid details, the user can click the Sign Up button to be brough
 </details>
 
 #### Logging In
-Existing users may log in using their email and password. On the login form there is a Remember Me checkbox which when checked will keep the user logged in on their current device for 7 days as opposed to the default behaviour which would be until the browser is closed. A password reset link is presented underneath the password field. On successful login, a toast message confirms the account under which the user has just signed in.
+Existing users may log in using their email and password. On the login form, there is a Remember Me checkbox, which, when checked, will keep the user logged in on their current device for seven days as opposed to the default behaviour, which would be until the browser is closed. A password reset link is presented underneath the password field. On successful login, a toast message confirms the account under which the user has just signed in.
 
 <details open><summary>The Sign In page</summary>
 
@@ -914,7 +942,7 @@ Existing users may log in using their email and password. On the login form ther
 </details>
 
 #### Password Reset
-If a registered user enters a valid email into the reset password form and submits it, a page is rendered informing them to check their email inbox for a password reset link. When the user follows the link, they may change their account password. If the new password if valid, a success page and toast message is rendered confirming that their password was changed. A button underneath the message allows to the user to quickly navigate back to the login page.
+If a registered user enters a valid email into the reset password form and submits it, a page is rendered informing them to check their email inbox for a password reset link. When the user follows the link, they may change their account password. If the new password is valid, a success page and toast message is rendered confirming that their password was changed. A button underneath the message allows to the user to quickly navigate back to the login page.
 
 <details open><summary>Password Reset page</summary>
 
@@ -956,7 +984,7 @@ A user may sign out when authenticated by clicking the Log Out nav link. They ar
 </details>
 
 #### My Account Page
-An authenticated user may view their account page via a link in the nav bar. On this page they will see their full name and email that was provided on registration. These two details are read-only. The Default Location Information form contains the user's details if present. These details can be rendered if the user previously placed an order and clicked the save details checkbox, or by entering the data directly on this page and clicking the Save Changes button.
+An authenticated user may view their account page via a link in the nav bar. On this page, they will see the full name and email that was provided during registration. These two details are read-only. The Default Location Information form contains the user's details if present. These details can be rendered if the user previously placed an order and clicked the save details checkbox or by entering the data directly on this page and clicking the Save Changes button.
 
 <details open><summary>My Account page</summary>
 
@@ -964,7 +992,7 @@ An authenticated user may view their account page via a link in the nav bar. On 
 
 </details>
 
-The user's order history is listed if it exists. The order number, date of purchase, summary of order items, and total price is displayed in a table. The order number is truncated in the table and is itself a link to the order confirmation page with full details of the past order. Hovering over the link on desktop screens will display the full order number. When the order confirmation page is visited from this link, an information toast message is displayed stating that this order was in the past. If the user has no order history, a statement confirming this is presented instead of an empty table. A "Back to My Account" button allows the user to navigate directly back to their account page.
+The user's order history is listed if it exists. The order number, date of purchase, summary of order items, and total price are displayed in a table. The order number is truncated in the table and is itself a link to the order confirmation page with full details of the past order. Hovering over the link on desktop screens will display the full order number. When the order confirmation page is visited from this link, an information toast message is displayed stating that this order was in the past. If the user has no order history, a statement confirming this is presented instead of an empty table. A "Back to My Account" button allows the user to navigate directly back to their account page.
 
 <details><summary>Toast message and changed button text on past order confirmation page</summary>
 
@@ -1000,7 +1028,7 @@ A maximum of 6 reviews are displayed at any one time. If more reviews exists, th
 </details>
 
 #### Writing a Review
-If a user has previously ordered a particular service, they will see a Leave a Review button under the page's heading. Clicking it will bring them to the `create_review.html` page. Confirmation of the account under which the review is being made is given above the review form. The user must complete three fields: a title, review content, and rating out of 5. A green Submit button will allow the user to submit their review and a confirmation toast message is displayed stating that the review is pending approval.
+If a user has previously ordered a particular service, they will see a Leave a Review button under the page's heading. Clicking it will bring them to the `create_review.html` page. Confirmation of the account under which the review is being made is given above the review form. The user must complete three fields: a title, review content, and a rating out of 5. A green Submit button will allow the user to submit their review and a confirmation toast message is displayed stating that the review is pending approval.
 
 <details open><summary>The Leave a Review button</summary>
 
@@ -1043,7 +1071,7 @@ If the user clicks the Edit button, the review form page is loaded with an amend
 
 </details>
 
-If the user clicks the delete button, a confirmation modal is displayed informing them that the delete action cannot be undone. A cancel button will close the modal without deleting the review.
+If the user clicks the delete button, a confirmation modal is displayed, informing them that the delete action cannot be undone. A cancel button will close the modal without deleting the review.
 
 <details><summary>The Delete Confirmation Modal for reviews.</summary>
 
@@ -1052,7 +1080,7 @@ If the user clicks the delete button, a confirmation modal is displayed informin
 </details>
 
 #### Publishing and Unpublishing a Review
-Staff users may view a page containing all unpublished reviews and delete or publish them at their discretion. When viewing the main reviews page for a service, they may unpublish or delete any reviews listed, though they do not have the ability to edit any reviews that are not their own. There is no hero image on the unpublished reviews page as only staff users will ever see it and reduces the load on the browser. Staff users can also see the reviewer's contact email address at the bottom of the review card so that they can directly address any concerns the user may have communicated in the review.
+Staff users may view a page containing all unpublished reviews and delete or publish them at their discretion. When viewing the main reviews page for a service, they may unpublish or delete any reviews listed, though they do not have the ability to edit any reviews that are not their own. There is no hero image on the unpublished reviews page, as only staff users will ever see it, and it reduces the load on the browser. Staff users can also see the reviewer's contact email address at the bottom of the review card so that they can directly address any concerns the user may have communicated in the review.
 
 <details><summary>Admin view of reviews page</summary>
 
@@ -1083,7 +1111,7 @@ If a user is authenticated, the name, email, and phone number fields will alread
 
 </details>
 
-<details><summary>The contact us form with user detail fields already completed</summary>
+<details><summary>The Contact Us form with user detail fields already completed</summary>
 
 ![The contact us form with user detail fields already completed](docs/images/readme/contact-filled.gif)
 
@@ -1116,7 +1144,7 @@ The website's privacy policy is presented on its own webpage. Usert may view the
 </details>
 
 ### Error Pages
-Custom templates for 403, 404, and 500 error were created for the website. Each page informs the user that something has gone wrong and gives them a navigation option to go back to the main site. The navbar may also be used on each of these pages
+Custom templates for 403, 404, and 500 error were created for the website. Each page informs the user that something has gone wrong and gives them a navigation option to go back to the main site. The navbar may also be used on each of these pages.
 
 <details><summary>The 403, 404, and 500 errors page</summary>
 
@@ -1128,11 +1156,11 @@ Custom templates for 403, 404, and 500 error were created for the website. Each 
 </details>
 
 ### Email Functionality
-The Garden Path website utilises a Gmail SMTP Server to send emails to its site users. User are sent emails in the following situations:
+The Garden Path website utilises a Gmail SMTP Server to send emails to its site users. Users are sent emails in the following situations:
 - To verify the email address provided when creating a new user account
 - To reset their user account password
 - Receiving an order confirmation after successfully paying for and placing an order
-- Receiving a summary of a submitted contact us form
+- Receiving a summary of a submitted Contact Us form
 
 ### Features to be Implemented
 Some features could not be implemented in this release of The Garden Path e-commerce website. Below are discussed some of those features that would benefit the site user or help generate more income for the business.
@@ -1142,16 +1170,16 @@ Users often create accounts on website more easily when they have the option to 
 
 #### Message History
 Allowing users to view their messaging history on their account page would improve the customer experience by keeping their website data accessible from the same secure page.
-Staff users would also benefit from being able to view all message submitted via the contact us form with the ability to reply to users from an admin messages page. As part of this feature, staff users would receive a notification when new messages have been submitted since they last logged in.
+Staff users would also benefit from being able to view all messages submitted via the contact us form with the ability to reply to users from an admin messages page. As part of this feature, staff users would receive a notification when new messages have been submitted since they last logged in.
 
 #### Responding to Reviews
-Adding a feature where staff users can publicy reply to reviews would demonstrate that the business is trustworthy and maintains open communication with its customers. Knowing that The Garden Path has real people behind it who are ready to deal with any issues the customers have could encourage repeat business. Similarly to above, staff users would receive a notification when new reviews have been submitted since they last logged in. This would be very beneficial as staff users must mark reviews as approved before they are published to the main reviews page.
+Adding a feature where staff users can publicy reply to reviews would demonstrate that the business is trustworthy and maintains open communication with its customers. Knowing that The Garden Path has real people behind it who are ready to deal with any issues the customers have could encourage repeat business. Similar to the above, staff users would receive a notification when new reviews have been submitted since they last logged in. This would be very beneficial as staff users must mark reviews as approved before they are published to the main reviews page.
 
 #### Sorting Reviews
-Allowing users to sort reviews based on their ratings would be of benefit to the prospective customer. Seeing the number of 5 stars reviews compared to number of lower star reviews can influence a customer's purchase more than the average rating itself. Since this is a gardening and landscaping website, being able to sort reviews by the season they were written in would help customer's understand how the business performs various services in different conditions.
+Allowing users to sort reviews based on their ratings would benefit them as prospective customers. Seeing the number of 5 stars reviews compared to number of lower star reviews can influence a customer's purchase more than the average rating itself. Since this is a gardening and landscaping website, being able to sort reviews by the season they were written in would help customer's understand how the business performs various services in different conditions.
 
 #### Updating Website Content
-Staff users would be able to directly edit website content from the front-end. Content models would be created to store the text on the database allowing staff to update the database using forms. Staff would have access to a button in the navbar that toggles an "Editing Mode" for the current page. Edit buttons would be displayed next to blocks of text which when clicked would enable the staff user to update or delete the content. The text would be edited in a form that is displayed in a modal. When submitted successfully, the database would be updated and the new content displayed when the page reloads.
+Staff users would be able to directly edit website content from the front end. Content models would be created to store the text on the database allowing staff to update the database using forms. Staff would have access to a button in the navbar that toggles an "Editing Mode" for the current page. Edit buttons would be displayed next to blocks of text, which, when clicked, would enable the staff user to update or delete the content. The text would be edited in a form that is displayed in a modal. When submitted successfully, the database would be updated and the new content displayed when the page reloads.
 
 ## Technologies Used
 ### Languages
@@ -1228,7 +1256,7 @@ The live version of this website was deployed on Heroku.
 To deploy this program locally on your device, please follow the steps below:
 
 #### Forking
-1. Log in or sign up to [GitHub](https://github.com/).
+1. Login or sign up to [GitHub](https://github.com/).
 2. Navigate to the repository for [The Garden Path](https://github.com/simonhw/gardening-services).
 3. Click the **Fork** button located in the top right part of the webpage.
 
@@ -1249,8 +1277,8 @@ To deploy this program locally on your device, please follow the steps below:
 1. Navigate to the PostgreSQL provider of your choice and create a new instance.
 2. Find the database URL and copy it to the clipboard.
 3. Create an `env.py` file in your IDE root directory and confirm that it is listed in the `.gitignore` file.
-4. Create a secret key yourself or by using a website of your choice such as [Secret Key Generator](https://secretkeygen.vercel.app/).
-5. Add the following code to your `env.py` file making sure to replace `<enter-copied-url-here>` with the URL you copied in step 2 and `<your-secret-key>` with the one you generated in step 4:
+4. Create a secret key yourself or by using a website of your choice, such as [Secret Key Generator](https://secretkeygen.vercel.app/).
+5. Add the following code to your `env.py` file, making sure to replace `<enter-copied-url-here>` with the URL you copied in step 2 and `<your-secret-key>` with the one you generated in step 4:
     ```python
       import os
 
@@ -1261,7 +1289,7 @@ To deploy this program locally on your device, please follow the steps below:
 7. Create a superuser account by running `python3 manage.py createsuperuser` and enter details as prompted.
 
 #### Setting up Stripe
-1. Log in or sign up to [Stripe](https://stripe.com/)
+1. Login or sign up to [Stripe](https://stripe.com/)
 2. Navigate to your Dashboard and click the **Developers** button at the top of the page.
 3. Click the **API Keys** heading to reveal your keys.
 3. Copy your Publishable key and Secret key and save them in your `env.py` file in the following format:
@@ -1271,11 +1299,11 @@ To deploy this program locally on your device, please follow the steps below:
     ```
     ensuring you replace `<publishable-key>` and `<secret-key>` with the respective keys you copied above.
 4. Click the **Webhooks** heading and click **Add Endpoint** on the right-hand side of the screen.
-5. Paste in the url of your local website and append the address with `checkout/wh/`.
+5. Paste in the URL of your local website and append the address with `checkout/wh/`.
 6. Under **Select events to listen to**, tick **Select all events**.
 7. At the bottom of this list, click **Add Endpoint**.
 8. On your new webhook's page, click **Reveal** under Signing secret at the top of the page and copy the key.
-9. In `env.py` add this key using the following format:
+9. In `env.py`, add this key using the following format:
     ```python
     os.environ['STRIPE_WH_SECRET'] = '<signing-secret>'
     ```
@@ -1285,7 +1313,7 @@ To deploy this program locally on your device, please follow the steps below:
 #### Setting up reCAPTCHA
 1. Navigate to the [reCAPTCHA](https://www.google.com/recaptcha/about/) website and click **Get Started with Enterprise** at the top of the page.
 2. Enter a name for your project, click **Get Started**, and wait for the site to set up your account.
-3. Click **Cloud Console** and enter a display name for your site and select "website" as your platform type.
+3. Click **Cloud Console**, enter a display name for your site, and select "website" as your platform type.
 4. Enter your website domain and click done.
 5. Click the blue dropdown arrow and enable the **Use checkbox challenge** key.
 6. Click **Create Key**.
@@ -1299,7 +1327,7 @@ To deploy this program locally on your device, please follow the steps below:
     ensuring you replace `<public-key>` and `<private-key>` with your reCAPTCHA public and private keys respectively.
 
 #### Setting up Email Functionality
-1. Log in or sign up to [Google](https://accounts.google.com/)
+1. Login or sign up to [Google](https://accounts.google.com/)
 2. Go to your account settings and navigate to the **Security** tab.
 3. Enable 2-Step Verification and follow the onscreen instructions.
 4. In the search bar at the top of the page, enter "app passwords" and click on the result of the same name.
@@ -1318,7 +1346,7 @@ To deploy this project yourself on Heroku, please follow the following additiona
 
 #### Storing Static files and images.
 **Part I**
-1. Log in or sign up to [Amazon Web Services](https://aws.amazon.com/).
+1. Login or sign up to [Amazon Web Services](https://aws.amazon.com/).
 2. Go to the **S3** service and create a new bucket.
 3. Enter a bucket name and region and enable ACLS. Tick "Bucket owner preferred" under **Object Ownership**.
 4. Click **Create Bucket**.
@@ -1353,7 +1381,7 @@ To deploy this project yourself on Heroku, please follow the following additiona
 13. Click edit and enable **List** for "Everyone (public access), accepting the warning message that appears.
 
 **Part II**
-1. Now navigate to the IAM service on your dashboard.
+1. Navigate to the IAM service on your Dashboard.
 2. Click **Create Group** in the sidebar and give it an appropriate name before clicking **Next Step** until you can see the **Create Group** button. Click **Create Group**.
 3. Go to the **Create Policy** page and on the JSON tab, click **Import managed policy**.
 4. Find "AmazonS3FullAccess" in the list of options and import it.
@@ -1366,7 +1394,7 @@ To deploy this project yourself on Heroku, please follow the following additiona
     ```
     where `<arn-string>` is the copied ARN from above.
 6. Click Review Policy and enter an appropriate name and description before clicking Create Policy.
-7. Attach this policy to the group you created above via the **User Groups** permissions tab.
+7. Attach this policy to the Group you created above via the **User Groups** permissions tab.
 8. Click **Users** in the sidebar and click **Add User**.
 9. Enter an appropriate name and enable programmatic access.
 10. Add the user to the user group you created earlier and click next until you are able to click **Create User**.
@@ -1383,7 +1411,7 @@ To deploy this project yourself on Heroku, please follow the following additiona
 5. Select the images to upload, grant public read access, and click upload.
 
 #### Heroku
-1. Log in or sign up to [Heroku](https://www.heroku.com/).
+1. Login or sign up to [Heroku](https://www.heroku.com/).
 2. Create a new app with a unique name in a region close to you.
 3. In the Settings tab under Config Vars, add the following keys from your `env.py` with their respective values:
     - `DATABASE_URL`
@@ -1394,7 +1422,7 @@ To deploy this project yourself on Heroku, please follow the following additiona
     - `EMAIL_HOST_PASS`
     - `RECAPTCHA_PUBLIC_KEY`
     - `RECAPTCHA_PRIVATE_KEY`
-5. Add the below AWS-related keys in the same way. The access key and secret key are in the .csv file you downloaded in Part II Step 14.
+5. Add the below AWS-related keys in the same way. The access key and secret key are in the .csv file you downloaded in Part II, Step 14.
     - `AWS_ACCESS_KEY_ID`
     - `AWS_SECRET_ACCESS_KEY`
     - `USE_AWS:` with a value of `True`
@@ -1430,7 +1458,7 @@ Images were resized and cropped where necessary.
 - Tree service: [A Firefighter Cutting a Tree with a Chainsaw](https://www.pexels.com/photo/a-firefighter-cutting-a-tree-with-a-chainsaw-7812853/)
 - Hedge service: [Man Cutting a Hedge With a Trimmer in the Garden](https://www.pexels.com/photo/man-cutting-a-hedge-with-a-trimmer-in-the-garden-24595769/)
 - Flowerbed service: [Photo of Assorted Color Flowers at Daytime](https://www.pexels.com/photo/photo-of-assorted-color-flowers-at-daytime-1039129/)
-- Tree Stump service: [A Close Up Shot of a Tree Stump](https://www.pexels.com/photo/a-close-up-shot-of-a-tree-stump-10814837/)
+- Tree Stump service: [A Close-Up Shot of a Tree Stump](https://www.pexels.com/photo/a-close-up-shot-of-a-tree-stump-10814837/)
 
 
 ### Code Used
@@ -1444,7 +1472,7 @@ The UserAccount model and form | Adapted from the UserProfile model and form in 
 The Category model | Taken from the Boutique Ado walkthrough
 The Services app's `views.py` file | Taken from the Boutique Ado walkthrough with minor adjustments made.
 The Checkout app's `views.py` file | Adapted from the Boutique Ado walkthrough with major adjustments.
-Service star ratings | The HTML and CSS for the stars was copied from this [Codepen.io workspace](https://codepen.io/mcallaro88/pen/EWQdRX)
+Service star ratings | The HTML and CSS for the stars were copied from this [Codepen.io workspace](https://codepen.io/mcallaro88/pen/EWQdRX)
 The JavaScript code to control the decrement and increment of the number input field on the service pages | Taken from the Boutique Ado walkthrough
 The Order model | Adapted from the Boutique Ado walkthrough
 The OrderLineItem model | Adapted from the Boutique Ado walkthrough
@@ -1458,11 +1486,11 @@ The `checkout.css` file | The contents of this extra CSS file were copied from t
 The HTML structure of the toast messages | Adapted from examples in this article: [https://fastbootstrap.com/components/toast/](https://fastbootstrap.com/components/toast/)
 The Offcanvas cart preview | The HTML code was copied from the [Bootsrap documentation](https://getbootstrap.com/docs/5.0/components/offcanvas/)
 Pagination of reviews | Taken from the Django documentation: [https://docs.djangoproject.com/en/5.1/topics/pagination/](https://docs.djangoproject.com/en/5.1/topics/pagination/)
-The JavaScript code to control the color of the select field in the Contact Us form | Taken and adapted from the Boutique Ado walkthrough
+The JavaScript code to control the colour of the select field in the Contact Us form | Taken and adapted from the Boutique Ado walkthrough
 Form label for reCAPTCHA field| Line of code copied from a comment on this [GitHub post](https://github.com/google/recaptcha/issues/421)
 
 
 ## Acknowledgements
 - [Creating Your First README - Kera Cudmore](https://github.com/kera-cudmore/readme-examples)
-- I would like to thank my CI Mentor [Graeme Taylor](https://github.com/G-Taylor) for his encouragement and advice over the last 12 months of this course.
+- I would like to thank my CI Mentor [Graeme Taylor](https://github.com/G-Taylor), for his encouragement and advice over the last 12 months of this course.
 - To my partner Luiza, thank you for encouraging me to face new challenges and supporting me every step of the way. I could not have achieved all that I have without your love and support.
