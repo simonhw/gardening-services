@@ -27,7 +27,7 @@
                             <span class="icon"><i class="fas fa-lock px-2 fs-5"></i></span>
                         </div>
                         <div>
-                            <p class="m-0"><strong class="mate fs-5">Secure Checkout</strong></p>
+                            <h1 class="m-0 mate fw-bold fs-5">Secure Checkout</h1>
                         </div>
                     </div>
                 </div>
@@ -182,7 +182,7 @@
                                     {% for item in cart_items %}
                                     <div class="row">
                                         <div class="d-none d-sm-inline col-sm-2 offset-sm-1 my-1">
-                                            <img src="{{ MEDIA_URL }}{{ item.service.image }}" class="w-100 rounded"  alt="Image of a {{ service.name }} service"/>
+                                            <img src="{{ MEDIA_URL }}{{ item.service.image }}" class="w-100 rounded"  alt="{{ service.alt }}"/>
                                         </div>
                                         <div class="col-6 offset-1 col-sm-5 offset-sm-0">
                                             <p class="my-0 fs-mob-smaller"><b>{{item.number}} x {{ item.service.name }}</b></p>
