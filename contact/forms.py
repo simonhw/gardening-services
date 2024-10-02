@@ -34,6 +34,7 @@ class ContactUsForm(forms.ModelForm):
             'phone_number',
             'contact_reason',
             'message',
+            'captcha'
         }
         widgets = {
             'contact_reason': forms.Select(
@@ -75,6 +76,11 @@ class ContactUsForm(forms.ModelForm):
                 continue
             elif field == 'contact_reason':
                 self.fields[field].label = False
+                self.fields[field].widget.attrs.update(
+                    {
+                        'aria-label': placeholder
+                    }
+                )
                 continue
             elif self.fields[field].required:
                 placeholder = f'{placeholders[field]} *'
@@ -82,6 +88,11 @@ class ContactUsForm(forms.ModelForm):
                 placeholder = placeholders[field]
             self.fields[field].widget.attrs['placeholder'] = placeholder
             self.fields[field].label = False
+            self.fields[field].widget.attrs.update(
+                {
+                    'aria-label': placeholder
+                }
+            )
 
     def clean(self):
         """
