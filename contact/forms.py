@@ -71,6 +71,7 @@ class ContactUsForm(forms.ModelForm):
         }
 
         for field in self.fields:
+            placeholder = placeholders[field]
             if field == 'captcha':
                 self.fields[field].label = ''
                 continue

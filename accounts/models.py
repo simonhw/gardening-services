@@ -69,7 +69,7 @@ class CustomUser(AbstractUser, PermissionsMixin):
         first_name (CharField) - The user's first name
         last_name (CharField) - The user's surname
         is_staff (BooleanField) - The user's staff status
-    
+
     Sets the username field to use email addresses and sets the
     first_name and last_name fields as required.
 

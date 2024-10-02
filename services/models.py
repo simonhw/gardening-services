@@ -34,14 +34,14 @@ class Service(models.Model):
         review_count (PositiveIntegerField) - The number of published
                                               reviews a service has
         average_rating (DecimalField) - The average value of all the
-                                        published review ratings a 
-                                        service has 
+                                        published review ratings a
+                                        service has
         has_sizes (BooleanField) - Denotes whether or not the service
                                    can have the size attribute
         has_acres (BooleanField) - Denotes whether or not the service
                                    can have the acre attribute
         has_fellprune (BooleanField) - Denotes whether or not the
-                                       service can have the 
+                                       service can have the
                                        tree-related attribute
         has_surface (BooleanField - Denotes whether or not the service
                                     can have the surface attribute
@@ -68,7 +68,7 @@ class Service(models.Model):
     def calculate_average_rating(self):
         """
         Method that loops through all approved reviews for the service
-        and sums their ratings and divides by the total number of 
+        and sums their ratings and divides by the total number of
         approved reviews to get an average value.
         """
 

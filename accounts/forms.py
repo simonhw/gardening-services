@@ -115,7 +115,7 @@ class CustomUserCreationForm(SignupForm):
 
         cleaned_data = super().clean()
         email = cleaned_data.get('email')
-        
+
         try:
             if CustomUser.objects.get(email=email):
                 raise ValidationError('This email address is already in use')
@@ -133,7 +133,6 @@ class CustomUserCreationForm(SignupForm):
 
 class CustomLoginForm(LoginForm):
     """ A custom login form to allow for custtomisation """
-
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -164,6 +163,7 @@ class CustomResetPasswordForm(ResetPasswordForm):
                 'aria-label': 'Email Address'
             }
         )
+
 
 class CustomUserChangeForm(UserChangeForm):
     """ Specify the model used for editing a user """

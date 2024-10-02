@@ -270,9 +270,9 @@ def amend_cart(request, item_id):
                     cart.pop(item_id)
     elif tree:
         if number > 99:
-                messages.error(
-                    request, 'Number of services must be 99 or less.'
-                )
+            messages.error(
+                request, 'Number of services must be 99 or less.'
+            )
         elif number > 0:
             # Update the number of the specific size tree service
             cart[item_id]['cuts'][tree]['sizes'][size] = number
@@ -292,9 +292,9 @@ def amend_cart(request, item_id):
                 cart.pop(item_id)
     elif size:
         if number > 99:
-                messages.error(
-                    request, 'Number of services must be 99 or less.'
-                )
+            messages.error(
+                request, 'Number of services must be 99 or less.'
+            )
         elif number > 0:
             # Update the number of the specific size service
             cart[item_id]['sizes'][size] = number
@@ -312,9 +312,9 @@ def amend_cart(request, item_id):
                 cart.pop(item_id)
     else:
         if number > 99:
-                messages.error(
-                    request, 'Number of services must be 99 or less.'
-                )
+            messages.error(
+                request, 'Number of services must be 99 or less.'
+            )
         elif number > 0:
             # Update the number of the specific service
             cart[item_id] = number

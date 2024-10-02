@@ -220,7 +220,7 @@ if 'USE_AWS' in os.environ:
     AWS_S3_REGION_NAME = 'eu-west-1'
     AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
     AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
-    # The AWS custom domain declarationis longer than 79 characters. 
+    # The AWS custom domain declarationis longer than 79 characters.
     # Attempting to split it onto a new line with \ or () broke the URL link
     # on the deployed website. It is therefore appended with the noqa comment
     # to indicate to the linter that it should not be considered an error.
