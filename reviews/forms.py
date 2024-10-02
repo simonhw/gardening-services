@@ -22,6 +22,7 @@ class ReviewForm(forms.ModelForm):
             'title',
             'rating',
             'content',
+            'rating'
         }
         labels = {
             'title': '',
@@ -31,12 +32,14 @@ class ReviewForm(forms.ModelForm):
         widgets = {
             'title': forms.TextInput(
                 attrs={
-                    'placeholder': 'Title *'
+                    'placeholder': 'Title *',
+                    'aria-label': 'Review title'
                 }
             ),
             'content': forms.Textarea(
                 attrs={
                     'placeholder': 'Write a review... *',
+                    'aria-label': 'Review content',
                     'style': 'height: 200px;',
                 }
             ),
@@ -44,6 +47,9 @@ class ReviewForm(forms.ModelForm):
                 choices=[
                     (1, '★'), (2, '★'), (3, '★'), (4, '★'), (5, '★'),
                 ],
+                attrs={
+                    'aria-label': 'Review rating',
+                }
             ),
         }
 
