@@ -665,9 +665,13 @@ In `apps.py`, Flake8 flags `checkout.signals` as being imported but never used. 
 The WAVE tool was used to assess the website for any errors or issues associated with accessibility. The results and comments for each page are listed below.
 - All pages with the navbar contained an alert for a redundant homepage link. Both the site logo and the Home navbar link direct the user to the homepage. This in an intended design feature as users expect to click a site's logo to get back to the homepage and on mobile screens the user tap the logo to get back to the homepage instead of having to open the dropdown navbar menu. 
 This alert is not discussed again in the below list but is seen in the WAVE screenshots.
-- For pages with the review star ratings, the original design had colour contrast errors. A dark bacground colour was added to resolve this error, though it was not the preferred design choice.
+- For pages with the review star ratings, the original design had colour contrast errors. A dark background colour was added or text colour changes to resolve these errors, though it was not the preferred design choice. 
     - [Original Star Rating Design](static/images/testing/original-star.png)
     - [Final Star Rating Design](static/images/testing/final-star.png)
+    - [Original Reviews Design](static/images/readme/reviews-pagination.png)
+    - [Final Reviews Design](static/images/testing/final-review-stars.png)
+- One error is present on the Newsletter Signup Page related to a missing form label for a hidden input field that MailChimp uses to prevent form bot signups. Adding an aria-label could reduce the effectiveness of this measure. For this reason, this is not considered a true accessibilty error since no real humans are meant to ever interact with this field.
+- One alert is present on the Checkout page for a redundant link to the Cart page. This is intentional due to the design of the checkout form which only shows one of these links to the user at any given time. Having two links allows the user to navigate back to the cart from the Address Details section and from the Review Order section.
 
 Page | No Errors | Comments | Supporting Image
 :--- | :---: | :--- | :---: 
@@ -681,14 +685,14 @@ Tree Maintenance |&check; | | ![WAVE results for .html](static/images/testing)
 Hedge Cutting |&check; | | ![WAVE results for .html](static/images/testing)
 Flowerbed Care |&check; | | ![WAVE results for .html](static/images/testing)
 Tree Stump Removal |&check; | | ![WAVE results for .html](static/images/testing)
-Reviews | | star contrast | ![WAVE results for .html](static/images/testing)
-Create Reviews | | missing form labels, star contrast, missing fieldset| ![WAVE results for .html](static/images/testing)
-Unpublished Reviews | | star contrast | ![WAVE results for .html](static/images/testing)
-Cart | | form label, empty buttons, alt text, skipped headings | ![WAVE results for .html](static/images/testing)
-Checkout | | form lables, alt test, no h1, adjust cart redundant links| ![WAVE results for .html](static/images/testing)
-Checkout Success | | missing h1, missing form labels | ![WAVE results for .html](static/images/testing)
-Contact Us | | missing label| ![WAVE results for .html](static/images/testing)
-Newsletter | | form label, low contrast asterisks | ![WAVE results for .html](static/images/testing)
+Reviews |&check; |  | ![WAVE results for .html](static/images/testing)
+Create Reviews |&check; | star labels are not unique | ![WAVE results for .html](static/images/testing)
+Unpublished Reviews |&check; | | ![WAVE results for .html](static/images/testing)
+Cart |&check; | | ![WAVE results for .html](static/images/testing)
+Checkout |&check; | One acceptable alert. See above.| ![WAVE results for .html](static/images/testing)
+Checkout Success |&check; | | ![WAVE results for .html](static/images/testing)
+Contact Us |&check; | | ![WAVE results for .html](static/images/testing)
+Newsletter | &check; | One acceptable error. See comment above. | ![WAVE results for .html](static/images/testing)
 Privacy Policy |&check; | | ![WAVE results for .html](static/images/testing)
 403 |&check;| | ![WAVE results for .html](static/images/testing)
 404 |&check; | | ![WAVE results for .html](static/images/testing)
