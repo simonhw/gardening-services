@@ -37,18 +37,18 @@
                             <div class="card-body review-card">
                                 <h2 class="title fs-5">{{ review.title}}</h2>
                                 <div class="star-ratings mb-1">
-                                    <div class="fill-ratings review-fill-ratings" id="fill-ratings-{{review.pk}}" style="width: 0%;">
+                                    <div class="fill-ratings review-fill-ratings text-dark" id="fill-ratings-{{review.pk}}" style="width: 0%;">
                                         <span>★★★★★</span>
                                     </div>
-                                    <div class="empty-ratings">
-                                        <span>★★★★★</span>
+                                    <div class="empty-ratings text-dark">
+                                        <span>☆☆☆☆☆</span>
                                     </div>
                                     <div id="rating-{{review.pk}}" hidden>{{ review.rating }}</div>
                                 </div>
                                 <div class="card-text">{{ review.content | safe }}</div>
-                                <h6 class="card-subtitle text-end text-muted mb-2">- {{ review.reviewer.first_name }}</h6>
-                                <h6 class="card-subtitle text-end text-muted mb-2">Email: {{ review.reviewer.email }}</h6>
-                                <h6 class="card-subtitle text-end text-muted mb-2">{{ review.created_on }}</h6>
+                                <p class="card-subtitle text-end mb-2">- {{ review.reviewer.first_name }}</p>
+                                <p class="card-subtitle text-end mb-2">Email: {{ review.reviewer.email }}</p>
+                                <p class="card-subtitle text-end mb-2">{{ review.created_on }}</p>
                                 <hr>
                                 <div class="admin-buttons d-flex justify-content-around">
                                     <a href="{% url 'publish_review' service.id review.id %}" class="btn rounded-1 btn-dark isabelline">
@@ -59,7 +59,7 @@
                                         Edit
                                     </a>
                                     {% endif %}
-                                    <button type="button" class="btn rounded-1 btn-danger isabelline btn-delete" data-bs-toggle="modal"
+                                    <button type="button" class="btn rounded-1 btn-outline-danger btn-delete" data-bs-toggle="modal"
                                         data-bs-target="#deleteModal" data-review_id="{{ review.id }}" data-service_id="{{ service.id }}">
                                         Delete
                                     </button>   

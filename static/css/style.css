@@ -383,6 +383,11 @@ td > img,
     width: 104px;
 }
 
+.form-row fieldset > div {
+    background-color: #3A5A40;
+    border-radius: var(--bs-border-radius);
+}
+
 /* Smaller font size on mobiles for service names
    in checkout cart summary */
 @media (max-width: 473px) {
