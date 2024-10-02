@@ -71,19 +71,23 @@
                     <!-- Pagination Links -->
                     <div class="col-12 my-3">
                         <div class="pagination d-flex justify-content-center">
-                            <span class="step-links">
+                            <span class="step-links text-end">
                                 {% if page_obj.has_previous %}
+                                    {% if page_obj.paginator.num_pages > 2 %}
                                     <a href="?page=1" class="hunter-green">&laquo; first</a>
+                                    {% endif %}
                                     <a href="?page={{ page_obj.previous_page_number }}" class="hunter-green">previous</a>
                                 {% endif %}
                             </span>
                             <span class="current mx-2">
                                 Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
                             </span>
-                            <span class="step-links">
+                            <span class="step-links text-start">
                                 {% if page_obj.has_next %}
                                     <a href="?page={{ page_obj.next_page_number }}" class="hunter-green">next</a>
+                                    {% if page_obj.paginator.num_pages > 2 %}
                                     <a href="?page={{ page_obj.paginator.num_pages }}" class="hunter-green">last &raquo;</a>
+                                    {% endif %}
                                 {% endif %}
                             </span>
                         </div>
