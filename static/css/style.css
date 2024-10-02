@@ -389,6 +389,10 @@ td > img,
     .fs-mob-smaller {
         font-size: smaller;
     }
+
+    .w-sm-100 {
+        width: 100%;
+    }
 }
 
 @media (min-width: 473px) {
@@ -402,6 +406,17 @@ td > img,
     .adjust-cart {
         margin-top: 4px;
         margin-bottom: 4px;
+    }
+}
+
+/* Center Service Rating Text */
+@media (max-width: 768px) {
+    #star-ratings-row {
+        justify-content: center;
+    }
+    
+    .w-sm-100 {
+        width: 100%;
     }
 }
 
