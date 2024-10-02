@@ -1457,6 +1457,7 @@ The HTML structure of the toast messages | Adapted from examples in this article
 The Offcanvas cart preview | The HTML code was copied from the [Bootsrap documentation](https://getbootstrap.com/docs/5.0/components/offcanvas/)
 Pagination of reviews | Taken from the Django documentation: [https://docs.djangoproject.com/en/5.1/topics/pagination/](https://docs.djangoproject.com/en/5.1/topics/pagination/)
 The JavaScript code to control the color of the select field in the Contact Us form | Taken and adapted from the Boutique Ado walkthrough
+Form label for reCAPTCHA field| Line of code copied from a comment on this [GitHub post](https://github.com/google/recaptcha/issues/421)
 
 
 ## Acknowledgements
