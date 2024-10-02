@@ -48,7 +48,7 @@ class ReviewForm(forms.ModelForm):
                     (1, '★'), (2, '★'), (3, '★'), (4, '★'), (5, '★'),
                 ],
                 attrs={
-                    'aria-label': 'Review rating',
+                    'aria-label': f'Review rating radio button',
                 }
             ),
         }
