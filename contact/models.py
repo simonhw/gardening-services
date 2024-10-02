@@ -3,7 +3,21 @@ from accounts.models import UserAccount
 
 
 class ContactUs(models.Model):
-    """ A model for the Contact Us form """
+    """
+    A custom model for the Contact Us form
+
+    Fields:
+        account (ForeignKey) - A foreign key to link the user's message
+                               to their UserAccount if authenticated.
+        full_name (CharField) - The user's full name
+        email (EmailField) - The user's contact email
+        phone_number (CharField) - The user's contact number
+        contact_reason (CharField) - A specific reason for sending a
+                                     message. Can only be selected from
+                                     a dropdown list
+        message (CharField) - The user's message content
+        created_on - The date that the message was submitted
+    """
 
     account = models.ForeignKey(
         UserAccount,

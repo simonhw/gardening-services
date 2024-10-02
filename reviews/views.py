@@ -28,9 +28,7 @@ class ServiceReviews(View):
     """
 
     def get(self, request, service_id):
-        """
-        Function to handle pagination of reviews
-        """
+        """ Function to handle pagination of reviews """
 
         service = get_object_or_404(Service, pk=service_id)
         reviews = service.reviews.filter(approved=True).order_by('created_on')
@@ -99,9 +97,7 @@ class UnpublishedReviews(StaffCheck, View):
 
 
 def review_page(request, review_id):
-    """
-    View that displays an individual service review.
-    """
+    """ View that displays an individual service review """
 
     review = get_object_or_404(Review, pk=review_id)
 
@@ -163,6 +159,7 @@ def publish_review(request, service_id, review_id):
     Method to allow staff users to toggle the publication state of a
     review.
     """
+
     service = get_object_or_404(Service, pk=service_id)
     review = get_object_or_404(Review, pk=review_id)
 
@@ -263,6 +260,7 @@ def delete_review(request, service_id, review_id):
     """
     Method to allow staff users and review owners to delete a review
     """
+
     service = get_object_or_404(Service, pk=service_id)
     review = get_object_or_404(Review, pk=review_id)
 

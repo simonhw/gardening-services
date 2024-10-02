@@ -7,7 +7,9 @@ from django.dispatch import receiver
 
 
 class CustomUserManager(BaseUserManager):
-    """ Model for creating user accounts """
+    """
+    A custom model for creating user accounts
+    """
 
     def create_user(
         self, email, password, first_name, last_name, **extra_fields
@@ -60,7 +62,19 @@ class CustomUserManager(BaseUserManager):
 
 class CustomUser(AbstractUser, PermissionsMixin):
     """
-    Custom User model which takes the user's email as their username
+    A custom model which uses the user's email as their username
+
+    Fields:
+        email (EmailField) - The user's email address
+        first_name (CharField) - The user's first name
+        last_name (CharField) - The user's surname
+        is_staff (BooleanField) - The user's staff status
+    
+    Sets the username field to use email addresses and sets the
+    first_name and last_name fields as required.
+
+    Set the CustomUserManager model as the model to use when creating
+    new CustomUser model instances.
     """
 
     username = None
@@ -80,8 +94,8 @@ class CustomUser(AbstractUser, PermissionsMixin):
 
 class UserAccount(models.Model):
     """
-    A user account model for maintaining default delivery
-    information and order history
+    A user account model for maintaining default delivery information
+    and order history
     """
 
     user = models.OneToOneField(CustomUser, on_delete=models.CASCADE)

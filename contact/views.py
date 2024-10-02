@@ -54,7 +54,7 @@ def contact_us(request):
 
 
 def _send_contact_email(contact_us_form):
-    """ Send the user a confirmation email. """
+    """ Send the user a confirmation email """
 
     full_name = contact_us_form.cleaned_data['full_name']
     cust_email = contact_us_form.cleaned_data['email']
@@ -91,9 +91,7 @@ def _send_contact_email(contact_us_form):
 
 
 def subscribe_page(request):
-    """
-    View that renders the newsletter signup page.
-    """
+    """ View that renders the newsletter signup page """
 
     return render(
         request,

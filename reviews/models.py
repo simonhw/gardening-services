@@ -4,6 +4,24 @@ from services.models import Service
 
 
 class Review(models.Model):
+    """
+    A custom model for service Reviews.
+
+    Fields:
+        reviewer (ForeignKey) - A foreign key linked to the
+                                authenticated user
+        service (ForeignKey) - The service being reviewed
+        title (CharField) - A review title
+        content (CharField) - The body of the review text
+        created_on (DateField) - The date that the review was
+                                 originally submitted
+        updated_on (DateField) - The date that the review was last
+                                 edited or published
+        approved (BooleanField) - Denotes if the review has been
+                                  published or not
+        rating (IntegerField) - The user's rating from 1 to 5
+    """
+
     reviewer = models.ForeignKey(
         CustomUser,
         on_delete=models.SET_NULL,

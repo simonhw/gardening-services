@@ -7,7 +7,13 @@ from django.core.exceptions import ValidationError
 
 
 class CustomUserCreationForm(SignupForm):
-    """ Specify the model used for creating a user """
+    """
+    A class to specify the model used for creating a user. Placeholders
+    and aria-labels are added to the form fields. The fields are ordered
+    specifically. The clean_email method ensures that a user can't sign
+    up with an existing email address.
+    The specific save method that allauth expects is defined.
+    """
 
     first_name = forms.CharField(
         max_length=35,
@@ -126,8 +132,7 @@ class CustomUserCreationForm(SignupForm):
 
 
 class CustomLoginForm(LoginForm):
-    """ A custom login form to allow for customisation """
-
+    """ A custom login form to allow for custtomisation """
 
 
     def __init__(self, *args, **kwargs):
@@ -148,7 +153,7 @@ class CustomLoginForm(LoginForm):
 
 
 class CustomResetPasswordForm(ResetPasswordForm):
-    """ A custom login form to allow for cusomisation """
+    """ A custom reset passowrd form to allow for customisation """
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -169,9 +174,7 @@ class CustomUserChangeForm(UserChangeForm):
 
 
 class UserAccountForm(forms.ModelForm):
-    """
-    Form to handle updating user details.
-    """
+    """ Form to handle updating user details. """
 
     class Meta:
         model = UserAccount

@@ -5,11 +5,12 @@ from services.models import Service
 
 
 def view_cart(request):
-    ''' View that renders the shopping cart page '''
+    """ View that renders the shopping cart page """
 
     context = {
         'on_cart_page': True
     }
+
     return render(request, "cart/cart.html", context)
 
 

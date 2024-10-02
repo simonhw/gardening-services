@@ -21,17 +21,30 @@ class Category(models.Model):
 
 class Service(models.Model):
     """
-    Model for the gardening services on offer.
+    A custom Service model for the gardening services on offer
 
     Fields:
         category (ForeignKey) - The category type of the service
         name (CharField) - The name of the service
-        image (URLField) - An image representing the service
         unit_price (DecimalField) - The minimum price of the service
                                     based on how it is carried out
-        description (TextField - A full description of the service
-        rating (DecimalField) - A rating of the service based on
-                                customer reviews
+        description (TextField) - A full description of the service
+        image (URLField) - An image representing the service
+        alt (CharField) - Image alt test for accessibility
+        review_count (PositiveIntegerField) - The number of published
+                                              reviews a service has
+        average_rating (DecimalField) - The average value of all the
+                                        published review ratings a 
+                                        service has 
+        has_sizes (BooleanField) - Denotes whether or not the service
+                                   can have the size attribute
+        has_acres (BooleanField) - Denotes whether or not the service
+                                   can have the acre attribute
+        has_fellprune (BooleanField) - Denotes whether or not the
+                                       service can have the 
+                                       tree-related attribute
+        has_surface (BooleanField - Denotes whether or not the service
+                                    can have the surface attribute
     """
 
     category = models.ForeignKey(
@@ -53,6 +66,12 @@ class Service(models.Model):
     has_surface = models.BooleanField(default=False, null=True, blank=True)
 
     def calculate_average_rating(self):
+        """
+        Method that loops through all approved reviews for the service
+        and sums their ratings and divides by the total number of 
+        approved reviews to get an average value.
+        """
+
         reviews = self.reviews.filter(approved=True)
         if reviews:
             summed_ratings = sum(review.rating for review in reviews)

@@ -3,9 +3,7 @@ from .models import Service, Category
 
 
 def all_services(request):
-    '''
-    View that displays all services on offer
-    '''
+    """ View that displays all services on offer """
 
     services = Service.objects.all().order_by('pk')
     categories = None
@@ -28,9 +26,7 @@ def all_services(request):
 
 
 def service_page(request, service_id):
-    '''
-    View that displays the details of an individual product.
-    '''
+    """ View that displays the details of an individual product """
 
     service = get_object_or_404(Service, pk=service_id)
 

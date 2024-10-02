@@ -32,6 +32,7 @@ legend {
     font: 14px Helvetica, Arial, sans-serif;
 }
 
+/* Prevent reCAPTCHA box from causing x-scroll on smaller screens */
 @media (min-width: 375px) {
     .g-recaptcha {
         transform:scale(0.95);

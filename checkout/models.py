@@ -8,6 +8,26 @@ from accounts.models import UserAccount
 
 
 class Order(models.Model):
+    """
+    A model for user orders.
+
+    Fields:
+        order_number - A unique number for each order
+        user_account - The user who places the order
+        full_name - The user's name
+        email - Email associated with the order
+        phone_number - Phone number associated with the order
+        street_address1 - Required address field
+        street_address2 - Optional address field
+        town_or_city - Required address field
+        county - Required address field
+        eircode - Optional address field
+        date - The date that the order is created
+        grand_total - The total cose of the order
+        original_cart - The dictionary of services that were ordered
+        stripe_pid - The Stripe payment ID
+        """
+
     order_number = models.CharField(max_length=32, null=False, editable=False)
     user_account = models.ForeignKey(
         UserAccount,
@@ -61,6 +81,23 @@ class Order(models.Model):
 
 
 class OrderLineItem(models.Model):
+    """
+    A model for individal service variations in an order.
+
+    Fields:
+        order (ForeignKey) - The order the service is a part of
+        service (ForeignKey) - The service being added to the line
+        surface (CharField) - To denote if the service has a surface
+                              attribute
+        cuts (CharField) - To denote if the service has a tree-related
+                           attribute
+        size (CharField) - To denote if the service has a size
+                           attribute
+        number (IntegerField) - To denote if the service has a number
+                                attribute
+        line_item_total (DecimalField) - The subtotal for the line
+    """
+
     order = models.ForeignKey(
         Order, null=False, blank=False,
         on_delete=models.CASCADE, related_name='lineitems'
