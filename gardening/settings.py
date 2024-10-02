@@ -29,12 +29,15 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'DEVELOPMENT' in os.environ
 
-
 ALLOWED_HOSTS = [
     '8000-simonhw-gardeningservic-n6pd81grg5m.ws.codeinstitute-ide.net',
     'gardening-services-e596b6371c3f.herokuapp.com',
 ]
 
+# The URL for the locally deployed site below goes over the 79 character
+# line limit by 1. It was not possible to split this URL without breaking
+# the link. A noqa comment was therefore appended to the line so that the
+# linter did not consider it an error.
 ALLOWED_ORIGINS = [
     'https://8000-simonhw-gardeningservic-n6pd81grg5m.ws.codeinstitute-ide.net',  # noqa
     'https://gardening-services-e596b6371c3f.herokuapp.com/',
@@ -164,6 +167,10 @@ AUTHENTICATION_BACKENDS = [
     "django.contrib.auth.backends.ModelBackend",
 ]
 
+# The below password validator calls extend beyond the 79 character line
+# limit. There is no meaningful way to split these lines without losing
+# readability. The noqa comment is therefopre appended to tell the linter
+# that it should not consider these lines are errors.
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',  # noqa
@@ -213,11 +220,11 @@ if 'USE_AWS' in os.environ:
     AWS_S3_REGION_NAME = 'eu-west-1'
     AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
     AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
-    # The AWS custom domain is assigned temporarily here as the original line
-    # was longer than 79 characters. Attempting to split it onto a new line
-    # with \ or () broke the url link on the deployed website.
-    P8_DOM = f'{AWS_STORAGE_BUCKET_NAME}.s3.{AWS_S3_REGION_NAME}.amazonaws.com'
-    AWS_S3_CUSTOM_DOMAIN = P8_DOM
+    # The AWS custom domain declarationis longer than 79 characters. 
+    # Attempting to split it onto a new line with \ or () broke the URL link
+    # on the deployed website. It is therefore appended with the noqa comment
+    # to indicate to the linter that it should not be considered an error.
+    AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.{AWS_S3_REGION_NAME}.amazonaws.com'  # noqa
 
     STATICFILES_STORAGE = 'custom_storages.StaticStorage'
     STATICFILES_LOCATION = 'static'
