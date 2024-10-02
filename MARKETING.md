@@ -59,19 +59,19 @@ Positive elements from each of these business were analysed and incorporated int
 ## Content Marketing
 The Garden Path allows user to leave reviews for services they have purchased. Reviews are visible to all site users, regardless of their authentication status. While reviews are not published until a site admin approved the review, this step is only intended to be a bulwark against malicious or spam reviews. Showing all genuine reviews on the website, regardless of the rating, builds trust and credibility in the eyes of the customer. Many customers based their purchase decisions wholly on the contents of reviews. On each service page, the star rating and number of reviews are visible to the user under the service description, with their attention immediatly drawn to the orange colours of the stars. It was important to show the number of reviews next to the rating as many customers value a slightly lower rating with many reviews much higher than a high rating with only a few reviews.
 
-![Star rating on services page](static/images/readme/service-stars.png)
+![Star rating on services page](docs/images/readme/service-stars.png)
 
 ## Email Marketing
 A newsletter feature was added to the site as a way to keep customers engaged with the business. The content of newsletters sent out by The Garden Path would be designed to attract repeat business throughout the year. Seasonal work is one example of a valid reason to engage customers in this way. What customers may need in the summer does not necessarily translate well in the darker winter months. Reminding customers of other services offered by The Garden Path can help generate business which may otherwise be lost to competitors or not realised in the first place.
 
 The newsletter signup link is present in the footer on each webpage, and directs the user to a dedicated signup page. This gives new and repeat customers the opportunity to join this mailing list without feeling pressured to do so by a large modal that fills the screen.
 
-![Newsletter signup page](static/images/readme/newsletter-page.png)
+![Newsletter signup page](docs/images/readme/newsletter-page.png)
 
 ## Social Media Marketing
 A Facebook page (mockup) was created for The Garden Path to engage directly with a large and freely accessible potential customer base. The target demographic for this business is mainly homeowners or business owners. Currently, a majority of this age demographic would have working Facebook accounts. The use of a Facebook business page is free and allows for a effective way of marketing the business through the share feature and direct engagement with users via posts and comments. An active social media page can give potential customers a very good impression of an active and professional business. The each of access for Facebook users to message the business page can also foster new customer relationships and support existing ones.
 
-![Mock Facebook page for The Garden Path](static/images/readme/facebook_mockup.png)
+![Mock Facebook page for The Garden Path](docs/images/readme/facebook_mockup.png)
 
 ## Search Engine Optimisation
 ### Keywords
@@ -109,25 +109,25 @@ Using [Wordtracker](https://www.wordtracker.com/), keywords were tested to guage
 
 <details open><summary>Wordtracker results for 'gardening services'</summary>
 
-![Wordtracker results for 'gardening services'](static/images/readme/wordtracker-01.png)
+![Wordtracker results for 'gardening services'](docs/images/readme/wordtracker-01.png)
 
 </details>
 
 <details><summary>Wordtracker results for 'tree surgeon'</summary>
 
-![Wordtracker results for 'tree surgeon'](static/images/readme/wordtracker-02.png)
+![Wordtracker results for 'tree surgeon'](docs/images/readme/wordtracker-02.png)
 
 </details>
 
 <details><summary>Wordtracker results for 'landscaper'</summary>
 
-![Wordtracker results for 'landscaper'](static/images/readme/wordtracker-03.png)
+![Wordtracker results for 'landscaper'](docs/images/readme/wordtracker-03.png)
 
 </details>
 
 <details><summary>Wordtracker results for 'grass cutting'</summary>
 
-![Wordtracker results for 'grass cutting'](static/images/readme/wordtracker-04.png)
+![Wordtracker results for 'grass cutting'](docs/images/readme/wordtracker-04.png)
 
 </details>
 <br>
@@ -154,7 +154,7 @@ Some of these keywords were integrated in the website content inside `<strong>` 
 
 The footer includes links to relevant pages to increase The Garden Path's standing in website rankings. These include a link to the [Associaton of Landscape Contracters in Ireland](https://alci.ie/) and [The Royal Horticultural Society of Ireland](https://rhsi.ie/). Because these anchor tags do not include the `rel="noopener"` attribute, search engines will rank the website higher on indexes, but importantly, the websites linked are not direct business competitors.
 
-![Image of footer with relevant links](static/images/readme/new-footer.png)
+![Image of footer with relevant links](docs/images/readme/new-footer.png)
 
 ### Sitemap and Robots.txt 
 To improve the website's search engine ranking, both a `sitemap.xml` and `robots.txt` file were added. The `sitemap.xml` file lists the website's important URLs so that search engine can navigate through them and understand the structure of the website. The `robots.txt` file contains a list of disallowed directories that search engine spiders are not allowed to access. It also provides the URL of the `sitemap.xml` file.

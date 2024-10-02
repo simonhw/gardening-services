@@ -26,7 +26,7 @@ Deployed program on Heroku: [The Garden Path](https://gardening-services-e596b63
 For each of the 6 services available to the user, there is at least 1 and at most 3 form fields to interact with. These include select and number inputs, depending on the type of service.
 For all select inputs, it is impossible for the user not to select one of the options, as each input has one value already marked as selected.
 
-![Service select field](static/images/testing/service-select-input.gif)
+![Service select field](docs/images/testing/service-select-input.gif)
 
 The form on each service pages differs as follows:
 - Grass Cutting
@@ -46,7 +46,7 @@ The form on each service pages differs as follows:
 
 Each number input has a minimum value of 1 and a maximum value of 99. The decrement button is disabled by JavaScript code when the value is 1 and the increment button disabled when the value reaches 99. On desktop screens, the user can click the default arrow buttons inside the input field or use the keyboard to increase or decrease the numbers but the values will not go outside the set range of 1-99. The user may manually edit the number in the field to be less than 1 or greater than 99, but the form will not submit in this case and a validation message is displayed to the user.
 
-![Service number field](static/images/testing/service-number-input.gif)
+![Service number field](docs/images/testing/service-number-input.gif)
 
 ### The Checkout Form
 The checkout form is displayed to the user in three distinct sections and custom validation was written for each section.
@@ -54,11 +54,11 @@ The checkout form is displayed to the user in three distinct sections and custom
 #### Personal Details
 The first set of fields presented to the user are personal, contact, and address details. Required fields are marked with an asterisk and the **Continue to Payment** button is disabled until those fields contain data. This is achieved using [custom JavaScript code](https://github.com/simonhw/gardening-services/blob/main/static/js/checkout_form.js). An keyup event listener is added to each required input field which calls the `continueCheck()` and `allFilled()` functions. This functions together check the the value of each required input field, and if any are blank or only contain whitespace(s), keep the continue button disabled and only enable it when all required inputs contain text. In cases where users are logged in and have their personal details saved on their profile, these fields will already be filled with their data. For this reason, the `continueCheck()` function is also called when the page first loads.
 
-![The Personal Details fields and Continue button](static/images/readme/checkout-address.gif)
+![The Personal Details fields and Continue button](docs/images/readme/checkout-address.gif)
 
 <details><summary>Continue button being enabled on page load</summary>
 
-![Continue button being enabled on page load](static/images/testing/checkout-account-details.gif)
+![Continue button being enabled on page load](docs/images/testing/checkout-account-details.gif)
 
 </details>
 
@@ -66,33 +66,33 @@ The only validation messages that the user can see in this section relate to an 
 
 <details><summary>Email address validation warnings</summary>
 
-![Email address validation warnings](static/images/testing/checkout-email-validation.gif)
+![Email address validation warnings](docs/images/testing/checkout-email-validation.gif)
 
 </details>
 
 #### Payment Details
 This section consists of a single Stripe input field. Similar to above, the button that brings the user to the next step in the checkout process is disabled while the Stripe field remains empty. Realtime error handling is managed by code in the `stripe_elements.js` file. An change event listener checks if any error events are detected and displays the error messages in a div under the input. The **Review Order** button has a `disabled` attribute applied to it in these cases. If a "complete" event is detected, the script removes the disabled attribute from the **Review Order** button. If any other event occur, the button is kept disabled. In this way, the user may only continue to the final step of the checkout process when the Stripe input has been completed with no errors.
 
-![Empty Stripe input and disabled button](static/images/testing/card-empty.png)
-![Complete Stripe input and enabled button](static/images/testing/card-complete.png)
+![Empty Stripe input and disabled button](docs/images/testing/card-empty.png)
+![Complete Stripe input and enabled button](docs/images/testing/card-complete.png)
 
 <details><summary>Stripe input error messages</summary>
 
-![Stripe input error messages](static/images/testing/card-incomplete.png)
+![Stripe input error messages](docs/images/testing/card-incomplete.png)
 
-![Stripe input error messages](static/images/testing/card-invalid.png)
+![Stripe input error messages](docs/images/testing/card-invalid.png)
 
-![Stripe input error messages](static/images/testing/card-expiry.png)
+![Stripe input error messages](docs/images/testing/card-expiry.png)
 
-![Stripe input error messages](static/images/testing/card-cvc.png)
+![Stripe input error messages](docs/images/testing/card-cvc.png)
 
-![Stripe input error messages](static/images/testing/card-code.png)
+![Stripe input error messages](docs/images/testing/card-code.png)
 
 </details>
 
 <details><summary>Enabling and disabling button when data is deleted</summary>
 
-![Enabling and disabling button when data is deleted](static/images/testing/card-dynamic-button.gif)
+![Enabling and disabling button when data is deleted](docs/images/testing/card-dynamic-button.gif)
 
 </details>
 
@@ -101,7 +101,7 @@ In this section, the user will not find any form fields to complete, only a butt
 
 <details><summary>Payment error feedback in the Review Order section</summary>
 
-![Payment error feedback in the Review Order section](static/images/testing/card-declined.gif)
+![Payment error feedback in the Review Order section](docs/images/testing/card-declined.gif)
 
 </details>
 
@@ -114,48 +114,48 @@ Users who have previously ordered a service may leave a review for it. The revie
 
 Three input fields are presented to the user and each have custom validation. All three are set as required fields on the backend and the data is cleaned and checked for validity on form submission. If either of the three fields are not complete, ValidationErrors are raised and the fields outlined in red with an error message in bold red text displayed under the field. The ratings stars are given a red colour if the input is left blank.
 
-![Blank review form](static/images/testing/review-empty.png)
+![Blank review form](docs/images/testing/review-empty.png)
 
 <details><summary>ValidationError messages and styles</summary>
 
-![No title validation error](static/images/testing/review-title.png)
+![No title validation error](docs/images/testing/review-title.png)
 
-![No content validation error](static/images/testing/review-content.png)
+![No content validation error](docs/images/testing/review-content.png)
 
-![No rating validation error](static/images/testing/review-stars.png)
+![No rating validation error](docs/images/testing/review-stars.png)
 
 </details>
 
 <details><summary>Error styling resetting when inputs are corrected</summary>
 
-![Error styling resetting when inputs are corrected](static/images/testing/review-errors-reset.gif)
+![Error styling resetting when inputs are corrected](docs/images/testing/review-errors-reset.gif)
 
 </details>
 
 ### Contact Us Form
 Any site user may send a message to the business by using the contact form. There are six input fields presented to the user all of which are required. The first five fields will show browser validation messages without reloading the page if left blank when the **Send** button is clicked. The email field will show additional custom validation if the user enters an incomplete email of the form `example@email` without a top-level domain. This validation message is displayed after the user clicks the **Send** button and the page reloads. The reCAPTCHA field validation is displayed in the same way. This was achieved by cleaning the form data on the back end and raising ValidationError messages if any data was missing.
 
-![Blank Contact Us form](static/images/testing/contact.png)
+![Blank Contact Us form](docs/images/testing/contact.png)
 
 <details><summary>ValidationError messages and styles</summary>
 
-![No name validation error](static/images/testing/contact-name.png)
+![No name validation error](docs/images/testing/contact-name.png)
 
-![No email validation error](static/images/testing/contact-email-00.png)
+![No email validation error](docs/images/testing/contact-email-00.png)
 
-![Invalid email validation error 1](static/images/testing/contact-email-01.png)
+![Invalid email validation error 1](docs/images/testing/contact-email-01.png)
 
-![Invalid email validation error 2](static/images/testing/contact-email-02.png)
+![Invalid email validation error 2](docs/images/testing/contact-email-02.png)
 
-![Invalid email validation error 3](static/images/testing/contact-email-03.png)
+![Invalid email validation error 3](docs/images/testing/contact-email-03.png)
 
-![No phone number validation error](static/images/testing/contact-phone-01.png)
+![No phone number validation error](docs/images/testing/contact-phone-01.png)
 
-![No reason validation error](static/images/testing/contact-reason.png)
+![No reason validation error](docs/images/testing/contact-reason.png)
 
-![No message validation error](static/images/testing/contact-message.png)
+![No message validation error](docs/images/testing/contact-message.png)
 
-![No captcha validation error](static/images/testing/contact-captcha.png)
+![No captcha validation error](docs/images/testing/contact-captcha.png)
 
 </details>
 
@@ -170,7 +170,7 @@ An existing code block adds an asterisk to any form field that is required, so n
 
 <details><summary>Demonstration of Account Details form validation</summary>
 
-![Account Details form validation](static/images/testing/accounts-validation.png)
+![Account Details form validation](docs/images/testing/accounts-validation.png)
 
 </details>
 
@@ -182,52 +182,52 @@ Various allauth templates were used in this application and those that have form
 **User Stories** | **Achieved By:** | **Supporting Images**
 --- | --- | ---
 **Initial Project Setup** | |
-Set Up Django Files | Installing the correct version of Django in the IDE. Creating a project named "gardening". Creating an app called "home" and writing a basic view to display "Hello World!" on the homepage. | ![Closed Issue on kanban board](static/images/testing/kanban/setup.png)
-Create PostgreSQL Database | Creating a new PostgreSQL instance, copying the URL in the Details section, creating the `env.py` file and setting the `DATABASE_URL` constant, installing the relevant packages for database connection, and running migrations. | ![Closed Issue on kanban board](static/images/testing/kanban/database.png)
-Deploy Project to Heroku | Creating a Heroku app with a unique name, updating the code for deployment with Gunicorn, and deploying the app on Heroku. | ![Closed Issue on kanban board](static/images/testing/kanban/deploy-01.png)
-Deploy Heroku App with Static Files | Creating a staticfiles directory and collecting the static files, deploying the project on Heroku, and ensuring all styles are applied. | ![Closed Issue on kanban board](static/images/testing/kanban/deploy-02.png)
+Set Up Django Files | Installing the correct version of Django in the IDE. Creating a project named "gardening". Creating an app called "home" and writing a basic view to display "Hello World!" on the homepage. | ![Closed Issue on kanban board](docs/images/testing/kanban/setup.png)
+Create PostgreSQL Database | Creating a new PostgreSQL instance, copying the URL in the Details section, creating the `env.py` file and setting the `DATABASE_URL` constant, installing the relevant packages for database connection, and running migrations. | ![Closed Issue on kanban board](docs/images/testing/kanban/database.png)
+Deploy Project to Heroku | Creating a Heroku app with a unique name, updating the code for deployment with Gunicorn, and deploying the app on Heroku. | ![Closed Issue on kanban board](docs/images/testing/kanban/deploy-01.png)
+Deploy Heroku App with Static Files | Creating a staticfiles directory and collecting the static files, deploying the project on Heroku, and ensuring all styles are applied. | ![Closed Issue on kanban board](docs/images/testing/kanban/deploy-02.png)
 **Create Models** | |
-Three Custom Models | Creating custom Django models that were not directly copied from other sources. | ![Closed Issue on kanban board](static/images/testing/kanban/three-models.png)
-Create Service Model | Creating a **services** app, creating a models file, declaring the necessary imports, and creating a model with the appropriate fields required. | ![Closed Issue on kanban board](static/images/testing/kanban/service-model.png)
-Create Custom User Model | Creating an app called **accounts**, creating the CustomUser model in `models.py`, and updating `settings.py` to use the custom model. | ![Closed Issue on kanban board](static/images/testing/kanban/user-model.png)
-Create Order Model | Creating an app called **checkout**, creating the Order model in `models.py`, and adding functions to generate a unique order number and calculate the total price. | ![Closed Issue on kanban board](static/images/testing/kanban/order-model.png)
-Create OrderLineIem Model | Creating the OrderLineItem model in `models.py` and adding a function to calculate the line subtotal. | ![Closed Issue on kanban board](static/images/testing/kanban/orderline-model.png)
-Create Reviews Model | Creating an app called **reviews**, creating the Review model in `models.py`, and adding functions to calculate an average rating for a service. | ![Closed Issue on kanban board](static/images/testing/kanban/reviews-model.png)
-Create ContactUs Model | Creating an app called **contact** and creating the ContactUs model in `models.py`. | ![Closed Issue on kanban board](static/images/testing/kanban/contact-model.png)
+Three Custom Models | Creating custom Django models that were not directly copied from other sources. | ![Closed Issue on kanban board](docs/images/testing/kanban/three-models.png)
+Create Service Model | Creating a **services** app, creating a models file, declaring the necessary imports, and creating a model with the appropriate fields required. | ![Closed Issue on kanban board](docs/images/testing/kanban/service-model.png)
+Create Custom User Model | Creating an app called **accounts**, creating the CustomUser model in `models.py`, and updating `settings.py` to use the custom model. | ![Closed Issue on kanban board](docs/images/testing/kanban/user-model.png)
+Create Order Model | Creating an app called **checkout**, creating the Order model in `models.py`, and adding functions to generate a unique order number and calculate the total price. | ![Closed Issue on kanban board](docs/images/testing/kanban/order-model.png)
+Create OrderLineIem Model | Creating the OrderLineItem model in `models.py` and adding a function to calculate the line subtotal. | ![Closed Issue on kanban board](docs/images/testing/kanban/orderline-model.png)
+Create Reviews Model | Creating an app called **reviews**, creating the Review model in `models.py`, and adding functions to calculate an average rating for a service. | ![Closed Issue on kanban board](docs/images/testing/kanban/reviews-model.png)
+Create ContactUs Model | Creating an app called **contact** and creating the ContactUs model in `models.py`. | ![Closed Issue on kanban board](docs/images/testing/kanban/contact-model.png)
 **User Accounts** | |
-Create an Account | Clicking the sign-in button to prompt account creation. Verifying email address and logging out and logging back in using the created password. | ![Closed Issue on kanban board](static/images/testing/kanban/account-create.png)
-View Account Page | Navigating to the My Account page and viewing and amending details, and viewing past orders. | ![Closed Issue on kanban board](static/images/testing/kanban/account-view.png)
+Create an Account | Clicking the sign-in button to prompt account creation. Verifying email address and logging out and logging back in using the created password. | ![Closed Issue on kanban board](docs/images/testing/kanban/account-create.png)
+View Account Page | Navigating to the My Account page and viewing and amending details, and viewing past orders. | ![Closed Issue on kanban board](docs/images/testing/kanban/account-view.png)
 **Website Content** | |
-Create Base Template | Creating a `base.html` file, creating a header and nav bar for small screens, creating a footer for small screens, creating a header and nav bar for larger screens, and creating a footer for larger screens. | ![Closed Issue on kanban board](static/images/testing/kanban/base.png)
-View Homepage | Viewing the landing page on website load. | ![Closed Issue on kanban board](static/images/testing/kanban/home.png)
-View Business Information | Viewing the About Us page. Reading the business information, viewing the locations covered by the business, and seeing the products and services offered. | ![Closed Issue on kanban board](static/images/testing/kanban/about.png)
-Create Error Pages | Creating 404, 403, and 500 error page templates. | ![Closed Issue on kanban board](static/images/testing/kanban/error.png)
-View Privacy Policy | Navigating to the privacy policy page from a link in the footer and reading the privacy policy on a dedicated webpage. | ![Closed Issue on kanban board](static/images/testing/kanban/privacy.png)
+Create Base Template | Creating a `base.html` file, creating a header and nav bar for small screens, creating a footer for small screens, creating a header and nav bar for larger screens, and creating a footer for larger screens. | ![Closed Issue on kanban board](docs/images/testing/kanban/base.png)
+View Homepage | Viewing the landing page on website load. | ![Closed Issue on kanban board](docs/images/testing/kanban/home.png)
+View Business Information | Viewing the About Us page. Reading the business information, viewing the locations covered by the business, and seeing the products and services offered. | ![Closed Issue on kanban board](docs/images/testing/kanban/about.png)
+Create Error Pages | Creating 404, 403, and 500 error page templates. | ![Closed Issue on kanban board](docs/images/testing/kanban/error.png)
+View Privacy Policy | Navigating to the privacy policy page from a link in the footer and reading the privacy policy on a dedicated webpage. | ![Closed Issue on kanban board](docs/images/testing/kanban/privacy.png)
 **Services and Checkout** | |
-View Individual Service Details | Clicking on a service link in the navbar or services page. Reading the service description, price, and rating. | ![Closed Issue on kanban board](static/images/testing/kanban/service.png)
-Order a Service | Viewing the list of services that can be booked, selecting the relevant options, and adding the service(s) to the shopping cart. | ![Closed Issue on kanban board](static/images/testing/kanban/add-service.png)
-View Cart | Navigating to the cart page and viewing the list of services. Viewing each service's individual cost and the total cost of the order. | ![Closed Issue on kanban board](static/images/testing/kanban/cart.png)
-View Preview of Cart | Adding a service to the cart on smaller screens and viewing the toast message with the cart details. On desktop screens, adding a service to the cart and viewing the cart preview in the offcanvas window. | ![Closed Issue on kanban board](static/images/testing/kanban/cart-preview.png)
-Update Services from the Cart Page | Changing the number of a given service with the **+** and **-** buttons and seeing the subtotal price change. Removing a service from the cart with the remove button or by entering 0 into the number field. Viewing the order total update after updating or deleting a service. | ![Closed Issue on kanban board](static/images/testing/kanban/update-services.png)
-Proceed to Checkout | Clicking the checkout button and entering personal details, delivery details, and payment information before reviewing a summary of the order. | ![Closed Issue on kanban board](static/images/testing/kanban/checkout.png)
+View Individual Service Details | Clicking on a service link in the navbar or services page. Reading the service description, price, and rating. | ![Closed Issue on kanban board](docs/images/testing/kanban/service.png)
+Order a Service | Viewing the list of services that can be booked, selecting the relevant options, and adding the service(s) to the shopping cart. | ![Closed Issue on kanban board](docs/images/testing/kanban/add-service.png)
+View Cart | Navigating to the cart page and viewing the list of services. Viewing each service's individual cost and the total cost of the order. | ![Closed Issue on kanban board](docs/images/testing/kanban/cart.png)
+View Preview of Cart | Adding a service to the cart on smaller screens and viewing the toast message with the cart details. On desktop screens, adding a service to the cart and viewing the cart preview in the offcanvas window. | ![Closed Issue on kanban board](docs/images/testing/kanban/cart-preview.png)
+Update Services from the Cart Page | Changing the number of a given service with the **+** and **-** buttons and seeing the subtotal price change. Removing a service from the cart with the remove button or by entering 0 into the number field. Viewing the order total update after updating or deleting a service. | ![Closed Issue on kanban board](docs/images/testing/kanban/update-services.png)
+Proceed to Checkout | Clicking the checkout button and entering personal details, delivery details, and payment information before reviewing a summary of the order. | ![Closed Issue on kanban board](docs/images/testing/kanban/checkout.png)
 **Payment System** | |
-Set Up Stripe | Installing Stripe, setting up a webhook handler, and implementing views to process the payment and order data. | ![Closed Issue on kanban board](static/images/testing/kanban/stripe.png)
-Pay for an Order | Entering payment details in the checkout process and being informed of the success or failure of the payment attempt. | ![Closed Issue on kanban board](static/images/testing/kanban/pay.png)
-Receive Confirmation of Orders | Seeing a confirmation message on the site with an order number provided, viewing the submitted order details on the account page, and viewing the order details in an email confirmation. | ![Closed Issue on kanban board](static/images/testing/kanban/confirm.png)
+Set Up Stripe | Installing Stripe, setting up a webhook handler, and implementing views to process the payment and order data. | ![Closed Issue on kanban board](docs/images/testing/kanban/stripe.png)
+Pay for an Order | Entering payment details in the checkout process and being informed of the success or failure of the payment attempt. | ![Closed Issue on kanban board](docs/images/testing/kanban/pay.png)
+Receive Confirmation of Orders | Seeing a confirmation message on the site with an order number provided, viewing the submitted order details on the account page, and viewing the order details in an email confirmation. | ![Closed Issue on kanban board](docs/images/testing/kanban/confirm.png)
 **Reviews** | |
-View Reviews | On a particular service page, viewing all reviews for that service and navigating through the reviews via pagination. | ![Closed Issue on kanban board](static/images/testing/kanban/reviews.png)
-Review a Service | Interacting with a "Leave a Review" button, rating the service out of 5 stars, and writing a title and brief review. | ![Closed Issue on kanban board](static/images/testing/kanban/create.png)
-Edit a Review | For a particular review made, clicking the edit button and amending the title, content, and or the rating and saving the changes. | ![Closed Issue on kanban board](static/images/testing/kanban/edit.png)
-Publish Reviews | For a given pending review, publishing it to the website making it publicly visible.  For a given published review, unpublishing and preventing users from seeing it. | ![Closed Issue on kanban board](static/images/testing/kanban/publish.png)
-Delete a Review | Clicking the delete button when rendered and interacting with the modal to  with the option to confirm or cancel the delete action before it takes effect. | ![Closed Issue on kanban board](static/images/testing/kanban/delete.png)
+View Reviews | On a particular service page, viewing all reviews for that service and navigating through the reviews via pagination. | ![Closed Issue on kanban board](docs/images/testing/kanban/reviews.png)
+Review a Service | Interacting with a "Leave a Review" button, rating the service out of 5 stars, and writing a title and brief review. | ![Closed Issue on kanban board](docs/images/testing/kanban/create.png)
+Edit a Review | For a particular review made, clicking the edit button and amending the title, content, and or the rating and saving the changes. | ![Closed Issue on kanban board](docs/images/testing/kanban/edit.png)
+Publish Reviews | For a given pending review, publishing it to the website making it publicly visible.  For a given published review, unpublishing and preventing users from seeing it. | ![Closed Issue on kanban board](docs/images/testing/kanban/publish.png)
+Delete a Review | Clicking the delete button when rendered and interacting with the modal to  with the option to confirm or cancel the delete action before it takes effect. | ![Closed Issue on kanban board](docs/images/testing/kanban/delete.png)
 **Contact Us** | |
-View Contact Us Page | Navigating to the Contact Us page from the main nav bar and sending a message to the business using a form. | ![Closed Issue on kanban board](static/images/testing/kanban/contact.png)
-Contact Us Email Confirmation | Submitting a message using the Contact Us form and receiving a copy of the message via email. | ![Closed Issue on kanban board](static/images/testing/kanban/contact-confirm.png)
-Pre-filled Contact Us Form | Being logged into an account with details saved to the database and navigating to the Contact Us page. Seeing that the full name, email, and phone number fields are already completed using this data. | ![Closed Issue on kanban board](static/images/testing/kanban/contact-filled.png)
+View Contact Us Page | Navigating to the Contact Us page from the main nav bar and sending a message to the business using a form. | ![Closed Issue on kanban board](docs/images/testing/kanban/contact.png)
+Contact Us Email Confirmation | Submitting a message using the Contact Us form and receiving a copy of the message via email. | ![Closed Issue on kanban board](docs/images/testing/kanban/contact-confirm.png)
+Pre-filled Contact Us Form | Being logged into an account with details saved to the database and navigating to the Contact Us page. Seeing that the full name, email, and phone number fields are already completed using this data. | ![Closed Issue on kanban board](docs/images/testing/kanban/contact-filled.png)
 **Marketing** | |
-Subscribe to Newsletters | Submitting an email in the newsletter form and receiving visual feedback confirming successful addition to the mailing list. | ![Closed Issue on kanban board](static/images/testing/kanban/newsletter.png)
-Create Facebook Page | Creating a mock-up of a Facebook business page for The Garden Path with relevant images and text. | ![Closed Issue on kanban board](static/images/testing/kanban/facebook.png)
-Search Engine Optimisation | Conducting research on and implementing keywords, creating a `robots.txt` file, creating a `sitemap.xml` file, employing descriptive meta tags, adding appropriate `rel` attributes on external links, and adding links to reputable websites related to the business. | ![Closed Issue on kanban board](static/images/testing/kanban/seo.png)
+Subscribe to Newsletters | Submitting an email in the newsletter form and receiving visual feedback confirming successful addition to the mailing list. | ![Closed Issue on kanban board](docs/images/testing/kanban/newsletter.png)
+Create Facebook Page | Creating a mock-up of a Facebook business page for The Garden Path with relevant images and text. | ![Closed Issue on kanban board](docs/images/testing/kanban/facebook.png)
+Search Engine Optimisation | Conducting research on and implementing keywords, creating a `robots.txt` file, creating a `sitemap.xml` file, employing descriptive meta tags, adding appropriate `rel` attributes on external links, and adding links to reputable websites related to the business. | ![Closed Issue on kanban board](docs/images/testing/kanban/seo.png)
 
 ### Full Testing
 The program was deployed on Heroku and tested there on a Windows 10 desktop with a 26" monitor and on a One Plus 9 Pro mobile phone.
@@ -558,57 +558,57 @@ The W3C validator sites were used to validate the [HTML](https://validator.w3.or
 
 HTML Page | Passed with no Errors or Warnings? | Comments
 :--- | :---: | :---
-LOCAL [about.html](static/images/testing/w3c-about.png) | &check; | Trailing slash in self-closing `<img/>` element is flagged as having no effect.
-LOCAL [account.html](static/images/testing/w3c-account.png) | &check; |
-LOCAL [privacy.html](static/images/testing/w3c-privacy.png) | &check; |
-LOCAL [cart.html](static/images/testing/w3c-cart.png) | &check; | Trailing slash in self-closing `<img/>` element is flagged as having no effect.
-LOCAL [checkout.html](static/images/testing/w3c-checkout.png) | &check; | Trailing slash in self-closing `<img/>` element is flagged as having no effect.
-LOCAL [checkout_success.html](static/images/testing/w3c-checkout-success.png) | &check; |
-LOCAL [contact_us.html](static/images/testing/w3c-contact_us.png) | &check;* | This page had one warning and one error, both of which are due to third-party lines of code that are rendered by the reCAPTCHA library. The warning states that having a type attribute in its JavaScript `<script>` tag is unessecary. The error states that the attribute `required` is not allowed on the checkbox div rendered by reCAPTCHA. Attempts were made using JavaScript to remove the attribute on page load, as the field is set as required on the backend already; however, the third-party library still rendered the element with the `required` attribute. Even with this error, the form works as intended with no bugs present. For the purposes of this application, and espcially considering the error is due to third-party code that can't be easily edited, this page is considered as having **passed with no errors**. A trailing slash in a self-closing `<img/>` element is flagged as having no effect.
-LOCAL [subscribe.html](static/images/testing/w3c-subscribe.png) | &check; | Trailing slash in self-closing `<img/>` element is flagged as having no effect.
-LOCAL [index.html](static/images/testing/w3c-index.png) | &check; | Trailing slash in self-closing `<img/>` element is flagged as having no effect.
-LOCAL [create_review.html](static/images/testing/w3c-create_review.png) | &check; | Trailing slash in self-closing `<img/>` element is flagged as having no effect.
-LOCAL [reviews.html](static/images/testing/w3c-reviews.png) | &check; | Trailing slash in self-closing `<img/>` element is flagged as having no effect.
-LOCAL [unpublished_reviews.html](static/images/testing/w3c-unpublished_reviews.png) | &check; |
-LOCAL [service_page.html](static/images/testing/w3c-service_page.png) | &check; | Trailing slash in self-closing `<input/>` element is flagged as having no effect.
-LOCAL [services.html](static/images/testing/w3c-services.png) | &check; | Trailing slash in self-closing `<img/>` element is flagged as having no effect.
-LOCAL [403.html](static/images/testing/w3c-403.png) | &check; |
-| &check; |LOCAL [404.html](static/images/testing/w3c-404.png) | &check; |
-NOT TESTED YET!!! [500.html](static/images/testing/w3c-500.png) | | 
+LOCAL [about.html](docs/images/testing/w3c-about.png) | &check; | Trailing slash in self-closing `<img/>` element is flagged as having no effect.
+LOCAL [account.html](docs/images/testing/w3c-account.png) | &check; |
+LOCAL [privacy.html](docs/images/testing/w3c-privacy.png) | &check; |
+LOCAL [cart.html](docs/images/testing/w3c-cart.png) | &check; | Trailing slash in self-closing `<img/>` element is flagged as having no effect.
+LOCAL [checkout.html](docs/images/testing/w3c-checkout.png) | &check; | Trailing slash in self-closing `<img/>` element is flagged as having no effect.
+LOCAL [checkout_success.html](docs/images/testing/w3c-checkout-success.png) | &check; |
+LOCAL [contact_us.html](docs/images/testing/w3c-contact_us.png) | &check;* | This page had one warning and one error, both of which are due to third-party lines of code that are rendered by the reCAPTCHA library. The warning states that having a type attribute in its JavaScript `<script>` tag is unessecary. The error states that the attribute `required` is not allowed on the checkbox div rendered by reCAPTCHA. Attempts were made using JavaScript to remove the attribute on page load, as the field is set as required on the backend already; however, the third-party library still rendered the element with the `required` attribute. Even with this error, the form works as intended with no bugs present. For the purposes of this application, and espcially considering the error is due to third-party code that can't be easily edited, this page is considered as having **passed with no errors**. A trailing slash in a self-closing `<img/>` element is flagged as having no effect.
+LOCAL [subscribe.html](docs/images/testing/w3c-subscribe.png) | &check; | Trailing slash in self-closing `<img/>` element is flagged as having no effect.
+LOCAL [index.html](docs/images/testing/w3c-index.png) | &check; | Trailing slash in self-closing `<img/>` element is flagged as having no effect.
+LOCAL [create_review.html](docs/images/testing/w3c-create_review.png) | &check; | Trailing slash in self-closing `<img/>` element is flagged as having no effect.
+LOCAL [reviews.html](docs/images/testing/w3c-reviews.png) | &check; | Trailing slash in self-closing `<img/>` element is flagged as having no effect.
+LOCAL [unpublished_reviews.html](docs/images/testing/w3c-unpublished_reviews.png) | &check; |
+LOCAL [service_page.html](docs/images/testing/w3c-service_page.png) | &check; | Trailing slash in self-closing `<input/>` element is flagged as having no effect.
+LOCAL [services.html](docs/images/testing/w3c-services.png) | &check; | Trailing slash in self-closing `<img/>` element is flagged as having no effect.
+LOCAL [403.html](docs/images/testing/w3c-403.png) | &check; |
+| &check; |LOCAL [404.html](docs/images/testing/w3c-404.png) | &check; |
+NOT TESTED YET!!! [500.html](docs/images/testing/w3c-500.png) | | 
 Toast messages and Offcanvas | &check; | Toast messages and the Offcanvas element were triggered and validation of the HTML code was done by direct input e.g. a success toast after adding items to the cart.
-LOCAL [login.html](static/images/testing/w3c-login.png) | &check; |
-LOCAL [signup.html](static/images/testing/w3c-signup.png) | &check; |
-LOCAL [logout.html](static/images/testing/w3c-logout.png) | &check; |
-[password_reset.html](static/images/testing/w3c-password-reset.png) | &check; | Validated by direct input
-[password_reset_done.html](static/images/testing/w3c-password-reset-done.png) | &check; | Validated by direct input
-[password_reset_from_key.html](static/images/testing/w3c-password-reset-from-key.png) | &check; | Validated by direct input
-[password_reset_from_key_done.html](static/images/testing/w3c-password-reset-from-key-done.png) | &check; | Validated by direct input
-[verification_sent.html](static/images/testing/w3c-verification-sent.png) | &check; | Validated by direct input
-[email_confirm.html](static/images/testing/w3c-email-confirm.png) | &check; | Validated by direct input
+LOCAL [login.html](docs/images/testing/w3c-login.png) | &check; |
+LOCAL [signup.html](docs/images/testing/w3c-signup.png) | &check; |
+LOCAL [logout.html](docs/images/testing/w3c-logout.png) | &check; |
+[password_reset.html](docs/images/testing/w3c-password-reset.png) | &check; | Validated by direct input
+[password_reset_done.html](docs/images/testing/w3c-password-reset-done.png) | &check; | Validated by direct input
+[password_reset_from_key.html](docs/images/testing/w3c-password-reset-from-key.png) | &check; | Validated by direct input
+[password_reset_from_key_done.html](docs/images/testing/w3c-password-reset-from-key-done.png) | &check; | Validated by direct input
+[verification_sent.html](docs/images/testing/w3c-verification-sent.png) | &check; | Validated by direct input
+[email_confirm.html](docs/images/testing/w3c-email-confirm.png) | &check; | Validated by direct input
 
 CSS File | Passed with no Errors or Warnings? | Comments
 :--- | :---: | :---
-LOCAL [style.css](static/images/testing/w3c-css.png) | &check; | ????
-LOCAL [accounts.css](static/images/testing/w3c-css-accounts.png) | &check; |
-LOCAL [cart.css](static/images/testing/w3c-css-cart.png) | &check; |
-LOCAL [checkout.css](static/images/testing/w3c-css-checkout.png) | &check; |
-LOCAL [contact.css](static/images/testing/w3c-css-contact.png) | &check; |
-LOCAL [reviews.css](static/images/testing/w3c-css-reviews.png) | &check; |
+LOCAL [style.css](docs/images/testing/w3c-css.png) | &check; | ????
+LOCAL [accounts.css](docs/images/testing/w3c-css-accounts.png) | &check; |
+LOCAL [cart.css](docs/images/testing/w3c-css-cart.png) | &check; |
+LOCAL [checkout.css](docs/images/testing/w3c-css-checkout.png) | &check; |
+LOCAL [contact.css](docs/images/testing/w3c-css-contact.png) | &check; |
+LOCAL [reviews.css](docs/images/testing/w3c-css-reviews.png) | &check; |
 
 #### JavaScript
 JavaScript File | Passed with no Errors or Warnings? | Comments
 :--- | :---: | :---
-[cart.js](static/images/testing/jshint-cart.png) | &check; |
-[cart_numbers.js](static/images/testing/jshint-cart-numbers.png) | &check; |
-[cart_preview.js](static/images/testing/jshint-cart-preview.png) | &check; | One variable flagged as undefined: `bootstrap`. This variable is defined in the `bootstrap.bundle.min.js` script which is called before `cart_preview.js` thus allowing the function to work as intended.
-[checkout_form.js](static/images/testing/jshint-checkout-form.png) | &check; |
-[contact_us.js](static/images/testing/jshint-contact-us.png) | &check; |
-[delete_buttons.js](static/images/testing/jshint-delete-buttons.png) | &check; |
-[number_inputs.js](static/images/testing/jshint-number-inputs.png) | &check; |
-[review_stars.js](static/images/testing/jshint-review-stars.png) | &check; |
-[service_form.js](static/images/testing/jshint-service-form.png) | &check; |
-[star_ratings.js](static/images/testing/jshint-star-ratings.png) | &check; |
-[stripe_elements.js](static/images/testing/jshint-stripe-elements.png) | &check; | One variable flagged as undefined: `Stripe`. This variable is defined in `<script src="https://js.stripe.com/v3/"></script>` which is called before `stripe_elements.js` allowing it to be used correctly.
+[cart.js](docs/images/testing/jshint-cart.png) | &check; |
+[cart_numbers.js](docs/images/testing/jshint-cart-numbers.png) | &check; |
+[cart_preview.js](docs/images/testing/jshint-cart-preview.png) | &check; | One variable flagged as undefined: `bootstrap`. This variable is defined in the `bootstrap.bundle.min.js` script which is called before `cart_preview.js` thus allowing the function to work as intended.
+[checkout_form.js](docs/images/testing/jshint-checkout-form.png) | &check; |
+[contact_us.js](docs/images/testing/jshint-contact-us.png) | &check; |
+[delete_buttons.js](docs/images/testing/jshint-delete-buttons.png) | &check; |
+[number_inputs.js](docs/images/testing/jshint-number-inputs.png) | &check; |
+[review_stars.js](docs/images/testing/jshint-review-stars.png) | &check; |
+[service_form.js](docs/images/testing/jshint-service-form.png) | &check; |
+[star_ratings.js](docs/images/testing/jshint-star-ratings.png) | &check; |
+[stripe_elements.js](docs/images/testing/jshint-stripe-elements.png) | &check; | One variable flagged as undefined: `Stripe`. This variable is defined in `<script src="https://js.stripe.com/v3/"></script>` which is called before `stripe_elements.js` allowing it to be used correctly.
 
 #### Python
 Flake8 was used to check original Python code to ensure compliance with PEP8 standards. This was done by navigating to each Django app in turn and running `python3 -m flake8` in workspace terminal. Any issues were then listed in the terminal along with the filename and location within the file. When no issues remain, the terminal did not print any output.
@@ -625,25 +625,25 @@ There were two different types of errors flagged in the `settings.py` file:
     When applying the guideline would make the code less readable, even for someone who is used to reading code that follows this PEP."
     - The comment `# noqa` was added after each of these long lines so that the linter would ignore the error.
 
-    ![Flake8 command run in the gardening directory](static/images/testing/flake8-gardening.png)
+    ![Flake8 command run in the gardening directory](docs/images/testing/flake8-gardening.png)
 
 </details>
 
 <details><summary>The About app - No errors</summary>
 
-![Flake8 command run in the about directory](static/images/testing/flake8-about.png)
+![Flake8 command run in the about directory](docs/images/testing/flake8-about.png)
 
 </details>
 
 <details><summary>The Accounts app - No errors</summary>
 
-![Flake8 command run in the accounts directory](static/images/testing/flake8-about.png)
+![Flake8 command run in the accounts directory](docs/images/testing/flake8-about.png)
 
 </details>
 
 <details><summary>The Cart app - No errors</summary>
 
-![Flake8 command run in the cart directory](static/images/testing/flake8-cart.png)
+![Flake8 command run in the cart directory](docs/images/testing/flake8-cart.png)
 
 </details>
 
@@ -651,13 +651,13 @@ There were two different types of errors flagged in the `settings.py` file:
 
 In `apps.py`, Flake8 flags `checkout.signals` as being imported but never used. This is due to the linter seeing this file in isolation and not understanding the purpose of the import. It is included so that Django is aware of the signals module and the update listeners contained within.
 
-![Flake8 command run in the checkout directory](static/images/testing/flake8-checkout.png)
+![Flake8 command run in the checkout directory](docs/images/testing/flake8-checkout.png)
 
 </details>
 
 <details><summary>The Reviews app - No errors</summary>
 
-![Flake8 command run in the reviews directory](static/images/testing/flake8-reviews.png)
+![Flake8 command run in the reviews directory](docs/images/testing/flake8-reviews.png)
 
 </details>
 
@@ -666,68 +666,68 @@ The WAVE tool was used to assess the website for any errors or issues associated
 - All pages with the navbar contained an alert for a redundant homepage link. Both the site logo and the Home navbar link direct the user to the homepage. This in an intended design feature as users expect to click a site's logo to get back to the homepage and on mobile screens the user tap the logo to get back to the homepage instead of having to open the dropdown navbar menu. 
 This alert is not discussed again in the below list but is seen in the WAVE screenshots.
 - For pages with the review star ratings, the original design had colour contrast errors. A dark background colour was added or text colour changes to resolve these errors, though it was not the preferred design choice. 
-    - [Original Star Rating Design](static/images/testing/original-star.png)
-    - [Final Star Rating Design](static/images/testing/final-star.png)
-    - [Original Reviews Design](static/images/readme/reviews-pagination.png)
-    - [Final Reviews Design](static/images/testing/final-review-stars.png)
+    - [Original Star Rating Design](docs/images/testing/original-star.png)
+    - [Final Star Rating Design](docs/images/testing/final-star.png)
+    - [Original Reviews Design](docs/images/readme/reviews-pagination.png)
+    - [Final Reviews Design](docs/images/testing/final-review-stars.png)
 - One error is present on the Newsletter Signup Page related to a missing form label for a hidden input field that MailChimp uses to prevent form bot signups. Adding an aria-label could reduce the effectiveness of this measure. For this reason, this is not considered a true accessibilty error since no real humans are meant to ever interact with this field.
 - One alert is present on the Checkout page for a redundant link to the Cart page. This is intentional due to the design of the checkout form which only shows one of these links to the user at any given time. Having two links allows the user to navigate back to the cart from the Address Details section and from the Review Order section.
 
 Page | No Errors | Comments | Supporting Image
 :--- | :---: | :--- | :---: 
-Homepage | &check; | | ![WAVE results for index.html](static/images/testing/wave-index.png)
-About Us | &check; | | ![WAVE results for about.html](static/images/testing/wave-about.png)
-My Account |&check; | | ![WAVE results for .html](static/images/testing)
-All Services |  &check;| | ![WAVE results for .html](static/images/testing)
-Grass Cutting | &check; | | ![WAVE results for .html](static/images/testing)
-Weeding |&check; | | ![WAVE results for .html](static/images/testing)
-Tree Maintenance |&check; | | ![WAVE results for .html](static/images/testing)
-Hedge Cutting |&check; | | ![WAVE results for .html](static/images/testing)
-Flowerbed Care |&check; | | ![WAVE results for .html](static/images/testing)
-Tree Stump Removal |&check; | | ![WAVE results for .html](static/images/testing)
-Reviews |&check; |  | ![WAVE results for .html](static/images/testing)
-Create Reviews |&check; |  | ![WAVE results for .html](static/images/testing)
-Unpublished Reviews |&check; | | ![WAVE results for .html](static/images/testing)
-Cart |&check; | | ![WAVE results for .html](static/images/testing)
-Checkout |&check; | One acceptable alert. See above.| ![WAVE results for .html](static/images/testing)
-Checkout Success |&check; | | ![WAVE results for .html](static/images/testing)
-Contact Us |&check; | | ![WAVE results for .html](static/images/testing)
-Newsletter | &check; | One acceptable error. See comment above. | ![WAVE results for .html](static/images/testing)
-Privacy Policy |&check; | | ![WAVE results for .html](static/images/testing)
-403 |&check;| | ![WAVE results for .html](static/images/testing)
-404 |&check; | | ![WAVE results for .html](static/images/testing)
-500 |&check; | | ![WAVE results for .html](static/images/testing)
-Sign In |&check; | | ![WAVE results for .html](static/images/testing)
-Sign Up |&check; | | ![WAVE results for .html](static/images/testing)
-Sign Out |&check; | | ![WAVE results for .html](static/images/testing)
-Reset Password |&check; | | ![WAVE results for .html](static/images/testing)
-Reset Password Done |&check; | | ![WAVE results for .html](static/images/testing)
-Change Password |&check; | | ![WAVE results for .html](static/images/testing)
-Password Changed |&check; | | ![WAVE results for .html](static/images/testing)
-Sign Up Email Sent | &check;| | ![WAVE results for .html](static/images/testing)
-Verify Email |&check; | | ![WAVE results for .html](static/images/testing)
+Homepage | &check; | | ![WAVE results for index.html](docs/images/testing/wave-index.png)
+About Us | &check; | | ![WAVE results for about.html](docs/images/testing/wave-about.png)
+My Account |&check; | | ![WAVE results for .html](docs/images/testing)
+All Services |  &check;| | ![WAVE results for .html](docs/images/testing)
+Grass Cutting | &check; | | ![WAVE results for .html](docs/images/testing)
+Weeding |&check; | | ![WAVE results for .html](docs/images/testing)
+Tree Maintenance |&check; | | ![WAVE results for .html](docs/images/testing)
+Hedge Cutting |&check; | | ![WAVE results for .html](docs/images/testing)
+Flowerbed Care |&check; | | ![WAVE results for .html](docs/images/testing)
+Tree Stump Removal |&check; | | ![WAVE results for .html](docs/images/testing)
+Reviews |&check; |  | ![WAVE results for .html](docs/images/testing)
+Create Reviews |&check; |  | ![WAVE results for .html](docs/images/testing)
+Unpublished Reviews |&check; | | ![WAVE results for .html](docs/images/testing)
+Cart |&check; | | ![WAVE results for .html](docs/images/testing)
+Checkout |&check; | One acceptable alert. See above.| ![WAVE results for .html](docs/images/testing)
+Checkout Success |&check; | | ![WAVE results for .html](docs/images/testing)
+Contact Us |&check; | | ![WAVE results for .html](docs/images/testing)
+Newsletter | &check; | One acceptable error. See comment above. | ![WAVE results for .html](docs/images/testing)
+Privacy Policy |&check; | | ![WAVE results for .html](docs/images/testing)
+403 |&check;| | ![WAVE results for .html](docs/images/testing)
+404 |&check; | | ![WAVE results for .html](docs/images/testing)
+500 |&check; | | ![WAVE results for .html](docs/images/testing)
+Sign In |&check; | | ![WAVE results for .html](docs/images/testing)
+Sign Up |&check; | | ![WAVE results for .html](docs/images/testing)
+Sign Out |&check; | | ![WAVE results for .html](docs/images/testing)
+Reset Password |&check; | | ![WAVE results for .html](docs/images/testing)
+Reset Password Done |&check; | | ![WAVE results for .html](docs/images/testing)
+Change Password |&check; | | ![WAVE results for .html](docs/images/testing)
+Password Changed |&check; | | ![WAVE results for .html](docs/images/testing)
+Sign Up Email Sent | &check;| | ![WAVE results for .html](docs/images/testing)
+Verify Email |&check; | | ![WAVE results for .html](docs/images/testing)
 
 #### Lighthouse Testing
 ##### Home Page
 
 Desktop test:
 
-![Lighthouse test for index.html - desktop](static/images/testing/lighthouse-index-desktop.png)
+![Lighthouse test for index.html - desktop](docs/images/testing/lighthouse-index-desktop.png)
 
 Mobile test:
 
-![Lighthouse test for index.html - mobile](static/images/testing/lighthouse-index-mobile.png)
+![Lighthouse test for index.html - mobile](docs/images/testing/lighthouse-index-mobile.png)
 
 ##### About Page
 Desktop and mobile tests for about.html were all very good with scores ranging from 80 to 100.
 
 Desktop test:
 
-![Lighthouse test for about.html - desktop](static/images/testing/lighthouse-about-desktop.png)
+![Lighthouse test for about.html - desktop](docs/images/testing/lighthouse-about-desktop.png)
 
 Mobile test:
 
-![Lighthouse test for about.html - mobile](static/images/testing/lighthouse-about-mobile.png)
+![Lighthouse test for about.html - mobile](docs/images/testing/lighthouse-about-mobile.png)
 
 ## Bugs
 ### Known Bugs

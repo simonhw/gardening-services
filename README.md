@@ -3,7 +3,7 @@
 The Garden Path is an e-commerce website for a fictional gardening and landscaping business based in Munster, Ireland. The site offers customers a variety of services ranging from grass cutting and weed removal to arboriculture and tree stump removal. Customer reviews are visible to all site users, and registered users can view their order history and update their details.
 This website is responsive and designed to be viewed on a variety of screen sizes. 
 
-![AmIResponsive Layout of Website](static/images/readme/amiresponsive-gardenpath.png)
+![AmIResponsive Layout of Website](docs/images/readme/amiresponsive-gardenpath.png)
 
 Deployed program on Heroku: [The Garden Path](https://gardening-services-e596b6371c3f.herokuapp.com/)
 
@@ -379,12 +379,12 @@ All documentation on the marketing for this e-commerce application can be found 
 ### Colour Scheme
 A palette of greens gradually becoming lighter was chosen for this website. The different green colours are reflective of the environments in which The Garden Path services are carried out. An off-white colour called Isabelline was added to be able to soften areas of the website and avoid using a complete white shade.
 
-![Coolors colour palette](static/images/readme/the-garden-path-colours.png)
+![Coolors colour palette](docs/images/readme/the-garden-path-colours.png)
 
 ### Typography
 The Mate font was chosen from the Google Fonts library as its thin and sharp look evoked thought of garden tools, fencing, and ordered lines. This gives the impression of a professional business and evokes thoughts of neat and careful services carried out by the business.
 
-![Mate Font](static/images/readme/mate.png)
+![Mate Font](docs/images/readme/mate.png)
 
 ### Imagery
 Vibrant and colourful images were chosen for the website to represent the services on offer. Each service image is clear in what it represents with no superfluous information that could mislead the site user. 
@@ -398,34 +398,34 @@ Wireframes were created in Balsamiq for the initial front-end design of the webs
 
 #### Homepage Wireframe - Mobile
 
-![Homepage Wireframe - Mobile](static/images/readme/mobile-wireframe-home.png)
+![Homepage Wireframe - Mobile](docs/images/readme/mobile-wireframe-home.png)
 
 #### Homepage Wireframe - Tablet
 
-![Homepage Wireframe - Tablet](static/images/readme/tablet-wireframe-home.png)
+![Homepage Wireframe - Tablet](docs/images/readme/tablet-wireframe-home.png)
 
 #### Homepage Wireframe - Desktop
 
-![Homepage Wireframe - Desktop](static/images/readme/desktop-wireframe-home.png)
+![Homepage Wireframe - Desktop](docs/images/readme/desktop-wireframe-home.png)
 
 
 **About Us Page**
 
 <details open><summary>About Us Wireframe - Mobile</summary>
 
-![About Wireframe - Mobile](static/images/readme/mobile-about.png)
+![About Wireframe - Mobile](docs/images/readme/mobile-about.png)
 
 </details>
 
 <details><summary>About Us Wireframe - Tablet</summary>
 
-![About Wireframe - Tablet](static/images/readme/tablet-about.png)
+![About Wireframe - Tablet](docs/images/readme/tablet-about.png)
 
 </details>
 
 <details><summary>About Us Wireframe - Desktop</summary>
 
-![About Wireframe - Desktop](static/images/readme/desktop-about.png)
+![About Wireframe - Desktop](docs/images/readme/desktop-about.png)
 
 </details><br>
 
@@ -433,19 +433,19 @@ Wireframes were created in Balsamiq for the initial front-end design of the webs
 
 <details open><summary>Services Wireframe - Mobile</summary>
 
-![Services Wireframe - Mobile](static/images/readme/mobile-services.png)
+![Services Wireframe - Mobile](docs/images/readme/mobile-services.png)
 
 </details>
 
 <details><summary>Services Wireframe - Tablet</summary>
 
-![Services Wireframe - Tablet](static/images/readme/tablet-services.png)
+![Services Wireframe - Tablet](docs/images/readme/tablet-services.png)
 
 </details>
 
 <details><summary>Services Wireframe - Desktop</summary>
 
-![Services Wireframe - Desktop](static/images/readme/services-desktop.png)
+![Services Wireframe - Desktop](docs/images/readme/services-desktop.png)
 
 </details>
 
@@ -453,19 +453,19 @@ Wireframes were created in Balsamiq for the initial front-end design of the webs
 
 <details open><summary>Individual Service Wireframe - Mobile</summary>
 
-![Individial Service Wireframe - Mobile](static/images/readme/service-mobile.png)
+![Individial Service Wireframe - Mobile](docs/images/readme/service-mobile.png)
 
 </details>
 
 <details><summary>Individual Service Wireframe - Tablet</summary>
 
-![Individial Service Wireframe - Mobile](static/images/readme/tablet-service-page.png)
+![Individial Service Wireframe - Mobile](docs/images/readme/tablet-service-page.png)
 
 </details>
 
 <details><summary>Individual Service Wireframe - Desktop</summary>
 
-![Individial Service Wireframe - Mobile](static/images/readme/service-desktop.png)
+![Individial Service Wireframe - Mobile](docs/images/readme/service-desktop.png)
 
 </details>
 
@@ -473,19 +473,19 @@ Wireframes were created in Balsamiq for the initial front-end design of the webs
 
 <details open><summary>Basket Wireframe - Mobile</summary>
 
-![Basket Wireframe - Mobile](static/images/readme/basket-mobile.png)
+![Basket Wireframe - Mobile](docs/images/readme/basket-mobile.png)
 
 </details>
 
 <details><summary>Basket Wireframe - Tablet</summary>
 
-![Basket Wireframe - Mobile](static/images/readme/basket-tablet.png)
+![Basket Wireframe - Mobile](docs/images/readme/basket-tablet.png)
 
 </details>
 
 <details><summary>Basket Wireframe - Desktop</summary>
 
-![Basket Wireframe - Mobile](static/images/readme/basket-desktop.png)
+![Basket Wireframe - Mobile](docs/images/readme/basket-desktop.png)
 
 </details>
 
@@ -493,26 +493,26 @@ Wireframes were created in Balsamiq for the initial front-end design of the webs
 
 <details open><summary>Checkout Wireframe - Mobile</summary>
 
-![Checkout Wireframe - Mobile](static/images/readme/mobile-checkout.png)
+![Checkout Wireframe - Mobile](docs/images/readme/mobile-checkout.png)
 
 </details>
 
 <details><summary>Checkout Wireframe - Tablet</summary>
 
-![Checkout Wireframe - Mobile](static/images/readme/tablet-checkout.png)
+![Checkout Wireframe - Mobile](docs/images/readme/tablet-checkout.png)
 
 </details>
 
 <details><summary>Checkout Wireframe - Desktop</summary>
 
-![Checkout Wireframe - Mobile](static/images/readme/desktop-checkout.png)
+![Checkout Wireframe - Mobile](docs/images/readme/desktop-checkout.png)
 
 </details>
 
 ### Entity Relationship Diagrams
 An ERD was created to plan out the models that would be created and used in this project. In total, 8 custom models were written, including some taken from previous Django projects. These are credited below in the [Code Used](#code-used) section and all custom models are explained in the [Custom Models](#custom-models) section.
 
-![ERDs](static/images/readme/erd_the_garden_path.png)
+![ERDs](docs/images/readme/erd_the_garden_path.png)
 
 ### CRUD Functionality
 A key requirement for this project was for users to be able to create, read, update, and/or delete data from the database as appropriate. Users could interact with the database in these ways as follows:
@@ -544,8 +544,8 @@ On small screen sizes the navbar is a dropdown menu accessed on the right hand s
 
 <details open><summary>Comparison of navbar on small and large screens</summary>
 
-![Nav bar menu on small screens](static/images/readme/navbar-mobile.gif)
-![Nav bar on larger screens](static/images/readme/navbar-desktop.png)
+![Nav bar menu on small screens](docs/images/readme/navbar-mobile.gif)
+![Nav bar on larger screens](docs/images/readme/navbar-desktop.png)
 
 </details>
 
@@ -554,7 +554,7 @@ The hero image is shown with its original aspect ratio of ~3:2 on screen sizes u
 
 <details open><summary>Responsiveness of hero image with differing screen widths</summary>
 
-![Responsiveness of Hero Image](static/images/readme/hero-responsive.gif)
+![Responsiveness of Hero Image](docs/images/readme/hero-responsive.gif)
 
 </details>
 
@@ -563,8 +563,8 @@ Content on small screens is displayed in single column fashion, displaying text 
 
 <details open><summary>Comparison on text content layout on small and large screens</summary>
 
-![Content layout on small screens](static/images/readme/content-mobile.gif)
-![Content layout on large screens](static/images/readme/content-desktop.png)
+![Content layout on small screens](docs/images/readme/content-mobile.gif)
+![Content layout on large screens](docs/images/readme/content-desktop.png)
 
 </details>
 
@@ -573,19 +573,19 @@ On the service page, the service images are displayed in columns of 1, 2, 3, and
 
 <details open><summary>Service page on medium screens</summary>
 
-![Service page on small screens](static/images/readme/services-mob.gif)
+![Service page on small screens](docs/images/readme/services-mob.gif)
 
 </details>
 
 <details><summary>Service page on medium screens</summary>
 
-![Service page on medium screens](static/images/readme/services-tablet.gif)
+![Service page on medium screens](docs/images/readme/services-tablet.gif)
 
 </details>
 
 <details><summary>Service page on large screens</summary>
 
-![Service page on large screens](static/images/readme/services-desktop.gif)
+![Service page on large screens](docs/images/readme/services-desktop.gif)
 
 </details>
 
@@ -594,8 +594,8 @@ On each service page, the image and service information are displayed either in 
 
 <details open><summary>Comparison of service page on mobile and tablet screens</summary>
 
-![Grass Cutting page on mobile screens](static/images/readme/ind-services-mob.gif)
-![Grass Cutting page on tablet screens](static/images/readme/ind-services-tablet.png)
+![Grass Cutting page on mobile screens](docs/images/readme/ind-services-mob.gif)
+![Grass Cutting page on tablet screens](docs/images/readme/ind-services-tablet.png)
 
 </details>
 
@@ -604,13 +604,13 @@ The cart and its features are neatly arranged using the grid system on all scree
 
 <details open><summary>Cart on mobile screens</summary>
 
-![Cart on mobile screens](static/images/readme/cart-mob.gif)
+![Cart on mobile screens](docs/images/readme/cart-mob.gif)
 
 </details>
 
 <details><summary>Cart on desktop screens</summary>
 
-![Cart on desktop screens](static/images/readme/cart-desktop.gif)
+![Cart on desktop screens](docs/images/readme/cart-desktop.gif)
 
 </details>
 
@@ -619,9 +619,9 @@ The site logo, secure checkout text, and progress indicator change position at t
 
 <details open><summary>Comparison of checkout header on small and large screens</summary>
 
-![Checkout header on mobile screens](static/images/readme/checkout-mob.png)
-![Checkout header on mobile screens](static/images/readme/checkout-tablet.png)
-![Checkout header on mobile screens](static/images/readme/checkout-desktop.png)
+![Checkout header on mobile screens](docs/images/readme/checkout-mob.png)
+![Checkout header on mobile screens](docs/images/readme/checkout-tablet.png)
+![Checkout header on mobile screens](docs/images/readme/checkout-desktop.png)
 
 </details>
 
@@ -629,8 +629,8 @@ The review order card does not diplay the service images on mobile screen, but o
 
 <details open><summary>Comparison of review order card on small and large screens</summary>
 
-![Checkout order review card on mobile screens](static/images/readme/checkout-review-mob.png)
-![Checkout order review card on wider screens](static/images/readme/checkout-review-desktop.png)
+![Checkout order review card on mobile screens](docs/images/readme/checkout-review-mob.png)
+![Checkout order review card on wider screens](docs/images/readme/checkout-review-desktop.png)
 
 </details>
 
@@ -639,8 +639,8 @@ Reviews are displayed in different ways depending on how many there are for a se
 
 <details open><summary>Comparison of user reviews small and large screens</summary>
 
-![User reviews on mobile screens](static/images/readme/reviews-mob.gif)
-![User reviews on wider screens](static/images/readme/review-tablet.png)
+![User reviews on mobile screens](docs/images/readme/reviews-mob.gif)
+![User reviews on wider screens](docs/images/readme/review-tablet.png)
 
 </details>
 
@@ -649,16 +649,16 @@ The Contact Us page displays its form fields in columns of width 10 with an offs
 
 <details open><summary>The Contact Us page on small and large screens</summary>
 
-![Contact Us page on mobile screens](static/images/readme/contact-mob.png)
-![Contact Us page on mobile screens](static/images/readme/contact-desktop.png)
+![Contact Us page on mobile screens](docs/images/readme/contact-mob.png)
+![Contact Us page on mobile screens](docs/images/readme/contact-desktop.png)
 
 </details>
 
 #### Footer
 The footer is displayed in a single column on small screens, with a horizontal line separating the different information block. On larger screens, these blocks are arranged in a row that uses the full width of the screen, and the horizontal lines are hidden. 
 
-![Footer on small screens](static/images/readme/footer-mobile.png)
-![Footer on larger screens](static/images/readme/footer-desktop.png)
+![Footer on small screens](docs/images/readme/footer-mobile.png)
+![Footer on larger screens](docs/images/readme/footer-desktop.png)
 
 ## Features
 The website consists of 42 pages with varying levels of accessibility for different types of users:
@@ -692,12 +692,12 @@ Unpublished Reviews (6) |  |  | &check;
 
 **1.** A favicon of a pair of gloves. This icon was chosen to reflect a hands-on and professional business to the customer.  
 
-![Gloves favicon](static/images/readme/gloves-favicon.png)
+![Gloves favicon](docs/images/readme/gloves-favicon.png)
 
 **2.** A header with a logo and nav bar or menu dropdown for page links (except the checkout page)
 
-![Website Header on mobile](static/images/readme/header-mobile.png)
-![Website Header on desktop](static/images/readme/header-desktop.png)
+![Website Header on mobile](docs/images/readme/header-mobile.png)
+![Website Header on desktop](docs/images/readme/header-desktop.png)
 
 The header contains direct links to the main pages of the website, depending on the authentication status of the site user. The nav link for the page currently being viewed is made distinct with a CSS style of `active` which is represented by a background colour of Sage and text colour of Isabelline when the nav bar is in dropdown form, and a bold font weight with a subtle Isabelline text shadow on larger screens.
 - The website logo "The Garden Path" is a link which when clicked will return the user to the `index.html` page.
@@ -711,8 +711,8 @@ When a user is signed in, the header links change.
 - A new link "My Account" brings the user to the `account.html` page.
 - "Log In/Sign Up" is hidden and "Log Out" is shown, which will direct the user to the `logout.html` account page.
 
-    ![Website Header on mobile when user is logged in](static/images/readme/header-authenticated-mobile.png)
-    ![Website Header on dekstop when user is logged in](static/images/readme/header-authenticated-desktop.png)
+    ![Website Header on mobile when user is logged in](docs/images/readme/header-authenticated-mobile.png)
+    ![Website Header on dekstop when user is logged in](docs/images/readme/header-authenticated-desktop.png)
 
 
 **3.** A footer with contact information, social media links, and links to important internal pages and relevant external sites.
@@ -726,26 +726,26 @@ When a user is signed in, the header links change.
     - The privacy policy page
     - The newsletter signup page
 
-![Website Footer](static/images/readme/footer-desktop.png)
+![Website Footer](docs/images/readme/footer-desktop.png)
 
 ### The Homepage
 The homepage contains two sections: a general introduction and a services overview. A heading welcomes the user with a smaller muted heading below it communicating that the business is local and specialists in garden care. An image of a smartly-dressed mature man holding a leaf is displayed next to the introduction. This gives the user a sense that the business offers experience and knowledge. The services sub-heading lists the location covered by the business so that the user understands without having to navigate further through the website if they can avail of The Garden Path's services. An image of a man driving a ride-on lawnmower is shown next to the summary of service, and a button which links to the service page is displayed underneath.
 
-![The website' homepage](static/images/readme/content-desktop.png)
+![The website' homepage](docs/images/readme/content-desktop.png)
 
 ### The About Page
 Three distinct sections are displayed on the About page.
 - The first is a short statement about the business following by a paragraph on the founding of the business by the fictional Dermot Murphy. This history instills a sense of trust and customer care in the user as they think of The Garden Path as one that started as a local business run by someone passionate about their work that has become successful and increased in size. A picture of "Dermot" amongst vegetation reading from a tablet makes the user think of the business as one with good attention to detail.
 
-    ![Our Story section of About Us page](static/images/readme/about-story.png)
+    ![Our Story section of About Us page](docs/images/readme/about-story.png)
 
 - The second section has a different background colour and inset shadow both to seperate it clearly from the other sections and to break up the amount of white on the page. This section contains two different headings which detail the business' mission and the top reasons to patronise The Garden Path. There is a button underneath the "Why Choose Us?" list which brings the customer directly to the Contact Us page if they want to get a quote for the work to be carried out.
 
-    ![Our Mission section of About Us page](static/images/readme/about-mission.png)
+    ![Our Mission section of About Us page](docs/images/readme/about-mission.png)
 
 - The third section is brief paragraph that speaks directly to the prospective customer. It communicates that the business is dedicated to quality service and delivering exactly what the customer wants. A image of "Dermot" smiling and looking directly at the camera make a connection with the user as if they were speaking in person to a staff member.
 
-    ![Our Mission section of About Us page](static/images/readme/about-committment.png)
+    ![Our Mission section of About Us page](docs/images/readme/about-committment.png)
 
 
 ### The Service Pages
@@ -753,31 +753,31 @@ Three distinct sections are displayed on the About page.
 The All Services page consists of two sections: the list of services and the pricing model.
 - Currently offering 6 types of services, the business displays each as a card containing a large vibrant image with a title underneath it. Clicking any of the images or titles will bring the user to the individual service page.
 
-    ![The All Services page services section](static/images/readme/services-section.png)
+    ![The All Services page services section](docs/images/readme/services-section.png)
 
 - The pricing model section outlines the hourly rates for each category of service and, if applicable, the minimum number of hours for the service to be carried out.
 
-    ![The pricing model section](static/images/readme/pricing-section.png)
+    ![The pricing model section](docs/images/readme/pricing-section.png)
 
 #### Individual Service Pages
 For each individal service, the page is displayed with the hero image, to draw the user's eye to the colours in the image and in the star ratings. A brief description of the service is given, under which sits the star rating. The average rating is displayed as a number of stars out of 5 filled with an orange colour. The decimal value of the rating is listed next to the stars as well as the number of reviews. The number of reviews is a link to the reviews page for the service and is one of the few links on the website outside of the footer where the underline has not been removed for styling reasons. It must be present so that the user understand they can click the link to view the list of reviews.
 
 Underneath the rating are the option(s) for the user to select. These can range from 1-3 options e.g. the size of the area for grass cutting (1 option) or the type of tree service, the size of the tree, and the number of trees (3 options). The price per number of services is shown underneath the options along with two buttons that either allow the user to go back to the list of all services or to add the current service to the user's cart with the selected options.
 
-![An individual service page](static/images/readme/ind-services-tablet.png)
+![An individual service page](docs/images/readme/ind-services-tablet.png)
 
 Underneath each service's title are breadcrumb links of the form "All Services > Category > Service". Clicking on the Services breadcrumb takes the user back to the All Services page. Clicking the category breadcrumb (in the above image called "Garden Maintenance") renders the all services page with a category filter so that only services of the current category are shown and with the category name appended to the page's heading. The breadcrumb is shown in bold for the level of page that the user is currently viewing.
 
-![The service category page for Garden Maintenance](static/images/readme/category-page.png)
+![The service category page for Garden Maintenance](docs/images/readme/category-page.png)
 
 ### The Shopping Cart
 When viewing the cart page without any services having been added to it, a message saying "Your cart is empty" is displayed with a button that will bring the user back to the All Services page. The heading indicates the number of services in the cart at any given time.
 
 <details open><summary>Comparison of the cart page when empty and when containing one service</summary>
 
-![Empty Cart page](static/images/readme/cart-empty.png)
+![Empty Cart page](docs/images/readme/cart-empty.png)
 
-![Cart page with one service](static/images/readme/cart-01.png)
+![Cart page with one service](docs/images/readme/cart-01.png)
 
 </details>
 
@@ -785,42 +785,42 @@ When greater than zero, the total price of the services in the cart is appended 
 
 <details open><summary>Comparison of the cart page with several services on different screen sizes</summary>
 
-![A cart with many services on small screens](static/images/readme/cart-mob.gif)
+![A cart with many services on small screens](docs/images/readme/cart-mob.gif)
 
-![A cart with many services on larger screens](static/images/readme/cart-desktop.gif)
+![A cart with many services on larger screens](docs/images/readme/cart-desktop.gif)
 
 </details>
 
 #### Quantity and Remove buttons
 To amend the number of services directly from the cart, the user can click the **-** or **+** buttons to immediatley update the value. The decrement button is disabled when the value is 1 but the user may enter 0 directly into the field in which case the service will be removed from the cart.
 
-![Removing a service from the cart by setting the number to 0](static/images/readme/cart-0-remove.gif)
+![Removing a service from the cart by setting the number to 0](docs/images/readme/cart-0-remove.gif)
 
 The remove button is given a prominent size, either as wide as the image or the details container. The `btn-outline-danger` Bootstrap class is used instead of a solid red fill for three different reasons: 
 - To keep the association of red with removal or deletion
 - To not distract from the colours in the vibrant images
 - To avoid clashing with the various green shades used
 
-![Removing an item from the cart with the remove button](static/images/readme/cart-remove-button.gif)
+![Removing an item from the cart with the remove button](docs/images/readme/cart-remove-button.gif)
 
 #### The Cart Preview
 When adding services to the cart, the user is shown a summary of the current contents of their cart and the total price. This is displayed in the toast message on mobile and tablet screens, and in an offcanvas element on desktop screens. Both types of preview feature a scrollable list for many services and a "View Cart" button to bring the user directly to the cart page.
 
-![Cart preview on smaller screens](static/images/readme/cart-preview-mob.gif)
+![Cart preview on smaller screens](docs/images/readme/cart-preview-mob.gif)
 
-![Cart preview on desktop screens](static/images/readme/cart-preview-desktop.gif)
+![Cart preview on desktop screens](docs/images/readme/cart-preview-desktop.gif)
 
 ### The Checkout Page
 When a user proceeds to the checkout page, the navbar is not shown. The site logo is still present, but in the navbar's place is now text saying "Secure Checkout" with a padlock icon, and a custom progress indicator for the checkout process. 
 
-![Checkout Page header](static/images/readme/checkout-mob.png)
+![Checkout Page header](docs/images/readme/checkout-mob.png)
 
 #### Progress Indicator
 The indicator consists of three filled grey circles connected by grey lines representing the three steps of the checkout process. This is made clear to the user with subheadings under each circle titled "Address", "Payment", and "Review". The circle representing the current step is twice the diameter of the others and has a black colour. When a user moves to the next step, the previous step's circle and the connecting line retain their black colour, but the circle becomes smaller again. This allows the user to understand exactly where they are in the checkout process, what steps they have completed, and how many steps are left.
 
 <details><summary>Demonstration of checkout progress indicator</summary>
 
-![Demonstration of checkout progress indicator](static/images/readme/checkout-progress.gif)
+![Demonstration of checkout progress indicator](docs/images/readme/checkout-progress.gif)
 
 </details>
 
@@ -829,13 +829,13 @@ The user is first presented with form fields related to their personal details a
 
 <details><summary>Checkout address fields and proceed button enable/disable feature</summary>
 
-![Checkout address fields and proceed button enable/disable feature](static/images/readme/checkout-address.gif)
+![Checkout address fields and proceed button enable/disable feature](docs/images/readme/checkout-address.gif)
 
 </details>
 
 <details><summary>Save details checkbox in checkout form</summary>
 
-![Save details checkbox in checkout form](static/images/readme/checkout-save-details.png)
+![Save details checkbox in checkout form](docs/images/readme/checkout-save-details.png)
 
 </details>
 
@@ -844,7 +844,7 @@ Continuing to the next stage, the user must enter valid card details into a Stri
 
 <details><summary>Checkout payment input and review order button</summary>
 
-![Checkout payment input and review order button](static/images/readme/checkout-payment.gif)
+![Checkout payment input and review order button](docs/images/readme/checkout-payment.gif)
 
 </details>
 
@@ -853,18 +853,18 @@ Moving to the final step of the checkout process, an orange text box explains th
 
 <details><summary>Review Order section and checkout submission</summary>
 
-![Review Order section and checkout submission](static/images/readme/checkout-success.gif)
+![Review Order section and checkout submission](docs/images/readme/checkout-success.gif)
 
 </details>
 
 #### Checkout Success
 On successful checkout, a confirmation toast message is shown and informs the user that copy of the order details will be sent to the provided email.
 
-![Checkout success toast message](static/images/readme/checkout-success-toast.png)
+![Checkout success toast message](docs/images/readme/checkout-success-toast.png)
 
 The success page itself also confirms this as well as providing the unique order number. A summary of the order details is given with a button allowing the user to navigate back to the website's homepage.
 
-![Checkout success page](static/images/readme/checkout-success.png)
+![Checkout success page](docs/images/readme/checkout-success.png)
 
 ### User Accounts
 #### Signing Up
@@ -872,7 +872,7 @@ Visitors to the website can register for a user account via a number of links to
 
 <details open><summary>The Sign Up page</summary>
 
-![The Sign Up page](static/images/readme/signup.png)
+![The Sign Up page](docs/images/readme/signup.png)
 
 </details>
 
@@ -880,21 +880,21 @@ After entering valid details, the user can click the Sign Up button to be brough
 
 <details><summary>The Signup form being submitted</summary>
 
-![The Sign Up form being submitted](static/images/readme/verify-email.gif)
+![The Sign Up form being submitted](docs/images/readme/verify-email.gif)
 
 </details>
 
 <details><summary>The Verify Email toast message</summary>
 
-![The Verify Email toast message](static/images/readme/verify-toast.png)
+![The Verify Email toast message](docs/images/readme/verify-toast.png)
 
 </details>
 
 <details><summary>Verifying the email address</summary>
 
-![The verify email page](static/images/readme/email-confirm.png)
+![The verify email page](docs/images/readme/email-confirm.png)
 
-![Toast message after email verification](static/images/readme/email-confirmed.png)
+![Toast message after email verification](docs/images/readme/email-confirmed.png)
 
 </details>
 
@@ -903,13 +903,13 @@ Existing users may log in using their email and password. On the login form ther
 
 <details open><summary>The Sign In page</summary>
 
-![The Sign In page](static/images/readme/login.png)
+![The Sign In page](docs/images/readme/login.png)
 
 </details>
 
 <details><summary>Login toast message</summary>
 
-![The Verify Email toast message](static/images/readme/login-toast.png)
+![The Verify Email toast message](docs/images/readme/login-toast.png)
 
 </details>
 
@@ -918,25 +918,25 @@ If a registered user enters a valid email into the reset password form and submi
 
 <details open><summary>Password Reset page</summary>
 
-![Password Reset page](static/images/readme/password-reset.png)
+![Password Reset page](docs/images/readme/password-reset.png)
 
 </details>
 
 <details><summary>Password Reset information page</summary>
 
-![Password Reset page](static/images/readme/password-email.png)
+![Password Reset page](docs/images/readme/password-email.png)
 
 </details>
 
 <details><summary>Password Reset form</summary>
 
-![Password Reset page](static/images/readme/change-password.png)
+![Password Reset page](docs/images/readme/change-password.png)
 
 </details>
 
 <details><summary>Password Reset success page</summary>
 
-![Password Reset page](static/images/readme/password-changed.png)
+![Password Reset page](docs/images/readme/password-changed.png)
 
 </details>
 
@@ -945,13 +945,13 @@ A user may sign out when authenticated by clicking the Log Out nav link. They ar
 
 <details><summary>Sign Out page</summary>
 
-![Password Reset page](static/images/readme/logout.png)
+![Password Reset page](docs/images/readme/logout.png)
 
 </details>
 
 <details><summary>Toast message after signing out</summary>
 
-![Password Reset page](static/images/readme/logout-toast.png)
+![Password Reset page](docs/images/readme/logout-toast.png)
 
 </details>
 
@@ -960,7 +960,7 @@ An authenticated user may view their account page via a link in the nav bar. On 
 
 <details open><summary>My Account page</summary>
 
-![My Account page](static/images/readme/account.png)
+![My Account page](docs/images/readme/account.png)
 
 </details>
 
@@ -968,34 +968,34 @@ The user's order history is listed if it exists. The order number, date of purch
 
 <details><summary>Toast message and changed button text on past order confirmation page</summary>
 
-![Toast message on past order confirmation page](static/images/readme/past-order-toast.png)
+![Toast message on past order confirmation page](docs/images/readme/past-order-toast.png)
 
-![Changed button text on past order confirmation page](static/images/readme/past-order-button.png)
+![Changed button text on past order confirmation page](docs/images/readme/past-order-button.png)
 
 </details>
 
 <details><summary>Order number displayed on mouse hover</summary>
 
-![Order number displayed on mouse hover](static/images/readme/order-number-hover.png)
+![Order number displayed on mouse hover](docs/images/readme/order-number-hover.png)
 
 </details>
 
 <details><summary>Order history section when user has no order history</summary>
 
-![Order history section when user has no order history](static/images/readme/account-no-orders.png)
+![Order history section when user has no order history](docs/images/readme/account-no-orders.png)
 
 </details>
 
 ### The Reviews page
 A review page exists for each service that The Garden Path offers. Only users who have previously ordered a particular service can write reviews for it. The link to the review page is presented next to the star rating on each service page. When clicked, the user may read the various reviews that have been approved by the site administrators.
 
-![Reviews page](static/images/readme/reviews-mob.gif)
+![Reviews page](docs/images/readme/reviews-mob.gif)
 
 A maximum of 6 reviews are displayed at any one time. If more reviews exists, then pagination controls are shown underneath the reviews as well as an indication of how many pages of reviews there are.
 
 <details><summary>Pagination of reviews</summary>
 
-![Reviews pagination](static/images/readme/reviews-pagination.png)
+![Reviews pagination](docs/images/readme/reviews-pagination.png)
 
 </details>
 
@@ -1004,19 +1004,19 @@ If a user has previously ordered a particular service, they will see a Leave a R
 
 <details open><summary>The Leave a Review button</summary>
 
-![Leave a Review button](static/images/readme/review-button.png)
+![Leave a Review button](docs/images/readme/review-button.png)
 
 </details>
 
 <details><summary>The review form page</summary>
 
-![The review form page](static/images/readme/review-form.png)
+![The review form page](docs/images/readme/review-form.png)
 
 </details>
 
 <details><summary>The review confirmation toast message</summary>
 
-![The review confirmation toast message](static/images/readme/review-toast.png)
+![The review confirmation toast message](docs/images/readme/review-toast.png)
 
 </details>
 
@@ -1025,7 +1025,7 @@ When a user in logged in they may edit or delete their published reviews. In the
 
 <details open><summary>A review with Edit and Delete buttons</summary>
 
-![Review card as seen by its author](static/images/readme/reviews-author.png)
+![Review card as seen by its author](docs/images/readme/reviews-author.png)
 
 </details>
 
@@ -1033,13 +1033,13 @@ If the user clicks the Edit button, the review form page is loaded with an amend
 
 <details><summary>The Edit Review page with amended heading and pre-filled form data</summary>
 
-![Review card as seen by its author](static/images/readme/reviews-edit.png)
+![Review card as seen by its author](docs/images/readme/reviews-edit.png)
 
 </details>
 
 <details><summary>The edit review toast message</summary>
 
-![The review confirmation toast message](static/images/readme/review-edit-toast.png)
+![The review confirmation toast message](docs/images/readme/review-edit-toast.png)
 
 </details>
 
@@ -1047,7 +1047,7 @@ If the user clicks the delete button, a confirmation modal is displayed informin
 
 <details><summary>The Delete Confirmation Modal for reviews.</summary>
 
-![Delete review modal window](static/images/readme/review-modal.png)
+![Delete review modal window](docs/images/readme/review-modal.png)
 
 </details>
 
@@ -1056,13 +1056,13 @@ Staff users may view a page containing all unpublished reviews and delete or pub
 
 <details><summary>Admin view of reviews page</summary>
 
-![Admin view of reviews page](static/images/readme/reviews-admin.png)
+![Admin view of reviews page](docs/images/readme/reviews-admin.png)
 
 </details>
 
 <details><summary>The unpublished reviews page</summary>
 
-![The unpublished reviews page](static/images/readme/reviews-unpublished.png)
+![The unpublished reviews page](docs/images/readme/reviews-unpublished.png)
 
 </details>
 
@@ -1079,19 +1079,19 @@ If a user is authenticated, the name, email, and phone number fields will alread
 
 <details><summary>The contact us form</summary>
 
-![The contact us form](static/images/readme/contact-desktop.png)
+![The contact us form](docs/images/readme/contact-desktop.png)
 
 </details>
 
 <details><summary>The contact us form with user detail fields already completed</summary>
 
-![The contact us form with user detail fields already completed](static/images/readme/contact-filled.gif)
+![The contact us form with user detail fields already completed](docs/images/readme/contact-filled.gif)
 
 </details>
 
 <details><summary>The contact us form success toast message</summary>
 
-![The contact us form success toast message](static/images/readme/contact-toast.png)
+![The contact us form success toast message](docs/images/readme/contact-toast.png)
 
 </details>
 
@@ -1100,7 +1100,7 @@ Users may sign up to a newsletter mailing list by navigating to this page and en
 
 <details><summary>The newsletter page with MailChimp form</summary>
 
-![The newsletter page with MailChimp form](static/images/readme/newsletter-page.png)
+![The newsletter page with MailChimp form](docs/images/readme/newsletter-page.png)
 
 </details>
 
@@ -1109,9 +1109,9 @@ The website's privacy policy is presented on its own webpage. Usert may view the
 
 <details><summary>The privacy policy page</summary>
 
-![The privacy policy webpage](static/images/readme/privacy-policy.png)
+![The privacy policy webpage](docs/images/readme/privacy-policy.png)
 
-![The section of the privacy policy regarding inquiries](static/images/readme/privacy-contact.png)
+![The section of the privacy policy regarding inquiries](docs/images/readme/privacy-contact.png)
 
 </details>
 
@@ -1120,9 +1120,9 @@ Custom templates for 403, 404, and 500 error were created for the website. Each 
 
 <details><summary>The 403, 404, and 500 errors page</summary>
 
-![The 403 error page](static/images/readme/403.png)
-![The 404 error page](static/images/readme/404.png)
-![The 500 error page](static/images/readme/500.png)
+![The 403 error page](docs/images/readme/403.png)
+![The 404 error page](docs/images/readme/404.png)
+![The 500 error page](docs/images/readme/500.png)
 
 
 </details>
