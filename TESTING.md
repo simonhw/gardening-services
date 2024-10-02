@@ -617,6 +617,8 @@ Flake8 flagged E501 errors in migrations files for lines longer than 79 characte
 
 <details><summary>The Gardening app - Acceptable error</summary>
 
+![Flake8 command run in the gardening directory](docs/images/testing/flake8-gardening.png)
+
 There were two different types of errors flagged in the `settings.py` file:
 - The first was flagging `env` as being imported but not used. This is because the linter is looking for the word `env` being called elsewhere in the file and not finding it; however, this is an acceptable error as the file is still using the imported data but calling it via `os.environ.get`.
 - The second related to lines longer than 79 characters in the `ALLOWED_ORIGINS` and `AUTH_PASSWORD_VALIDATORS` blocks. There was no realistic way of splitting these lines in two and not breaking the functionality of the website; therefore, these errors flagged by the linter were deemed acceptable to have.
@@ -625,7 +627,6 @@ There were two different types of errors flagged in the `settings.py` file:
     When applying the guideline would make the code less readable, even for someone who is used to reading code that follows this PEP."
     - The comment `# noqa` was added after each of these long lines so that the linter would ignore the error.
 
-    ![Flake8 command run in the gardening directory](docs/images/testing/flake8-gardening.png)
 
 </details>
 
@@ -649,9 +650,10 @@ There were two different types of errors flagged in the `settings.py` file:
 
 <details><summary>The Checkout app - No true errors</summary>
 
+![Flake8 command run in the checkout directory](docs/images/testing/flake8-checkout.png)
+
 In `apps.py`, Flake8 flags `checkout.signals` as being imported but never used. This is due to the linter seeing this file in isolation and not understanding the purpose of the import. It is included so that Django is aware of the signals module and the update listeners contained within.
 
-![Flake8 command run in the checkout directory](docs/images/testing/flake8-checkout.png)
 
 </details>
 
@@ -708,26 +710,57 @@ Sign Up Email Sent | &check;| | ![WAVE results for .html](docs/images/testing)
 Verify Email |&check; | | ![WAVE results for .html](docs/images/testing)
 
 #### Lighthouse Testing
-##### Home Page
+Lighthouse tests were run for each page on the deployed website and the results are summarised in the tables below. The pages were scored in four different categories: Performance, Accessibility, Best Practises, and Search Engine Optimisation.
 
-Desktop test:
+Category | Lowest Score | Highest Score | Median Score
+:--- | :---: | :---: | :---:
+Performance | 65 | 96 | 77
+Accessibility |100 |100 |100
+Best Practises | 100|100 |100
+SEO | 91 |100 |100
 
-![Lighthouse test for index.html - desktop](docs/images/testing/lighthouse-index-desktop.png)
+All pages scored well across all 4 categories. Performance scores were slighty lower on pages with more images and JavaScript files, but overall The Garden Path demonstrates that it is a well-designed and coded application.
 
-Mobile test:
+<details><summary>Table of all Lighthouse results with supporting images</summary>
 
-![Lighthouse test for index.html - mobile](docs/images/testing/lighthouse-index-mobile.png)
+Page  | Mobile | Desktop | Comments
+:--- | :---: | :---: | :---:
+Homepage &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | ![Lighthouse mobile results for index.html](docs/images/testing/lighthouse/lighthouse-home-mobile.png) | ![Lighthouse desktop results for index.html](docs/images/testing/lighthouse/lighthouse-home-desktop.png) | Very Good 
+About Us | ![Lighthouse mobile results for about.html](docs/images/testing/lighthouse/lighthouse-about-mobile.png) | ![Lighthouse desktop results for about.html](docs/images/testing/lighthouse/lighthouse-about-desktop.png) | Good
+My Account | ![Lighthouse mobile results for account.html](docs/images/testing/lighthouse/lighthouse-account-mobile.png) | ![Lighthouse desktop results for account.html](docs/images/testing/lighthouse/lighthouse-account-desktop.png) | Good
+All Services | ![Lighthouse mobile results for services.html](docs/images/testing/lighthouse/lighthouse-services-mobile.png) | ![Lighthouse desktop results for services.html](docs/images/testing/lighthouse/lighthouse-services-desktop.png) | Good
+Grass Cutting Page| ![Lighthouse mobile results for services/1.html](docs/images/testing/lighthouse/lighthouse-grass-mobile.png) | ![Lighthouse desktop results for services/1.html](docs/images/testing/lighthouse/lighthouse-grass-desktop.png) | Very Good
+Weeding Page| ![Lighthouse mobile results for services/2.html](docs/images/testing/lighthouse/lighthouse-weeding-mobile.png) | ![Lighthouse desktop results for services/2.html](docs/images/testing/lighthouse/lighthouse-weeding-desktop.png) | Very Good
+Tree Maintenance Page| ![Lighthouse mobile results for services/3.html](docs/images/testing/lighthouse/lighthouse-tree-mobile.png) | ![Lighthouse desktop results for services/3.html](docs/images/testing/lighthouse/lighthouse-tree-desktop.png) | Very Good
+Hedge Cutting Page| ![Lighthouse mobile results for services/4.html](docs/images/testing/lighthouse/lighthouse-hedge-mobile.png) | ![Lighthouse desktop results for services/4.html](docs/images/testing/lighthouse/lighthouse-hedge-desktop.png) | Very Good
+Flowerbed Care Page| ![Lighthouse mobile results for services/5.html](docs/images/testing/lighthouse/lighthouse-flowerbed-mobile.png) | ![Lighthouse desktop results for services/5.html](docs/images/testing/lighthouse/lighthouse-flowerbed-desktop.png) | Very Good
+Tree Stump Removal Page| ![Lighthouse mobile results for services/6.html](docs/images/testing/lighthouse/lighthouse-stump-mobile.png) | ![Lighthouse desktop results for services/6.html](docs/images/testing/lighthouse/lighthouse-stump-desktop.png) | Very Good
+Leave a Review Page | ![Lighthouse mobile results for /create_review.html](docs/images/testing/lighthouse/lighthouse-leavereview-mobile.png) | ![Lighthouse desktop results for /create_review.html](docs/images/testing/lighthouse/lighthouse-leavereview-desktop.png) | Good
+Grass Cutting Reviews Page | ![Lighthouse mobile results for services/1/reviews.html](docs/images/testing/lighthouse/lighthouse-reviews-1-mobile.png) | ![Lighthouse desktop results for services/1/reviews.html](docs/images/testing/lighthouse/lighthouse-reviews-1-desktop.png) | Good
+Weeding Reviews Page | ![Lighthouse mobile results for services/2/reviews.html](docs/images/testing/lighthouse/lighthouse-reviews-2-mobile.png) | ![Lighthouse desktop results for services/2/reviews.html](docs/images/testing/lighthouse/lighthouse-reviews-2-desktop.png) | Good
+Tree Maintenance Reviews Page | ![Lighthouse mobile results for services/3/reviews.html](docs/images/testing/lighthouse/lighthouse-reviews-3-mobile.png) | ![Lighthouse desktop results for services/3/reviews.html](docs/images/testing/lighthouse/lighthouse-reviews-3-desktop.png) | Good
+Hedge Cutting Reviews Page | ![Lighthouse mobile results for services/4/reviews.html](docs/images/testing/lighthouse/lighthouse-reviews-4-mobile.png) | ![Lighthouse desktop results for services/4/reviews.html](docs/images/testing/lighthouse/lighthouse-reviews-4-desktop.png) | Good
+Flowerbed Care Reviews Page | ![Lighthouse mobile results for services/5/reviews.html](docs/images/testing/lighthouse/lighthouse-reviews-5-mobile.png) | ![Lighthouse desktop results for services/5/reviews.html](docs/images/testing/lighthouse/lighthouse-reviews-5-desktop.png) | Good
+Tree Stump Removal Reviews Page | ![Lighthouse mobile results for services/6/reviews.html](docs/images/testing/lighthouse/lighthouse-reviews-6-mobile.png) | ![Lighthouse desktop results for services/6/reviews.html](docs/images/testing/lighthouse/lighthouse-reviews-6-desktop.png) | Good
+Grass Cutting Unpublished Reviews Page| ![Lighthouse mobile results for services/1/unpublished_reviews.html](docs/images/testing/lighthouse/lighthouse-unpublished-1-mobile.png) | ![Lighthouse desktop results for services/1/unpublished_reviews.html](docs/images/testing/lighthouse/lighthouse-unpublished-1-desktop.png) | Very Good
+Weeding Unpublished Reviews Page | ![Lighthouse mobile results for services/2/unpublished_reviews.html](docs/images/testing/lighthouse/lighthouse-unpublished-2-mobile.png) | ![Lighthouse desktop results for services/2/unpublished_reviews.html](docs/images/testing/lighthouse/lighthouse-unpublished-2-desktop.png) | Very Good
+Tree Maintenance Unpublished Reviews Page | ![Lighthouse mobile results for services/3/unpublished_reviews.html](docs/images/testing/lighthouse/lighthouse-unpublished-3-mobile.png) | ![Lighthouse desktop results for services/3/unpublished_reviews.html](docs/images/testing/lighthouse/lighthouse-unpublished-3-desktop.png) | Very Good
+Hedge Cutting Unpublished Reviews Page | ![Lighthouse mobile results for services/4/unpublished_reviews.html](docs/images/testing/lighthouse/lighthouse-unpublished-4-mobile.png) | ![Lighthouse desktop results for services/4/unpublished_reviews.html](docs/images/testing/lighthouse/lighthouse-unpublished-4-desktop.png) | Very Good
+Flowerbed Care Unpublished Reviews Page | ![Lighthouse mobile results for services/5/unpublished_reviews.html](docs/images/testing/lighthouse/lighthouse-unpublished-5-mobile.png) | ![Lighthouse desktop results for services/5/unpublished_reviews.html](docs/images/testing/lighthouse/lighthouse-unpublished-5-desktop.png) | Very Good
+Tree Stump Removal Unpublished Reviews Page | ![Lighthouse mobile results for services/6/unpublished_reviews.html](docs/images/testing/lighthouse/lighthouse-unpublished-6-mobile.png) | ![Lighthouse desktop results for services/6/unpublished_reviews.html](docs/images/testing/lighthouse/lighthouse-unpublished-6-desktop.png) | Very Good
+Cart | ![Lighthouse mobile results for cart.html](docs/images/testing/lighthouse/lighthouse-cart-mobile.png) | ![Lighthouse desktop results for cart.html](docs/images/testing/lighthouse/lighthouse-cart-desktop.png) | Very Good
+Checkout | ![Lighthouse mobile results for checkout.html](docs/images/testing/lighthouse/lighthouse-checkout-mobile.png) | ![Lighthouse desktop results for checkout.html](docs/images/testing/lighthouse/lighthouse-checkout-desktop.png) | Good
+Checkout Success | ![Lighthouse mobile results for checkout_success.html](docs/images/testing/lighthouse/lighthouse-checkoutsuccess-mobile.png) | ![Lighthouse desktop results for checkout_success.html](docs/images/testing/lighthouse/lighthouse-checkoutsuccess-desktop.png) | Very Good
+Contact Us | ![Lighthouse mobile results for contact.html](docs/images/testing/lighthouse/lighthouse-contact-mobile.png) | ![Lighthouse desktop results for contact.html](docs/images/testing/lighthouse/lighthouse-contact-desktop.png) | Very Good
+Newsletter Page | ![Lighthouse mobile results for subscribe.html](docs/images/testing/lighthouse/lighthouse-newsletter-mobile.png) | ![Lighthouse desktop results for subscribe.html](docs/images/testing/lighthouse/lighthouse-newsletter-desktop.png) | Very Good
+Privacy Policy Page | ![Lighthouse mobile results for privacy.html](docs/images/testing/lighthouse/lighthouse-privacy-mobile.png) | ![Lighthouse desktop results for privacy.html](docs/images/testing/lighthouse/lighthouse-privacy-desktop.png) | Very Good
+Sign In Page | ![Lighthouse mobile results for login.html](docs/images/testing/lighthouse/lighthouse-login-mobile.png) | ![Lighthouse desktop results for login.html](docs/images/testing/lighthouse/lighthouse-login-desktop.png) | Very Good
+Sign Up Page | ![Lighthouse mobile results for signup.html](docs/images/testing/lighthouse/lighthouse-signup-mobile.png) | ![Lighthouse desktop results for signup.html](docs/images/testing/lighthouse/lighthouse-signup-desktop.png) | Very Good
+Sign Up Email | ![Lighthouse mobile results for signup.html](docs/images/testing/lighthouse/lighthouse-email-mobile.png) | ![Lighthouse desktop results for signup.html](docs/images/testing/lighthouse/lighthouse-email-desktop.png) | Very Good
+Sign Out Page | ![Lighthouse mobile results for logout.html](docs/images/testing/lighthouse/lighthouse-logout-mobile.png) | ![Lighthouse desktop results for logout.html](docs/images/testing/lighthouse/lighthouse-logout-desktop.png) | Very Good
+Reset Password | ![Lighthouse mobile results for password_reset.html](docs/images/testing/lighthouse/lighthouse-password-mobile.png) | ![Lighthouse desktop results for password_reset.html](docs/images/testing/lighthouse/lighthouse-password-desktop.png) | Very Good
 
-##### About Page
-Desktop and mobile tests for about.html were all very good with scores ranging from 80 to 100.
-
-Desktop test:
-
-![Lighthouse test for about.html - desktop](docs/images/testing/lighthouse-about-desktop.png)
-
-Mobile test:
-
-![Lighthouse test for about.html - mobile](docs/images/testing/lighthouse-about-mobile.png)
+</details>
 
 ## Bugs
 ### Known Bugs
