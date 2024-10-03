@@ -12,14 +12,14 @@ Deployed program on Heroku: [The Garden Path](https://gardening-services-e596b63
 - [Email Marketing](#email-marketing)
 - [Social Media Marketing](#social-media-marketing)
 - [Search Engine Optimisation](#search-engine-optimisation)
-    - [Keywords](#keywords)
-    - [Sitemap and Robots file](#sitemap-and-robotstxt)
+    - [Keywords](#keywords)
+    - [Sitemap and Robots file](#sitemap-and-robotstxt)
 
 ## Strategy Planning
 To assess the best type of marketing strategies to use for this business, the questions below were considered:
 
 ### Who are our users?
-Homeowners and business owners with gardens of all shaped and sizes.
+Homeowners and business owners with gardens of all shapes and sizes.
 
 ### Would our users use social media? Which platforms do we think we would find them on?
 An older customer group who may have a reduced ability to tend to their own gardens would be a good target customer base but would not necessarily have social media accounts.
@@ -59,7 +59,7 @@ Positive elements from each of these business were analysed and incorporated int
 ## Content Marketing
 The Garden Path allows users to leave reviews for services they have purchased. Reviews are visible to all site users, regardless of their authentication status. While reviews are not published until a site admin approved the review, this step is only intended to be a bulwark against malicious or spam reviews. Showing all genuine reviews on the website, regardless of the rating, builds trust and credibility in the eyes of the customer. Many customers based their purchase decisions wholly on the contents of reviews. On each service page, the star rating and number of reviews are visible to the user under the service description, with their attention immediately drawn to the orange colours of the stars. It was important to show the number of reviews next to the rating as many customers value a slightly lower rating with many reviews much higher than a high rating with only a few reviews.
 
-![Star rating on services page](docs/images/readme/service-stars.png)
+![Star rating on services page](docs/images/testing/final-star.png)
 
 ## Email Marketing
 A newsletter feature was added to the site as a way to keep customers engaged with the business. The content of newsletters sent out by The Garden Path would be designed to attract repeat business throughout the year. Seasonal work is one example of a valid reason to engage customers in this way. What customers may need in the summer does not necessarily translate well in the darker winter months. Reminding customers of other services offered by The Garden Path can help generate business which may otherwise be lost to competitors or not realised in the first place.
