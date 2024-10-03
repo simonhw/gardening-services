@@ -370,7 +370,7 @@ The GitHub Projects tool was used to manage development progress for this websit
 
 The Epics and labels discussed above were used in conjunction with the board and allowed the developer to manage their time well during development. Below is a screenshot of the final state of the kanban board. The project can be viewed on its [GitHub Projects page](https://github.com/users/simonhw/projects/4/).
 
-![Image of Kanban Board]()
+![Image of Kanban Board](docs/images/readme/kanban-final.png)
 
 ## Marketing
 All documentation on the marketing for this e-commerce application can be found in the [MARKETING.md](/MARKETING.md) file.
