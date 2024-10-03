@@ -23,7 +23,7 @@ Deployed program on Heroku: [The Garden Path](https://gardening-services-e596b63
 
 ## Form Validation
 ### Adding a Service to the Cart
-Each of the six services available to the user has at least one and at most 3 form fields to interact with. Depending on the service, these include select and number inputs.
+Each of the six services available to the user has at least one and at most three form fields to interact with. Depending on the service, these include select and number inputs.
 For all select inputs, the user can only select one option, as each input has one value already marked as selected.
 
 ![Service select field](docs/images/testing/service-select-input.gif)
@@ -112,7 +112,7 @@ On the back end, the checkout view utilises a number of try-except blocks and if
 ### Creating a Review
 Users who have previously ordered a service may leave a review for it. The review form may be accessed through the **Leave a Review** button on the service's reviews page. This button is displayed dynamically through the use of the `service_history` function and a Boolean context variable `ordered` returned from the view. The user's order history is looped through, and if any have the service, `ordered` is returned, which by default is set to `False` but in this case has now been set to `True`. This allows the user to interact with the **Leave a Review** button and navigate to the form page.
 
-Three input fields are presented to the user and each have custom validation. All three are set as required fields on the backend and the data is cleaned and checked for validity on form submission. If either of the three fields are not complete, ValidationErrors are raised and the fields outlined in red with an error message in bold red text displayed under the field. The ratings stars are given a red colour if the input is left blank.
+Three input fields are presented to the user and each have custom validation. All three are set as required fields on the backend and the data is cleaned and checked for validity on form submission. If either of the three fields are not complete, ValidationErrors are raised and the fields outlined in red with an error message in bold red text displayed under the field. The ratings stars are given a red colour if the input is left blank. When the enters valid inputs, the error styling is removed.
 
 ![Blank review form](docs/images/testing/review-empty.png)
 
@@ -123,12 +123,6 @@ Three input fields are presented to the user and each have custom validation. Al
 ![No content validation error](docs/images/testing/review-content.png)
 
 ![No rating validation error](docs/images/testing/review-stars.png)
-
-</details>
-
-<details><summary>Error styling resetting when inputs are corrected</summary>
-
-![Error styling resetting when inputs are corrected](docs/images/testing/review-errors-reset.gif)
 
 </details>
 
@@ -671,18 +665,19 @@ The WAVE tool was used to assess the website for any errors or issues associated
 All pages with the navbar contained an alert for a redundant homepage link. Both the site logo and the Home navbar link direct the user to the homepage. This is an intended design feature, as users expect to click a site's logo to get back to the homepage. On mobile screens, the user taps the logo to get back to the homepage instead of having to open the dropdown navbar menu. 
 This alert is not discussed again in the below list but is seen in the WAVE screenshots.
 The original design for pages with the review star ratings had colour contrast errors. To resolve the errors, either a dark background colour was added or text colour changes were made, though this was not the preferred design choice. 
-    - [Original Star Rating Design](docs/images/testing/original-star.png)
-    - [Final Star Rating Design](docs/images/testing/final-star.png)
+- [Original Star Rating Design](docs/images/testing/original-star.png)
+- [Final Star Rating Design](docs/images/testing/final-star.png)
 
-    - [Original Reviews Design](docs/images/readme/reviews-pagination.png)
-    - [Final Reviews Design](docs/images/testing/final-review-stars.png)
+- [Original Reviews Design](docs/images/readme/review-tablet.png)
+- [Final Reviews Design](docs/images/testing/final-review-stars.png)
+
 - One error is present on the Newsletter Signup Page related to a missing form label for a hidden input field that MailChimp uses to prevent form bot signups. Adding an aria-label could reduce the effectiveness of this measure. For this reason, this is not considered a true accessibility error since no real humans are meant to ever interact with this field.
-    - [Newsletter Page WAVE Error](docs/images/testing/wave/newsletter-error.png)
+    - [Newsletter Page WAVE Error](docs/images/testing/wave/newsletter-error.png)
 
-    - [Error location in HTML](docs/images/testing/wave/newsletter-error-detail.png)
+    - [Error location in HTML](docs/images/testing/wave/newsletter-error-detail.png)
 
 - One alert is present on the Checkout page for a redundant link to the Cart page. This is intentional due to the design of the checkout form, which only shows one of these links to the user at any given time. Having two links allows the user to navigate back to the cart from the Address Details section and from the Review Order section.
-    - [Checkout Page alert location in HTML](docs/images/testing/wave/checkout-alert.png)
+    - [Checkout Page alert location in HTML](docs/images/testing/wave/checkout-alert.png)
 
 Page | No Errors | Comments | Supporting Image
 :--- | :---: | :--- | :---: 
