@@ -55,6 +55,7 @@
     z-index: 200;
 }
 
+/* Boostrap-like Styles */
 .fs-small {
     font-size: small;
 }
@@ -89,14 +90,6 @@ em {
 
 .mate {
     font-family: "Mate", serif;
-}
-
-.dark-brown {
-    color: #332217;
-}
-
-.dark-brown-bg {
-    background-color: #332217;
 }
 
 .hunter-green {
@@ -139,7 +132,6 @@ em {
     background-color: #fff;
 }
 
-
 .plain-anchor {
     text-decoration: none;
 }
@@ -148,6 +140,7 @@ em {
     text-align: center;
 }
 
+/* Shadow Effects */
 main {
     box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.1);
     position: relative;
@@ -206,13 +199,11 @@ main {
       z-index: 0;
 }
 
-/* End of Star Rating Styles */
-/* ------------------------- */
-
 footer {
     background-color: #EDEDE8;
 }
 
+/* Cart Styles */
 td > img,
 .cart-items img {
     max-width: 100%;
@@ -329,28 +320,11 @@ td > img,
 }
 
 /* Make summary of cart with many services a scrollable list on
-   the chekout page */
+   the checkout page */
 .checkout-services-wrapper {
     max-height: 250px;
     overflow-x: hidden;
     overflow-y: auto;
-}
-
-/* Border classes for testing grid layouts */
-.bdr-r {
-    border: 1px solid red;
-}
-
-.bdr-g {
-    border: 1px solid green;
-}
-
-.bdr-b {
-    border: 1px solid blue;
-}
-
-.bdr-m {
-    border: 1px solid magenta;
 }
 
 .review-paragraphs p {
@@ -400,6 +374,7 @@ td > img,
     }
 }
 
+/* Display payment button neatly on small screens */
 @media (min-width: 473px) {
     #payment-form button {
         margin-left: 1rem;
@@ -425,6 +400,7 @@ td > img,
     }
 }
 
+/* Hide the hero image on larger screens and use a background image instead */
 @media (min-width: 768px) {
     .hero-image {
         display: none;

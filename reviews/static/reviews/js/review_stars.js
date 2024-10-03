@@ -1,7 +1,7 @@
 /*jshint jquery: true */
 $(document).ready(function() {
     let $radios = $('.form-check-input');  // radio inputs
-    let $stars = $('.form-check-label'); // star labels
+    let $stars = $('.form-check-label');  // star labels
 
     // Function to apply or remove the orange colour of a star
     function updateStars(index) {

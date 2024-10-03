@@ -50,7 +50,7 @@ if ( serviceName.includes('stump') ) {
     updateServiceName(serviceNoun, "Stump");
 }
 
-// Function that updates the service-name spans with the correct word.
+// Function that updates the service name spans with the correct word.
 function updateServiceName(serviceNoun, string) {
     for (let i = 0; i < serviceNoun.length; i++) {
         serviceNoun[i].innerText = string;
