@@ -75,6 +75,9 @@ class ContactUsForm(forms.ModelForm):
                 self.fields[field].label = ''
                 continue
             elif field == 'contact_reason':
+                # This line defines the placeholder variable before
+                # being used.
+                placeholder = placeholders.get(field, '')
                 self.fields[field].label = False
                 self.fields[field].widget.attrs.update(
                     {
